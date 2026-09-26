@@ -1,0 +1,6 @@
+# Python-инструменты извлечения и выравнивания (tools/extract, tools/align)
+pymupdf>=1.24
+ebooklib>=0.18
+beautifulsoup4>=4.12
+pyyaml>=6.0
+pypdf>=4.0
