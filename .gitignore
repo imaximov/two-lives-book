@@ -9,5 +9,4 @@ dist/
 .astro/
 .env
 .env.*
-translation/packets/
 .DS_Store

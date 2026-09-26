@@ -10,7 +10,7 @@
 
 - `docs/` — план, архитектура, процесс перевода, инвентаризация материалов
 - `sources/ru/original/` — русский оригинал (epub/pdf), части I–III
-- `sources/en-legacy/` — старый английский перевод 2017–2022 (справочно)
+- `sources/en-legacy/` — старый английский перевод 2017–2022 (основа для английской версии)
 - `legacy/` — предыдущий bookdown-проект, из которого сделан форк
   ([gorodnichy/two-lives-book](https://github.com/gorodnichy/two-lives-book))
 
