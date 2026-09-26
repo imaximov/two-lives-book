@@ -1,21 +1,18 @@
-# "Two Lives" book Project
+# «Две жизни» — Two Lives by Concordia Antarova
 
+Перевод романа Конкордии Антаровой «Две жизни» на английский (затем на польский) и сайт для чтения
+с компьютера и телефона, с запоминанием места чтения и загрузкой PDF/EPUB.
 
-This repository contains the working drafts of the English translation of 
-one of the most monumental spirituals books ever written, written in Russian and hence, unfotrunately,  not much known to the audience who can'tread Russian.
+Проект в начальной стадии. План, архитектура и процесс перевода — в [`docs/`](docs/README.md).
+Инструкции для агентов — в [`AGENTS.md`](AGENTS.md).
 
-The book is called "Two Lives". It was written (or it would be more corect to say it was heard and transcribed) by Concordia Antarova in the first half of 20th century.
+## Структура
 
-For more information about the project please visit  http://www.booktwolives.com/
-Learn more:  https://en.wikipedia.org/wiki/Concordia_Antarova
+- `docs/` — план, архитектура, процесс перевода, инвентаризация материалов
+- `sources/ru/original/` — русский оригинал (epub/pdf), части I–III
+- `sources/en-legacy/` — старый английский перевод 2017–2022 (справочно)
+- `legacy/` — предыдущий bookdown-проект, из которого сделан форк
+  ([gorodnichy/two-lives-book](https://github.com/gorodnichy/two-lives-book))
 
-Contributions, questions, feedback are welcome! - 
-You can also use the text to practice your Russian or English.
-
-Start by forking or cloning the entire project from here: https://github.com/gorodnichy/two-lives-book (this includes all source texts and translations). 
-
-Or,   
-you can read it directly from here: https://gorodnichy.github.io/two-lives-book/ (which links to pages in https://github.com/gorodnichy/two-lives-book/tree/master/docs)
-
-
-
+Дальше появятся `content/` (тексты по главам), `translation/` (глоссарий, стайлгайды, ревью),
+`tools/` (скрипты), `site/` (сайт), `publishing/` (шаблоны PDF/EPUB).

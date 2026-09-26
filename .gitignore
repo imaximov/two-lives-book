@@ -2,3 +2,12 @@
 .Rhistory
 .RData
 .Ruserdata
+
+# new project
+node_modules/
+dist/
+.astro/
+.env
+.env.*
+translation/packets/
+.DS_Store
