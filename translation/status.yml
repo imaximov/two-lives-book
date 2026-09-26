@@ -11,3 +11,55 @@ p1-c01:
     legacy:
       raw: translation/legacy-en/raw/part-1/ch-01.md
       alignment: translation/legacy-en/alignment/p1-c01.yml
+p1-c12:
+  ru:
+    stage: source-ready
+    sha256: 91f0b1086a26865d76f48a3b848a98e1e43fafccaadd33b5a1f008f1221c623a
+  en:
+    stage: none
+    mode: revision
+    note: старый перевод извлечён и выровнен автоматически; проверены только окна калибровочного отрывка
+    legacy:
+      raw: translation/legacy-en/raw/part-1/ch-12.md
+      alignment: translation/legacy-en/alignment/p1-c12.yml
+      reviewed:
+      - p1-c12-038..p1-c12-058
+p1-c20:
+  ru:
+    stage: source-ready
+    sha256: 5284f7af52732325b98beae8d88b46269e44e8dbc7e18e759ece39ed3834c437
+  en:
+    stage: none
+    mode: revision
+    note: старый перевод извлечён и выровнен автоматически; проверены только окна калибровочного отрывка
+    legacy:
+      raw: translation/legacy-en/raw/part-1/ch-20.md
+      alignment: translation/legacy-en/alignment/p1-c20.yml
+      reviewed:
+      - p1-c20-209..p1-c20-218
+p2-c01:
+  ru:
+    stage: source-ready
+    sha256: c837e84624d187e812ba674104a9e5b278cbb0a921852fae96376a75a465bbcc
+  en:
+    stage: none
+    mode: revision
+    note: старый перевод извлечён и выровнен автоматически; проверены только окна калибровочного отрывка
+    legacy:
+      raw: translation/legacy-en/raw/part-2/ch-01.md
+      alignment: translation/legacy-en/alignment/p2-c01.yml
+      reviewed:
+      - p2-c01-249..p2-c01-274
+p3-c01:
+  ru:
+    stage: source-ready
+    sha256: 3f98d92b2169b4caa1502a00c758ec7fc1880bddb6a76f54ee7912c987359e50
+  en:
+    stage: none
+    mode: revision
+    note: старый перевод извлечён и выровнен автоматически; проверены только окна калибровочного отрывка
+    legacy:
+      raw: translation/legacy-en/raw/part-3/ch-01.md
+      alignment: translation/legacy-en/alignment/p3-c01.yml
+      reviewed:
+      - p3-c01-062..p3-c01-087

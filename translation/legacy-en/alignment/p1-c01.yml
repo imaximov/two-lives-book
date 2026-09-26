@@ -3,7 +3,8 @@ ru: content/ru/part-1/ch-01.md
 ru_sha256: 0a9f8e36f66244282b6e111fd24143f3c5216490fe7c8936e043ecfa9cb48128
 en_raw: translation/legacy-en/raw/part-1/ch-01.md
 en_raw_sha256: e652bbcbeb922bc557e5f1447d0045520ac371cffe60626fcb387e68701b3c08
-method: 'auto: DP по длинам и признакам (tools/align/legacy_en.py); все не-1:1 и сомнительные связи проверены вручную (чтение RU и EN)'
+method: 'auto: DP по длинам и признакам (tools/align/legacy_en.py); проверенные связи — опоры'
+reviewed: full
 length_ratio_en_ru: 1.178
 stats:
   '2:1': 11
@@ -32,6 +33,7 @@ links:
   - L002
   type: '1:1'
   cost: 0.0
+  review: done
 - ru:
   - p1-c01-004
   - p1-c01-005
@@ -47,12 +49,14 @@ links:
   - L004
   type: '1:1'
   cost: 0.14
+  review: done
 - ru:
   - p1-c01-007
   en:
   - L005
   type: '1:1'
   cost: 0.0
+  review: done
 - ru:
   - p1-c01-008
   - p1-c01-009
@@ -68,30 +72,35 @@ links:
   - L007
   type: '1:1'
   cost: 0.44
+  review: done
 - ru:
   - p1-c01-011
   en:
   - L008
   type: '1:1'
   cost: 0.01
+  review: done
 - ru:
   - p1-c01-012
   en:
   - L009
   type: '1:1'
   cost: 2.47
+  review: done
 - ru:
   - p1-c01-013
   en:
   - L010
   type: '1:1'
   cost: 0.21
+  review: done
 - ru:
   - p1-c01-014
   en:
   - L011
   type: '1:1'
   cost: 0.1
+  review: done
 - ru:
   - p1-c01-015
   en:
@@ -126,6 +135,7 @@ links:
   - L019
   type: '1:1'
   cost: 2.25
+  review: done
 - ru:
   - p1-c01-019
   en:
@@ -165,6 +175,7 @@ links:
   - L027
   type: '1:1'
   cost: 0.39
+  review: done
 - ru:
   - p1-c01-024
   en:
@@ -181,36 +192,42 @@ links:
   - L031
   type: '1:1'
   cost: 0.5
+  review: done
 - ru:
   - p1-c01-026
   en:
   - L032
   type: '1:1'
   cost: 0.24
+  review: done
 - ru:
   - p1-c01-027
   en:
   - L033
   type: '1:1'
   cost: 0.07
+  review: done
 - ru:
   - p1-c01-028
   en:
   - L034
   type: '1:1'
   cost: 0.1
+  review: done
 - ru:
   - p1-c01-029
   en:
   - L035
   type: '1:1'
   cost: 0.15
+  review: done
 - ru:
   - p1-c01-030
   en:
   - L036
   type: '1:1'
   cost: 0.21
+  review: done
 - ru:
   - p1-c01-031
   en:
@@ -227,6 +244,7 @@ links:
   - L040
   type: '1:1'
   cost: 0.12
+  review: done
 - ru:
   - p1-c01-033
   en:
@@ -242,6 +260,7 @@ links:
   - L043
   type: '1:1'
   cost: 0.47
+  review: done
 - ru:
   - p1-c01-035
   - p1-c01-036
@@ -265,6 +284,7 @@ links:
   - L046
   type: '1:1'
   cost: 0.0
+  review: done
 - ru:
   - p1-c01-039
   en:
@@ -281,6 +301,7 @@ links:
   - L050
   type: '1:1'
   cost: 0.77
+  review: done
 - ru:
   - p1-c01-041
   en:
@@ -296,12 +317,14 @@ links:
   - L053
   type: '1:1'
   cost: 0.64
+  review: done
 - ru:
   - p1-c01-043
   en:
   - L054
   type: '1:1'
   cost: 0.49
+  review: done
 - ru:
   - p1-c01-044
   - p1-c01-045
@@ -327,6 +350,7 @@ links:
   - L057
   type: '1:1'
   cost: 0.05
+  review: done
 - ru:
   - p1-c01-050
   - p1-c01-051
@@ -386,12 +410,14 @@ links:
   - L064
   type: '1:1'
   cost: 1.55
+  review: done
 - ru:
   - p1-c01-063
   en:
   - L065
   type: '1:1'
   cost: 0.32
+  review: done
 - ru:
   - p1-c01-064
   - p1-c01-065
@@ -408,6 +434,7 @@ links:
   - L067
   type: '1:1'
   cost: 0.05
+  review: done
 - ru:
   - p1-c01-068
   en:
@@ -440,54 +467,63 @@ links:
   - L071
   type: '1:1'
   cost: 0.7
+  review: done
 - ru:
   - p1-c01-076
   en:
   - L072
   type: '1:1'
   cost: 0.74
+  review: done
 - ru:
   - p1-c01-077
   en:
   - L073
   type: '1:1'
   cost: 0.04
+  review: done
 - ru:
   - p1-c01-078
   en:
   - L074
   type: '1:1'
   cost: 0.81
+  review: done
 - ru:
   - p1-c01-079
   en:
   - L075
   type: '1:1'
   cost: 0.71
+  review: done
 - ru:
   - p1-c01-080
   en:
   - L076
   type: '1:1'
   cost: 0.45
+  review: done
 - ru:
   - p1-c01-081
   en:
   - L077
   type: '1:1'
   cost: 0.12
+  review: done
 - ru:
   - p1-c01-082
   en:
   - L078
   type: '1:1'
   cost: 0.0
+  review: done
 - ru:
   - p1-c01-083
   en:
   - L079
   type: '1:1'
   cost: 0.4
+  review: done
 - ru:
   - p1-c01-084
   - p1-c01-085
@@ -503,12 +539,14 @@ links:
   - L081
   type: '1:1'
   cost: 0.67
+  review: done
 - ru:
   - p1-c01-087
   en:
   - L082
   type: '1:1'
   cost: 0.95
+  review: done
 - ru:
   - p1-c01-088
   en:
@@ -525,36 +563,42 @@ links:
   - L086
   type: '1:1'
   cost: 0.11
+  review: done
 - ru:
   - p1-c01-090
   en:
   - L087
   type: '1:1'
   cost: 0.16
+  review: done
 - ru:
   - p1-c01-091
   en:
   - L088
   type: '1:1'
   cost: 1.06
+  review: done
 - ru:
   - p1-c01-092
   en:
   - L089
   type: '1:1'
   cost: 0.01
+  review: done
 - ru:
   - p1-c01-093
   en:
   - L090
   type: '1:1'
   cost: 0.01
+  review: done
 - ru:
   - p1-c01-094
   en:
   - L091
   type: '1:1'
   cost: 0.02
+  review: done
 - ru:
   - p1-c01-095
   - p1-c01-096
@@ -614,42 +658,49 @@ links:
   - L099
   type: '1:1'
   cost: 0.02
+  review: done
 - ru:
   - p1-c01-106
   en:
   - L100
   type: '1:1'
   cost: 0.5
+  review: done
 - ru:
   - p1-c01-107
   en:
   - L101
   type: '1:1'
   cost: 0.0
+  review: done
 - ru:
   - p1-c01-108
   en:
   - L102
   type: '1:1'
   cost: 2.2
+  review: done
 - ru:
   - p1-c01-109
   en:
   - L103
   type: '1:1'
   cost: 0.01
+  review: done
 - ru:
   - p1-c01-110
   en:
   - L104
   type: '1:1'
   cost: 0.14
+  review: done
 - ru:
   - p1-c01-111
   en:
   - L105
   type: '1:1'
   cost: 0.2
+  review: done
 - ru:
   - p1-c01-112
   - p1-c01-113
@@ -665,6 +716,7 @@ links:
   - L107
   type: '1:1'
   cost: 0.17
+  review: done
 - ru:
   - p1-c01-115
   en:
@@ -680,24 +732,28 @@ links:
   - L110
   type: '1:1'
   cost: 0.0
+  review: done
 - ru:
   - p1-c01-117
   en:
   - L111
   type: '1:1'
   cost: 0.0
+  review: done
 - ru:
   - p1-c01-118
   en:
   - L112
   type: '1:1'
   cost: 0.14
+  review: done
 - ru:
   - p1-c01-119
   en:
   - L113
   type: '1:1'
   cost: 0.23
+  review: done
 - ru:
   - p1-c01-120
   - p1-c01-121
@@ -723,6 +779,7 @@ links:
   - L116
   type: '1:1'
   cost: 0.09
+  review: done
 - ru:
   - p1-c01-127
   - p1-c01-128
@@ -738,18 +795,21 @@ links:
   - L118
   type: '1:1'
   cost: 0.24
+  review: done
 - ru:
   - p1-c01-130
   en:
   - L119
   type: '1:1'
   cost: 0.06
+  review: done
 - ru:
   - p1-c01-131
   en:
   - L120
   type: '1:1'
   cost: 0.02
+  review: done
 - ru:
   - p1-c01-132
   - p1-c01-133
@@ -765,6 +825,7 @@ links:
   - L122
   type: '1:1'
   cost: 0.07
+  review: done
 - ru:
   - p1-c01-135
   en:
@@ -774,3 +835,4 @@ links:
   cost: 0.02
   review: done
   note: 'проверено вручную: граница верна'
+review_note: '2026-09-26: вся глава проверена вручную (все связи; сомнительные места прочитаны целиком)'

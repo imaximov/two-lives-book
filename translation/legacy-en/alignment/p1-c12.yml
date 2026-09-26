@@ -1,0 +1,768 @@
+chapter: p1-c12
+ru: content/ru/part-1/ch-12.md
+ru_sha256: 91f0b1086a26865d76f48a3b848a98e1e43fafccaadd33b5a1f008f1221c623a
+en_raw: translation/legacy-en/raw/part-1/ch-12.md
+en_raw_sha256: 8f2c62fb8da4c4e634747b7e9d2c2fc8c57a3dd4a7d783ca67dcc70f9284c37c
+method: 'auto: DP по длинам и признакам (tools/align/legacy_en.py); проверенные связи — опоры'
+reviewed:
+- p1-c12-038..p1-c12-058
+review_note: '2026-09-26: проверено окно калибровочного отрывка 040–055 с контекстом 038–058.'
+length_ratio_en_ru: 1.397
+stats:
+  '1:1': 101
+  '1:2': 4
+  '2:1': 3
+  '1:3': 3
+  0:1: 3
+  '2:2': 1
+links:
+- ru:
+  - p1-c12-001
+  en:
+  - L001
+  type: '1:1'
+  cost: 0.34
+- ru:
+  - p1-c12-002
+  en:
+  - L002
+  type: '1:1'
+  cost: 0.51
+- ru:
+  - p1-c12-003
+  en:
+  - L003
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p1-c12-004
+  en:
+  - L004
+  type: '1:1'
+  cost: 0.05
+- ru:
+  - p1-c12-005
+  en:
+  - L005
+  type: '1:1'
+  cost: 0.14
+- ru:
+  - p1-c12-006
+  en:
+  - L006
+  - L007
+  type: '1:2'
+  cost: 4.63
+  review: needed
+- ru:
+  - p1-c12-007
+  en:
+  - L008
+  type: '1:1'
+  cost: 0.75
+- ru:
+  - p1-c12-008
+  en:
+  - L009
+  type: '1:1'
+  cost: 1.27
+- ru:
+  - p1-c12-009
+  en:
+  - L010
+  type: '1:1'
+  cost: 1.73
+- ru:
+  - p1-c12-010
+  - p1-c12-011
+  en:
+  - L011
+  type: '2:1'
+  cost: 1.04
+  review: needed
+- ru:
+  - p1-c12-012
+  en:
+  - L012
+  type: '1:1'
+  cost: 0.08
+- ru:
+  - p1-c12-013
+  en:
+  - L013
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p1-c12-014
+  en:
+  - L014
+  type: '1:1'
+  cost: 1.89
+- ru:
+  - p1-c12-015
+  en:
+  - L015
+  type: '1:1'
+  cost: 0.12
+- ru:
+  - p1-c12-016
+  en:
+  - L016
+  type: '1:1'
+  cost: 0.97
+- ru:
+  - p1-c12-017
+  en:
+  - L017
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p1-c12-018
+  en:
+  - L018
+  type: '1:1'
+  cost: 0.09
+- ru:
+  - p1-c12-019
+  en:
+  - L019
+  type: '1:1'
+  cost: 0.28
+- ru:
+  - p1-c12-020
+  en:
+  - L020
+  type: '1:1'
+  cost: 0.57
+- ru:
+  - p1-c12-021
+  en:
+  - L021
+  type: '1:1'
+  cost: 0.5
+- ru:
+  - p1-c12-022
+  en:
+  - L022
+  type: '1:1'
+  cost: 0.1
+- ru:
+  - p1-c12-023
+  en:
+  - L023
+  type: '1:1'
+  cost: 0.34
+- ru:
+  - p1-c12-024
+  en:
+  - L024
+  type: '1:1'
+  cost: 1.23
+- ru:
+  - p1-c12-025
+  en:
+  - L025
+  type: '1:1'
+  cost: 0.09
+- ru:
+  - p1-c12-026
+  en:
+  - L026
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p1-c12-027
+  en:
+  - L027
+  type: '1:1'
+  cost: 5.46
+  review: needed
+- ru:
+  - p1-c12-028
+  en:
+  - L028
+  type: '1:1'
+  cost: 0.08
+- ru:
+  - p1-c12-029
+  - p1-c12-030
+  en:
+  - L029
+  type: '2:1'
+  cost: 2.37
+  review: needed
+- ru:
+  - p1-c12-031
+  en:
+  - L030
+  type: '1:1'
+  cost: 0.12
+- ru:
+  - p1-c12-032
+  en:
+  - L031
+  type: '1:1'
+  cost: 0.1
+- ru:
+  - p1-c12-033
+  en:
+  - L032
+  - L033
+  - L034
+  type: '1:3'
+  cost: 0.56
+  review: needed
+- ru: []
+  en:
+  - L035
+  type: 0:1
+  cost: 0.0
+  review: needed
+- ru:
+  - p1-c12-034
+  en:
+  - L036
+  type: '1:1'
+  cost: 0.59
+- ru:
+  - p1-c12-035
+  en:
+  - L037
+  type: '1:1'
+  cost: 0.12
+- ru:
+  - p1-c12-036
+  - p1-c12-037
+  en:
+  - L038
+  - L039
+  type: '2:2'
+  cost: 2.65
+  review: needed
+- ru:
+  - p1-c12-038
+  en:
+  - L040
+  type: '1:1'
+  cost: 2.45
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p1-c12-039
+  en:
+  - L041
+  type: '1:1'
+  cost: 0.11
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p1-c12-040
+  en:
+  - L042
+  type: '1:1'
+  cost: 0.21
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p1-c12-041
+  en:
+  - L043
+  type: '1:1'
+  cost: 0.07
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p1-c12-042
+  en:
+  - L044
+  type: '1:1'
+  cost: 0.97
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p1-c12-043
+  en:
+  - L045
+  type: '1:1'
+  cost: 2.24
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p1-c12-044
+  en:
+  - L046
+  type: '1:1'
+  cost: 0.04
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p1-c12-045
+  en:
+  - L047
+  type: '1:1'
+  cost: 0.47
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p1-c12-046
+  en:
+  - L048
+  type: '1:1'
+  cost: 0.11
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p1-c12-047
+  en:
+  - L049
+  type: '1:1'
+  cost: 0.28
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p1-c12-048
+  en:
+  - L050
+  type: '1:1'
+  cost: 0.03
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p1-c12-049
+  en:
+  - L051
+  type: '1:1'
+  cost: 0.54
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p1-c12-050
+  en:
+  - L052
+  type: '1:1'
+  cost: 0.01
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p1-c12-051
+  en:
+  - L053
+  - L054
+  type: '1:2'
+  cost: 0.15
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p1-c12-052
+  - p1-c12-053
+  en:
+  - L055
+  type: '2:1'
+  review: done
+  note: исправлено вручную при проверке
+- ru:
+  - p1-c12-054
+  en:
+  - L056
+  type: '1:1'
+  review: done
+  note: исправлено вручную при проверке
+- ru:
+  - p1-c12-055
+  en:
+  - L057
+  type: '1:1'
+  review: done
+  note: исправлено вручную при проверке
+- ru:
+  - p1-c12-056
+  en:
+  - L058
+  type: '1:1'
+  review: done
+  note: исправлено вручную при проверке
+- ru:
+  - p1-c12-057
+  en:
+  - L059
+  - L060
+  type: '1:2'
+  review: done
+  note: 'в L060 расширение: капитан отправляет помощника узнать о пассажирах (нет в RU)'
+- ru:
+  - p1-c12-058
+  en:
+  - L061
+  type: '1:1'
+  review: done
+  note: опора ресинхронизации после окна
+- ru:
+  - p1-c12-059
+  en:
+  - L062
+  type: '1:1'
+  cost: 0.98
+- ru:
+  - p1-c12-060
+  en:
+  - L063
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p1-c12-061
+  en:
+  - L064
+  type: '1:1'
+  cost: 0.9
+- ru:
+  - p1-c12-062
+  en:
+  - L065
+  type: '1:1'
+  cost: 0.11
+- ru:
+  - p1-c12-063
+  en:
+  - L066
+  - L067
+  - L068
+  type: '1:3'
+  cost: 2.43
+  review: needed
+- ru:
+  - p1-c12-064
+  en:
+  - L069
+  - L070
+  type: '1:2'
+  cost: 0.46
+  review: needed
+- ru:
+  - p1-c12-065
+  en:
+  - L071
+  type: '1:1'
+  cost: 2.04
+- ru: []
+  en:
+  - L072
+  type: 0:1
+  cost: 0.0
+  review: needed
+- ru: []
+  en:
+  - L073
+  type: 0:1
+  cost: 0.0
+  review: needed
+- ru:
+  - p1-c12-066
+  en:
+  - L074
+  type: '1:1'
+  cost: 2.32
+- ru:
+  - p1-c12-067
+  en:
+  - L075
+  - L076
+  - L077
+  type: '1:3'
+  cost: 5.98
+  review: needed
+- ru:
+  - p1-c12-068
+  en:
+  - L078
+  type: '1:1'
+  cost: 0.12
+- ru:
+  - p1-c12-069
+  en:
+  - L079
+  type: '1:1'
+  cost: 0.85
+- ru:
+  - p1-c12-070
+  en:
+  - L080
+  type: '1:1'
+  cost: 1.11
+- ru:
+  - p1-c12-071
+  en:
+  - L081
+  type: '1:1'
+  cost: 0.57
+- ru:
+  - p1-c12-072
+  en:
+  - L082
+  type: '1:1'
+  cost: 0.65
+- ru:
+  - p1-c12-073
+  en:
+  - L083
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p1-c12-074
+  en:
+  - L084
+  type: '1:1'
+  cost: 0.54
+- ru:
+  - p1-c12-075
+  en:
+  - L085
+  type: '1:1'
+  cost: 0.67
+- ru:
+  - p1-c12-076
+  en:
+  - L086
+  type: '1:1'
+  cost: 0.34
+- ru:
+  - p1-c12-077
+  en:
+  - L087
+  type: '1:1'
+  cost: 0.24
+- ru:
+  - p1-c12-078
+  en:
+  - L088
+  type: '1:1'
+  cost: 3.54
+  review: needed
+- ru:
+  - p1-c12-079
+  en:
+  - L089
+  type: '1:1'
+  cost: 0.5
+- ru:
+  - p1-c12-080
+  en:
+  - L090
+  type: '1:1'
+  cost: 0.08
+- ru:
+  - p1-c12-081
+  en:
+  - L091
+  type: '1:1'
+  cost: 1.87
+- ru:
+  - p1-c12-082
+  en:
+  - L092
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p1-c12-083
+  en:
+  - L093
+  type: '1:1'
+  cost: 0.23
+- ru:
+  - p1-c12-084
+  en:
+  - L094
+  type: '1:1'
+  cost: 0.5
+- ru:
+  - p1-c12-085
+  en:
+  - L095
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p1-c12-086
+  en:
+  - L096
+  type: '1:1'
+  cost: 0.57
+- ru:
+  - p1-c12-087
+  en:
+  - L097
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p1-c12-088
+  en:
+  - L098
+  type: '1:1'
+  cost: 1.21
+- ru:
+  - p1-c12-089
+  en:
+  - L099
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p1-c12-090
+  en:
+  - L100
+  type: '1:1'
+  cost: 0.02
+- ru:
+  - p1-c12-091
+  en:
+  - L101
+  type: '1:1'
+  cost: 0.23
+- ru:
+  - p1-c12-092
+  en:
+  - L102
+  type: '1:1'
+  cost: 0.02
+- ru:
+  - p1-c12-093
+  en:
+  - L103
+  type: '1:1'
+  cost: 0.63
+- ru:
+  - p1-c12-094
+  en:
+  - L104
+  type: '1:1'
+  cost: 0.11
+- ru:
+  - p1-c12-095
+  en:
+  - L105
+  type: '1:1'
+  cost: 0.74
+- ru:
+  - p1-c12-096
+  en:
+  - L106
+  type: '1:1'
+  cost: 0.47
+- ru:
+  - p1-c12-097
+  en:
+  - L107
+  type: '1:1'
+  cost: 0.6
+- ru:
+  - p1-c12-098
+  en:
+  - L108
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p1-c12-099
+  en:
+  - L109
+  type: '1:1'
+  cost: 0.11
+- ru:
+  - p1-c12-100
+  en:
+  - L110
+  type: '1:1'
+  cost: 2.84
+  review: needed
+- ru:
+  - p1-c12-101
+  en:
+  - L111
+  type: '1:1'
+  cost: 0.88
+- ru:
+  - p1-c12-102
+  en:
+  - L112
+  type: '1:1'
+  cost: 0.74
+- ru:
+  - p1-c12-103
+  en:
+  - L113
+  type: '1:1'
+  cost: 0.72
+- ru:
+  - p1-c12-104
+  en:
+  - L114
+  type: '1:1'
+  cost: 0.47
+- ru:
+  - p1-c12-105
+  en:
+  - L115
+  type: '1:1'
+  cost: 2.12
+- ru:
+  - p1-c12-106
+  en:
+  - L116
+  type: '1:1'
+  cost: 0.09
+- ru:
+  - p1-c12-107
+  en:
+  - L117
+  type: '1:1'
+  cost: 0.05
+- ru:
+  - p1-c12-108
+  en:
+  - L118
+  type: '1:1'
+  cost: 0.02
+- ru:
+  - p1-c12-109
+  en:
+  - L119
+  type: '1:1'
+  cost: 1.05
+- ru:
+  - p1-c12-110
+  en:
+  - L120
+  type: '1:1'
+  cost: 0.77
+- ru:
+  - p1-c12-111
+  en:
+  - L121
+  type: '1:1'
+  cost: 1.21
+- ru:
+  - p1-c12-112
+  en:
+  - L122
+  type: '1:1'
+  cost: 0.02
+- ru:
+  - p1-c12-113
+  en:
+  - L123
+  type: '1:1'
+  cost: 0.86
+- ru:
+  - p1-c12-114
+  en:
+  - L124
+  type: '1:1'
+  cost: 1.23
+- ru:
+  - p1-c12-115
+  en:
+  - L125
+  type: '1:1'
+  cost: 0.12
+- ru:
+  - p1-c12-116
+  en:
+  - L126
+  type: '1:1'
+  cost: 1.06

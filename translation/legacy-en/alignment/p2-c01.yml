@@ -1,0 +1,2740 @@
+chapter: p2-c01
+ru: content/ru/part-2/ch-01.md
+ru_sha256: c837e84624d187e812ba674104a9e5b278cbb0a921852fae96376a75a465bbcc
+en_raw: translation/legacy-en/raw/part-2/ch-01.md
+en_raw_sha256: 67c71d84733f60d87c2b3af918a97f419924ee464c63c2573502b0a8edf762ed
+method: 'auto: DP по длинам и признакам (tools/align/legacy_en.py); проверенные связи — опоры'
+reviewed:
+- p2-c01-249..p2-c01-274
+review_note: '2026-09-26: проверено окно калибровочного отрывка 252–271 с контекстом 249–274 (автомат верен; в L289 расширение конца RU 259).'
+length_ratio_en_ru: 1.228
+stats:
+  '1:1': 360
+  '1:2': 34
+  '1:3': 15
+  '2:1': 7
+  '3:1': 2
+  0:1: 1
+  '2:2': 2
+links:
+- ru:
+  - p2-c01-001
+  en:
+  - L001
+  type: '1:1'
+  cost: 0.09
+- ru:
+  - p2-c01-002
+  en:
+  - L002
+  type: '1:1'
+  cost: 0.55
+- ru:
+  - p2-c01-003
+  en:
+  - L003
+  type: '1:1'
+  cost: 0.04
+- ru:
+  - p2-c01-004
+  en:
+  - L004
+  type: '1:1'
+  cost: 0.1
+- ru:
+  - p2-c01-005
+  en:
+  - L005
+  type: '1:1'
+  cost: 0.21
+- ru:
+  - p2-c01-006
+  en:
+  - L006
+  type: '1:1'
+  cost: 0.05
+- ru:
+  - p2-c01-007
+  en:
+  - L007
+  type: '1:1'
+  cost: 0.03
+- ru:
+  - p2-c01-008
+  en:
+  - L008
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-009
+  en:
+  - L009
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-010
+  en:
+  - L010
+  - L011
+  type: '1:2'
+  cost: 0.09
+  review: needed
+- ru:
+  - p2-c01-011
+  en:
+  - L012
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p2-c01-012
+  en:
+  - L013
+  type: '1:1'
+  cost: 0.33
+- ru:
+  - p2-c01-013
+  en:
+  - L014
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-014
+  en:
+  - L015
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p2-c01-015
+  en:
+  - L016
+  type: '1:1'
+  cost: 0.71
+- ru:
+  - p2-c01-016
+  en:
+  - L017
+  type: '1:1'
+  cost: 0.65
+- ru:
+  - p2-c01-017
+  en:
+  - L018
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p2-c01-018
+  en:
+  - L019
+  - L020
+  type: '1:2'
+  cost: 0.14
+  review: needed
+- ru:
+  - p2-c01-019
+  en:
+  - L021
+  type: '1:1'
+  cost: 3.74
+- ru:
+  - p2-c01-020
+  en:
+  - L022
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p2-c01-021
+  en:
+  - L023
+  type: '1:1'
+  cost: 0.07
+- ru:
+  - p2-c01-022
+  en:
+  - L024
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-023
+  en:
+  - L025
+  - L026
+  type: '1:2'
+  cost: 0.17
+  review: needed
+- ru:
+  - p2-c01-024
+  en:
+  - L027
+  type: '1:1'
+  cost: 0.23
+- ru:
+  - p2-c01-025
+  en:
+  - L028
+  type: '1:1'
+  cost: 0.12
+- ru:
+  - p2-c01-026
+  en:
+  - L029
+  type: '1:1'
+  cost: 0.22
+- ru:
+  - p2-c01-027
+  en:
+  - L030
+  type: '1:1'
+  cost: 0.12
+- ru:
+  - p2-c01-028
+  en:
+  - L031
+  type: '1:1'
+  cost: 0.64
+- ru:
+  - p2-c01-029
+  en:
+  - L032
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p2-c01-030
+  en:
+  - L033
+  type: '1:1'
+  cost: 0.18
+- ru:
+  - p2-c01-031
+  en:
+  - L034
+  type: '1:1'
+  cost: 0.02
+- ru:
+  - p2-c01-032
+  en:
+  - L035
+  type: '1:1'
+  cost: 2.71
+- ru:
+  - p2-c01-033
+  en:
+  - L036
+  type: '1:1'
+  cost: 3.02
+  review: needed
+- ru:
+  - p2-c01-034
+  en:
+  - L037
+  type: '1:1'
+  cost: 2.07
+- ru:
+  - p2-c01-035
+  en:
+  - L038
+  - L039
+  type: '1:2'
+  cost: 0.14
+  review: needed
+- ru:
+  - p2-c01-036
+  en:
+  - L040
+  - L041
+  type: '1:2'
+  cost: 0.0
+  review: needed
+- ru:
+  - p2-c01-037
+  en:
+  - L042
+  type: '1:1'
+  cost: 0.06
+- ru:
+  - p2-c01-038
+  en:
+  - L043
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p2-c01-039
+  en:
+  - L044
+  type: '1:1'
+  cost: 0.11
+- ru:
+  - p2-c01-040
+  en:
+  - L045
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-041
+  en:
+  - L046
+  type: '1:1'
+  cost: 0.28
+- ru:
+  - p2-c01-042
+  en:
+  - L047
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p2-c01-043
+  en:
+  - L048
+  type: '1:1'
+  cost: 0.09
+- ru:
+  - p2-c01-044
+  en:
+  - L049
+  type: '1:1'
+  cost: 0.79
+- ru:
+  - p2-c01-045
+  en:
+  - L050
+  - L051
+  - L052
+  type: '1:3'
+  cost: 0.06
+  review: needed
+- ru:
+  - p2-c01-046
+  en:
+  - L053
+  type: '1:1'
+  cost: 0.83
+- ru:
+  - p2-c01-047
+  en:
+  - L054
+  type: '1:1'
+  cost: 0.15
+- ru:
+  - p2-c01-048
+  en:
+  - L055
+  type: '1:1'
+  cost: 2.0
+- ru:
+  - p2-c01-049
+  en:
+  - L056
+  type: '1:1'
+  cost: 0.41
+- ru:
+  - p2-c01-050
+  - p2-c01-051
+  en:
+  - L057
+  type: '2:1'
+  cost: 0.03
+  review: needed
+- ru:
+  - p2-c01-052
+  en:
+  - L058
+  type: '1:1'
+  cost: 0.06
+- ru:
+  - p2-c01-053
+  en:
+  - L059
+  type: '1:1'
+  cost: 0.62
+- ru:
+  - p2-c01-054
+  en:
+  - L060
+  type: '1:1'
+  cost: 0.03
+- ru:
+  - p2-c01-055
+  en:
+  - L061
+  type: '1:1'
+  cost: 0.76
+- ru:
+  - p2-c01-056
+  en:
+  - L062
+  type: '1:1'
+  cost: 2.65
+- ru:
+  - p2-c01-057
+  en:
+  - L063
+  type: '1:1'
+  cost: 0.32
+- ru:
+  - p2-c01-058
+  en:
+  - L064
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-059
+  en:
+  - L065
+  type: '1:1'
+  cost: 0.1
+- ru:
+  - p2-c01-060
+  en:
+  - L066
+  type: '1:1'
+  cost: 0.28
+- ru:
+  - p2-c01-061
+  en:
+  - L067
+  type: '1:1'
+  cost: 2.59
+- ru:
+  - p2-c01-062
+  en:
+  - L068
+  type: '1:1'
+  cost: 0.1
+- ru:
+  - p2-c01-063
+  en:
+  - L069
+  type: '1:1'
+  cost: 0.66
+- ru:
+  - p2-c01-064
+  en:
+  - L070
+  type: '1:1'
+  cost: 0.16
+- ru:
+  - p2-c01-065
+  en:
+  - L071
+  type: '1:1'
+  cost: 0.53
+- ru:
+  - p2-c01-066
+  en:
+  - L072
+  type: '1:1'
+  cost: 0.15
+- ru:
+  - p2-c01-067
+  en:
+  - L073
+  type: '1:1'
+  cost: 0.1
+- ru:
+  - p2-c01-068
+  en:
+  - L074
+  - L075
+  type: '1:2'
+  cost: 0.05
+  review: needed
+- ru:
+  - p2-c01-069
+  en:
+  - L076
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p2-c01-070
+  en:
+  - L077
+  type: '1:1'
+  cost: 0.77
+- ru:
+  - p2-c01-071
+  en:
+  - L078
+  type: '1:1'
+  cost: 0.55
+- ru:
+  - p2-c01-072
+  en:
+  - L079
+  type: '1:1'
+  cost: 0.62
+- ru:
+  - p2-c01-073
+  en:
+  - L080
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-074
+  en:
+  - L081
+  type: '1:1'
+  cost: 0.73
+- ru:
+  - p2-c01-075
+  en:
+  - L082
+  type: '1:1'
+  cost: 0.35
+- ru:
+  - p2-c01-076
+  en:
+  - L083
+  type: '1:1'
+  cost: 1.8
+- ru:
+  - p2-c01-077
+  en:
+  - L084
+  type: '1:1'
+  cost: 1.33
+- ru:
+  - p2-c01-078
+  en:
+  - L085
+  type: '1:1'
+  cost: 0.71
+- ru:
+  - p2-c01-079
+  en:
+  - L086
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p2-c01-080
+  en:
+  - L087
+  type: '1:1'
+  cost: 0.3
+- ru:
+  - p2-c01-081
+  en:
+  - L088
+  type: '1:1'
+  cost: 0.86
+- ru:
+  - p2-c01-082
+  en:
+  - L089
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-083
+  en:
+  - L090
+  - L091
+  type: '1:2'
+  cost: 0.18
+  review: needed
+- ru:
+  - p2-c01-084
+  en:
+  - L092
+  type: '1:1'
+  cost: 0.22
+- ru:
+  - p2-c01-085
+  en:
+  - L093
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-086
+  en:
+  - L094
+  - L095
+  type: '1:2'
+  cost: 0.72
+  review: needed
+- ru:
+  - p2-c01-087
+  en:
+  - L096
+  type: '1:1'
+  cost: 0.07
+- ru:
+  - p2-c01-088
+  en:
+  - L097
+  type: '1:1'
+  cost: 0.71
+- ru:
+  - p2-c01-089
+  en:
+  - L098
+  type: '1:1'
+  cost: 0.24
+- ru:
+  - p2-c01-090
+  en:
+  - L099
+  type: '1:1'
+  cost: 0.33
+- ru:
+  - p2-c01-091
+  en:
+  - L100
+  - L101
+  type: '1:2'
+  cost: 5.13
+  review: needed
+- ru:
+  - p2-c01-092
+  en:
+  - L102
+  type: '1:1'
+  cost: 0.79
+- ru:
+  - p2-c01-093
+  en:
+  - L103
+  type: '1:1'
+  cost: 0.41
+- ru:
+  - p2-c01-094
+  en:
+  - L104
+  type: '1:1'
+  cost: 0.06
+- ru:
+  - p2-c01-095
+  en:
+  - L105
+  type: '1:1'
+  cost: 0.75
+- ru:
+  - p2-c01-096
+  en:
+  - L106
+  - L107
+  type: '1:2'
+  cost: 0.02
+  review: needed
+- ru:
+  - p2-c01-097
+  en:
+  - L108
+  type: '1:1'
+  cost: 0.02
+- ru:
+  - p2-c01-098
+  en:
+  - L109
+  type: '1:1'
+  cost: 0.04
+- ru:
+  - p2-c01-099
+  en:
+  - L110
+  type: '1:1'
+  cost: 0.02
+- ru:
+  - p2-c01-100
+  en:
+  - L111
+  type: '1:1'
+  cost: 0.02
+- ru:
+  - p2-c01-101
+  en:
+  - L112
+  type: '1:1'
+  cost: 1.39
+- ru:
+  - p2-c01-102
+  en:
+  - L113
+  type: '1:1'
+  cost: 0.16
+- ru:
+  - p2-c01-103
+  en:
+  - L114
+  type: '1:1'
+  cost: 0.06
+- ru:
+  - p2-c01-104
+  en:
+  - L115
+  type: '1:1'
+  cost: 3.66
+  review: needed
+- ru:
+  - p2-c01-105
+  - p2-c01-106
+  en:
+  - L116
+  type: '2:1'
+  cost: 1.05
+  review: needed
+- ru:
+  - p2-c01-107
+  - p2-c01-108
+  en:
+  - L117
+  type: '2:1'
+  cost: 0.2
+  review: needed
+- ru:
+  - p2-c01-109
+  en:
+  - L118
+  type: '1:1'
+  cost: 0.31
+- ru:
+  - p2-c01-110
+  en:
+  - L119
+  type: '1:1'
+  cost: 0.09
+- ru:
+  - p2-c01-111
+  en:
+  - L120
+  type: '1:1'
+  cost: 0.9
+- ru:
+  - p2-c01-112
+  en:
+  - L121
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-113
+  en:
+  - L122
+  - L123
+  - L124
+  type: '1:3'
+  cost: 0.0
+  review: needed
+- ru:
+  - p2-c01-114
+  en:
+  - L125
+  type: '1:1'
+  cost: 0.03
+- ru:
+  - p2-c01-115
+  en:
+  - L126
+  type: '1:1'
+  cost: 1.59
+- ru:
+  - p2-c01-116
+  en:
+  - L127
+  type: '1:1'
+  cost: 0.02
+- ru:
+  - p2-c01-117
+  en:
+  - L128
+  - L129
+  - L130
+  type: '1:3'
+  cost: 0.83
+  review: needed
+- ru:
+  - p2-c01-118
+  en:
+  - L131
+  type: '1:1'
+  cost: 0.07
+- ru:
+  - p2-c01-119
+  en:
+  - L132
+  type: '1:1'
+  cost: 0.19
+- ru:
+  - p2-c01-120
+  en:
+  - L133
+  type: '1:1'
+  cost: 0.94
+- ru:
+  - p2-c01-121
+  en:
+  - L134
+  type: '1:1'
+  cost: 0.2
+- ru:
+  - p2-c01-122
+  en:
+  - L135
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-123
+  en:
+  - L136
+  type: '1:1'
+  cost: 0.19
+- ru:
+  - p2-c01-124
+  en:
+  - L137
+  type: '1:1'
+  cost: 0.12
+- ru:
+  - p2-c01-125
+  en:
+  - L138
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p2-c01-126
+  en:
+  - L139
+  type: '1:1'
+  cost: 0.13
+- ru:
+  - p2-c01-127
+  en:
+  - L140
+  type: '1:1'
+  cost: 0.76
+- ru:
+  - p2-c01-128
+  en:
+  - L141
+  type: '1:1'
+  cost: 0.92
+- ru:
+  - p2-c01-129
+  en:
+  - L142
+  type: '1:1'
+  cost: 0.2
+- ru:
+  - p2-c01-130
+  en:
+  - L143
+  - L144
+  type: '1:2'
+  cost: 0.52
+  review: needed
+- ru:
+  - p2-c01-131
+  en:
+  - L145
+  - L146
+  type: '1:2'
+  cost: 0.02
+  review: needed
+- ru:
+  - p2-c01-132
+  en:
+  - L147
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-133
+  en:
+  - L148
+  - L149
+  - L150
+  type: '1:3'
+  cost: 0.01
+  review: needed
+- ru:
+  - p2-c01-134
+  en:
+  - L151
+  type: '1:1'
+  cost: 1.07
+- ru:
+  - p2-c01-135
+  - p2-c01-136
+  - p2-c01-137
+  en:
+  - L152
+  type: '3:1'
+  cost: 0.71
+  review: needed
+- ru:
+  - p2-c01-138
+  en:
+  - L153
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p2-c01-139
+  en:
+  - L154
+  - L155
+  type: '1:2'
+  cost: 0.79
+  review: needed
+- ru:
+  - p2-c01-140
+  en:
+  - L156
+  type: '1:1'
+  cost: 0.04
+- ru:
+  - p2-c01-141
+  en:
+  - L157
+  type: '1:1'
+  cost: 0.09
+- ru:
+  - p2-c01-142
+  en:
+  - L158
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-143
+  en:
+  - L159
+  type: '1:1'
+  cost: 0.06
+- ru:
+  - p2-c01-144
+  en:
+  - L160
+  - L161
+  type: '1:2'
+  cost: 1.15
+  review: needed
+- ru:
+  - p2-c01-145
+  en:
+  - L162
+  type: '1:1'
+  cost: 0.04
+- ru:
+  - p2-c01-146
+  en:
+  - L163
+  - L164
+  type: '1:2'
+  cost: 0.07
+  review: needed
+- ru:
+  - p2-c01-147
+  en:
+  - L165
+  type: '1:1'
+  cost: 0.16
+- ru:
+  - p2-c01-148
+  en:
+  - L166
+  type: '1:1'
+  cost: 0.59
+- ru:
+  - p2-c01-149
+  en:
+  - L167
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-150
+  en:
+  - L168
+  type: '1:1'
+  cost: 0.2
+- ru:
+  - p2-c01-151
+  en:
+  - L169
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-152
+  en:
+  - L170
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-153
+  en:
+  - L171
+  - L172
+  type: '1:2'
+  cost: 0.0
+  review: needed
+- ru:
+  - p2-c01-154
+  en:
+  - L173
+  type: '1:1'
+  cost: 2.92
+  review: needed
+- ru:
+  - p2-c01-155
+  en:
+  - L174
+  type: '1:1'
+  cost: 1.12
+- ru:
+  - p2-c01-156
+  en:
+  - L175
+  type: '1:1'
+  cost: 1.68
+- ru:
+  - p2-c01-157
+  en:
+  - L176
+  type: '1:1'
+  cost: 0.02
+- ru:
+  - p2-c01-158
+  en:
+  - L177
+  type: '1:1'
+  cost: 0.07
+- ru:
+  - p2-c01-159
+  en:
+  - L178
+  type: '1:1'
+  cost: 0.19
+- ru:
+  - p2-c01-160
+  en:
+  - L179
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-161
+  en:
+  - L180
+  type: '1:1'
+  cost: 0.07
+- ru:
+  - p2-c01-162
+  en:
+  - L181
+  type: '1:1'
+  cost: 0.07
+- ru:
+  - p2-c01-163
+  en:
+  - L182
+  type: '1:1'
+  cost: 4.64
+  review: needed
+- ru:
+  - p2-c01-164
+  en:
+  - L183
+  type: '1:1'
+  cost: 0.22
+- ru:
+  - p2-c01-165
+  en:
+  - L184
+  type: '1:1'
+  cost: 0.29
+- ru:
+  - p2-c01-166
+  en:
+  - L185
+  type: '1:1'
+  cost: 0.03
+- ru:
+  - p2-c01-167
+  en:
+  - L186
+  type: '1:1'
+  cost: 0.18
+- ru:
+  - p2-c01-168
+  en:
+  - L187
+  type: '1:1'
+  cost: 0.12
+- ru:
+  - p2-c01-169
+  en:
+  - L188
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p2-c01-170
+  en:
+  - L189
+  type: '1:1'
+  cost: 0.05
+- ru:
+  - p2-c01-171
+  en:
+  - L190
+  type: '1:1'
+  cost: 0.03
+- ru:
+  - p2-c01-172
+  en:
+  - L191
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p2-c01-173
+  en:
+  - L192
+  - L193
+  type: '1:2'
+  cost: 1.23
+  review: needed
+- ru:
+  - p2-c01-174
+  en:
+  - L194
+  - L195
+  - L196
+  type: '1:3'
+  cost: 1.07
+  review: needed
+- ru:
+  - p2-c01-175
+  en:
+  - L197
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-176
+  en:
+  - L198
+  type: '1:1'
+  cost: 1.17
+- ru:
+  - p2-c01-177
+  en:
+  - L199
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p2-c01-178
+  en:
+  - L200
+  - L201
+  type: '1:2'
+  cost: 0.39
+  review: needed
+- ru:
+  - p2-c01-179
+  en:
+  - L202
+  type: '1:1'
+  cost: 0.07
+- ru:
+  - p2-c01-180
+  en:
+  - L203
+  type: '1:1'
+  cost: 0.19
+- ru:
+  - p2-c01-181
+  en:
+  - L204
+  type: '1:1'
+  cost: 0.14
+- ru:
+  - p2-c01-182
+  en:
+  - L205
+  type: '1:1'
+  cost: 0.43
+- ru:
+  - p2-c01-183
+  en:
+  - L206
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p2-c01-184
+  en:
+  - L207
+  - L208
+  type: '1:2'
+  cost: 0.1
+  review: needed
+- ru:
+  - p2-c01-185
+  en:
+  - L209
+  type: '1:1'
+  cost: 0.02
+- ru:
+  - p2-c01-186
+  en:
+  - L210
+  type: '1:1'
+  cost: 0.38
+- ru:
+  - p2-c01-187
+  en:
+  - L211
+  type: '1:1'
+  cost: 0.16
+- ru:
+  - p2-c01-188
+  en:
+  - L212
+  type: '1:1'
+  cost: 0.27
+- ru:
+  - p2-c01-189
+  en:
+  - L213
+  type: '1:1'
+  cost: 0.43
+- ru:
+  - p2-c01-190
+  en:
+  - L214
+  type: '1:1'
+  cost: 0.02
+- ru:
+  - p2-c01-191
+  en:
+  - L215
+  - L216
+  type: '1:2'
+  cost: 0.23
+  review: needed
+- ru:
+  - p2-c01-192
+  en:
+  - L217
+  type: '1:1'
+  cost: 0.29
+- ru:
+  - p2-c01-193
+  en:
+  - L218
+  type: '1:1'
+  cost: 0.79
+- ru:
+  - p2-c01-194
+  en:
+  - L219
+  - L220
+  type: '1:2'
+  cost: 0.66
+  review: needed
+- ru:
+  - p2-c01-195
+  en:
+  - L221
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-196
+  en:
+  - L222
+  - L223
+  type: '1:2'
+  cost: 0.65
+  review: needed
+- ru:
+  - p2-c01-197
+  en:
+  - L224
+  type: '1:1'
+  cost: 0.05
+- ru:
+  - p2-c01-198
+  en:
+  - L225
+  type: '1:1'
+  cost: 0.57
+- ru:
+  - p2-c01-199
+  en:
+  - L226
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-200
+  en:
+  - L227
+  type: '1:1'
+  cost: 0.05
+- ru:
+  - p2-c01-201
+  en:
+  - L228
+  type: '1:1'
+  cost: 0.08
+- ru:
+  - p2-c01-202
+  en:
+  - L229
+  type: '1:1'
+  cost: 0.08
+- ru:
+  - p2-c01-203
+  en:
+  - L230
+  type: '1:1'
+  cost: 0.29
+- ru:
+  - p2-c01-204
+  en:
+  - L231
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-205
+  en:
+  - L232
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p2-c01-206
+  en:
+  - L233
+  type: '1:1'
+  cost: 0.02
+- ru:
+  - p2-c01-207
+  en:
+  - L234
+  type: '1:1'
+  cost: 0.05
+- ru:
+  - p2-c01-208
+  en:
+  - L235
+  type: '1:1'
+  cost: 0.08
+- ru:
+  - p2-c01-209
+  - p2-c01-210
+  en:
+  - L236
+  type: '2:1'
+  cost: 0.08
+  review: needed
+- ru:
+  - p2-c01-211
+  en:
+  - L237
+  type: '1:1'
+  cost: 0.24
+- ru:
+  - p2-c01-212
+  en:
+  - L238
+  type: '1:1'
+  cost: 0.03
+- ru:
+  - p2-c01-213
+  en:
+  - L239
+  type: '1:1'
+  cost: 0.05
+- ru:
+  - p2-c01-214
+  en:
+  - L240
+  type: '1:1'
+  cost: 1.46
+- ru:
+  - p2-c01-215
+  en:
+  - L241
+  type: '1:1'
+  cost: 0.46
+- ru:
+  - p2-c01-216
+  en:
+  - L242
+  type: '1:1'
+  cost: 0.2
+- ru:
+  - p2-c01-217
+  en:
+  - L243
+  type: '1:1'
+  cost: 0.38
+- ru:
+  - p2-c01-218
+  en:
+  - L244
+  type: '1:1'
+  cost: 0.05
+- ru:
+  - p2-c01-219
+  en:
+  - L245
+  - L246
+  type: '1:2'
+  cost: 0.93
+  review: needed
+- ru:
+  - p2-c01-220
+  en:
+  - L247
+  - L248
+  type: '1:2'
+  cost: 0.75
+  review: needed
+- ru:
+  - p2-c01-221
+  en:
+  - L249
+  type: '1:1'
+  cost: 0.57
+- ru:
+  - p2-c01-222
+  en:
+  - L250
+  type: '1:1'
+  cost: 1.99
+- ru:
+  - p2-c01-223
+  en:
+  - L251
+  type: '1:1'
+  cost: 0.14
+- ru:
+  - p2-c01-224
+  en:
+  - L252
+  type: '1:1'
+  cost: 0.91
+- ru:
+  - p2-c01-225
+  en:
+  - L253
+  type: '1:1'
+  cost: 0.11
+- ru:
+  - p2-c01-226
+  en:
+  - L254
+  type: '1:1'
+  cost: 0.1
+- ru:
+  - p2-c01-227
+  en:
+  - L255
+  type: '1:1'
+  cost: 0.48
+- ru:
+  - p2-c01-228
+  en:
+  - L256
+  type: '1:1'
+  cost: 0.35
+- ru:
+  - p2-c01-229
+  en:
+  - L257
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-230
+  en:
+  - L258
+  - L259
+  type: '1:2'
+  cost: 0.33
+  review: needed
+- ru:
+  - p2-c01-231
+  en:
+  - L260
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p2-c01-232
+  en:
+  - L261
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-233
+  en:
+  - L262
+  type: '1:1'
+  cost: 1.45
+- ru:
+  - p2-c01-234
+  en:
+  - L263
+  type: '1:1'
+  cost: 0.04
+- ru:
+  - p2-c01-235
+  en:
+  - L264
+  type: '1:1'
+  cost: 1.23
+- ru:
+  - p2-c01-236
+  en:
+  - L265
+  type: '1:1'
+  cost: 0.63
+- ru:
+  - p2-c01-237
+  en:
+  - L266
+  type: '1:1'
+  cost: 0.02
+- ru:
+  - p2-c01-238
+  en:
+  - L267
+  type: '1:1'
+  cost: 1.13
+- ru:
+  - p2-c01-239
+  en:
+  - L268
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-240
+  en:
+  - L269
+  type: '1:1'
+  cost: 1.95
+- ru:
+  - p2-c01-241
+  en:
+  - L270
+  type: '1:1'
+  cost: 0.15
+- ru:
+  - p2-c01-242
+  en:
+  - L271
+  type: '1:1'
+  cost: 0.06
+- ru:
+  - p2-c01-243
+  en:
+  - L272
+  type: '1:1'
+  cost: 1.49
+- ru:
+  - p2-c01-244
+  en:
+  - L273
+  type: '1:1'
+  cost: 0.34
+- ru:
+  - p2-c01-245
+  en:
+  - L274
+  type: '1:1'
+  cost: 0.65
+- ru:
+  - p2-c01-246
+  en:
+  - L275
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p2-c01-247
+  en:
+  - L276
+  type: '1:1'
+  cost: 0.08
+- ru:
+  - p2-c01-248
+  en:
+  - L277
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-249
+  en:
+  - L278
+  type: '1:1'
+  cost: 0.43
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p2-c01-250
+  en:
+  - L279
+  type: '1:1'
+  cost: 0.18
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p2-c01-251
+  en:
+  - L280
+  type: '1:1'
+  cost: 0.05
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p2-c01-252
+  en:
+  - L281
+  type: '1:1'
+  cost: 0.12
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p2-c01-253
+  en:
+  - L282
+  type: '1:1'
+  cost: 0.32
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p2-c01-254
+  en:
+  - L283
+  type: '1:1'
+  cost: 0.13
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p2-c01-255
+  en:
+  - L284
+  type: '1:1'
+  cost: 0.38
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p2-c01-256
+  en:
+  - L285
+  type: '1:1'
+  cost: 0.16
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p2-c01-257
+  en:
+  - L286
+  type: '1:1'
+  cost: 0.02
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p2-c01-258
+  en:
+  - L287
+  type: '1:1'
+  cost: 0.02
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p2-c01-259
+  en:
+  - L288
+  - L289
+  type: '1:2'
+  cost: 4.11
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p2-c01-260
+  en:
+  - L290
+  type: '1:1'
+  cost: 0.48
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p2-c01-261
+  en:
+  - L291
+  type: '1:1'
+  cost: 0.5
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p2-c01-262
+  en:
+  - L292
+  type: '1:1'
+  cost: 0.0
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p2-c01-263
+  en:
+  - L293
+  type: '1:1'
+  cost: 0.01
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p2-c01-264
+  en:
+  - L294
+  type: '1:1'
+  cost: 0.16
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p2-c01-265
+  en:
+  - L295
+  type: '1:1'
+  cost: 0.25
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p2-c01-266
+  en:
+  - L296
+  type: '1:1'
+  cost: 0.01
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p2-c01-267
+  en:
+  - L297
+  type: '1:1'
+  cost: 0.79
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p2-c01-268
+  en:
+  - L298
+  type: '1:1'
+  cost: 0.05
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p2-c01-269
+  en:
+  - L299
+  type: '1:1'
+  cost: 0.24
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p2-c01-270
+  en:
+  - L300
+  type: '1:1'
+  cost: 0.77
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p2-c01-271
+  en:
+  - L301
+  type: '1:1'
+  cost: 0.22
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p2-c01-272
+  en:
+  - L302
+  type: '1:1'
+  cost: 0.05
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p2-c01-273
+  en:
+  - L303
+  type: '1:1'
+  cost: 0.3
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p2-c01-274
+  en:
+  - L304
+  type: '1:1'
+  cost: 0.65
+  review: done
+  note: 'проверено вручную: граница верна'
+- ru:
+  - p2-c01-275
+  en:
+  - L305
+  type: '1:1'
+  cost: 0.03
+- ru:
+  - p2-c01-276
+  en:
+  - L306
+  type: '1:1'
+  cost: 0.14
+- ru:
+  - p2-c01-277
+  en:
+  - L307
+  type: '1:1'
+  cost: 0.76
+- ru:
+  - p2-c01-278
+  en:
+  - L308
+  type: '1:1'
+  cost: 0.04
+- ru:
+  - p2-c01-279
+  en:
+  - L309
+  type: '1:1'
+  cost: 0.71
+- ru:
+  - p2-c01-280
+  en:
+  - L310
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-281
+  en:
+  - L311
+  type: '1:1'
+  cost: 0.33
+- ru:
+  - p2-c01-282
+  - p2-c01-283
+  en:
+  - L312
+  type: '2:1'
+  cost: 0.2
+  review: needed
+- ru:
+  - p2-c01-284
+  en:
+  - L313
+  type: '1:1'
+  cost: 0.18
+- ru:
+  - p2-c01-285
+  en:
+  - L314
+  type: '1:1'
+  cost: 0.83
+- ru:
+  - p2-c01-286
+  en:
+  - L315
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-287
+  en:
+  - L316
+  type: '1:1'
+  cost: 0.02
+- ru:
+  - p2-c01-288
+  en:
+  - L317
+  type: '1:1'
+  cost: 0.48
+- ru:
+  - p2-c01-289
+  en:
+  - L318
+  type: '1:1'
+  cost: 0.09
+- ru:
+  - p2-c01-290
+  en:
+  - L319
+  type: '1:1'
+  cost: 0.03
+- ru:
+  - p2-c01-291
+  en:
+  - L320
+  type: '1:1'
+  cost: 0.02
+- ru:
+  - p2-c01-292
+  en:
+  - L321
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-293
+  en:
+  - L322
+  type: '1:1'
+  cost: 0.68
+- ru:
+  - p2-c01-294
+  en:
+  - L323
+  type: '1:1'
+  cost: 0.09
+- ru:
+  - p2-c01-295
+  en:
+  - L324
+  type: '1:1'
+  cost: 0.02
+- ru:
+  - p2-c01-296
+  en:
+  - L325
+  type: '1:1'
+  cost: 0.16
+- ru:
+  - p2-c01-297
+  en:
+  - L326
+  type: '1:1'
+  cost: 1.73
+- ru:
+  - p2-c01-298
+  en:
+  - L327
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-299
+  en:
+  - L328
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-300
+  en:
+  - L329
+  type: '1:1'
+  cost: 0.49
+- ru:
+  - p2-c01-301
+  en:
+  - L330
+  type: '1:1'
+  cost: 0.11
+- ru:
+  - p2-c01-302
+  en:
+  - L331
+  type: '1:1'
+  cost: 0.32
+- ru:
+  - p2-c01-303
+  - p2-c01-304
+  en:
+  - L332
+  type: '2:1'
+  cost: 0.02
+  review: needed
+- ru:
+  - p2-c01-305
+  en:
+  - L333
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-306
+  en:
+  - L334
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p2-c01-307
+  en:
+  - L335
+  type: '1:1'
+  cost: 0.34
+- ru:
+  - p2-c01-308
+  en:
+  - L336
+  type: '1:1'
+  cost: 0.19
+- ru:
+  - p2-c01-309
+  en:
+  - L337
+  type: '1:1'
+  cost: 1.17
+- ru:
+  - p2-c01-310
+  en:
+  - L338
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-311
+  en:
+  - L339
+  type: '1:1'
+  cost: 0.08
+- ru:
+  - p2-c01-312
+  en:
+  - L340
+  - L341
+  type: '1:2'
+  cost: 0.09
+  review: needed
+- ru:
+  - p2-c01-313
+  en:
+  - L342
+  type: '1:1'
+  cost: 0.74
+- ru:
+  - p2-c01-314
+  en:
+  - L343
+  type: '1:1'
+  cost: 0.31
+- ru:
+  - p2-c01-315
+  en:
+  - L344
+  - L345
+  type: '1:2'
+  cost: 1.09
+  review: needed
+- ru:
+  - p2-c01-316
+  en:
+  - L346
+  - L347
+  - L348
+  type: '1:3'
+  cost: 0.1
+  review: needed
+- ru:
+  - p2-c01-317
+  en:
+  - L349
+  type: '1:1'
+  cost: 0.05
+- ru:
+  - p2-c01-318
+  en:
+  - L350
+  type: '1:1'
+  cost: 1.09
+- ru:
+  - p2-c01-319
+  en:
+  - L351
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p2-c01-320
+  en:
+  - L352
+  type: '1:1'
+  cost: 0.37
+- ru:
+  - p2-c01-321
+  en:
+  - L353
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-322
+  en:
+  - L354
+  type: '1:1'
+  cost: 0.02
+- ru:
+  - p2-c01-323
+  en:
+  - L355
+  - L356
+  - L357
+  type: '1:3'
+  cost: 0.23
+  review: needed
+- ru:
+  - p2-c01-324
+  en:
+  - L358
+  type: '1:1'
+  cost: 0.09
+- ru:
+  - p2-c01-325
+  en:
+  - L359
+  type: '1:1'
+  cost: 2.4
+- ru:
+  - p2-c01-326
+  en:
+  - L360
+  - L361
+  type: '1:2'
+  cost: 2.02
+  review: needed
+- ru:
+  - p2-c01-327
+  en:
+  - L362
+  - L363
+  - L364
+  type: '1:3'
+  cost: 0.03
+  review: needed
+- ru:
+  - p2-c01-328
+  en:
+  - L365
+  type: '1:1'
+  cost: 0.21
+- ru:
+  - p2-c01-329
+  en:
+  - L366
+  type: '1:1'
+  cost: 0.37
+- ru:
+  - p2-c01-330
+  en:
+  - L367
+  type: '1:1'
+  cost: 1.82
+- ru:
+  - p2-c01-331
+  en:
+  - L368
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-332
+  en:
+  - L369
+  type: '1:1'
+  cost: 0.06
+- ru:
+  - p2-c01-333
+  en:
+  - L370
+  - L371
+  - L372
+  type: '1:3'
+  cost: 1.69
+  review: needed
+- ru:
+  - p2-c01-334
+  en:
+  - L373
+  - L374
+  - L375
+  type: '1:3'
+  cost: 8.82
+  review: needed
+- ru:
+  - p2-c01-335
+  en:
+  - L376
+  type: '1:1'
+  cost: 0.06
+- ru:
+  - p2-c01-336
+  en:
+  - L377
+  type: '1:1'
+  cost: 0.16
+- ru:
+  - p2-c01-337
+  en:
+  - L378
+  type: '1:1'
+  cost: 0.05
+- ru:
+  - p2-c01-338
+  en:
+  - L379
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p2-c01-339
+  en:
+  - L380
+  type: '1:1'
+  cost: 0.19
+- ru:
+  - p2-c01-340
+  en:
+  - L381
+  type: '1:1'
+  cost: 0.74
+- ru:
+  - p2-c01-341
+  en:
+  - L382
+  type: '1:1'
+  cost: 0.05
+- ru:
+  - p2-c01-342
+  en:
+  - L383
+  - L384
+  type: '1:2'
+  cost: 0.0
+  review: needed
+- ru: []
+  en:
+  - L385
+  type: 0:1
+  cost: 0.0
+  review: needed
+- ru:
+  - p2-c01-343
+  en:
+  - L386
+  - L387
+  - L388
+  type: '1:3'
+  cost: 1.45
+  review: needed
+- ru:
+  - p2-c01-344
+  en:
+  - L389
+  type: '1:1'
+  cost: 0.27
+- ru:
+  - p2-c01-345
+  en:
+  - L390
+  type: '1:1'
+  cost: 0.2
+- ru:
+  - p2-c01-346
+  en:
+  - L391
+  type: '1:1'
+  cost: 0.47
+- ru:
+  - p2-c01-347
+  en:
+  - L392
+  - L393
+  type: '1:2'
+  cost: 0.89
+  review: needed
+- ru:
+  - p2-c01-348
+  en:
+  - L394
+  type: '1:1'
+  cost: 0.93
+- ru:
+  - p2-c01-349
+  en:
+  - L395
+  - L396
+  type: '1:2'
+  cost: 0.73
+  review: needed
+- ru:
+  - p2-c01-350
+  en:
+  - L397
+  type: '1:1'
+  cost: 0.05
+- ru:
+  - p2-c01-351
+  en:
+  - L398
+  type: '1:1'
+  cost: 2.67
+  review: needed
+- ru:
+  - p2-c01-352
+  en:
+  - L399
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-353
+  en:
+  - L400
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-354
+  en:
+  - L401
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-355
+  en:
+  - L402
+  type: '1:1'
+  cost: 0.65
+- ru:
+  - p2-c01-356
+  en:
+  - L403
+  type: '1:1'
+  cost: 0.7
+- ru:
+  - p2-c01-357
+  - p2-c01-358
+  - p2-c01-359
+  en:
+  - L404
+  type: '3:1'
+  cost: 0.27
+  review: needed
+- ru:
+  - p2-c01-360
+  en:
+  - L405
+  type: '1:1'
+  cost: 0.99
+- ru:
+  - p2-c01-361
+  - p2-c01-362
+  en:
+  - L406
+  - L407
+  type: '2:2'
+  cost: 0.26
+  review: needed
+- ru:
+  - p2-c01-363
+  en:
+  - L408
+  type: '1:1'
+  cost: 0.12
+- ru:
+  - p2-c01-364
+  en:
+  - L409
+  type: '1:1'
+  cost: 0.13
+- ru:
+  - p2-c01-365
+  en:
+  - L410
+  - L411
+  - L412
+  type: '1:3'
+  cost: 0.3
+  review: needed
+- ru:
+  - p2-c01-366
+  en:
+  - L413
+  type: '1:1'
+  cost: 1.21
+- ru:
+  - p2-c01-367
+  en:
+  - L414
+  type: '1:1'
+  cost: 2.65
+- ru:
+  - p2-c01-368
+  en:
+  - L415
+  type: '1:1'
+  cost: 0.78
+- ru:
+  - p2-c01-369
+  en:
+  - L416
+  type: '1:1'
+  cost: 0.39
+- ru:
+  - p2-c01-370
+  en:
+  - L417
+  type: '1:1'
+  cost: 0.04
+- ru:
+  - p2-c01-371
+  en:
+  - L418
+  type: '1:1'
+  cost: 0.34
+- ru:
+  - p2-c01-372
+  en:
+  - L419
+  type: '1:1'
+  cost: 0.34
+- ru:
+  - p2-c01-373
+  en:
+  - L420
+  type: '1:1'
+  cost: 0.19
+- ru:
+  - p2-c01-374
+  en:
+  - L421
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p2-c01-375
+  en:
+  - L422
+  type: '1:1'
+  cost: 0.17
+- ru:
+  - p2-c01-376
+  en:
+  - L423
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p2-c01-377
+  en:
+  - L424
+  type: '1:1'
+  cost: 0.31
+- ru:
+  - p2-c01-378
+  en:
+  - L425
+  type: '1:1'
+  cost: 0.35
+- ru:
+  - p2-c01-379
+  en:
+  - L426
+  type: '1:1'
+  cost: 0.03
+- ru:
+  - p2-c01-380
+  en:
+  - L427
+  type: '1:1'
+  cost: 0.19
+- ru:
+  - p2-c01-381
+  en:
+  - L428
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-382
+  en:
+  - L429
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-383
+  en:
+  - L430
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-384
+  en:
+  - L431
+  type: '1:1'
+  cost: 0.12
+- ru:
+  - p2-c01-385
+  en:
+  - L432
+  - L433
+  type: '1:2'
+  cost: 1.59
+  review: needed
+- ru:
+  - p2-c01-386
+  en:
+  - L434
+  - L435
+  - L436
+  type: '1:3'
+  cost: 0.02
+  review: needed
+- ru:
+  - p2-c01-387
+  en:
+  - L437
+  type: '1:1'
+  cost: 0.44
+- ru:
+  - p2-c01-388
+  en:
+  - L438
+  type: '1:1'
+  cost: 0.05
+- ru:
+  - p2-c01-389
+  en:
+  - L439
+  type: '1:1'
+  cost: 0.38
+- ru:
+  - p2-c01-390
+  en:
+  - L440
+  - L441
+  type: '1:2'
+  cost: 1.29
+  review: needed
+- ru:
+  - p2-c01-391
+  en:
+  - L442
+  - L443
+  - L444
+  type: '1:3'
+  cost: 2.06
+  review: needed
+- ru:
+  - p2-c01-392
+  en:
+  - L445
+  type: '1:1'
+  cost: 0.03
+- ru:
+  - p2-c01-393
+  - p2-c01-394
+  en:
+  - L446
+  - L447
+  type: '2:2'
+  cost: 0.27
+  review: needed
+- ru:
+  - p2-c01-395
+  en:
+  - L448
+  type: '1:1'
+  cost: 0.08
+- ru:
+  - p2-c01-396
+  en:
+  - L449
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-397
+  en:
+  - L450
+  type: '1:1'
+  cost: 0.03
+- ru:
+  - p2-c01-398
+  en:
+  - L451
+  type: '1:1'
+  cost: 0.06
+- ru:
+  - p2-c01-399
+  en:
+  - L452
+  type: '1:1'
+  cost: 0.11
+- ru:
+  - p2-c01-400
+  en:
+  - L453
+  type: '1:1'
+  cost: 0.71
+- ru:
+  - p2-c01-401
+  en:
+  - L454
+  type: '1:1'
+  cost: 1.08
+- ru:
+  - p2-c01-402
+  en:
+  - L455
+  type: '1:1'
+  cost: 0.52
+- ru:
+  - p2-c01-403
+  en:
+  - L456
+  type: '1:1'
+  cost: 0.3
+- ru:
+  - p2-c01-404
+  en:
+  - L457
+  type: '1:1'
+  cost: 0.03
+- ru:
+  - p2-c01-405
+  en:
+  - L458
+  type: '1:1'
+  cost: 0.35
+- ru:
+  - p2-c01-406
+  en:
+  - L459
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-407
+  en:
+  - L460
+  type: '1:1'
+  cost: 0.03
+- ru:
+  - p2-c01-408
+  en:
+  - L461
+  type: '1:1'
+  cost: 0.36
+- ru:
+  - p2-c01-409
+  en:
+  - L462
+  type: '1:1'
+  cost: 0.03
+- ru:
+  - p2-c01-410
+  en:
+  - L463
+  type: '1:1'
+  cost: 0.02
+- ru:
+  - p2-c01-411
+  en:
+  - L464
+  type: '1:1'
+  cost: 0.18
+- ru:
+  - p2-c01-412
+  en:
+  - L465
+  - L466
+  - L467
+  type: '1:3'
+  cost: 0.07
+  review: needed
+- ru:
+  - p2-c01-413
+  en:
+  - L468
+  type: '1:1'
+  cost: 0.98
+- ru:
+  - p2-c01-414
+  - p2-c01-415
+  en:
+  - L469
+  type: '2:1'
+  cost: 0.11
+  review: needed
+- ru:
+  - p2-c01-416
+  en:
+  - L470
+  type: '1:1'
+  cost: 1.29
+- ru:
+  - p2-c01-417
+  en:
+  - L471
+  type: '1:1'
+  cost: 0.09
+- ru:
+  - p2-c01-418
+  en:
+  - L472
+  type: '1:1'
+  cost: 0.17
+- ru:
+  - p2-c01-419
+  en:
+  - L473
+  type: '1:1'
+  cost: 0.02
+- ru:
+  - p2-c01-420
+  en:
+  - L474
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p2-c01-421
+  en:
+  - L475
+  type: '1:1'
+  cost: 0.04
+- ru:
+  - p2-c01-422
+  en:
+  - L476
+  type: '1:1'
+  cost: 0.02
+- ru:
+  - p2-c01-423
+  en:
+  - L477
+  type: '1:1'
+  cost: 0.12
+- ru:
+  - p2-c01-424
+  en:
+  - L478
+  type: '1:1'
+  cost: 0.02
+- ru:
+  - p2-c01-425
+  en:
+  - L479
+  type: '1:1'
+  cost: 0.11
+- ru:
+  - p2-c01-426
+  en:
+  - L480
+  type: '1:1'
+  cost: 0.01
+- ru:
+  - p2-c01-427
+  en:
+  - L481
+  type: '1:1'
+  cost: 0.02
+- ru:
+  - p2-c01-428
+  en:
+  - L482
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-429
+  en:
+  - L483
+  type: '1:1'
+  cost: 0.0
+- ru:
+  - p2-c01-430
+  en:
+  - L484
+  type: '1:1'
+  cost: 0.04
+- ru:
+  - p2-c01-431
+  en:
+  - L485
+  type: '1:1'
+  cost: 0.65
+- ru:
+  - p2-c01-432
+  en:
+  - L486
+  type: '1:1'
+  cost: 0.02
+- ru:
+  - p2-c01-433
+  en:
+  - L487
+  type: '1:1'
+  cost: 0.0
