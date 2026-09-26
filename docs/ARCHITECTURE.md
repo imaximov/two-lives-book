@@ -38,7 +38,7 @@ translation/               ← «кухня» перевода (подробно
     raw/part-N/ch-NN.md    ← старый перевод, извлечённый из PDF без правок (абзацы L001…), + отчёт о технической чистке
     alignment/pX-cYY.yml   ← сопоставление абзацев старого перевода с ID оригинала
   analysis/                ← анализ старого перевода и другие отчёты
-  calibration/             ← калибровочный набор отрывков для сравнения и смены моделей
+  calibration/             ← калибровочный набор: passages.yml (состав) + cal-*.md (RU и старый EN по блокам)
   reports/                 ← отчёты шагов: extract-ru/, extract-legacy-en/, align-legacy-en/ …
   prompts/                 ← промпты: редактура, перевод, ревью, разбор
   reviews/<lang>/<unit>/   ← internal-*.json, request.md (пакет для внешнего ревью), external-*.json, resolution.md
@@ -74,7 +74,7 @@ title: "At My Brother's"
 
 {#p1-c01-002} “Who could they be?” I wondered, going back to where I had met them.
 
-::: verse {#p1-c01-003}
+{#p1-c20-213} ::: verse
 I am but a wanderer on this earth.
 Amid the toil, the passions and the pain…
 :::
@@ -121,8 +121,9 @@ macOS и Windows. Хеши PDF и epub — по байтам (`sha256_file`). Ф
 
 Остальные правила:
 
-- Разметка минимальная: `*курсив*`, сноски `[^1]`, блоки `::: verse`, `::: epigraph`, `::: letter`
-  (письма и записки в тексте), `::: note`.
+- Разметка минимальная: `*курсив*`, сноски `[^1]`. Стихи — многострочный блок: маркер ID, затем
+  `::: verse`, строки стиха, закрывающее `:::` (пустых строк внутри нет). Позже, по мере надобности:
+  `::: letter` (письма и записки), `::: note`.
 - Типографика — по правилам языка (кавычки, тире, многоточие), см. стайлгайды.
 - `content/book.yml` описывает структуру книги (части → тома → главы) и названия на всех языках.
   Из него строятся оглавления, навигация и сборка.
@@ -307,6 +308,8 @@ docker compose -f deploy/docker-compose.yml run --rm build
 | `extract:en-legacy` | PDF старого перевода → `translation/legacy-en/raw/**` без правок текста (только техническая чистка; потерянные пробелы — по координатам символов, словарь только со сверкой по странице) + отчёт |
 | `align:en-legacy` | raw → `translation/legacy-en/alignment/*.yml` (1:1, 1:N, N:1, N:M, пропуски, лишнее, `confidence`) + отчёт |
 | `import:en-legacy` | raw + alignment → `content/en/**` (стадия `legacy-imported`), текст без изменений |
+| `tools.align.manual` | ручные правки выравнивания (проверенные связи становятся опорами для перевыравнивания) |
+| `tools.calibration.build` | сборка калибровочного набора из `translation/calibration/passages.yml` |
 | `compare <chapter>` | локальная HTML-страница RU \| старый EN \| новый EN с подсветкой изменений по словам (без сервера) |
 | `book --chapter <chapter>` | пробная сборка одной главы в EPUB и PDF |
 | `packet <chapter> <lang>` | собирает `translation/reviews/<lang>/<unit>/request.md` для внешнего ревью: шапка с `commit`/`text_hash`/`source_hash`, инструкция, выровненный RU/перевод, термины для явного вердикта, JSON-схема ответа |
