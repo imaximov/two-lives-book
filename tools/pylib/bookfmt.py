@@ -48,7 +48,7 @@ def dump_chapter(ch: Chapter) -> str:
 
 
 def load_chapter(path: Path) -> Chapter:
-    raw = path.read_text(encoding="utf-8")
+    raw = path.read_text(encoding="utf-8-sig").replace("\r\n", "\n")
     _, head, body = raw.split("---\n", 2)
     ch = Chapter(meta=yaml.safe_load(head))
     for chunk in body.strip().split("\n\n"):
@@ -60,12 +60,22 @@ def load_chapter(path: Path) -> Chapter:
 
 
 def sha256_file(path: Path) -> str:
+    """Хеш бинарного файла (PDF, epub) — байты как есть."""
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def sha256_text(path: Path) -> str:
+    """Хеш текстового файла, не зависящий от ОС: BOM убирается, CRLF/CR → LF.
+
+    На Windows git может выдать файлы с CRLF — хеш от этого не меняется."""
+    data = path.read_bytes().removeprefix(b"\xef\xbb\xbf")
+    return hashlib.sha256(data.replace(b"\r\n", b"\n").replace(b"\r", b"\n")).hexdigest()
 
 
 def write(path: Path, text: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(text, encoding="utf-8")
+    # newline="\n": на Windows не превращать переводы строк в CRLF
+    path.write_text(text, encoding="utf-8", newline="\n")
 
 
 def rel(path: Path) -> str:

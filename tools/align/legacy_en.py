@@ -16,7 +16,7 @@ import re
 
 import yaml
 
-from tools.pylib.bookfmt import ROOT, chapter_id, chapter_path, load_chapter, rel, sha256_file, write
+from tools.pylib.bookfmt import ROOT, chapter_id, chapter_path, load_chapter, rel, sha256_text, write
 
 BEADS = {(1, 1): 0.0, (1, 2): 3.0, (2, 1): 3.0, (2, 2): 5.0, (1, 3): 6.0, (3, 1): 6.0, (1, 0): 9.0, (0, 1): 9.0}
 SIGMA2 = 0.06            # дисперсия log(отношения длин) для 1:1
@@ -104,8 +104,8 @@ def main() -> None:
         if suspicious:
             link["review"] = "needed"
         links.append(link)
-    data = {"chapter": cid, "ru": rel(ru_path), "ru_sha256": sha256_file(ru_path),
-            "en_raw": rel(en_path), "en_raw_sha256": sha256_file(en_path),
+    data = {"chapter": cid, "ru": rel(ru_path), "ru_sha256": sha256_text(ru_path),
+            "en_raw": rel(en_path), "en_raw_sha256": sha256_text(en_path),
             "method": "auto: DP по длинам и признакам (tools/align/legacy_en.py)",
             "length_ratio_en_ru": round(ratio, 3), "stats": stats, "links": links}
     write(out, yaml.safe_dump(data, allow_unicode=True, sort_keys=False, width=200))

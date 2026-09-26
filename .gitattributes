@@ -1,0 +1,10 @@
+# Тексты проекта — всегда LF, в том числе на Windows (хеши глав считаются по LF, см. tools/pylib/bookfmt.py)
+* text=auto eol=lf
+*.pdf  binary
+*.epub binary
+*.jpg  binary
+*.png  binary
+*.ttf  binary
+*.woff binary
+*.woff2 binary
+*.pyc  binary

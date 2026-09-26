@@ -18,7 +18,7 @@ import difflib
 import pymupdf
 import pypdf
 
-from tools.pylib.bookfmt import ROOT, Block, Chapter, chapter_id, chapter_path, dump_chapter, rel, sha256_file, write
+from tools.pylib.bookfmt import ROOT, Block, Chapter, chapter_id, chapter_path, dump_chapter, rel, sha256_file, sha256_text, write
 
 # Какой PDF для какой части (INVENTORY §3, DEC-010). Для части III понадобится диагностика
 # слитного текста (DEC-020) — до неё извлечение части III не запускаем.
@@ -140,7 +140,7 @@ def extract(part: int, number: int) -> None:
 
     rep = [f"# Извлечение старого EN (без правок): {cid}", "",
            f"- Источник: `{SOURCES[part]}` (sha256 `{sha256_file(src)}`), страницы {ch.meta['pages']} (нумерация с 1)",
-           f"- Результат: `{rel(out)}` (sha256 `{sha256_file(out)}`)",
+           f"- Результат: `{rel(out)}` (sha256 текста, LF: `{sha256_text(out)}`)",
            f"- Заголовок в PDF: «{ch.meta['legacy_heading']}» / «{ch.meta['legacy_title']}»",
            f"- Строк текста: {len(body)}; абзацев: {len(texts)}; слов: {sum(len(t.split()) for t in texts)}",
            f"- Межстрочный интервал: {line_h}; новый абзац — отступ первой строки (x ≥ {INDENT_MIN}) или интервал > {GAP_FACTOR}×",

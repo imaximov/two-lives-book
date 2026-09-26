@@ -10,11 +10,12 @@
 from __future__ import annotations
 
 import argparse
+from itertools import zip_longest
 
 import yaml
 
 from tools.pylib.bookfmt import (ROOT, Block, Chapter, chapter_id, chapter_path, coverage_errors, dump_chapter,
-                                 load_chapter, rel, sha256_file, split_ref, write)
+                                 load_chapter, rel, sha256_text, split_ref, write)
 
 MISSING = "⟦missing⟧"
 
@@ -33,7 +34,7 @@ def main() -> None:
     ru = load_chapter(ROOT / al["ru"])
     raw = load_chapter(ROOT / al["en_raw"])
     for key, path in (("ru_sha256", al["ru"]), ("en_raw_sha256", al["en_raw"])):
-        if sha256_file(ROOT / path) != al[key]:
+        if sha256_text(ROOT / path) != al[key]:
             raise SystemExit(f"{path} изменился после выравнивания — выровняйте заново")
     en_text = {b.ids[0]: b.text for b in raw.blocks}
 
@@ -66,15 +67,18 @@ def main() -> None:
     if used != len(raw.blocks):
         raise SystemExit(f"использовано {used} абзацев EN из {len(raw.blocks)}")
 
+    # Контроль «текст не менялся» — до записи: блоки по порядку == абзацы raw по порядку
+    got = [b.text for b in blocks if b.text != MISSING]
+    want = [b.text for b in raw.blocks]
+    if got != want:
+        bad = next(i for i, (x, y) in enumerate(zip_longest(got, want)) if x != y)
+        raise SystemExit(f"текст при импорте изменился бы (первое расхождение на абзаце {bad + 1}) — файл не записан")
+
     ch = Chapter(meta={"id": cid, "lang": "en", "part": a.part, "volume": ru.meta["volume"],
                        "chapter": a.chapter, "title": raw.meta["legacy_title"]})
     ch.blocks = blocks
     out = chapter_path("content/en", a.part, a.chapter)
     write(out, dump_chapter(ch))
-
-    # Контроль «текст не менялся»: склеенный текст блоков == склеенный raw
-    joined = lambda bs: " ".join(b.text for b in bs if b.text != MISSING)
-    assert joined(blocks) == joined(raw.blocks), "текст при импорте изменился"
     missing = sum(1 for b in blocks if b.text == MISSING)
     report = ROOT / "translation/reports/align-legacy-en" / f"{cid}.md"
     notes = [f"- {', '.join(x[-3:] for x in l['ru'])} ↔ {', '.join(l['en'])} ({l['type']}): {l['note']}"

@@ -20,7 +20,7 @@ from bs4 import BeautifulSoup, NavigableString, Tag
 from ebooklib import epub
 
 from tools.pylib.bookfmt import (ROOT, Block, Chapter, chapter_id, chapter_path, dump_chapter, para_id,
-                                 rel, sha256_file, write)
+                                 rel, sha256_file, sha256_text, write)
 
 warnings.filterwarnings("ignore")
 
@@ -152,7 +152,7 @@ def extract(part: int, only: int | None) -> None:
         write(report, f"""# Извлечение RU: {cid}
 
 - Источник: `{SOURCES[part]}` (sha256 `{sha256_file(ROOT / SOURCES[part])}`)
-- Результат: `{rel(out)}` (sha256 `{sha256_file(out)}`)
+- Результат: `{rel(out)}` (sha256 текста, LF: `{sha256_text(out)}`)
 - Том: {c.volume}; заголовок: «{c.title}»
 - Абзацев: {len(c.paragraphs)}; слов: {words}
 

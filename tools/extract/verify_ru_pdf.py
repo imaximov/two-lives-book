@@ -55,8 +55,8 @@ def main() -> None:
     for tag, i1, i2, j1, j2 in diffs[:50]:
         lines.append(f"  - {tag}: epub «{' '.join(ours[max(0, i1 - 3):i2 + 3])}» | PDF «{' '.join(theirs[max(0, j1 - 3):j2 + 3])}»")
     report = ROOT / "translation/reports/extract-ru" / f"{cid}.md"
-    text = report.read_text(encoding="utf-8").split("\n## Сверка с PDF")[0].rstrip("\n") + "\n"
-    report.write_text(text + "\n".join(lines) + "\n", encoding="utf-8")
+    text = report.read_text(encoding="utf-8").replace("\r\n", "\n").split("\n## Сверка с PDF")[0].rstrip("\n") + "\n"
+    report.write_text(text + "\n".join(lines) + "\n", encoding="utf-8", newline="\n")
     print("\n".join(lines))
 
 
