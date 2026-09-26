@@ -1,0 +1,13 @@
+# Статусы глав — единственный источник (DEC-016). Стадии: docs/TRANSLATION-PROCESS.md §4.
+p1-c01:
+  ru:
+    stage: source-ready
+    sha256: 0a9f8e36f66244282b6e111fd24143f3c5216490fe7c8936e043ecfa9cb48128
+  en:
+    stage: legacy-imported
+    mode: revision
+    source_sha256: 0a9f8e36f66244282b6e111fd24143f3c5216490fe7c8936e043ecfa9cb48128
+    sha256: 8ab02e93ddfbc8a7cf3d41009780ca1abd9dc6807da23ffbeff172a81caa9cdb
+    legacy:
+      raw: translation/legacy-en/raw/part-1/ch-01.md
+      alignment: translation/legacy-en/alignment/p1-c01.yml
