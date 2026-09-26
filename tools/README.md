@@ -21,4 +21,13 @@ python3 -m venv .venv && .venv/bin/pip install -r tools/requirements.txt
 .venv/bin/python -m tools.align.import_legacy --part 1 --chapter 1     # content/en/part-1/ch-01.md
 ```
 
+Ручные правки выравнивания — `tools/align/manual.py` (`set_links`): исправленные связи и проверенные окна
+помечаются `review: done` и становятся опорами; повторный запуск `tools.align.legacy_en` перевыравнивает
+только промежутки. Импорт разрешён только для глав с `reviewed: full`.
+
+```bash
+# Калибровочный набор (отрывки для сравнения моделей)
+.venv/bin/python -m tools.calibration.build        # translation/calibration/passages.yml → cal-*.md
+```
+
 Отчёты каждого шага — в `translation/reports/`. Общий формат и проверка покрытия ID — `tools/pylib/bookfmt.py`.

@@ -2,6 +2,11 @@
 
 Файл главы: YAML-шапка + блоки, один блок = одна строка, блоки разделены пустой строкой.
 Блок начинается с маркера {#ID ...}: список канонических ID (или ID с суффиксом .N).
+Стихи — многострочный блок без пустых строк внутри:
+    {#p1-c20-045} ::: verse
+    строка 1
+    строка 2
+    :::
 """
 from __future__ import annotations
 
@@ -14,7 +19,11 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
 
-MARKER_RE = re.compile(r"^\{#([^}]+)\}\s?(.*)$")
+MARKER_RE = re.compile(r"^\{#([^}]+)\}\s?(.*)$", re.S)
+
+
+def verse(lines: list[str]) -> str:
+    return "::: verse\n" + "\n".join(lines) + "\n:::"
 
 
 def chapter_id(part: int, chapter: int) -> str:

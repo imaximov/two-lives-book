@@ -19,6 +19,7 @@ PDFS = {1: "sources/ru/original/part-1.pdf", 2: "sources/ru/original/part-2.pdf"
 
 
 def words(text: str) -> list[str]:
+    text = re.sub(r"::: verse|:::", " ", text)  # разметка стихов — не слова текста
     text = text.replace("\xad", "").replace("ё", "е").replace("Ё", "Е")
     # дефис на переносе строки в PDF неотличим от дефиса в слове («где-то») — дефисы не сравниваем
     text = text.replace("-\n", "").replace("-", "")

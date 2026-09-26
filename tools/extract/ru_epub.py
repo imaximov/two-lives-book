@@ -20,7 +20,7 @@ from bs4 import BeautifulSoup, NavigableString, Tag
 from ebooklib import epub
 
 from tools.pylib.bookfmt import (ROOT, Block, Chapter, chapter_id, chapter_path, dump_chapter, para_id,
-                                 rel, sha256_file, sha256_text, write)
+                                 rel, sha256_file, sha256_text, verse, write)
 
 warnings.filterwarnings("ignore")
 
@@ -111,6 +111,11 @@ def read_part(part: int) -> list[RawChapter]:
                 if text:
                     cur.paragraphs.append(text)
                 continue
+            if node.name == "div" and "poem" in classes and len(node.find_all(class_="stanza")) == 1:
+                lines = [normalize(inline_text(v), cur.stats) for v in node.find_all("p", class_="v")]
+                cur.paragraphs.append(verse(lines))
+                cur.stats["verse"] = cur.stats.get("verse", 0) + 1
+                continue
             cur.unsupported.append(f"<{node.name} class={classes}>: {node.get_text(' ', strip=True)[:80]}")
         chapters.append(cur)
     return chapters
@@ -163,6 +168,7 @@ def extract(part: int, only: int | None) -> None:
 | неразрывные пробелы → обычные | {c.stats['nbsp']} |
 | мягкие переносы удалены | {c.stats['soft_hyphen']} |
 | абзацы, где схлопнуты или обрезаны пробелы | {c.stats['whitespace']} |
+| стихотворные блоки (`::: verse`) | {c.stats.get('verse', 0)} |
 """)
         print(rel(out), len(c.paragraphs), "абзацев")
 

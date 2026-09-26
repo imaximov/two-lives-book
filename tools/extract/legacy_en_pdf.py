@@ -18,12 +18,16 @@ import difflib
 import pymupdf
 import pypdf
 
-from tools.pylib.bookfmt import ROOT, Block, Chapter, chapter_id, chapter_path, dump_chapter, rel, sha256_file, sha256_text, write
+from tools.pylib.bookfmt import (ROOT, Block, Chapter, chapter_id, chapter_path, dump_chapter, rel, sha256_file,
+                                 sha256_text, verse, write)
 
 # Какой PDF для какой части (INVENTORY §3, DEC-010). Для части III понадобится диагностика
 # слитного текста (DEC-020) — до неё извлечение части III не запускаем.
 SOURCES = {1: "sources/en-legacy/TwoLives-Vol1-2018-part1.pdf",
-           2: "sources/en-legacy/TwoLives-Vol2-2021-part2.pdf"}
+           2: "sources/en-legacy/TwoLives-Vol2-2021-part2.pdf",
+           # гл. 1–9 части III — из чистого PDF 2022 года (текст тот же, что в новом Vol3, DEC-010)
+           3: "sources/en-legacy/TwoLives-Vol3-2022-part3-ch1-10.pdf"}
+MAX_CHAPTER = {3: 9}  # дальше — новый Vol3 после диагностики слитного текста (DEC-020)
 
 HEADING_SIZE = 14.0      # заголовки глав — 16 pt, основной текст — 11 pt
 INDENT_MIN = 120.0       # левое поле ≈85, отступ первой строки ≈150
@@ -65,7 +69,7 @@ def find_chapter(lines: list[Line], number: int) -> tuple[int, int]:
         return l.size >= HEADING_SIZE and re.fullmatch(rf"\s*Chapter\s+{n}\s*", l.plain) is not None
     start = next(i for i, l in enumerate(lines) if is_head(l, number))
     end = next((i for i, l in enumerate(lines[start + 1:], start + 1)
-                if is_head(l, number + 1) or re.search(r"The end of part", l.plain)), len(lines))
+                if is_head(l, number + 1) or re.search(r"The end of (part|volume)", l.plain)), len(lines))
     return start, end
 
 
@@ -73,9 +77,10 @@ def crosscheck(src, first_page: int, last_page: int, title: str, number: int, te
     """Независимая сверка слов с другим извлекателем (pypdf): ничего не потеряно и не добавлено."""
     reader = pypdf.PdfReader(str(src))
     raw = "\n".join(reader.pages[i].extract_text() for i in range(first_page, last_page + 1))
-    raw = raw.split(title, 1)[1] if title in raw else raw
-    raw = re.split(rf"Chapter\s+{number + 1}\b|The end of part", raw)[0]
-    tok = lambda t: re.findall(r"[\w’']+", t.replace("*", ""))
+    m = re.search(r"\s+".join(map(re.escape, title.split())), raw)  # название может занимать несколько строк
+    raw = raw[m.end():] if m else raw
+    raw = re.split(rf"Chapter\s+{number + 1}\b|The end of (?:part|volume)", raw)[0]
+    tok = lambda t: re.findall(r"[\w’']+", re.sub(r"::: verse|:::", " ", t).replace("*", ""))
     ours, theirs = tok(" ".join(texts)), tok(raw)
     sm = difflib.SequenceMatcher(None, ours, theirs, autojunk=False)
     diffs = [o for o in sm.get_opcodes() if o[0] != "equal"]
@@ -115,8 +120,25 @@ def extract(part: int, number: int) -> None:
             italic_lines += 1
         prev = l
 
-    texts = []
+    # Стихи: подряд идущие однострочные абзацы, целиком набранные курсивом → один блок verse
+    grouped: list = []
     for p in paras:
+        t = p[0].text.strip()
+        if len(p) == 1 and len(t) > 2 and t.startswith("*") and t.endswith("*") and t.count("*") == 2:
+            if grouped and isinstance(grouped[-1], tuple):
+                grouped[-1][1].append(p[0])
+            else:
+                grouped.append(("verse", [p[0]]))
+        else:
+            grouped.append(p)
+    grouped = [g[1] if isinstance(g, tuple) and len(g[1]) == 1 else g for g in grouped]  # одна строка — не стих
+
+    texts, verse_blocks, italic_merges = [], 0, 0
+    for p in grouped:
+        if isinstance(p, tuple):
+            texts.append(verse([l.text.strip() for l in p[1]]))
+            verse_blocks += 1
+            continue
         acc = ""
         for l in p:
             t = l.text.strip()
@@ -127,7 +149,11 @@ def extract(part: int, number: int) -> None:
                 acc += t          # дефис на конце строки сохраняется (Word не переносит слова)
             else:
                 acc += " " + t
-        texts.append(re.sub(r"\s+", " ", acc).strip())
+        t = re.sub(r"\s+", " ", acc).strip()
+        # курсив размечается по фрагментам строк: «*a* *b*» → «*a b*» (соседние курсивные куски)
+        t, n = re.subn(r"\*\s+\*", " ", t)
+        italic_merges += n
+        texts.append(t)
 
     cid = chapter_id(part, number)
     ch = Chapter(meta={"id": cid, "lang": "en", "kind": "legacy-raw", "source": SOURCES[part],
@@ -146,10 +172,11 @@ def extract(part: int, number: int) -> None:
            f"- Межстрочный интервал: {line_h}; новый абзац — отступ первой строки (x ≥ {INDENT_MIN}) или интервал > {GAP_FACTOR}×",
            f"- Левые позиции строк (x → число строк): {dict(sorted(xs.items()))}", "",
            "## Технические действия", "",
-           f"- Строки склеены в абзацы через пробел: {len(body) - len(texts)} стыков.",
+           f"- Строки склеены в абзацы через пробел: {sum(len(p) - 1 for p in grouped if not isinstance(p, tuple))} стыков.",
+           f"- Стихотворных блоков (однострочные курсивные абзацы подряд → `::: verse`, переносы строк сохранены): {verse_blocks}",
            f"- Стыков с дефисом на конце строки (дефис сохранён, без пробела): {len(hyphen_joins)}"]
     rep += [f"  - {h}" for h in hyphen_joins]
-    rep += [f"- Строк с курсивом (размечен `*…*`): {italic_lines}",
+    rep += [f"- Строк с курсивом (размечен `*…*`): {italic_lines}; склеено соседних курсивных фрагментов: {italic_merges}",
             f"- Строк с нетипичным левым краем: {len(odd_x)}"]
     rep_x = [f"  - стр. {l.page + 1}, x={l.x0:.1f}: «{l.plain.strip()[:70]}»" for l in odd_x]
     rep += rep_x + ["", "## Контроль", "",
@@ -163,8 +190,8 @@ def main() -> None:
     ap.add_argument("--part", type=int, required=True)
     ap.add_argument("--chapter", type=int, required=True)
     a = ap.parse_args()
-    if a.part not in SOURCES:
-        raise SystemExit(f"часть {a.part}: извлечение ещё не подготовлено (для части III сначала DEC-020)")
+    if a.part not in SOURCES or a.chapter > MAX_CHAPTER.get(a.part, 999):
+        raise SystemExit(f"p{a.part}-c{a.chapter:02d}: извлечение ещё не подготовлено (часть III с гл. 10 — после DEC-020)")
     extract(a.part, a.chapter)
 
 

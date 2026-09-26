@@ -1,9 +1,7 @@
 """1в (импорт). raw + alignment → content/en/part-N/ch-NN.md, текст старого перевода без изменений.
 
-Раскладка ID по блокам (ARCHITECTURE §3):
-  1:1 → [ru]; N:1 → [ru1 ru2 …]; 1:N → [ru], [ru.2], [ru.3] …;
-  N:M → явно из поля `blocks` в alignment; 1:0 → блок «⟦missing⟧»; 0:1 → продолжение предыдущего ID.
-Импорт запрещён, пока в alignment есть `review: needed`.
+Раскладка ID по блокам — tools/align/layout.py.
+Импорт запрещён, пока глава не проверена целиком (`reviewed: full`) или есть `review: needed`.
 
     python -m tools.align.import_legacy --part 1 --chapter 1
 """
@@ -14,10 +12,9 @@ from itertools import zip_longest
 
 import yaml
 
+from tools.align.layout import MISSING, layout
 from tools.pylib.bookfmt import (ROOT, Block, Chapter, chapter_id, chapter_path, coverage_errors, dump_chapter,
-                                 load_chapter, rel, sha256_text, split_ref, write)
-
-MISSING = "⟦missing⟧"
+                                 load_chapter, rel, sha256_text, write)
 
 
 def main() -> None:
@@ -28,6 +25,8 @@ def main() -> None:
     cid = chapter_id(a.part, a.chapter)
     al_path = ROOT / "translation/legacy-en/alignment" / f"{cid}.yml"
     al = yaml.safe_load(al_path.read_text(encoding="utf-8"))
+    if al.get("reviewed") != "full":
+        raise SystemExit(f"{rel(al_path)}: выравнивание проверено не целиком (reviewed: {al.get('reviewed')!r}) — импорт запрещён")
     pending = [l for l in al["links"] if l.get("review") == "needed"]
     if pending:
         raise SystemExit(f"{rel(al_path)}: {len(pending)} связей ещё не проверены (review: needed)")
@@ -39,26 +38,9 @@ def main() -> None:
     en_text = {b.ids[0]: b.text for b in raw.blocks}
 
     blocks: list[Block] = []
-    last_ref = None
     for link in al["links"]:
-        r, e = link["ru"], link["en"]
-        if "blocks" in link:
-            layout = [(lid, link["blocks"][lid]) for lid in e]
-        elif r and not e:
-            blocks += [Block([x], MISSING) for x in r]
-            last_ref = r[-1]
-            continue
-        elif e and not r:
-            base, n = split_ref(blocks[-1].ids[-1]) if blocks else (None, 1)
-            layout = [(lid, [f"{base}.{n + k}"]) for k, lid in enumerate(e, 1)]
-        elif len(e) == 1:
-            layout = [(e[0], list(r))]
-        elif len(r) == 1:
-            layout = [(lid, [r[0] if k == 0 else f"{r[0]}.{k + 1}"]) for k, lid in enumerate(e)]
-        else:
-            raise SystemExit(f"связь {r}↔{e}: для N:M нужно поле blocks")
-        blocks += [Block(ids, en_text[lid]) for lid, ids in layout]
-        last_ref = r[-1] if r else last_ref
+        prev = blocks[-1].ids[-1] if blocks else None
+        blocks += [Block(ids, MISSING if lid is None else en_text[lid]) for lid, ids in layout(link, prev)]
 
     errors = coverage_errors([b.ids[0] for b in ru.blocks], blocks)
     if errors:
