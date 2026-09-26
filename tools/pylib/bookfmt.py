@@ -70,3 +70,35 @@ def write(path: Path, text: str) -> None:
 
 def rel(path: Path) -> str:
     return str(path.relative_to(ROOT))
+
+
+def split_ref(ref: str) -> tuple[str, int]:
+    """'p1-c01-012' → ('p1-c01-012', 1); 'p1-c01-012.2' → ('p1-c01-012', 2)."""
+    base, _, part = ref.partition(".")
+    return base, int(part) if part else 1
+
+
+def coverage_errors(canonical: list[str], blocks: list[Block]) -> list[str]:
+    """Инвариант ARCHITECTURE §3: каждый канонический ID начинается ровно в одном блоке, по порядку;
+    продолжение X.N (N ≥ 2) допустимо только первым в списке блока и только для последнего начатого ID."""
+    errors, pos, last, last_n = [], 0, None, 1
+    for bi, b in enumerate(blocks, 1):
+        for k, ref in enumerate(b.ids):
+            base, n = split_ref(ref)
+            if n > 1:
+                if k != 0:
+                    errors.append(f"блок {bi}: продолжение {ref} не первым в списке")
+                if base != last or n != last_n + 1:
+                    errors.append(f"блок {bi}: продолжение {ref} не следует за {last}.{last_n}")
+                last_n = n
+                continue
+            if pos >= len(canonical) or canonical[pos] != base:
+                expected = canonical[pos] if pos < len(canonical) else "конец"
+                errors.append(f"блок {bi}: ожидался {expected}, найден {base}")
+                if base in canonical:
+                    pos = canonical.index(base)
+            pos += 1
+            last, last_n = base, 1
+    if pos < len(canonical):
+        errors.append(f"не покрыты: {canonical[pos:]}")
+    return errors
