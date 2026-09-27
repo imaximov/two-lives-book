@@ -176,11 +176,11 @@ entries:
     p3-c29-027), поэтому иерархию «выше Учителя» из текста не выводим'
   distinguish: 'не путать с vladyka#ruler (строчная: светский властелин, «владыкой пустыни» p3-c17-108; «новый владыка» сердца
     p2-c03-009), vladyka#god (церковнославянское «Владыко» в молитве p2-c02-039) и с vladyki-karm.'
-  ru_forms: [Владыка, Владыки, Владыке, Владыку, Владыкой, Владык, Владыкам, Владыками, Владыко]
+  ru_forms: [Владыка, Владыки, Владыке, Владыку, Владыкой, Владык, Владыкам, Владыками]
   tier: core
   first_seen: p3-c25-046
-  counts: {p1: 0, p2: 1, p3: 365}
-  counts_what: все формы с прописной (p2 — «Владыко» в молитве); в значении титула — только ч. III, гл. 25–33, 11 глав
+  counts: {p1: 0, p2: 0, p3: 347}
+  counts_what: все формы с прописной в значении титула, без «Владыко» в молитве (vladyka#god) и без 18 прописных «Владыки карм» (vladyki-karm); только ч. III, гл. 25–33
   evidence:
   - {id: p3-c25-088, ru: старший Владыка еще раз поклонился И., en_legacy: the senior Master bowed to I. once again}
   - {id: p3-c25-059, ru: 'Старейшины, или, как их называет Учитель И., Владыки оазиса', en_legacy: 'The chiefs, or the Masters
@@ -282,7 +282,7 @@ entries:
   evidence:
   - {id: p3-c28-038, ru: 'Великий Бог, Господь нашей планеты — Санат Кумара', en_legacy: 'the Great God, the Lord of our planet
       – Sanat Kumara'}
-  - {id: p3-c30-022, ru: 'со всем Светлым Братством, с Его Главою — Санат Кумарой', en_legacy: 'with the whole Bright Brotherhood,
+  - {id: p3-c30-022, ru: 'со всем Светлым Братством, с Его Главою — Санат Кумарой', en_legacy: 'with the whole Bright Brotherhood …
       with Her Master – Sanat Kumara'}
   - {id: p3-c29-073, ru: мимо рабочего места Санат Кумары, en_legacy: through Sanat Kamara’s working place, note: опечатка
       старого EN}
@@ -361,7 +361,7 @@ entries:
   distinguish: «Братство» с прописной в ч. III почти всегда = Светлое Братство (131 из 131). «Белое Братство» — 2 раза (p3-c18-136,
     p3-c21-057, в речи Рассула и о тайных скитах) — старый EN сливает его с Bright Brotherhood. Строчное «братство» — братство
     людей вообще (p1-c04-011 «к равенству и братству»).
-  ru_forms: [Светлое Братство, Светлого Братства, Светлому Братству, Светлым Братством, Светлом Братстве, Светлые Братья,
+  ru_forms: [Светлое Братство, Светлого Братства, Светлому Братству, Светлым Братством, Светлом Братстве,
     Светлых Братьев]
   tier: core
   first_seen: p3-c18-042
@@ -1733,8 +1733,9 @@ entries:
   tier: core
   first_seen: p1-c08-036
   counts: {p1: 18, p2: 43, p3: 106}
-  note: для свойства — creative power(s), the creative spirit; creativity — слово второй половины XX в. с психологическим
-    и деловым оттенком, в речи рассказчика и Учителей звучит анахронизмом («the stormy flame of your Teachers’ creative work»,
+  note: для свойства — creative power(s), the creative spirit; creativity (известно с 1870-х, но широко — с середины XX в.) имеет
+    психологический и деловой оттенок и в речи рассказчика и Учителей звучит современно; устойчивая пара «труд и творчество»
+    (3 места) — labour and creative work (не «work and creative work», так как «труд» здесь — labour, см. trud) («the stormy flame of your Teachers’ creative work»,
     p3-c01-070)
   evidence:
   - {id: p3-c01-070, ru: ты сольешься с бурным пламенем творчества твоих Учителей, en_legacy: you will unite with the intensive
@@ -2147,7 +2148,7 @@ entries:
   - {id: p3-c01-078, ru: 'Прими, друг, бодрое пожатие моей руки', en_legacy: 'My friend, accept my energetic handshake'}
   en:
     term: p1-c06-019 — I clasp your hand. Accept my handshake, full of vigour and energy…; p3-c01-078 — Accept, my friend,
-      a firm and vigorous handshake
+      the vigorous clasp of my hand
     legacy: handshake full of cheerfulness and energy; energetic handshake
     avoid: []
     status: proposed
@@ -3859,7 +3860,8 @@ entries:
     avoid: []
     status: proposed
   question: 'Have pity on me (старый EN, не ошибка — исправить только разрыв «Have pity on me. Nikolushka») или for pity’s
-    sake (разговорнее)? Рекомендация по §9.2 п.6 — старый вариант. have mercy не брать: mercy занято «милосердием».'
+    sake (разговорнее)? Рекомендация по §9.2 п.6 — старый вариант. have mercy не брать как рабочий вариант: в поучениях mercy — «милосердие»; в бытовых идиомах
+    (poshchada) mercy допустимо, но здесь старый вариант верен.'
 
 - id: srednyaya-aziya
   ru: Средняя Азия (среднеазиатский торговый город)

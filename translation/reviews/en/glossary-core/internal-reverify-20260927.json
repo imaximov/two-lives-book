@@ -1,0 +1,306 @@
+{
+  "unit": "glossary-core",
+  "lang": "en",
+  "commit": "26ddaec",
+  "reviewer": "claude-fresh-context",
+  "level": "internal",
+  "pass": "re-verification",
+  "items": [
+    {
+      "ref": "check",
+      "verdict": "ok",
+      "severity": "minor",
+      "detail": "`tools.glossary.check`: 212 терминов, 57 персонажей, ok. RU-цитаты evidence сверяются с абзацами epub, имена между файлами согласованы (правила 4, 5).",
+      "suggestion": ""
+    },
+    {
+      "ref": "e0 / t1 (mat-anna, mat#address, anna)",
+      "verdict": "implemented",
+      "severity": "major",
+      "detail": "mat-anna (characters) и mat#address (glossary) заведены; first_seen p3-c23-103 (первое появление) и p3-c23-107 («Прости, мать» — первое обращение) верны; цитаты RU и старого EN (p3-c23-105, 112, 113, 117, 107) сверены глазами; «мать/матери/матерью Анн*» в ч. III — 175 (пересчитано); anna.p3 = 35 + mat-anna 181 = 216, как прежде. Связь с nastoyatel#title (the Mother Superior) есть.",
+      "suggestion": ""
+    },
+    {
+      "ref": "e1 bodrost",
+      "verdict": "implemented",
+      "severity": "minor",
+      "detail": "Довод переписан через «истинная бодрость … Божественной Энергии и гармоничный труд» (p3-c31-018); ссылка «бодрящий» исправлена на p1-c06-019.",
+      "suggestion": ""
+    },
+    {
+      "ref": "e2 svet#world",
+      "verdict": "implemented",
+      "severity": "major",
+      "detail": "Запись svet#world (world) есть; first_seen p1-c05-017 («забыл обо всём на свете») — действительно первое; пересчёт по шаблону даёт 14/29/26 против заявленных 16/29/23 («тот свет» = свет вычтен вручную) — правдоподобно; «на свете» 12/20/17 против 12/21/17. svet#light уменьшен, distinguish в svet#light, svet#society, svet#light-divine, mir#world обновлены. EN-цитаты p1-c06-118, p1-c20-132, p2-c07-013 верны.",
+      "suggestion": ""
+    },
+    {
+      "ref": "e3–e13, e14",
+      "verdict": "implemented",
+      "severity": "major",
+      "detail": "11 ID исправлены; проверка по epub проходит без ошибок, то есть она действительно ловит сдвиг.",
+      "suggestion": ""
+    },
+    {
+      "ref": "e15–e18 (first_seen)",
+      "verdict": "implemented",
+      "severity": "minor",
+      "detail": "Сверено по корпусу: doktor p1-c02-006 (связь 005–006, «два доктора» стоит в 006), temnye-sily p1-c22-122 (p1-c21-032 — «человеком большой тёмной силы», другое), stupen p1-c14-081, osvobozhdenie p1-c14-079 (p1-c06-007 — политическое «освобождение народа»), bozhestvennyi p1-c22-185 («божественная груша» — бытовое), brat#fellow p3-c01-067, luch#ray p3-c04-121.",
+      "suggestion": ""
+    },
+    {
+      "ref": "e19, e20",
+      "verdict": "implemented",
+      "severity": "minor",
+      "detail": "Добавлен старый EN для p3-c25-039 («You know that Life is the Eternal Movement.») и p2-c06-164 («…loving and loved»); оба сверены.",
+      "suggestion": ""
+    },
+    {
+      "ref": "e21–e27",
+      "verdict": "implemented",
+      "severity": "minor",
+      "detail": "olga: по-русски с ней говорит Ананда (p1-c25-249…252) — верно; andreeva: «остроглазая» — прозвище от Яссы (p3-c16-046, p3-c17-063) — верно; levushka: «Лев Николаевич» — князь (обращение), Ананда и Ольга (упоминания) — верно; florentiets: алиасы исправлены; illofillion: I.’s в ч. III — 321, «I. I» — 19 (пересчитано, совпадает). nikolay: «Николушка» (p1-c01-088, 101) и «брат-отец» (19/0/6–7) добавлены. brat#sibling: легенда о двоюродном брате и p1-c07-027 («Другой мой друг — грек») верны.",
+      "suggestion": ""
+    },
+    {
+      "ref": "e28 vladyka#master",
+      "verdict": "implemented",
+      "severity": "minor",
+      "detail": "«лорд Бенедикт» — 15/559/1 = 575 (пересчитано).",
+      "suggestion": ""
+    },
+    {
+      "ref": "e29 obshchina",
+      "verdict": "implemented",
+      "severity": "minor",
+      "detail": "Опора заменена на p3-c06-073 (дом для сирот при Общине) и p3-c20-206 («тайно от наших семей в твоих мастерских и школах»); обе цитаты верны.",
+      "suggestion": ""
+    },
+    {
+      "ref": "e30 dukh#spirit / dukh#beings",
+      "verdict": "implemented",
+      "severity": "major",
+      "detail": "«Дух» с прописной в середине фразы — 19, все в ч. III (пересчитано). dukh#beings: 44 формы мн. ч. минус 5 «духов»-парфюма = 39 (пересчитано); first_seen p3-c09-179 (духи-домовые) — первое такое значение; старый EN spirits 30 из 37 связей. EN-цитаты p3-c26-037, p3-c29-013, p3-c26-081 верны. Идиомы мужества (p1-c13-094, p3-c22-119, p3-c15-078) в distinguish верны.",
+      "suggestion": ""
+    },
+    {
+      "ref": "e31 zemlya#earth",
+      "verdict": "implemented",
+      "severity": "major",
+      "detail": "first_seen p1-c09-099 («счастья жить на земле») — первое такое значение (раньше — почва и край: p1-c02-084, p1-c04-060, p1-c09-051). EN-цитаты p1-c09-099, p2-c01-327, p3-c11-143, p1-c26-034 верны. en.term earth однозначен, в question — on earth / of the earth.",
+      "suggestion": "Попутно: в p3-c11-143 старый EN переворачивает смысл («until the earth needs you» при RU «пока земля нуждается в тебе»); стоит пометить note у цитаты."
+    },
+    {
+      "ref": "e32, e33",
+      "verdict": "implemented",
+      "severity": "minor",
+      "detail": "dobro: имущество и краткие прилагательные вычтены, distinguish расширен. volya#will и verse-terms#cal-5: противоречия больше нет (в прозе will, в песне — по DEC-026).",
+      "suggestion": ""
+    },
+    {
+      "ref": "t0 / l8 vladyki-karm",
+      "verdict": "implemented",
+      "severity": "major",
+      "detail": "Masters of karma (старый EN), lords of karma в avoid; прописная 18 / строчная 8 исправлены (пересчёт: всего 26 с «кармы»); отказ от lords of karma обоснован без довода «привычно в теософии».",
+      "suggestion": ""
+    },
+    {
+      "ref": "t2 spokoistvie / pokoy",
+      "verdict": "implemented",
+      "severity": "major",
+      "detail": "Счета пересчитаны и совпадают: «спокойстви*» 28/44/65, first_seen p1-c01-007; «покой» 9/19/23, first_seen p1-c07-022 («ночной покой», значение 2 записи). Старый EN по связям: calm 81 / peace 43 / tranquillity 26 и peace 24 / calm 19 / tranquillity 7 / rest 5 — совпадает. EN-цитаты (p1-c02-071, p2-c06-009, p3-c04-094, p3-c18-055, p2-c14-120, p3-c11-072, p2-c09-018) сверены глазами. Разведение mir#peace → peace, spokoistvie → calm, pokoy → tranquillity последовательно (avoid каждой записи исключает слова двух других); идиомы leave in peace явно выделены.",
+      "suggestion": ""
+    },
+    {
+      "ref": "t3 poshchada / zhalost / miloserdie",
+      "verdict": "implemented",
+      "severity": "major",
+      "detail": "Существительное «пощада» 4/12/14, first_seen p1-c24-010 («не знавших никогда пощады… закона пощады») верно; «жалость» 2/4/9, first_seen p1-c14-035 верно. Старый EN по связям (compassion 15 / mercy 15 / pity 8; compassion 10 / pity 5–7 / sympathy 4–5 / regret 3) совпадает. EN-цитаты p3-c32-028 («regret and mercy don’t have anything in common»), p1-c24-150, p3-c32-157, p3-c09-007, p3-c06-068, p1-c17-099 верны. В question miloserdie названо, что mercy меняет ≈178 compassion и почему. Четыре записи согласованы (mercy / clemency / compassion / pity), критерий для бытовых идиом с mercy есть.",
+      "suggestion": ""
+    },
+    {
+      "ref": "t4 wodsword",
+      "verdict": "implemented",
+      "severity": "major",
+      "detail": "en.name = Wodsword; Wadsworth только в question; довод о звучании прямо назван недостаточным по DEC-028.",
+      "suggestion": ""
+    },
+    {
+      "ref": "t5 / l16–l18 (имена в примерах)",
+      "verdict": "implemented",
+      "severity": "minor",
+      "detail": "Prince Saintger, Lord Samuel Retedly, Lady Katherine Wodsword, Doctor Il., Liza, Mr Tendl — совпадают с characters.yml; поиск форм из avoid персонажей по en.term/note глоссария находит только счёты старого EN (sir Vomi, Nataliya).",
+      "suggestion": ""
+    },
+    {
+      "ref": "t6 / l2, t7, l6, l7, l13, l14, l15, l0",
+      "verdict": "implemented",
+      "severity": "major",
+      "detail": "Один рабочий вариант: purposefulness (expediency в avoid), vigour (формы — критерий в note), stage (step/rung/level — критерий), union, creative work, conformity to law, the plain grey day, May you be blessed (Bless you в avoid, Be blessed в question). Во всём glossary нет en.term с «(?)» или с «или»; оставшиеся « / » — пары форм (m/f, регистр как в RU).",
+      "suggestion": ""
+    },
+    {
+      "ref": "t8, t9 (правило 2)",
+      "verdict": "implemented",
+      "severity": "major",
+      "detail": "Возвращены старые варианты: Peace to you, Be strong, my friend, my friend (дружок), madam, the owner, oriental robe, brilliants, writing-table, majority, have pity, my “nurse”, sitting-room, pinks, visiting-cards, Stroganoff; новое — в question. kupets получил довод о различении понятий (купец/торговец). Среди изменённых в 26ddaec en.term новых вкусовых замен верного старого варианта не найдено (оставшиеся замены опираются на ошибку старого EN или на принятые пункты l*).",
+      "suggestion": ""
+    },
+    {
+      "ref": "t10 zhizn#life-divine",
+      "verdict": "implemented",
+      "severity": "minor",
+      "detail": "Доводы за She (p3-c23-004, p3-c23-013) добавлены, рекомендация помечена как стилистическая.",
+      "suggestion": ""
+    },
+    {
+      "ref": "t11 vladyka#master",
+      "verdict": "implemented",
+      "severity": "major",
+      "detail": "Обоснование лексическое (два слова RU — два слова EN); «выше Учителя» снято с опорой на p3-c26-083/108, p3-c29-027; согласовано с bog и vladyka#god.",
+      "suggestion": ""
+    },
+    {
+      "ref": "t12 formula#nikto-ne-drug",
+      "verdict": "implemented",
+      "severity": "minor",
+      "detail": "Прописная 4:3 с ID, «зеркалить RU»; варианты «не брат» и связь с D14 — в note.",
+      "suggestion": ""
+    },
+    {
+      "ref": "t13 podvig / nastavnik / sotrudnik / sotrudnichestvo",
+      "verdict": "implemented",
+      "severity": "major",
+      "detail": "Пересчитано: «подвиг*» 8/5/58 (без «подвигаться»), «наставни*» 6/10/46, «сотрудник*» 1/3/60, «сотруднич*» 0/2/38 — совпадает. first_seen p1-c11-020, p1-c07-028, p1-c16-105, p2-c04-075 верны. Старый EN по связям (deed 34 / heroi- 30 / feat 11; guardian 37 / teacher 14; colleague 21 / assistant 16 / associate 13; cooperat- 25) совпадает. EN-цитаты (p1-c25-039, p3-c26-117, p3-c18-100, p3-c08-020, p3-c04-061, p3-c28-040, p1-c07-028, p3-c23-118, p3-c01-053, p3-c05-009, p3-c32-008, p1-c16-105, p3-c32-006, p3-c29-073, p3-c07-038) сверены глазами. feat / mentor / co-worker / cooperation однозначны, с другими записями не конфликтуют.",
+      "suggestion": ""
+    },
+    {
+      "ref": "t14 sanat-kumara / maha-chohan / kumary / aleksandra",
+      "verdict": "implemented",
+      "severity": "major",
+      "detail": "Санат Кумара 21, first_seen p3-c28-038; Маха-Чохан 6 (все в одном абзаце; note о связи 051 честная); Кумары (без род. п. «Санат Кумары») 4. «три Его Брата», «Защитник и Покровитель Земли» (p3-c29-033), «Главою» (p3-c30-022) в тексте есть. Старый EN: Maha Chohan 6, Kumaras 4, Sanat Kamara 1 — верно. Александра — secondary, сестра больницы Общины; старый EN nurse/sister Alexandra верен.",
+      "suggestion": ""
+    },
+    {
+      "ref": "t15–t19",
+      "verdict": "implemented",
+      "severity": "minor",
+      "detail": "olga → secondary; vladyka#lord разделён на vladyka#ruler (lord, 7 строчных вне «владык карм» — пересчитано 2/5) и vladyka#god (Lord); общий вопрос о буквенном несоответствии — в tendl, ссылки из затронутых записей есть; «both Mahomets?» — в note ali-mohammed; luch#ray first_seen p3-c04-121.",
+      "suggestion": ""
+    },
+    {
+      "ref": "l1 svetly / svetloe-bratstvo",
+      "verdict": "implemented",
+      "severity": "major",
+      "detail": "Эпитет перед людьми и силами — of Light (Bright Brothers / Bright Powers в avoid); название Братства — Bright Brotherhood, Brotherhood of Light — в question с доводами за и против.",
+      "suggestion": ""
+    },
+    {
+      "ref": "l3 illofillion, l29 eta, l30 sandra, l31 zeyhed, общий пункт об оксфордской запятой",
+      "verdict": "implemented",
+      "severity": "minor",
+      "detail": "Риски Il. и проверка шрифтов на этапе 4 — в question; Eta рабочий, Età в question; he/his для Сандры — в note и в заголовке; -ogly/-oglu — в общем вопросе khava; оксфордская запятая — открытый вопрос стайлгайда в заголовке glossary.yml.",
+      "suggestion": ""
+    },
+    {
+      "ref": "l9–l12, l19–l28, l34",
+      "verdict": "implemented",
+      "severity": "minor",
+      "detail": "greetings; full of vigour and energy / my friend; the Great Life; Mother of Life / Great Mother Life; my lady; the Galdoni ladies; a Serene Highness; orderly (пометка о batman исправлена); robing-room; bathroom; roll; broadside on; strapping; young Ali; stage director — всё внесено.",
+      "suggestion": ""
+    },
+    {
+      "ref": "l4, l5, l32, l33 (речь торговца)",
+      "verdict": "partially",
+      "severity": "minor",
+      "detail": "Главное выполнено: нет пиджина (plenty people), американского просторечия (know him good), Oy (теперь Ay-ya / Ow-yai), «one tall dark people» (теперь one tall dark man); в 034 последние три фразы правильные, смысловая ошибка «Уеду» → I will leave исправлена; смысловых расхождений с RU нет. Но принцип 2 («фразы, правильные в RU, остаются правильными») нарушен в двух местах: p1-c01-029 «Я же сказал» — правильно в RU, а оба варианта дают “I tell you already”; p1-c01-021 «На что ему ещё?» — правильное разговорное RU (в разборе RU оно в ломаные не записано), а в образцах “What for he need more?” / “Why he need more?”. Мелочь: лёгкий вариант 014 “Many people come to my shop today” — ошибка времени, которой нет в описании лёгкого варианта (только артикли, связка, базовые формы).",
+      "suggestion": "029: “I told you already — big important merchant. Persia he trade with, Russia also.” 021: “Captain T.? Him I know well. He have seven oriental robes already. What does he want more for?” (или “Why does he need more?”). 014, лёгкий: “Many people came to my shop today”."
+    },
+    {
+      "ref": "tendl (правило 1 / t17)",
+      "verdict": "partially",
+      "severity": "minor",
+      "detail": "Общий вопрос о принципе оформлен хорошо, но en.name = Tendl, а рекомендация записи — Tendle. Сама запись называет Tendl непроизносимым по-английски и отвергает его при рекомендованном варианте (в). Это расходится с правилом 1 resolution: «в en.name — ровно один вариант, равный рекомендации». Ссылка на §9.2 п.2 («первый вариант держится») не снимает противоречия: правило 1 само выведено из п.2. По DEC-028 Tendl тоже не вариант старого EN. Тот же Tendl распространяется на mister#title (Mr Tendl).",
+      "suggestion": "Либо en.name = Tendle (рекомендация; mister#title → Mr Tendle), либо записать в resolution явное исключение: рабочий вариант Tendl до решения владельца по общему вопросу t17, и в question прямо сказать, что рабочий вариант не совпадает с рекомендацией."
+    },
+    {
+      "ref": "katarina (правило 1 / правило 3)",
+      "verdict": "partially",
+      "severity": "minor",
+      "detail": "en.name = Katherine (старый EN, правило 3 соблюдено), но формулировка рекомендации в question — «склоняюсь к Caterina… допустимо оставить Katherine» — не совпадает с рабочим вариантом.",
+      "suggestion": "Переписать: «Рекомендация: рабочий вариант Katherine (§9.2 п.6, DEC-028 — прямого указания на звучание нет); Caterina — предложение владельцу по происхождению героини»."
+    },
+    {
+      "ref": "vladyka#master (после разделения t16)",
+      "verdict": "new-issue",
+      "severity": "minor",
+      "detail": "«Владыко» перенесено в vladyka#god, но осталось в ru_forms vladyka#master, а counts {p2: 1, p3: 365} по-прежнему включает эту молитву (p2) и 18 «Владык карм» с прописной, у которых теперь своя запись vladyki-karm. Одни и те же вхождения посчитаны в двух записях.",
+      "suggestion": "Убрать «Владыко» из ru_forms; counts → {p1: 0, p2: 0, p3: ≈347}, в counts_what указать, что «Владыки карм» вычтены."
+    },
+    {
+      "ref": "aleksandra (counts_what, distinguish)",
+      "verdict": "new-issue",
+      "severity": "minor",
+      "detail": "counts_what: «Александр*» 25, ещё 7 — о мужчине. По корпусу «Александр*» в ч. III — 53: о ней 19 (18 «сестр* Александр*» + «и Александре» в p3-c03), о мужчине ≈34 (p3-c12…c13), и ещё 2 в p3-c22 («друг Александр», «назвал Александром»). distinguish называет только p3-c12…c13.",
+      "suggestion": "Исправить счёт (53: 19 о ней, ≈34 о мужчине / мужчинах) и добавить p3-c22 в distinguish."
+    },
+    {
+      "ref": "tvorchestvo × trud",
+      "verdict": "new-issue",
+      "severity": "minor",
+      "detail": "creative work (tvorchestvo) и work (trud) сталкиваются в устойчивой паре RU «труд и творчество» (p1-c22-045, p2-c04-067, p3-c23-007): механически выйдет “work and creative work”. Кроме того, в note неточно, что creativity — «слово второй половины XX в.»: оно засвидетельствовано с 1870-х и распространилось в первой половине XX в. Сам довод об оттенке остаётся в силе.",
+      "suggestion": "Добавить в note критерий для пары: например “work and creation” / “labour and creative work” — по решению о labour (trud); поправить датировку creativity («широко распространилось в XX в., с психологическим и деловым оттенком»)."
+    },
+    {
+      "ref": "pomilui#interjection × poshchada",
+      "verdict": "new-issue",
+      "severity": "minor",
+      "detail": "question pomilui исключает have mercy, потому что «mercy занято „милосердием“», но note poshchada прямо разрешает mercy в устойчивых бытовых идиомах (no mercy, beg for mercy). Доводы противоречат друг другу; на рабочий вариант (have pity, старый EN) это не влияет.",
+      "suggestion": "В pomilui заменить довод: «рабочий вариант — старый (§9.2 п.6); have mercy — идиома, допустимая по критерию poshchada, решение владельца»."
+    },
+    {
+      "ref": "sanat-kumara (evidence p3-c30-022)",
+      "verdict": "new-issue",
+      "severity": "minor",
+      "detail": "en_legacy «with the whole Bright Brotherhood, with Her Master – Sanat Kumara» — пропуск без многоточия; в старом EN: «your cooperation with the whole Bright Brotherhood is taking place, with Her Master – Sanat Kumara».",
+      "suggestion": "Вставить «…» или полную фразу; можно отметить note, что Her Master — ошибка рода и титула в старом EN."
+    },
+    {
+      "ref": "formula#pozhatie (p3-c01-078)",
+      "verdict": "new-issue",
+      "severity": "minor",
+      "detail": "Рабочий вариант «Accept, my friend, a firm and vigorous handshake» добавляет «firm», которого в RU нет, и теряет «моей руки» («бодрое пожатие моей руки»). Альтернатива из note — «the vigorous clasp of my hand» — ближе к RU.",
+      "suggestion": "Рассмотреть «Accept, my friend, the vigorous clasp of my hand» как рабочий вариант, а firm and vigorous handshake перенести в note (то же в критерии bodrost)."
+    },
+    {
+      "ref": "svetloe-bratstvo (ru_forms)",
+      "verdict": "new-issue",
+      "severity": "minor",
+      "detail": "ru_forms по-прежнему включает «Светлые Братья / Светлых Братьев», хотя по новому note и по svetly они передаются как the Brothers of Light, а en.term записи — Bright Brotherhood. При автоматической подсказке по ru_forms «Светлые Братья» получат Bright Brotherhood.",
+      "suggestion": "Убрать эти формы из ru_forms svetloe-bratstvo (они относятся к svetly) или оставить с пометкой в note, что они идут через svetly."
+    },
+    {
+      "ref": "правило 1 — выборка",
+      "verdict": "ok",
+      "severity": "minor",
+      "detail": "Просмотрены en.term / en.name всех 212 + 57 записей (больше, чем выборка из 30): нет «(?)», «или» и альтернатив через « / », кроме пар форм. Расхождения рабочего варианта с рекомендацией — только tendl и katarina (см. выше).",
+      "suggestion": ""
+    },
+    {
+      "ref": "правило 3 — персонажи с question",
+      "verdict": "ok",
+      "severity": "minor",
+      "detail": "Все 27 персонажей с question проверены: где en.name отличается от старого EN (Lyovushka, the Florentine, Il., Mohammed, Mahmud, Jeanne, Brazzano, Khava, Uomi, Liza, Alice, Armando, Francis, Bronsky, Nikito, Igoro, Demetro, Tendl), основание из текста (происхождение или форма RU) приведено с ID. Где его нет, остаётся старый EN: Katherine, Obersvode, Saintger, Amedeo, Wodsword, Stroganoff, Eta; Alexandra (Sister/Nurse — только форма обращения).",
+      "suggestion": ""
+    },
+    {
+      "ref": "конфликты терминов",
+      "verdict": "ok",
+      "severity": "minor",
+      "detail": "calm — только spokoistvie; peace — mir#peace и формулы (в pokoy только идиомы, явно); tranquillity — только pokoy; mercy — miloserdie (+ бытовые идиомы пощады по критерию); clemency — только poshchada; pity — zhalost, pomilui (идиома); Master — vladyka#master, vladyki-karm (строчное master — слуга/барин и «владыка» сердца, по контексту); Lord — vladyka#god, bog, moy-bog, lord#title (разведено прописной и контекстом, как в RU); Light — svet#light-divine, svetly (of Light), formula#svet-i-mir. Противоречий question ↔ en.term, кроме tendl и katarina, не найдено.",
+      "suggestion": ""
+    }
+  ],
+  "ready_for_external": true,
+  "summary": "Все пункты resolution со статусом accept / accept-modified внесены. Все critical и major (новые записи mat-anna, svet#world, spokoistvie, pokoy, poshchada, zhalost, podvig, nastavnik, sotrudnik, sotrudnichestvo, dukh#beings, zemlya#earth, vladyka#ruler, vladyka#god, sanat-kumara, maha-chohan, kumary, mat#address, aleksandra; правила 1–3; языковые правки) выполнены. Значения подтверждаются текстом, first_seen — первые вхождения этих значений, частоты RU и старого EN совпадают с пересчётом (9 записей), EN-цитаты сверены глазами. Остались только minor-замечания: 3 partially (два места в образцах торговца, где сломаны правильные в RU фразы; рабочий вариант не совпадает с рекомендацией в tendl и katarina) и 7 new-issue (счёт и ru_forms vladyka#master после разделения; счёт aleksandra; пара «труд и творчество»; довод в pomilui; неточная EN-цитата sanat-kumara; «firm» в formula#pozhatie; «Светлые Братья» в ru_forms svetloe-bratstvo). По DEC-027 подтверждённые minor исправляются, но пакет можно отдавать внешним ревьюерам: ни одно из замечаний не меняет рабочих терминов ядра."
+}
