@@ -31,3 +31,24 @@ python3 -m venv .venv && .venv/bin/pip install -r tools/requirements.txt
 ```
 
 Отчёты каждого шага — в `translation/reports/`. Общий формат и проверка покрытия ID — `tools/pylib/bookfmt.py`.
+
+## Анализ старого перевода (этап 2)
+
+```bash
+.venv/bin/python -m tools.analysis.sample_metrics    # метрики разметки выборки
+.venv/bin/python -m tools.analysis.legacy_patterns   # закономерности по корпусу (сырые совпадения)
+```
+
+## Глоссарий (этап 3)
+
+```bash
+# Вспомогательный корпус RU ↔ старый EN, выровненный АВТОМАТИЧЕСКИ (не проверен; кэш .cache/corpus/, не коммитится)
+.venv/bin/python -m tools.glossary.corpus build
+.venv/bin/python -m tools.glossary.corpus find 'самооблад' --en 'self-(control|possession)'
+.venv/bin/python -m tools.glossary.corpus count 'самооблад'
+# Проверка translation/glossary.yml и translation/characters.yml (TRANSLATION-PROCESS §9)
+.venv/bin/python -m tools.glossary.check
+```
+
+Корпус нужен только для поиска доказательств (как термин передан в старом EN, где впервые встречается).
+Цитаты EN из него перед использованием сверяются глазами: автовыравнивание может сдвигаться на абзац.
