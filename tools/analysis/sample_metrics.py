@@ -1,0 +1,141 @@
+"""Метрики качества старого EN по размеченной выборке (этап 2).
+
+Вход: translation/calibration/cal-*.md (окна) + translation/analysis/legacy-en-sample-annotations.yml.
+Выход: translation/analysis/legacy-en-sample-metrics.md.
+Проверяет, что уровни правки заданы ровно для всех EN-блоков окон, а замечания ссылаются на абзацы окон.
+
+    python -m tools.analysis.sample_metrics
+"""
+from __future__ import annotations
+
+import re
+from collections import Counter, defaultdict
+
+import yaml
+
+from tools.pylib.bookfmt import ROOT, sha256_text, write
+
+CAL = ROOT / "translation/calibration"
+ANN = ROOT / "translation/analysis/legacy-en-sample-annotations.yml"
+OUT = ROOT / "translation/analysis/legacy-en-sample-metrics.md"
+SEVS = ("critical", "major", "minor")
+LEVELS = ("L0", "L1", "L2", "L3", "L4")
+
+
+def parse_window(path):
+    text = path.read_text(encoding="utf-8")
+    meta = yaml.safe_load(text.split("---\n")[1])
+    win = text.split("## Отрывок")[1].split("## Контекст после")[0]
+    ru, en = {}, {}
+    mode = None
+    for line in win.splitlines():
+        if line.startswith("RU:"):
+            mode = "ru"
+        elif line.startswith("EN"):
+            mode = "en"
+        m = re.match(r"^\{#([^}]+)\} ?(.*)$", line)
+        if m and mode:
+            ids = m.group(1).split()
+            if mode == "ru":
+                ru[ids[0]] = m.group(2)
+            else:
+                en[ids[0]] = m.group(2)
+        elif en and mode == "en" and line and not line.startswith(("---", "EN", "RU")):
+            last = list(en)[-1]
+            en[last] += "\n" + line  # многострочный блок (стихи)
+    return meta, ru, en
+
+
+def words(t: str) -> int:
+    return len(re.sub(r"::: verse|:::|\*", " ", t).split())
+
+
+def main() -> None:
+    ann = yaml.safe_load(ANN.read_text(encoding="utf-8"))
+    passages = []
+    all_ru, all_en = {}, {}
+    for p in sorted(CAL.glob("cal-*.md")):
+        meta, ru, en = parse_window(p)
+        passages.append((meta, ru, en))
+        all_ru.update({k: meta["id"] for k in ru})
+        all_en.update({k: meta["id"] for k in en})
+
+    errors = []
+    levels = ann["levels"]
+    for k in all_en:
+        if k not in levels:
+            errors.append(f"нет уровня правки для блока {k}")
+    for k, v in levels.items():
+        if k not in all_en:
+            errors.append(f"уровень для несуществующего блока {k}")
+        if v not in LEVELS:
+            errors.append(f"{k}: неизвестный уровень {v}")
+    for f in ann["findings"]:
+        base = f["id"].split(".")[0]
+        if base not in all_ru:
+            errors.append(f"замечание к абзацу вне окон: {f['id']}")
+        if f["cat"] != "source-divergence" and f.get("sev") not in SEVS:
+            errors.append(f"{f['id']}: нет серьёзности")
+    if errors:
+        raise SystemExit("разметка не согласована с выборкой:\n  " + "\n  ".join(errors))
+
+    by_pass = defaultdict(list)
+    for f in ann["findings"]:
+        by_pass[all_ru[f["id"].split(".")[0]]].append(f)
+
+    lines = ["# Метрики выборки старого EN (генерируется)", "",
+             "Файл создан `python -m tools.analysis.sample_metrics`; не править вручную.", "",
+             f"- Разметка: `translation/analysis/legacy-en-sample-annotations.yml` (sha256 текста `{sha256_text(ANN)}`)",
+             "- Ошибки считаются без категории `source-divergence` (вероятные расхождения редакций — не ошибки перевода).",
+             "- Плотность — на 1 000 слов **русского** оригинала окна.", "",
+             "## По отрывкам", "",
+             "| Отрывок | Жанр | Слов RU | Блоков EN | critical | major | minor | major+ на 1000 | всего на 1000 | расхождений редакций |",
+             "|---|---|---|---|---|---|---|---|---|---|"]
+    tot = Counter()
+    tot_words = 0
+    for meta, ru, en in passages:
+        fs = by_pass[meta["id"]]
+        errs = [f for f in fs if f["cat"] != "source-divergence"]
+        c = Counter(f["sev"] for f in errs)
+        w = sum(words(t) for t in ru.values())
+        div = sum(1 for f in fs if f["cat"] == "source-divergence")
+        tot.update(c)
+        tot["div"] += div
+        tot["blocks"] += len(en)
+        tot_words += w if meta["evaluate"] == "prose" else 0
+        lines.append(f"| {meta['id']} | {meta['genre'].split(' — ')[0][:40]} | {w} | {len(en)} | {c['critical']} | {c['major']} | "
+                     f"{c['minor']} | {1000 * (c['critical'] + c['major']) / w:.1f} | {1000 * sum(c.values()) / w:.1f} | {div} |")
+    prose = [(m, r, e) for m, r, e in passages if m["evaluate"] == "prose"]
+    pc = Counter(f["sev"] for m, _, _ in prose for f in by_pass[m["id"]] if f["cat"] != "source-divergence")
+    lines += ["", f"**Проза вместе** (без стихов): {tot_words} слов RU; critical {pc['critical']}, major {pc['major']}, minor {pc['minor']}; "
+              f"major+ — {1000 * (pc['critical'] + pc['major']) / tot_words:.1f} на 1000 слов, всего — {1000 * sum(pc.values()) / tot_words:.1f} на 1000 слов.", ""]
+
+    lines += ["## По категориям (все отрывки)", "", "| Категория | critical | major | minor | всего |", "|---|---|---|---|---|"]
+    cats = defaultdict(Counter)
+    for f in ann["findings"]:
+        if f["cat"] != "source-divergence":
+            cats[f["cat"]][f["sev"]] += 1
+    for cat, c in sorted(cats.items(), key=lambda x: -sum(x[1].values())):
+        lines.append(f"| {cat} | {c['critical']} | {c['major']} | {c['minor']} | {sum(c.values())} |")
+    ev = Counter(f.get("evidence", "?") for f in ann["findings"] if f["cat"] == "source-divergence")
+    lines += ["", f"Вероятные расхождения редакций (`source-divergence`): {sum(ev.values())} — "
+              f"с подтверждением поиском: {ev['search']}, по признакам: {ev['pattern']}.", ""]
+
+    lines += ["## Нужная глубина правки блоков", "",
+              "Уровни: L0 — оставить; L1 — точечно; L2 — построчная редактура; L3 — переписать фразы из-за смысловых ошибок; L4 — перевести заново.", "",
+              "| Отрывок | L0 | L1 | L2 | L3 | L4 | доля L2+ |", "|---|---|---|---|---|---|---|"]
+    allc = Counter()
+    for meta, ru, en in passages:
+        c = Counter(levels[k] for k in en)
+        allc.update(c)
+        lines.append(f"| {meta['id']} | " + " | ".join(str(c[l]) for l in LEVELS)
+                     + f" | {100 * (c['L2'] + c['L3'] + c['L4']) / len(en):.0f}% |")
+    n = sum(allc.values())
+    lines.append("| **всего** | " + " | ".join(str(allc[l]) for l in LEVELS)
+                 + f" | {100 * (allc['L2'] + allc['L3'] + allc['L4']) / n:.0f}% |")
+    write(OUT, "\n".join(lines) + "\n")
+    print("\n".join(lines[8:]))
+
+
+if __name__ == "__main__":
+    main()
