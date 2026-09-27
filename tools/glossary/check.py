@@ -64,8 +64,6 @@ def main() -> None:
                 if pair in pairs:
                     errors.append(f"{where}: дубль (ru, sense) {pair}")
                 pairs.add(pair)
-                if "#" in eid and not e.get("distinguish"):
-                    warnings.append(f"{where}: значение многозначного слова без distinguish")
             if e.get("tier") not in TIERS:
                 errors.append(f"{where}: уровень {e.get('tier')!r}")
             check_ref(f"{where} first_seen", e.get("first_seen"), errors)
@@ -73,6 +71,15 @@ def main() -> None:
                 check_ref(f"{where} evidence", ev.get("id"), errors)
             if not e.get("evidence"):
                 warnings.append(f"{where}: нет evidence")
+        if kind == "glossary":  # у слова несколько записей-значений → каждая должна объяснять различие
+            groups: dict[str, list] = {}
+            for e in entries:
+                groups.setdefault(e.get("id", "").split("#")[0], []).append(e)
+            for base, es in groups.items():
+                if len(es) > 1 and base not in ("formula", "rule"):
+                    for e in es:
+                        if not e.get("distinguish"):
+                            warnings.append(f"{path.name}:{e.get('id')}: значение многозначного слова без distinguish")
             for lang in ("en", "pl"):
                 if lang in e:
                     check_lang(f"{where}.{lang}", e.get("tier"), e[lang], name_key, errors)

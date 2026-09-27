@@ -6,7 +6,7 @@ RU-ID совпадают с теми, что даст извлечение эт�
 без диагностики слитного текста (DEC-020): ≈1% слов слиплось, для поиска терминов это допустимо.
 
     python -m tools.glossary.corpus build                 # один раз, ~несколько минут
-    python -m tools.glossary.corpus find 'самооблад' [--en 'self-(control|possession)'] [--limit 20]
+    python -m tools.glossary.corpus find 'самооблад' [--en 'self-(control|possession)'] [--limit 20] [--case]
     python -m tools.glossary.corpus count 'самооблад'      # вхождения по частям + первое ID
 """
 from __future__ import annotations
@@ -75,8 +75,9 @@ def links():
             yield d["chapter"], l
 
 
-def find(rx_ru: str, rx_en: str | None, limit: int, width: int) -> None:
-    r, e = re.compile(rx_ru, re.I), re.compile(rx_en, re.I) if rx_en else None
+def find(rx_ru: str, rx_en: str | None, limit: int, width: int, case: bool = False) -> None:
+    fl = 0 if case else re.I
+    r, e = re.compile(rx_ru, fl), re.compile(rx_en, fl) if rx_en else None
     n = 0
     for cid, l in links():
         m = r.search(l["ru"])
@@ -115,13 +116,14 @@ def main() -> None:
     f.add_argument("--en")
     f.add_argument("--limit", type=int, default=15)
     f.add_argument("--width", type=int, default=80)
+    f.add_argument("--case", action="store_true", help="учитывать регистр (для понятий с прописной)")
     c = sp.add_parser("count")
     c.add_argument("ru")
     a = ap.parse_args()
     if a.cmd == "build":
         build()
     elif a.cmd == "find":
-        find(a.ru, a.en, a.limit, a.width)
+        find(a.ru, a.en, a.limit, a.width, a.case)
     else:
         count(a.ru)
 
