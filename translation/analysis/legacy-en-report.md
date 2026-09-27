@@ -15,15 +15,15 @@
 
 1. **Старый перевод годится как основа (DEC-003 подтверждается), но нужна построчная редактура почти каждого абзаца,
    а поучения Учителей — с переписыванием фраз.** В прозаической выборке (3 037 слов RU) найдено **2 критические,
-   25 серьёзных и 87 мелких** ошибок: **8,9 критических и серьёзных и 37,5 всего на 1 000 слов оригинала**. Правки требуют
-   **64 из 69** прозаических блоков; построчная редактура или глубже (L2+) — **61%**, переписывание фраз (L3) — **25%**.
+   25 серьёзных и 89 мелких** ошибок: **8,9 критических и серьёзных и 38,2 всего на 1 000 слов оригинала**. Правки требуют
+   **65 из 69** прозаических блоков; построчная редактура или глубже (L2+) — **62%**, переписывание фраз (L3) — **26%**.
 2. **Главный смысловой риск — поучения Учителей.** Обе критические ошибки и половина серьёзных — в письме Али (p3-c01):
    19,8 критических и серьёзных на 1 000 слов против 2,8–8,0 в остальной прозе. Среди них «закаляются сердца» →
    *become hardened* (ожесточаются), «видеть в них каплю огня Вечности» → её видят сами люди, «мир» → *calm* (5 раз).
 3. **В повествовании и диалоге смысл в основном передан**, образы и порядок изложения сохранены; ошибки там — это
    грамматика, кальки и неточные слова. Серьёзных ошибок меньше (2,8 на 1 000 слов в повествовании, 4,9 в диалоге,
    8,0 в драматической сцене).
-4. **Большинство мест, где в EN есть текст, которого нет в нашей RU, — вставки самого переводчика**, а не другая редакция.
+4. **Места, где в EN есть текст, которого нет в нашей RU, по нашей проверке вероятнее вставки самого переводчика**, чем другая редакция.
    Гипотеза о переводе с другой русской редакции **ослабла**: косвенно подтверждено одно место (p1-c01-056), одно — очень
    слабо (p2-c01-259.2). Вопрос о канонической редакции (D14) остаётся, но не срочный (§3).
 5. **Стихи переведены подстрочником** — переводить заново (L4).
@@ -106,7 +106,7 @@
 - Для семи находок `edition_candidate` метрики даны в двух вариантах; на выводы разница не влияет
   (8,9 против 8,6 критических и серьёзных на 1 000 слов).
 - **D14** (каноническая редакция частей I–III) остаётся открытым, но срочность ниже. Вопрос пересекается с **D7**
-  (источник и редакция части IV): при покупке части IV имеет смысл сразу взять и полную редакцию частей I–III,
+  (источник и редакция части IV): при покупке части IV имеет смысл сразу взять и другую редакцию частей I–III,
   чтобы сверить p1-c01-056 и p2-c01-259.2. До решения эти два места при редактуре не удалять, а помечать.
 - В p1-c12-042 (в нашей RU волна «прошла стороной», в EN — накрыла людей) почти наверняка неверное понимание, но
   формально оно тоже зависит от D14.
@@ -119,16 +119,17 @@
 
 | Отрывок | critical | major | minor | critical+major на 1000 (A / B) | всего на 1000 (A) | блоков L2+ | блоков L3+ |
 |---|---|---|---|---|---|---|---|
-| повествование (p1-c01) | 0 | 2 | 25 | 2,8 / 2,8 | 37,9 | 8 из 14 | 1 |
+| повествование (p1-c01) | 0 | 2 | 26 | 2,8 / 2,8 | 39,3 | 8 из 14 | 1 |
 | драма (p1-c12) | 0 | 6 | 24 | 8,0 / 6,6 | 39,9 | 12 из 16 | 4 |
-| диалог (p2-c01) | 0 | 4 | 20 | 4,9 / 4,9 | 29,4 | 8 из 21 | 3 |
+| диалог (p2-c01) | 0 | 4 | 21 | 4,9 / 4,9 | 30,6 | 9 из 21 | 4 |
 | письмо Учителя (p3-c01) | **2** | **13** | 18 | **19,8 / 19,8** | 43,7 | 14 из 18 | **9** |
-| **проза вместе** | **2** | **25** | **87** | **8,9 / 8,6** | **37,5** | **42 из 69 (61%)** | **17 (25%)** |
+| **проза вместе** | **2** | **25** | **89** | **8,9 / 8,6** | **38,2** | **43 из 69 (62%)** | **18 (26%)** |
 | стихи (p1-c20) | 0 | 3 | 4 | — | — | — | L4 |
 
-По категориям (вариант A, все отрывки): смысловые неточности — 33 (2 critical, 15 major), беглость и естественность — 30
-(1 major), грамматика — 18 (4 major), добавления — 10, терминология — 9 (7 major), пропуски — 8, типографика — 7, имена — 4.
-Уровни блоков (вся выборка): L0 — 6, L1 — 23, L2 — 26, L3 — 17, L4 — 1 (из 73).
+По категориям (вариант A, все отрывки): смысловые неточности — 33 (2 critical, 15 major), беглость и естественность — 29,
+грамматика — 20 (5 major), добавления — 10, терминология — 9 (7 major), пропуски — 9, типографика — 7, имена — 4, регистр — 1,
+стиль (стихи) — 1 (major). Точные числа — в `legacy-en-sample-metrics.md`.
+Уровни блоков (вся выборка): L0 — 5, L1 — 23, L2 — 25, L3 — 19, L4 — 1 (из 73).
 
 ### 4.2. Что показывает выборка (ошибочно → как правильно)
 
@@ -150,25 +151,34 @@
   of I., who turned the wheel*.
 - Подмена роли: «посаженная мать» → *matron of honour* (замужняя подружка невесты) → *will stand in for the bride’s mother*
   (p2-c01-256).
-- Обратная связка или коннотация: «потому что» → *although* (p2-c01-271); «поддерживаемый И.» → *although I. was holding me*
-  (p1-c20-215); «покоряла каждого» → *used to enslave everybody* → *won everyone over* (p2-c01-261).
+- Обратная связка или коннотация: «потому что» → *although* → *because we are all very close* (p2-c01-271);
+  «поддерживаемый И.» → *although I. was holding me* → *supported by I., I could barely rise* (p1-c20-215);
+  «покоряла каждого» → *used to enslave everybody* → *won everyone over* (p2-c01-261).
 - Сквозные понятия: «совершенствование» → *development* → *self-perfection* (p3-c01-067); «воля к добру» → *will for
   kindness* → *will to good* (p3-c01-074).
 
-**Серьёзные грамматические ошибки** (фраза не собрана, 4 major + 1 fluency major), примеры:
-*The first a simple cart was rolling* → *First came a simple cart* (p1-c01-046);
-*Those who are unable to live like this every day, the knowledge is out of reach for them* → *Knowledge is closed to those
-who cannot live their day like this* (p3-c01-071); p1-c12-048, p1-c12-051.2, p1-c01-052.2.
+**Серьёзные грамматические ошибки** (фраза не собрана, 5 major):
+- *The first a simple cart was rolling* → *First came a simple cart* (p1-c01-046);
+- *Those who are unable to live like this every day, the knowledge is out of reach for them* → *Knowledge is closed to those
+  who cannot live their day like this* (p3-c01-071);
+- *As though he had put his hand on I.’s hands, and that everybody … was obeying to I.’s commands* → *His hands seemed to rest on
+  I.’s hands. And the captain himself seemed to give his orders as if I. were dictating them* (p1-c12-048);
+- *I understood that like his indulgence to my childish incomprehension of the menacing death* → *an indulgent gesture towards me,
+  a boy who did not understand death* (p1-c12-051.2);
+- *I had seen a lot of women – both on the stage and other recognized beauties, - but only now for the first time I understood what
+  was beauty* → *I had seen acknowledged beauties, on the stage and in life, but only now did I understand what a woman’s beauty truly
+  was* (p1-c01-052.2).
 
-**Мелкие ошибки есть почти в каждом блоке** (87 на 69 блоков прозы), например:
+**Мелкие ошибки есть почти в каждом блоке** (89 на 69 блоков прозы), например:
 *came in by greeting* → *came in, greeting* (p2-c01-255); *everything what* → *everything that* (p2-c01-260, p3-c01-079);
 *a strange metal voice* → *an unfamiliar metallic voice* (p1-c01-058); *with its spike* / *front* → *bow* (p1-c12-053, 054);
 *keen brother’s ear* → *my brother’s keen ear* (p1-c01-041); *how it is beautiful* → *how beautiful … are* (p2-c01-253);
 опечатки *kelp* → *kept* (p1-c01-057), *is head* → *his head* (p1-c12-053).
 
-**Пропуски** — 8, все мелкие, но их нужно восстанавливать: «вдали» (p1-c01-041), «чёрной сеткой» (050), «втроём»
-(p1-c12-043), «похоронить в пропасти» (052), «выше» (p3-c01-071), имя «Али» (083), «необычно бледен» (p1-c20-215);
-также авторское «Казалось» (p1-c01-061).
+**Пропуски** — 9, все мелкие, но их нужно восстанавливать: «вдали» (p1-c01-041), «чёрной сеткой» (050), «втроём»
+(p1-c12-043), «похоронить в пропасти» (052), «неожиданных» (p2-c01-255), «что выходит из нашего дома» (p2-c01-269), «выше»
+(p3-c01-071), имя «Али» (083), «необычно бледен» (p1-c20-215). Кроме того, авторские смягчения опущены внутри других находок:
+«Казалось» (p1-c01-061), «показалось» → уверенное «успел увидеть» (p1-c01-051).
 
 **Добавления переводчика** — 10, все мелкие: *There were three of them already* (p1-c01-045), *fighting against the menacing
 death* (p1-c12-048), *the mirage of my love to him* (p1-c12-055), *to both men* (p2-c01-264), *of our forefathers* (p2-c01-267)
@@ -201,7 +211,7 @@ p1-c01-014; «большая важная купец», 029) передана п
 | глагол речи/действия + *by* -ing | 64 | 102 | 140 | — | **систематическая калька** деепричастия | *came in, greeting* |
 | глагол речи *uttered* | 66 | 134 | 247 | — | штамп, растёт от тома к тому | *said*, *replied* и т. п. |
 | *be going to* | 84 | 87 | 87 | — | часто; в поучениях снижает регистр (выборка p3-c01-068) | *will* |
-| матрос-верзила → *clumsy sailor* | 77 | — | — | 47 / 0 / 0 | систематический сдвиг смысла | *lanky / hulking sailor* |
+| матрос-верзила → *clumsy sailor* | 77 | 0 | 0 | 47 / 0 / 0 | систематический сдвиг смысла | *lanky / hulking sailor* |
 | орфография: colour / honour / grey / theatre; recognize, realize | 64 / 54 / 43 / 8; 66 | 51 / 68 / 29 / 12; 57 | 145 / 71 / 62 / 28; 124 | — | **британская с оксфордским -ize во всех томах**: американских вариантов 0, *-ise* — 1 | сохранить |
 
 **Не подтвердилось как закономерность корпуса** (в выборке есть, по корпусу единичные случаи): глагол речи + продолжение
@@ -222,10 +232,10 @@ p1-c01-014; «большая важная купец», 029) передана п
 
 **Редактировать, а не переводить заново:**
 - смысл повествования и диалогов в основном передан, образы и порядок изложения сохранены;
-- 27 из 69 прозаических блоков нуждаются лишь в точечных правках или вовсе не нуждаются (L0–L1);
+- 26 из 69 прозаических блоков нуждаются лишь в точечных правках или вовсе не нуждаются (L0–L1);
 - новый перевод потерял бы то, что в старом тексте работает (§6.2), и стоил бы кратно дороже.
 
-Но «корректуры» недостаточно: 61% прозаических блоков требуют работы внутри каждой фразы (L2+), 25% — переписывания фраз
+Но «корректуры» недостаточно: 62% прозаических блоков требуют работы внутри каждой фразы (L2+), 26% — переписывания фраз
 со смысловыми ошибками (L3).
 
 **По жанрам:**
@@ -246,9 +256,9 @@ p1-c01-014; «большая важная купец», 029) передана п
   *The thunder was heard, as though the cannons had fired; the ship trembled, its spike rose upward as on the swing* (p1-c12-054)
   → образ пушек и качелей оставить, «spike» → *bow*;
   *Knowledge – that’s the engine of life, while joy – that’s the lubricant for it* (p3-c01-076) → афористичную структуру
-  оставить.
-- **Удачные места, которые можно оставлять почти как есть:**
-  *“Look intently, but keep silent and don’t move, so that we wouldn’t be noticed,” my brother whispered to me.* (p1-c01-049, L0);
+  оставить, формулировку упростить: *Knowledge is the engine of life, and joy is its oil.*
+- **Удачные места, которые можно оставлять как есть:**
+  *All of a sudden, Ananda whispered something to Anna and began to sing in Russian:* (p1-c20-212, L0);
   *“My father was right when he told us that Sandra couldn’t find any words to describe you.”* (p2-c01-262, L0);
   *“I don’t know to whom your words are a compliment, but both of us say thank you for them,” Florentian answered her, while
   everybody was laughing.* (p2-c01-266, L0).
@@ -293,6 +303,14 @@ p1-c01-014; «большая важная купец», 029) передана п
 - **Редактировать внутри фразы:** чинить грамматику и слова, сохраняя порядок мыслей, образы и ритм абзаца.
 - **Рассказчик** (части I и III — первое лицо, пожилой человек вспоминает юность): связный, эмоциональный, слегка
   старомодный британский английский. Избегать и калек, и современной «гладкости».
+- **Как отличить «старомодно» от кальки:** старомодное — грамматически правильное и встречающееся в английской прозе
+  начала XX века (*I should have thought*, *as if cannons had fired*, *she laughed it off*) — сохраняем. Калька —
+  конструкция, которой нет в английском или которая звучит как ошибка (*everything what*, *came in by greeting*,
+  *According to me*, *a going*) — правим. Сомнение → ревьюеру-носителю.
+- **Диалоги:** реплика — отдельный абзац; ремарки простые (*said*, *asked*, *replied*); разговорные сокращения (*don’t*,
+  *it’s*) — в живой речи да, в речи Учителей нет.
+- **Реалии** (халат, чалма, посаженная мать, верзила): точный английский эквивалент, если он есть (*stand in for the bride’s
+  mother*); иначе — устоявшееся заимствование или короткое описание; единообразно по глоссарию.
 - **Повествование от третьего лица** (часть II): нейтральнее, но с той же лексикой эпохи.
 - **Персонажи:** речевые характеристики передавать, а не выравнивать. Ломаная речь торговца (p1-c01-014, 029) — вопрос
   владельцу: восстановить умеренную стилизацию или оставить нейтральную речь.
@@ -301,11 +319,10 @@ p1-c01-014; «большая важная купец», 029) передана п
 
 ### 6.6. Образцы правки (иллюстрация, не окончательный текст)
 
-**L1 — p2-c01-255.** Было: *The door of the adjacent room opened, and the pastor came in by greeting his guests and thanking
-them for the honour given to him with this visit.*
-Стало: *The door of the next room opened, and the pastor came in, greeting his unexpected guests and thanking them for the
-honour they had done his house.*
-Исправлено: калька *by greeting*; восстановлены «неожиданных» и «оказанную его дому». Структура фразы та же.
+**L1 — p1-c12-050.** Было: *I don’t know what happened to me, perhaps the swallowed pill encouraged me, but I cried into the very
+ear of the captain.*
+Стало: *I don’t know what happened to me — perhaps the pill had roused me — but I shouted right into the captain’s ear:*
+Исправлено: пунктуация перед репликой, одно слово и порядок слов. Остальное оставлено.
 
 **L2 — p1-c12-054.** Было: *If this mountain had hit the ship’s side, then it would have capsized inevitably. Thanks to the swift
 manoeuvre, the steamer pierced through the gigantic mass of the water with its spike, and the whole weight of the water fell on
@@ -314,8 +331,8 @@ in a moment we were sailing in the foam of the roaring sea again, where the wave
 but they didn’t menace to crash us anymore.*
 Стало: *Had that whole mass struck us broadside, the ship would inevitably have capsized. Thanks to the deft manoeuvre, the steamer
 cut through the belly of the water-mountain, and its whole weight crashed down on her stern. There was a roar as if cannons had
-fired; the ship shuddered, her bow reared up as on a swing, but a moment later we were again running through the foam of the
-seething sea. The waves were still terrible and swept the deck, but they no longer threatened to smash us to pieces.*
+been fired; the ship shuddered, her bow reared up as on a swing, but a moment later we were again ploughing through the foam of
+the seething sea. The waves were still terrible and swept the deck, but they no longer threatened to smash us to pieces.*
 Сохранено: порядок событий, пушки и качели. Исправлено: *spike* → *bow*, *menace to crash*, восстановлено «брюхо водяной горы»,
 разбита слишком длинная фраза.
 
@@ -328,15 +345,16 @@ daily, habitual engine of your life, you will be able to begin and end every mee
 
 ### 6.7. Ориентиры для пилота
 
-- Доля изменённых блоков — порядка выборки (**≈90%**; в выборке правки нужны 64 из 69 прозаических блоков).
-- Доля блоков L3–L4 — **≈25%** в повествовании и выше в поучениях; сильное отклонение разбирать.
+- Доля изменённых блоков — порядка выборки (**≈90–95%**; в выборке правки нужны 65 из 69 прозаических блоков).
+- Доля блоков L3–L4 — **≈26% по прозе в целом**: в выборке в повествовании 1 из 14, в драме 4 из 16, в диалоге 4 из 21,
+  в поучении 9 из 18. Сильное отклонение разбирать.
 - Цель после редактуры и ревью главы — **0 critical и не больше 1 major на 1 000 слов RU** (сейчас в выборке 8,9).
 
 ## 7. Открытые вопросы владельцу
 
 | # | Вопрос | Рекомендация |
 |---|---|---|
-| D14 | Каноническая русская редакция частей I–III (§3); связан с D7 (часть IV) | при покупке части IV взять и полную редакцию, сверить p1-c01-056 и p2-c01-259.2; до решения эти места не удалять |
+| D14 | Каноническая русская редакция частей I–III (§3); связан с D7 (часть IV) | при покупке части IV взять и другое издание частей I–III, сверить p1-c01-056 и p2-c01-259.2; до решения эти места не удалять |
 | D4 | Имена и формы: Левушка (*Lovushka* / *Lyovushka* / *Levushka*), «И.», *Joan* / *Jeanne*, *Alyssa* / *Alice*, *Florentian* / *the Florentine*, *Vomi*, *Wodsword* | решить на этапе 3 (ядро глоссария) |
 | — | Окончательно утвердить британскую орфографию с оксфордским -ize (DEC-004) | утвердить |
 | — | Речевые характеристики персонажей (ломаная речь торговца и т. п.) | восстанавливать умеренно, без карикатуры |

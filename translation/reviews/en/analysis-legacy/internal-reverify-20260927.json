@@ -1,0 +1,295 @@
+{
+  "unit": "analysis-legacy",
+  "lang": "en",
+  "reviewer": "claude-internal-reverify",
+  "level": "internal",
+  "pass": "re-verification",
+  "items": [
+    {
+      "ref": "accuracy: p2-c01-254 category-wrong",
+      "status": "implemented",
+      "detail": "Разметка: {cat: mistranslation, sev: major}, note: «три сдвига: «судишь» → «make your decision»; «научишься различать» → «take a look … in such a way»; «язвы разложения» → «wounds of break-up»». Блок L3.",
+      "suggestion": ""
+    },
+    {
+      "ref": "accuracy: p3-c01-071 severity-too-low",
+      "status": "implemented",
+      "detail": "sev: critical, note «центральная мысль отрывка: в RU «ты» видишь … в EN её видят сами люди»; анаколуф — отдельная grammar/major. Отражено в §1 п.2 и §4.2 отчёта.",
+      "suggestion": ""
+    },
+    {
+      "ref": "accuracy: p1-c12-040 divergence-doubtful",
+      "status": "implemented",
+      "detail": "addition/minor «I even had to close my eyes» (экспликация) + mistranslation/minor «I didn’t even notice how» с fix «Before I could collect myself…». Отчёт §3: «экспликация переводчика».",
+      "suggestion": ""
+    },
+    {
+      "ref": "accuracy: p1-c12-042 divergence-doubtful",
+      "status": "implemented",
+      "detail": "Разделено: mistranslation/major edition_candidate (волна; fix «…and a monstrous wave swept past us») и addition/minor edition_candidate («I. with all his strength was dragging my body»); блок L3; в §3 отдельный пункт о зависимости от D14.",
+      "suggestion": ""
+    },
+    {
+      "ref": "accuracy: p1-c12-045 divergence-doubtful",
+      "status": "implemented",
+      "detail": "mistranslation/minor, edition_candidate: true, note «рубка → угол; «blowing into my legs» — пересказ».",
+      "suggestion": ""
+    },
+    {
+      "ref": "accuracy: p1-c12-046 divergence-doubtful",
+      "status": "implemented",
+      "detail": "mistranslation/minor, note «пилюли из «зелёной коробочки Флорентийца» (044), не из «my first-aid kit»»; §3: «ошибка переводчика».",
+      "suggestion": ""
+    },
+    {
+      "ref": "accuracy: p1-c12-048 divergence-doubtful",
+      "status": "implemented",
+      "detail": "addition/minor «…was fighting against the menacing death», note «штамп переводчика («menacing death» добавлен и в 051.2)».",
+      "suggestion": ""
+    },
+    {
+      "ref": "accuracy: p2-c01-261 divergence-doubtful",
+      "status": "implemented",
+      "detail": "addition/minor edition_candidate сужена до «it clearly disobeyed the comb … having clapped her hands like a child»; остальное — три mistranslation (enslave/major, остов/minor, чужих/minor).",
+      "suggestion": ""
+    },
+    {
+      "ref": "accuracy: p1-c01-055 category-wrong",
+      "status": "implemented",
+      "detail": "ID исправлен на p1-c01-055.2 (в cal-1 есть EN-блок {#p1-c01-055.2} с цитатой «having forgotten where we were…»); fluency/minor; блок L2.",
+      "suggestion": ""
+    },
+    {
+      "ref": "accuracy: p1-c12-045 severity-too-low",
+      "status": "implemented",
+      "detail": "Вторая находка — mistranslation/major, note ««точно увидел» → «even saw» (видение стало фактом); «спал» → «was lying»; логика … перевёрнута»; блок L3. Использовано и в §6.3 п.2 как пример снятого авторского смягчения.",
+      "suggestion": ""
+    },
+    {
+      "ref": "accuracy: p1-c12-052 severity-too-low",
+      "status": "implemented",
+      "detail": "mistranslation/major «hollowed out walls…» (fix «Now and then towering green walls of water…bury us in the abyss») + omission/minor «и похоронить в пропасти … в который уже раз»; блок {052 053} L3.",
+      "suggestion": ""
+    },
+    {
+      "ref": "accuracy: p3-c01-080 severity-too-low",
+      "status": "implemented",
+      "detail": "Все пять «мир → calm» — terminology/major: 075, 078, 079, 080, 083; в 078 и 079 «начать и кончить» и «мир» — отдельные находки. Шапка: «Каждое вхождение сквозной ошибки … считается отдельно, с одной и той же серьёзностью».",
+      "suggestion": ""
+    },
+    {
+      "ref": "accuracy: missed p1-c12-053",
+      "status": "implemented",
+      "detail": "Добавлено mistranslation/major: «по EN штурвал поворачивает видение, а не И.»; fix «…the tall white figure of the Florentine touching the hands of I., who turned the wheel just as the captain wanted». Есть в §4.2.",
+      "suggestion": ""
+    },
+    {
+      "ref": "accuracy: missed p3-c01-068",
+      "status": "implemented",
+      "detail": "Добавлено mistranslation/major «You are going to control your inner and your outer powers» → «You will command the forces within you and without»; блок L3.",
+      "suggestion": ""
+    },
+    {
+      "ref": "accuracy: missed p3-c01-074 (+073)",
+      "status": "implemented",
+      "detail": "terminology/major «will for kindness» → «will to good», note включает ««тяжелым» опущено»; 073 переведено в mistranslation/minor («сдвиг субъекта»); блок {073 074} L3.",
+      "suggestion": ""
+    },
+    {
+      "ref": "accuracy: missed p2-c01-261 (enslave)",
+      "status": "implemented",
+      "detail": "mistranslation/major «Alyssa’s kindness used to enslave everybody» → fix «…won everyone over», note «обратная коннотация»; блок L3.",
+      "suggestion": ""
+    },
+    {
+      "ref": "accuracy: levels p1-c12-052, 045, 042; p3-c01-068, 073, 082",
+      "status": "implemented",
+      "detail": "В levels все шесть — L3.",
+      "suggestion": ""
+    },
+    {
+      "ref": "accuracy overall: неровный порог грамматики (accept-modified)",
+      "status": "partially",
+      "detail": "041 и p2-c01-253 понижены до minor (note «локальный порядок слов»), 043/047 — minor. Но по новому правилу («major — только несобранная фраза; порядок в словосочетании, предлог — minor») остаются пограничными: p1-c12-051.2 «I understood that like his indulgence to my childish incomprehension…» — фраза собрана (подлежащее+сказуемое), ошибки локальные (like→as, to→towards) + добавление «menacing»; p1-c01-052.2 «…only now for the first time I understood what was beauty» — тоже читаемая фраза с локальным порядком слов, при этом категория fluency, а note — «фраза не собрана» (признак grammar).",
+      "suggestion": "Либо понизить 051.2 и 052.2 до minor (проза: 25 → 23 major, пересчитать §1/§4.1), либо дописать в note, почему читатель «спотыкается» именно здесь; для 052.2 сменить категорию на grammar, если основание — несобранная фраза."
+    },
+    {
+      "ref": "accuracy overall: «≈5 major — нижняя граница»",
+      "status": "implemented",
+      "detail": "Метрики: проза A — critical 2, major 25, 8.9 на 1000; B — 8.6. Отчёт §1, §3, §4.1 используют эти числа.",
+      "suggestion": ""
+    },
+    {
+      "ref": "accuracy overall: cal-1 и cal-3 перепроверены частично (accept-modified)",
+      "status": "implemented",
+      "detail": "p2-c01-256 и p2-c01-271 — mistranslation/major; добавлены находки p2-c01-268 (grammar), p2-c01-270 (fluency), p1-c20-215.2 (typography); у p1-c01-043 находки addition «behind the tree» нет, в §4.2/§6.4 — «безвредное пояснение». Уровень 271 при этом не пересмотрен — см. отдельный new-issue.",
+      "suggestion": ""
+    },
+    {
+      "ref": "decision: p1-c20-213 не critical (reject)",
+      "status": "implemented",
+      "detail": "Согласуется со шкалой в шапке: major прямо включает «в стихах — потеря строки смысла или рифмы и размера», а critical требует, чтобы «смысл ключевого утверждения (поучение, важная сюжетная деталь) стал ложным или противоположным». «Избранник я счастливой доли» → «My destiny is going like this:» — строка утрачена, ложного утверждения нет; песня не поучение и не сюжетная деталь; блок и так L4, на решение не влияет.",
+      "suggestion": ""
+    },
+    {
+      "ref": "report #1 (critical): p1-c12-055 «мираж моей любви»",
+      "status": "implemented",
+      "detail": "Разметка: addition/minor, note ««мираж моей любви» есть в НАШЕЙ редакции, но в гл. 13 … не расхождение редакций»; §3 таблица «добавление переводчика»; §1 п.4 «косвенно подтверждено одно место (p1-c01-056), одно — очень слабо (p2-c01-259.2)»; правило в §2 «Прежде чем считать текст «другой редакцией», фраза ищется по полному тексту всех трёх наших частей».",
+      "suggestion": ""
+    },
+    {
+      "ref": "report #2: единый критерий source-divergence",
+      "status": "implemented",
+      "detail": "Шапка разметки: source-divergence только при «ВНЕШНЕМ признаке … (поиск по точной фразе)»; p1-c01-045, 050 и p1-c12-041/042/045, p2-c01-261 — edition_candidate; метрики A/B (8,9 / 8,6); first-aid kit — mistranslation. См. также new-issue о формулировке §1 п.4.",
+      "suggestion": ""
+    },
+    {
+      "ref": "report #3: итог §1 сильнее данных, «более полной»",
+      "status": "partially",
+      "detail": "§1 п.4 и §3 переписаны («Гипотеза … ослабла»), «более полной» и «лишний объём» из текста убраны. Но осталась «полная редакция»: §3 «имеет смысл сразу взять и полную редакцию частей I–III», §7 D14 «при покупке части IV взять и полную редакцию», то же в docs/PLAN.md (строка D14). «Полная» снова предполагает, что другая редакция длиннее, — ровно то, что ревьюер просил убрать.",
+      "suggestion": "Заменить на «взять издание, где есть фраза из p1-c01-056 (сначала проверить по превью)» или «другую редакцию» — в §3, §7 и в PLAN.md D14."
+    },
+    {
+      "ref": "report #4: «нет critical» vs определение (accept-modified)",
+      "status": "implemented",
+      "detail": "Шкала записана в шапке разметки и в §2 отчёта; critical — p3-c01-071 и p3-c01-075 (§4.2, fix «…are tempered»); фраза «нет критических ошибок» из §1 удалена. Оставление «Accept my regards and calm» и «begin and start» в major согласуется со шкалой: major включает «подмена понятия или сквозного термина» и «обратная связка», а critical — только ложное/противоположное ключевое утверждение; в 078/079 «begin and start» даёт тавтологию, а не ложное утверждение (ядро «встречать в радости» сохранено), в 083 — подмена понятия «мир» при сохранённой формуле приветствия. Разграничение с 075 («закаляются» → «ожесточаются» — утверждение об Общине стало противоположным) внятное.",
+      "suggestion": "Записать это обоснование в note находок p3-c01-078/079/083 (сейчас там только ««кончить» → «start»», «формула благословения»), чтобы внешний ревьюер видел, почему не critical."
+    },
+    {
+      "ref": "report #5: Levushka → Lyovushka",
+      "status": "implemented",
+      "detail": "§1 п.6 «(*Lovushka* 212 и *Lyovushka* 125)», §5 две строки (Lovushka 284/31/212; Lyovushka 0/0/125), в corpus-patterns отдельный шаблон Levushka = 0/0/0. В §7 D4 *Levushka* оставлена как вариант выбора — это корректно.",
+      "suggestion": ""
+    },
+    {
+      "ref": "report #6: шаблон «реплика без запятой»",
+      "status": "implemented",
+      "detail": "Шаблон сужен до «глагол речи (+наречие) + “строчная»; 2 / 4 / 1; в §5 перенесено в «Не подтвердилось как закономерность корпуса». Замечание: пример Vol2 «uttered “father” to him» — всё ещё ложное срабатывание, а шаблон не ловит «said to him “…» и т. п., т. е. это нижняя оценка узкого шаблона.",
+      "suggestion": "Необязательно: в §5 написать «узкий шаблон даёт единичные случаи», а не «по корпусу единичные случаи»."
+    },
+    {
+      "ref": "report #7: «систематические» для выборочных; орфография не в корпусе",
+      "status": "implemented",
+      "detail": "§6.3 п.5: «по корпусу систематические — everything what …; «глагол + by -ing» … По выборке (частоту проверять при редактуре): прогрессив …, strange …»; орфография — отдельный раздел corpus-patterns и строка §5 (colour 64/51/145 и т. д.). Мелочь: в «по выборке» попал и *uttered*, хотя он измерен корпусом (66/134/247).",
+      "suggestion": "Перенести *uttered* в корпусную часть п.5 («штамп, растёт от тома к тому»)."
+    },
+    {
+      "ref": "report #8: голос без цитат и без образцов правки",
+      "status": "partially",
+      "detail": "Добавлены цитаты старого EN в §6.2 (p1-c01-049, p2-c01-262, 266, 059), §6.6 «Образцы правки» L1–L3, голос по частям в §6.5 (I и III — 1-е лицо, II — 3-е). Не сделано предложенное правило-различитель «старомодно, но грамматично и идиоматично — сохраняем; неграмматично или калька — правим»: в §6.5 только «Избегать и калек, и современной «гладкости»». Диалоги и реалии (пункты плана этапа 2) в §6.5 не охарактеризованы.",
+      "suggestion": "Добавить в §6.5 одно предложение-различитель с примером (например, *I should have thought* — сохраняем; *so that we wouldn’t be noticed* в прямой речи — правим) и строку о диалогах/реалиях."
+    },
+    {
+      "ref": "report #9: «удачные» примеры содержат то, что правим",
+      "status": "partially",
+      "detail": "Примеры заменены на L0-блоки (p1-c01-049, p2-c01-262, 266 — в levels действительно L0); для p1-c12-054 дан исправленный вариант («spike» → *bow*). Но p3-c01-076 *Knowledge – that’s the engine of life, while joy – that’s the lubricant for it* по-прежнему подан только как «афористичную структуру оставить», без исправленного варианта; ревьюер указывал на технический регистр *lubricant* (RU «масло»), а *while* — противительная связка вместо «и», и конструкция *– that’s* — калька тире. Кроме того, p1-c01-049 (L0) содержит ошибку согласования времён в прямой речи — см. new-issue.",
+      "suggestion": "Для 076 дать образец: *Knowledge is the engine of life, and joy is the oil that runs it* (или *…and joy is its oil*), указать, что правится *lubricant*/*while*."
+    },
+    {
+      "ref": "report #10: нет пропусков и добавлений в §6.3",
+      "status": "implemented",
+      "detail": "§6.3 п.2 «Пропуски — восстанавливаем всегда, включая авторские смягчения («казалось», «точно», «как бы», «словно»)… (p1-c01-051, 061; p1-c12-045)»; п.3 «Добавления переводчика — убираем… критерий: пояснение не вводит нового факта, образа или оценки»; §6.4 — *behind the tree*; p2-c01-267 в §4.2 как добавление.",
+      "suggestion": ""
+    },
+    {
+      "ref": "report #19: нет правильных вариантов",
+      "status": "partially",
+      "detail": "«Ошибочно → правильно» есть в большинстве примеров §4.2 и в столбце «Как правильно» §5; поле fix — у всех critical/major, кроме стихов. Остались примеры без исправления: §4.2 «Серьёзные грамматические» — «p1-c12-048, p1-c12-051.2, p1-c01-052.2» даны одними ID; «Обратная связка» — p2-c01-271 (*although*) и p1-c20-215 (*although I. was holding me*) без правильного варианта (в разметке есть: *because*, *supported by I., I could barely rise*); «святыня» → *saint* без варианта; в «Не подтвердилось» *According to me*, *hair were* без исправления.",
+      "suggestion": "Дописать исправления из разметки: 048 *He seemed to be holding his hands on I.’s hands…*, 051.2 *He only shrugged — an indulgent gesture towards me…*, 052.2, 271 *…because we are all very close*, 215 *supported by I., I could barely rise*; *According to me* → *In my opinion*, *hair were* → *hair was*."
+    },
+    {
+      "ref": "numbers: §1, §4.1, §5, §6.1, §6.7 vs generated files",
+      "status": "implemented",
+      "detail": "Сверено: §1 — 2/25/87, 8,9 и 37,5 на 1000, 64 из 69 (69−5 L0), L2+ 61% (42/69), L3 25% (17/69), p3-c01 19,8 vs 2,8–8,0, 13 из 25 major в p3-c01 («половина»), duke 319, Lovushka 212 / Lyovushka 125. §4.1 — все строки таблицы (critical/major/minor, A/B, всего на 1000, L2+ и L3 по отрывкам) совпадают с legacy-en-sample-metrics.md; уровни 6/23/26/17/1 = 73. §5 — все 17 строк совпадают с legacy-en-corpus-patterns.md, calm 8,1 / 3,2 ≈ 2,5×, ≈871 тыс. слов (235 489 + 231 188 + 404 048). §6.1 — 27 из 69 (5+22). §6.7 — ≈90% (64/69 = 93%), 8,9. Метрики синхронны с разметкой (sha256 c54e95e2… совпадает). Мелочи: §5 строка clumsy sailor даёт «—» для Vol2/Vol3, в сгенерированном файле 0; §4.1 «По категориям» не упоминает register — 1 и style — 1 (последний — major в стихах).",
+      "suggestion": "Заменить «—» на 0; дописать «регистр — 1, стиль — 1 (major, стихи)» в список категорий §4.1."
+    },
+    {
+      "ref": "fixes: critical/major в разметке и §6.6 — общая проверка",
+      "status": "implemented",
+      "detail": "Точны по смыслу и естественны: p1-c01-046, p1-c12-042, 045, 051.2, 052, 053, p2-c01-254, 256, 271, p3-c01-067, 068, 071 (grammar), 074, 075 (оба), 077, 078, 079, 080, 083, p1-c20-215; §6.6 L3 (p3-c01-078) точен и идиоматичен. У двух major в p1-c20-213 fix нет — допустимо, блок L4 (перевод заново).",
+      "suggestion": ""
+    },
+    {
+      "ref": "fix: p3-c01-070",
+      "status": "new-issue",
+      "detail": "fix «If you show a heroic effort of all your strength and thought» — по смыслу близко, но *show … effort of your strength* неидиоматично: effort по-английски *make*, а «напряжение сил» ≠ «effort of strength».",
+      "suggestion": "*If you make a heroic effort, straining all your strength and thought* (или *If you summon up a heroic exertion of all your strength and thought*)."
+    },
+    {
+      "ref": "fix: p1-c01-052.2",
+      "status": "new-issue",
+      "detail": "fix «…but only now did I understand for the first time what a woman’s beauty was» — плеоназм *only now … for the first time* (перенесён из старого EN); «женская красота» естественнее как *feminine beauty*.",
+      "suggestion": "*…but only now did I understand what feminine beauty was* или *…but now, for the first time, I understood what feminine beauty was*."
+    },
+    {
+      "ref": "fix: p1-c12-048",
+      "status": "new-issue",
+      "detail": "fix «He seemed to be holding his hands over I.’s hands» — RU «держал свои руки на его руках»: *over* означает «над» (не касаясь), нужно *on*. Остальное («And the captain himself seemed to be giving orders at I.’s dictation») верно.",
+      "suggestion": "*He seemed to be holding his hands on I.’s hands. And even the captain seemed to be giving his orders at I.’s dictation.*"
+    },
+    {
+      "ref": "fix: p3-c01-071 (critical)",
+      "status": "new-issue",
+      "detail": "fix «One can live among people as imperfect as yourself, …and see in them…» — смысл исправлен верно, но смешение *one … yourself* в одной фразе стилистически шероховато (мелочь).",
+      "suggestion": "*You can live among people as imperfect as yourself, but striving towards the joy of perfection, and see in them a drop of the fire of Eternity* (заодно явно закрепляет, кто видит) или *…as imperfect as oneself…*."
+    },
+    {
+      "ref": "fix: §6.6 L2 (p1-c12-054)",
+      "status": "new-issue",
+      "detail": "Смысл передан верно (борт, «брюхо водяной горы», пушки, качели, «не грозили разбить в куски»). Мелкие шероховатости: *Thanks to the deft manoeuvre* (нужен неопределённый артикль — манёвр впервые упомянут), *as on a swing* (идиоматично *as if on a swing*), *as if cannons had fired* (пушки не «стреляют» сами в этой конструкции; *as if cannon had been fired*); *still* в «The waves were still terrible» в RU нет (унаследовано из старого EN).",
+      "suggestion": "*Thanks to a deft manoeuvre…; There was a roar as if cannon had been fired; …her bow reared up as if on a swing…; The waves were terrible and swept the deck…*"
+    },
+    {
+      "ref": "fixes: имена в fix (p2-c01-261 и др.)",
+      "status": "new-issue",
+      "detail": "fix p2-c01-261 «Alice’s joyful kindness won everyone over», p1-c12-044/047/053 «the Florentine» — варианты предрешают D4/ядро глоссария (в отчёте *Alyssa*/*Alice*, *Florentian*/*the Florentine* — открытые вопросы). Для иллюстрации не критично, но в стайлгайд может уйти как решение.",
+      "suggestion": "Оставить имена как в старом EN (*Alyssa*, *Florentian*) либо добавить в шапку разметки: «имена в fix — условные, до решения D4»."
+    },
+    {
+      "ref": "new: §6.7 «≈25% в повествовании»",
+      "status": "new-issue",
+      "detail": "«Доля блоков L3–L4 — ≈25% в повествовании и выше в поучениях» противоречит §4.1: в повествовании (p1-c01) L3+ — 1 из 14 (7%); 25% — доля по всей прозе (17/69). По отрывкам: повествование 7%, диалог 14%, драма 25%, поучения 50%.",
+      "suggestion": "«≈25% по прозе в целом (в повествовании и диалоге 7–14%, в драме ≈25%, в поучениях ≈50%)»."
+    },
+    {
+      "ref": "new: уровень p2-c01-271 (и p1-c20-214)",
+      "status": "new-issue",
+      "detail": "После повышения p2-c01-271 до mistranslation/major («потому что» → *although*, fix переписывает фразу: *That is true to some extent, because we are all very close*) блок остался L2; то же у блока {p1-c20-214 p1-c20-215} с major «поддерживаемый И.» → *although I. was holding me*. Все остальные блоки с major mistranslation — L3, а отчёт (§1, рекомендация) говорит «L3 — в каждой фразе со смысловой ошибкой».",
+      "suggestion": "Поднять p2-c01-271 и p1-c20-214 до L3 (проза: L3 17 → 18, 26%; диалог L3 3 → 4, L2+ 38% без изменений) или записать исключение «однословная замена связки — L2» в легенду уровней."
+    },
+    {
+      "ref": "new: уровень p1-c01-052.2",
+      "status": "new-issue",
+      "detail": "Блок {p1-c01-052.2 053 054 055} — L3, хотя смысловых ошибок уровня major в нём нет (fluency/major «фраза не собрана» + две mistranslation/minor + fluency/minor), а блок p1-c01-046 с той же major «фраза не собрана» — L2. По легенде L3 — «из-за смысловых ошибок».",
+      "suggestion": "Либо L2 для 052.2, либо обоснование в разметке (например, суммарно 053 требует переписать две фразы)."
+    },
+    {
+      "ref": "new: §4.2 «Пропуски — 8»",
+      "status": "new-issue",
+      "detail": "Перечислено 7 находок категории omission + «также авторское «Казалось» (p1-c01-061)», но «Казалось» записано как fluency, а восьмой omission — p2-c01-269 («что выходит из нашего дома») — в списке отсутствует.",
+      "suggestion": "Добавить «что выходит из нашего дома» (p2-c01-269) в перечень; «Казалось» оставить с пометкой «учтено в другой находке»."
+    },
+    {
+      "ref": "new: §6.6 L1-образец p2-c01-255",
+      "status": "new-issue",
+      "detail": "Образец L1 восстанавливает «неожиданных» и «оказанную его дому» и меняет *adjacent* → *next* — это больше, чем L1 по легенде («точечно: слово, опечатка, пунктуация, артикль»). Пропуск «неожиданных» (и сдвиг «честь, оказанную его дому» → *given to him with this visit*) в разметке не записан: у 255 одна находка (grammar/minor *by greeting*), хотя в её fix уже стоит *unexpected*.",
+      "suggestion": "Добавить omission/minor «неожиданных» (и при желании mistranslation/minor «оказанную его дому») и поднять 255 до L2 — либо взять для L1 другой блок (например p2-c01-257 *in my wedding* → *at my wedding*)."
+    },
+    {
+      "ref": "new: p1-c01-049 как образец «удачного места» (L0)",
+      "status": "new-issue",
+      "detail": "*“Look intently, but keep silent and don’t move, so that we wouldn’t be noticed,”* — в прямой речи с повелительным наклонением *wouldn’t* — ошибочное согласование времён (калька косвенной речи); нужно *won’t*/*so that we aren’t noticed*. Блок размечен L0 и приведён в §6.2 как «можно оставлять почти как есть».",
+      "suggestion": "Добавить grammar/minor, поднять до L1 (проза: L0 5 → 4, L1 22 → 23; доли L2+ не меняются) и в §6.2 оговорить правку или заменить пример."
+    },
+    {
+      "ref": "new: §1 п.4 и §3 — категоричность в обратную сторону",
+      "status": "new-issue",
+      "detail": "§1 п.4: «Большинство мест, где в EN есть текст, которого нет в нашей RU, — вставки самого переводчика, а не другая редакция» — утверждение сильнее, чем §3 («вероятнее вставки переводчика», edition_candidate). Кроме того, в §3 строка «мелкие связные детали» объединяет p1-c12-042 (волна — mistranslation/major) и p1-c12-045 (пересказ), которые не являются «вставками».",
+      "suggestion": "§1 п.4: «По-видимому, большинство…»; в §3 убрать 042 и 045 из строки «мелкие связные детали» (042 уже описан отдельным пунктом ниже)."
+    }
+  ],
+  "overall": {
+    "ready_for_external": true,
+    "comment": "Все принятые critical/major замечания обоих ревью внесены по существу: пересмотр source-divergence (p1-c12-055, 046, 048, 040), шкала серьёзности и два critical, пропущенные ошибки, уровни L3, Lyovushka, узкий шаблон реплик, орфография в корпусе, образцы правки и варианты fix. Все числа §1, §4.1, §5, §6.1 и §6.7 совпадают со сгенерированными файлами (метрики синхронны с разметкой). Отклонение p1-c20-213 и оставление «Accept my regards and calm» / «begin and start» в major согласуются с записанной шкалой. Частично выполнены #3 (осталась «полная редакция» в §3, §7 и PLAN), #8 (нет правила-различителя «старомодно vs калька»), #9 (p3-c01-076 без исправленного варианта) и #19 (несколько примеров без правильного варианта). Новые несоответствия мелкие: неверное «≈25% в повествовании» в §6.7, уровень L2 у p2-c01-271 и p1-c20-214 при major, список пропусков, объём L1-образца, ошибка времени в L0-образце p1-c01-049, несколько неидиоматичных fix (p3-c01-070, 052.2, 048). Блокирующих нет; рекомендую внести эти правки (изменят числа максимум на ±1–2 находки/блока, выводы не меняются) до сборки пакета для внешнего ревью."
+  }
+}
