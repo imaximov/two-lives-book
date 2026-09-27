@@ -1,9 +1,9 @@
-"""Пакеты внешнего ревью ядра глоссария (этап 3): translation/reviews/en/glossary-core/request-{1,2}.md.
+"""Пакеты внешнего ревью ядра глоссария (этап 3): translation/reviews/en/glossary-core/request-{1,2,3}.md.
 
 Привязка к версии (DEC-016): в шапке — коммит и хеши файлов; незакоммиченные изменения — ошибка.
 Результаты внутреннего ревью во внешний пакет не включаются (TRANSLATION-PROCESS §7.3).
-Пакет 1 — персонажи, титулы, обращения, условности, черновик речи торговца; пакет 2 — понятия учения, формулы, правила,
-термины пилотной главы и калибровочных отрывков. В каждом — список id, по которым нужен явный вердикт (§7.4, §9.1).
+Пакет 1 — персонажи, титулы, обращения, условности, черновик речи торговца; пакет 2 — понятия учения, формулы, правила;
+пакет 3 — термины пилотной главы и калибровочных отрывков. В каждом — список id, по которым нужен явный вердикт (§7.4, §9.1).
 
     python -m tools.review.packet_glossary
 """
@@ -56,7 +56,7 @@ INSTRUCTIONS = """## Инструкция ревьюеру
 ```json
 {
   "unit": "glossary-core",
-  "part": "<1 или 2 — номер пакета>",
+  "part": "<1, 2 или 3 — номер пакета>",
   "lang": "en",
   "commit": "<коммит из шапки пакета>",
   "reviewer": "<vendor>-<model>",
@@ -99,12 +99,12 @@ def main() -> None:
     concepts_etc, titles, pilot = g[:t0], g[t0:p0], g[p0:]
     decisions = (ROOT / "translation/decisions.md").read_text(encoding="utf-8")
     packs = {1: [("Персонажи (characters.yml)", ch), ("Титулы, обращения, условности (glossary.yml)", titles)],
-             2: [("Понятия учения, формулы, правила (glossary.yml)", concepts_etc),
-                 ("Термины пилотной главы p1-c01 и калибровочных отрывков (glossary.yml)", pilot)]}
+             2: [("Понятия учения, формулы, правила (glossary.yml)", concepts_etc)],
+             3: [("Термины пилотной главы p1-c01 и калибровочных отрывков (glossary.yml)", pilot)]}
     for n, sections in packs.items():
         head = ["---", "unit: glossary-core", f"part: {n}", "lang: en", f"commit: {commit}", "files:"]
         head += [f"  - {{path: {f}, sha256: {sha256_text(ROOT / f)}}}" for f in FILES]
-        head += ["---", "", f"# Запрос на внешнее ревью: ядро глоссария, пакет {n} из 2 (этап 3)", "",
+        head += ["---", "", f"# Запрос на внешнее ревью: ядро глоссария, пакет {n} из {len(packs)} (этап 3)", "",
                  f"Пакет собран из коммита `{commit}`. Всё нужное для ревью — в этом файле.", "", INSTRUCTIONS]
         verdict_ids = [e["id"] for _, es in sections for e in es]
         body = ["## Требуют вердикта", "", f"{len(verdict_ids)} id (по каждому — agree / object / unsure):", "",
