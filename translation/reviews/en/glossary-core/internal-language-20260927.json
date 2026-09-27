@@ -1,0 +1,328 @@
+{
+  "unit": "glossary-core",
+  "lang": "en",
+  "commit": "12fea09",
+  "reviewer": "claude-fresh-context",
+  "level": "internal",
+  "pass": "language",
+  "findings": [
+    {
+      "id": "formula#bud-blagosloven",
+      "category": "register",
+      "severity": "major",
+      "source_excerpt": "Будь благословенна. Иди любимая и любящая… (p3-c06-069); Будьте благословенны именем Светлого Братства — мир вам. (p3-c18-056)",
+      "target_excerpt": "en.term: Be blessed; Bless you (?)",
+      "suggestion": "Основная формула — «May you be blessed» (мн. ч. то же; «May you be blessed in the name of the Bright Brotherhood»); для тёплой, личной интонации допустимо «Blessings on you». «Bless you» внести в en.avoid.",
+      "rationale": "Британскому читателю «Bless you» — это ответ на чихание или снисходительно-ласковое «bless you, dear»; для торжественного благословения Учителя это недопустимо. «Be blessed» по-английски звучит как современное американское церковное (евангелическое) прощание, а не как британская торжественная речь. Кроме того, повелительное наклонение здесь неестественно: быть благословлённым не зависит от адресата. Английский желательный оборот «May you be…» — ясный, торжественный и без архаики, как требует §6.5. Смысл RU (желательное благословение-прощание) не меняется. Формула встречается 49 раз, поэтому решение распространится на весь текст."
+    },
+    {
+      "id": "svetly",
+      "category": "fluency",
+      "severity": "major",
+      "source_excerpt": "Светлое Братство, Светлые Братья, Светлые Силы, Светлая Община",
+      "target_excerpt": "en.term: Bright (Bright Brotherhood, Bright Brothers …)",
+      "suggestion": "Эпитет-начало передавать через «of Light»: the Brothers of Light (или Brothers of the Brotherhood), the Powers of Light (пара к the dark powers), the Community of Light. Для самого названия владельцу стоит сравнить «the Brotherhood of Light» и «the Bright Brotherhood». Если Bright Brotherhood сохраняется как устоявшееся имя собственное, то хотя бы не ставить Bright перед нарицательными словами о людях и силах.",
+      "rationale": "В английском bright о людях значит прежде всего «сообразительный» или «жизнерадостный»: «Bright Brothers» читается как «смышлёные братья», «Bright Powers» — как «яркие силы». В английской эзотерической прозе устоялись «of Light» и «forces/powers of Light», в паре с «dark powers» это естественная антитеза. Смысл RU («принадлежащий высшему Свету») «of Light» передаёт точнее. Эпитет встречается около 130 раз, поэтому ошибка разойдётся по всей части III. Знаю, что старый EN здесь последователен (§9.2 п.6), поэтому название Братства оставляю на решение владельца, а вот для эпитета перед людьми и силами прошу правку."
+    },
+    {
+      "id": "tselesoobraznost",
+      "category": "style",
+      "severity": "major",
+      "source_excerpt": "единственные законы движения вселенной: закономерность и целесообразность (p3-c05-129); действовать надо не только бесстрашно, но и целесообразно (p1-c05-028)",
+      "target_excerpt": "en.term: expediency (?)  [в question рекомендовано purposefulness]",
+      "suggestion": "en.term = purposefulness («the law of purposefulness»); наречие — purposefully / to good purpose («act not only fearlessly but to good purpose»); expediency и expediently внести в en.avoid.",
+      "rationale": "Современному британскому читателю expediency значит «выгода, беспринципное удобство» («political expediency») и звучит оценочно-отрицательно. «Закон expediency» во вселенной прочтётся как «закон выгоды», то есть как противоположность учению. Кроме того, en.term противоречит рекомендации в собственном поле question: если термин утвердят по полю term, в текст пойдёт неудачный вариант. Purposefulness передаёт «соответствие цели» без побочных смыслов. Смысл RU сохраняется."
+    },
+    {
+      "id": "illofillion",
+      "category": "typography",
+      "severity": "major",
+      "source_excerpt": "И. (≈2900 раз); доктор И., Учитель И.",
+      "target_excerpt": "en.name: Il.; Doctor Il., Teacher Il.",
+      "suggestion": "Прежде чем утверждать, проверить Il. в шрифтах сайта и EPUB. Если остаётся Il., в стайлгайд записать правило для конца предложения (одна точка: «…with Il.») и выбрать шрифт с засечками, где I и l различимы. Если владелец выберет I., в стайлгайде нужен приём перестройки фраз рядом с местоимением I.",
+      "rationale": "Решение по сути имени — за владельцем, но у Il. есть языковые и типографские риски, которых нет в поле question. (1) В рубленых шрифтах (веб по умолчанию, многие читалки) заглавная I и строчная l одинаковы, и Il. выглядит как «ll.» или «II.». (2) При чтении про себя «Doctor Il.» и «Teacher Il.» легко слышатся как «Doctor Ill» («больной доктор»), а это нежелательная ассоциация для героя-врача. (3) На конце предложения точка сокращения сливается с точкой предложения. Форма повторяется около 2900 раз, поэтому риск стоит проверить заранее."
+    },
+    {
+      "id": "p1-c01-014",
+      "category": "register",
+      "severity": "major",
+      "source_excerpt": "Люди? Люди много ходила сегодня мой лавка… Только твой, верно, не люди хочет знать, а один высокий чёрный люди?",
+      "target_excerpt": "Умеренный: “People? Plenty people come my shop today,” … “You want to know about one tall dark people, yes?”",
+      "suggestion": "“People? Many people comes to my shop today,” he said with a sly smile. “Only you not want to know about people, I think. You want to know about one tall dark man, yes?”",
+      "rationale": "(1) «one tall dark people» — «dark people» по-английски как группа читается как «темнокожие», то есть возвращает ту самую двусмысленность расы, которую глоссарий устраняет у «black man» (bryunet). К тому же игра «один … люди» в английском не считывается как шутка, а выглядит как непонятная ошибка. В идиоме «a tall dark man» dark однозначно значит «темноволосый». (2) «Plenty people» без «of» — характерная примета пиджинов (западноафриканского, меланезийского), а принцип 4 черновика прямо это исключает. Ошибка согласования «people comes» точнее соответствует типу ошибки RU («люди … ходила»). Смысл не меняется."
+    },
+    {
+      "id": "p1-c01-034",
+      "category": "register",
+      "severity": "major",
+      "source_excerpt": "Улица нельзя. У нас и в дом нельзя. А у Али Мохаммед все женщины дома ходит открыта. Мулла много раз говорил, да перестал. Али сказал: «Уеду». Ну, мулла и молчит пока.",
+      "target_excerpt": "Умеренный: “… But in Ali Mohammed’s house all the women go uncovered. The mullah talk and talk many times, then he stop. Ali say: ‘I go away from here.’ So the mullah keep quiet — for now.”",
+      "suggestion": "“In the street — not allowed. With us, not allowed even in the house. But in Ali Mohammed’s house all the women goes uncovered. The mullah spoke many times, but then he stopped. Ali said, ‘I will leave.’ So the mullah keeps quiet — for now.”",
+      "rationale": "Образец нарушает принцип 2 самого черновика. В RU ломаются только первые три фразы. «Мулла много раз говорил, да перестал. Али сказал: «Уеду». Ну, мулла и молчит пока» — правильный русский, и черновик сам приводит эту фразу как правильную. В обоих вариантах, наоборот, сломаны все четыре последних глагола (talk, stop, say, keep), а единственное место, где RU ломает согласование («женщины … ходит»), дано правильно. «talk and talk many times» к тому же добавляет повтор, которого нет в RU. Образец задаёт меру для всех реплик торговца, поэтому неверное распределение ошибок станет нормой. «I will leave» точнее передаёт «Уеду», чем «I go away from here»."
+    },
+    {
+      "id": "bodrost",
+      "category": "fluency",
+      "severity": "major",
+      "source_excerpt": "с моей внутренней бодростью (p1-c01-002); Прими, друг, бодрое пожатие моей руки (p3-c01-078); бодрый / бодро — 9/4/15",
+      "target_excerpt": "en.term: vigour (?); «бодрый — vigorous, «подать бодрость» — give vigour»",
+      "suggestion": "Существительное — vigour («my inner vigour», «vigour and energy»); это удачно, согласен. Прилагательное и наречие — по контексту, а не механически vigorous/vigorously: бодрый старик — hale / sprightly; бодрым голосом, бодро ответил — briskly, cheerily, in a brisk voice; бодрое пожатие — a firm, vigorous handshake. «Подать бодрость» — put heart into, hearten; «give vigour» не использовать.",
+      "rationale": "«Vigorous(ly)» в бытовых местах звучит физкультурно («vigorously answered» — «энергично-силово ответил»). «Give someone vigour» по-английски неидиоматично. Если записать vigorous как обязательное соответствие всем формам, в тексте появится много неестественных сочетаний. Смысл RU («деятельная живость, прилив сил») сохраняется во всех предложенных вариантах, и слияния с «радостью» (cheerfulness) не происходит, кроме наречия cheerily, которое допустимо только в бытовой речи."
+    },
+    {
+      "id": "seryi-den",
+      "category": "style",
+      "severity": "minor",
+      "source_excerpt": "в делах простого и серого дня (p1-c06-018); путь к Учителю ведет через серый день",
+      "target_excerpt": "en.term: the grey day (?)",
+      "suggestion": "Образ сохранить, но не фиксировать одну форму «the grey day». Основное — «the plain grey day» / «the grey everyday round»; во мн. ч. — «grey, ordinary days»; «in the affairs of the plain, grey day».",
+      "rationale": "Голое «the grey day» по-английски читается прежде всего как погода («пасмурный день»). Метафорический смысл возникает только с поддержкой (plain, ordinary, round, workaday). Для сквозного образа (65 раз) нужна гибкость, иначе он будет звучать как калька. Смысл «будничный день как поле труда» сохраняется."
+    },
+    {
+      "id": "vladyki-karm",
+      "category": "style",
+      "severity": "minor",
+      "source_excerpt": "что такое «владыки карм», о которых ты еще ничего не знаешь (p3-c05-122)",
+      "target_excerpt": "en.term: Masters of karma  [question рекомендует lords of karma]",
+      "suggestion": "en.term = the lords of karma (со строчной, как в RU).",
+      "rationale": "«Lords of Karma» — устоявшийся английский термин теософской литературы, его знает англоязычный читатель эзотерики, а «Masters of karma» звучит непривычно. Строчная буква отделяет его от титула Master (vladyka#master), как и объясняет question. Поле term противоречит рекомендации, и это нужно согласовать до утверждения."
+    },
+    {
+      "id": "formula#privet-i-mir",
+      "category": "fluency",
+      "severity": "minor",
+      "source_excerpt": "Прими мой привет и мир. (p3-c01-083); Примите привет Светлого Братства (p3-c25-085)",
+      "target_excerpt": "Accept my greeting and my peace.",
+      "suggestion": "Accept my greetings and my peace. / Accept the greetings of the Bright Brotherhood.",
+      "rationale": "В английской концовке письма устойчиво множественное число (greetings), а ед. ч. «my greeting» звучит как калька. Смысл тот же, регистр торжественный, не бытовой (regards по-прежнему в avoid)."
+    },
+    {
+      "id": "formula#pozhatie",
+      "category": "fluency",
+      "severity": "minor",
+      "source_excerpt": "Жму твою руку. Прими моё пожатие бодрости и энергии… (p1-c06-019); Прими, друг, бодрое пожатие моей руки (p3-c01-078)",
+      "target_excerpt": "Accept my handshake of vigour and energy / Accept, friend, the vigorous clasp of my hand",
+      "suggestion": "p1-c06-019: «I clasp your hand. Accept my handshake, full of vigour and energy…»; p3-c01-078: «Accept, my friend, a firm and vigorous handshake» (или «the vigorous clasp of my hand»).",
+      "rationale": "«handshake of vigour and energy» по-английски натянуто: сочетание «handshake of X» естественно только с отношением (of friendship, of peace), а не с состоянием. «full of» передаёт родительный качества RU без нового смысла. В p3-c01-078 голое «friend» во вставке звучит книжно, а по drug#address обращение — «my friend». Отчёт §6.5 просит сохранить здесь личную теплоту, а не церемонность, поэтому «clasp» допустимо, но не обязательно."
+    },
+    {
+      "id": "velikaya-zhizn",
+      "category": "fluency",
+      "severity": "minor",
+      "source_excerpt": "новый подарок, который тебе дала Великая Жизнь (p3-c01-076)",
+      "target_excerpt": "en.term: Great Life (артикль — «решить стайлгайду»)",
+      "suggestion": "the Great Life везде, кроме звательного обращения.",
+      "rationale": "В отличие от голого «Life», которое работает как абстрактное существительное, «Great Life» без артикля читается как имя собственное («Great Life gives you a gift»), и это звучит неестественно даже в торжественной речи. Ср. the Great Mother, the One Life — в глоссарии с артиклем."
+    },
+    {
+      "id": "mat-zhizni",
+      "category": "style",
+      "severity": "minor",
+      "source_excerpt": "И Великая Мать Жизнь не осудит тебя (p3-c22-116); Милосердие Великой Матери Жизни (p2-c15-142)",
+      "target_excerpt": "the Mother of Life; the Great Mother of Life",
+      "suggestion": "Различать как в RU: «Мать Жизни» → the (Great) Mother of Life; приложение «Мать Жизнь / Матерь Жизнь» → the Great Mother Life (как Mother Earth, Mother Nature).",
+      "rationale": "«Mother Life» идиоматично по модели Mother Earth, и именно так передаётся приложение RU (Жизнь и есть Мать). «Mother of Life» для этих мест слегка сдвигает смысл: получается «мать, породившая жизнь»."
+    },
+    {
+      "id": "tvorchestvo",
+      "category": "register",
+      "severity": "minor",
+      "source_excerpt": "ты сольешься с бурным пламенем творчества твоих Учителей (p3-c01-070)",
+      "target_excerpt": "creativity / creative work (?)",
+      "suggestion": "creative work; для свойства — creative power(s) / the creative spirit; creativity не использовать в речи рассказчика и Учителей.",
+      "rationale": "«Creativity» — слово, распространившееся после 1950-х, с современным психологическим и деловым оттенком; в «слегка старомодном» голосе (§6.5) оно звучит анахронизмом. «the stormy flame of your Teachers’ creative work» сохраняет смысл RU."
+    },
+    {
+      "id": "zakonomernost",
+      "category": "fluency",
+      "severity": "minor",
+      "source_excerpt": "закономерность и целесообразность (p3-c05-129); закономерно и целесообразно действующих сил (p1-c04-003)",
+      "target_excerpt": "lawfulness / conformity to law (?)",
+      "suggestion": "conformity to law (в паре — «conformity to law and purposefulness»); наречие — in accordance with law; lawfulness не использовать.",
+      "rationale": "Для общего читателя lawfulness значит прежде всего «законность, правомерность» в юридическом смысле. «Conformity to law» однозначно отсылает к закономерности природы и вселенной."
+    },
+    {
+      "id": "stupen",
+      "category": "style",
+      "severity": "minor",
+      "source_excerpt": "возводит человека на новую ступень внутренней силы (p1-c14-081); начиная с самых низших ступеней (p1-c22-179)",
+      "target_excerpt": "stage (?); level — не использовать",
+      "suggestion": "stage — для ступеней пути; step / rung — где явен образ лестницы («raises a man to a new step», «from the lowest rungs»). Не запрещать level в сочетаниях, где оно идиоматично: «a new level of inner strength».",
+      "rationale": "«a new stage of inner strength» по-английски неестественно, а «a new level of inner strength» — обычная идиома. Полный запрет level ухудшит беглость, а смысл RU level не меняет."
+    },
+    {
+      "id": "address#ty-vy",
+      "category": "name",
+      "severity": "minor",
+      "source_excerpt": "Вы, Алиса, всё ещё говорите Лизе «вы» (p2-c17-081)",
+      "target_excerpt": "«you still address Lisa so formally»",
+      "suggestion": "«you still address Liza so formally»",
+      "rationale": "Образец расходится с characters.yml (liza: Liza, Lisa — в avoid). Сами перифразы хороши и идиоматичны («speak to me as a friend — no formalities», «she laid heavy stress on the word ‘you’»)."
+    },
+    {
+      "id": "knyaz#title",
+      "category": "name",
+      "severity": "minor",
+      "source_excerpt": "А это дядя Ананды, князь Сенжер. (p2-c16-032)",
+      "target_excerpt": "en.term: … Prince Senjer",
+      "suggestion": "Prince Saintger (или Prince Senzher — по решению владельца в characters.yml).",
+      "rationale": "«Senjer» — третья форма, которой нет ни в characters.yml (Saintger / альтернатива Senzher), ни в старом EN. Образец в глоссарии не должен вводить непредусмотренный вариант."
+    },
+    {
+      "id": "tendl",
+      "category": "name",
+      "severity": "minor",
+      "source_excerpt": "Тендль; мистер Тендль",
+      "target_excerpt": "characters: Tendl; glossary mister#title: «Mr Tendly»",
+      "suggestion": "Согласовать образец в mister#title с characters.yml. Владельцу — рассмотреть написание Tendle как орфографическую передачу того же звучания.",
+      "rationale": "(1) В mister#title стоит Tendly, а characters.yml его отвергает. (2) Английская фамилия не может кончаться на -ndl: читатель споткнётся. Слоговое [l] в английской орфографии пишется -le (Tindle, Kendle), так что Tendle даёт то же звучание «Тендль» без лишнего «-и», в отличие от Tendly. Это правило транслитерации, а не догадка о «настоящей» фамилии, поэтому довод «естественнее» из DEC-028 сюда не относится. Но решает владелец."
+    },
+    {
+      "id": "ledi#title",
+      "category": "register",
+      "severity": "minor",
+      "source_excerpt": "Не называйте меня «миледи», я такая же слуга, как и вы (p2-c03-045)",
+      "target_excerpt": "обращение служанки — milady",
+      "suggestion": "my lady (в речи — допустимо m’lady).",
+      "rationale": "В британской речи прислуги начала XX века обращение звучит «my lady». Написание «milady» у англоязычного читателя ассоциируется с Дюма и французским колоритом. Смысл тот же."
+    },
+    {
+      "id": "sinyor#title",
+      "category": "fluency",
+      "severity": "minor",
+      "source_excerpt": "синьоры Гальдони",
+      "target_excerpt": "мн. ч. — the Signore Galdoni или the Galdoni ladies",
+      "suggestion": "the Galdoni ladies (или the two Signoras Galdoni — но signoras в avoid); «the Signore Galdoni» не использовать.",
+      "rationale": "Итальянское мн. ч. signore английский читатель не узнает и прочтёт как мужское ед. ч. signore («сударь»). «the Galdoni ladies» понятно и естественно."
+    },
+    {
+      "id": "titul#honorific-styles",
+      "category": "fluency",
+      "severity": "minor",
+      "source_excerpt": "Я, светлейшая княгиня, требую (p1-c13-025)",
+      "target_excerpt": "«I, a princess and a Serene Highness, demand …»",
+      "suggestion": "«I, a Serene Highness, demand …» или «I, Princess and Serene Highness, demand …»",
+      "rationale": "«a princess and a Serene Highness» громоздко: два неопределённых артикля и лишнее «princess» (в RU одно слово-титул). Комическая напыщенность персонажа сохраняется и в кратком варианте. Your/His Excellency для «сиятельства» — верно и принято в английских переводах русской классики."
+    },
+    {
+      "id": "denshchik",
+      "category": "style",
+      "severity": "minor",
+      "source_excerpt": "жил в нём один со своим денщиком (p1-c01-004)",
+      "target_excerpt": "orderly (британское разговорное — batman)",
+      "suggestion": "Оставить orderly (так принято в английских переводах русской классики), но исправить пометку: batman — стандартный британский армейский термин, а не разговорное слово.",
+      "rationale": "Пометка в глоссарии вводит в заблуждение будущих редакторов. Сам выбор orderly удачен."
+    },
+    {
+      "id": "zala",
+      "category": "fluency",
+      "severity": "minor",
+      "source_excerpt": "заглянем-ка в «туалетную», как важно зовёт денщик гардеробную (p1-c01-075)",
+      "target_excerpt": "‘the toilette room’, as my orderly grandly calls the dressing-room",
+      "suggestion": "‘the robing-room’, as my orderly grandly calls the dressing-room",
+      "rationale": "«toilette room» — не английское сочетание, и читатель услышит в нём «toilet room», то есть уборную. Это ложная шутка, которой нет в RU: там юмор в напыщенности названия. «robing-room» — пышное название, так говорят о комнатах облачения судей и духовенства, и ирония сохраняется. «the grand name ‘the salon’» для «залы» — удачно."
+    },
+    {
+      "id": "vannaya-v-sadu",
+      "category": "fluency",
+      "severity": "minor",
+      "source_excerpt": "умылись в ванной комнате, устроенной прямо в саду из циновок и брезента (p1-c01-069)",
+      "target_excerpt": "bathing shelter / washroom (of matting and canvas, right in the garden)",
+      "suggestion": "«we washed in the bathroom, rigged up right in the garden out of matting and canvas»; washroom не использовать.",
+      "rationale": "washroom в британском (и особенно в североамериканском) употреблении — эвфемизм уборной, то есть та же ошибка, что lavatory. Британское bathroom значит именно комнату для мытья, и заодно сохраняется лёгкая ирония RU: громкое «ванная комната» при самодельной конструкции."
+    },
+    {
+      "id": "kren",
+      "category": "style",
+      "severity": "minor",
+      "source_excerpt": "Ещё один такой крен, и пароход ляжет, чтобы уже не встать (p1-c12-049)",
+      "target_excerpt": "list / roll; annot.: One more list like that and she’ll go over and never right herself",
+      "suggestion": "«One more roll like that and she’ll go over and never right herself.»",
+      "rationale": "В морском английском list — устойчивый крен от смещения груза или воды, а мгновенный наклон на волне в шторм — roll (или heel). «go over, never right herself» — отлично."
+    },
+    {
+      "id": "bort-korma",
+      "category": "fluency",
+      "severity": "minor",
+      "source_excerpt": "Если бы вся эта масса ударила нам в борт (p1-c12-054)",
+      "target_excerpt": "side (удар в борт — broadside)",
+      "suggestion": "«had struck us broadside on» / «had struck our side»; broadside только как наречие (broadside on).",
+      "rationale": "Существительное broadside значит бортовой залп орудий. В роли существительного («a broadside») оно даст ложный образ, а корректно только наречное «broadside (on)»."
+    },
+    {
+      "id": "matros-verzila",
+      "category": "style",
+      "severity": "minor",
+      "source_excerpt": "Возле меня выросла высокая тень — это был наш матрос-верзила (p1-c11-101); этот верзила так же летал по лестницам (p1-c11-076)",
+      "target_excerpt": "the lanky sailor (или hulking sailor)",
+      "suggestion": "the strapping sailor (или the giant of a sailor / our big sailor).",
+      "rationale": "lanky — «долговязый и нескладный», hulking — «громоздкий, неуклюжий»: оба противоречат ловкости, которую подчёркивает текст («летал по лестницам»), и lanky, повторённое 70 раз, станет комичным. strapping — «рослый, крепкий» без неуклюжести, по-британски естественно и слегка старомодно."
+    },
+    {
+      "id": "ali-mahmud",
+      "category": "fluency",
+      "severity": "minor",
+      "source_excerpt": "Али молодой / молодой Али / Али-молодой (32 / 3 / 15)",
+      "target_excerpt": "en.note: «Али молодой» → the young Ali (по образцу the elder Ali)",
+      "suggestion": "young Ali (без артикля); в паре — the elder Ali и young Ali.",
+      "rationale": "Английская традиция различать тёзок — «young Jolyon / old Jolyon» (Голсуорси): без артикля. «the young Ali» звучит как «Али в молодости». Смысл RU («младший из двух Али») без артикля передаётся точнее."
+    },
+    {
+      "id": "eta",
+      "category": "name",
+      "severity": "minor",
+      "source_excerpt": "Я лучше назову его Эта, что по-итальянски значит «век» (p3-c06-008)",
+      "target_excerpt": "en.name: Eta",
+      "suggestion": "Età (хотя бы при первом упоминании), дальше — по решению владельца.",
+      "rationale": "Английский читатель прочтёт «Eta» как греческую букву эта ([ˈiːtə]), и объяснение «по-итальянски значит «век»» не сработает. Итальянское слово с диакритикой даёт правильное чтение и связывает имя с объяснением."
+    },
+    {
+      "id": "sandra-santanaida",
+      "category": "name",
+      "severity": "minor",
+      "source_excerpt": "Сандра Сантанаида — молодой индус, оксфордский студент",
+      "target_excerpt": "en.name: Sandra",
+      "suggestion": "Имя не менять (форма RU). В стайлгайд — при первых упоминаниях держать однозначные he/his и «young Indian», чтобы читатель не принял героя за женщину.",
+      "rationale": "Для английского читателя Sandra — только женское имя. Это касается и Ананды (Sandra Kon-Ananda). Замечание касается подачи в тексте, а не формы имени."
+    },
+    {
+      "id": "zeyhed",
+      "category": "name",
+      "severity": "minor",
+      "source_excerpt": "Зейхед-оглы",
+      "target_excerpt": "en.name: Zeykhed-ogly",
+      "suggestion": "Решать вместе с правилом для «х» (khava). Владельцу стоит учесть, что для английского глаза «-ogly» похоже на ugly. Распространённая в английском передача тюркского oğlu — «-oglu».",
+      "rationale": "Скопление «ykh» и созвучие ogly/ugly создают нежелательный комический эффект. Это языковое наблюдение, а не требование: основания по тексту (DEC-028) — на усмотрение владельца."
+    },
+    {
+      "id": "p1-c01-021",
+      "category": "register",
+      "severity": "minor",
+      "source_excerpt": "Капитан Т.? … Я его хорошо знай. Ему уже есть семь халатов. На что ему ещё?",
+      "target_excerpt": "Умеренный: “Captain T.? I know him good. He have seven robes already. What for he need more?”",
+      "suggestion": "“Captain T.? Him I know well. He have seven robes already. What for he need more?”",
+      "rationale": "«I know him good» британский читатель воспринимает как американское просторечие носителя, а не как ошибку иностранца. Инверсия «Him I know well» — типичная примета иностранной речи, не пиджин и не карикатура. Остальное в образце удачно («He have», «What for he need more?»)."
+    },
+    {
+      "id": "merchant-interjections",
+      "category": "register",
+      "severity": "minor",
+      "source_excerpt": "«ой-я», «оуяй» (p1-c01-015, 016, 023, 031, 033)",
+      "target_excerpt": "принцип 3: междометия транслитерируются (Oy-ya!)",
+      "suggestion": "Ay-ya! (или Aha! / Oho! по месту); «оуяй» — Ow-yai!",
+      "rationale": "Английское «Oy» прочно связано с идишским «oy (vey)». У среднеазиатского торговца оно даст ложный и стереотипный колорит. «Ay-ya» передаёт тот же звук без этой ассоциации."
+    },
+    {
+      "id": "rezhisser",
+      "category": "style",
+      "severity": "minor",
+      "source_excerpt": "что любой режиссёр мог бы позавидовать их фантазии (p1-c01-071)",
+      "target_excerpt": "stage director (или producer — британское для театра начала XX в.)",
+      "suggestion": "stage director; producer не использовать.",
+      "rationale": "Историческое британское producer (= режиссёр) современный читатель поймёт как «продюсер». Это ложный друг, и выигрыша в колорите он не даёт."
+    }
+  ],
+  "overall": {
+    "comment": "В целом английский в глоссарии хороший. Британская норма выдержана: vigour, labour, grey, pyjamas, visiting cards, drawing-room, Mr/Mrs без точки, bureau в британском значении. Американизмов в полях en.term и en.name не нашёл. Многие решения точны и идиоматичны: peace вместо calm, Peace be with you, Go in peace, Take courage, my friend, Go, loved and loving, the common good, temper для «закалять», in one’s stockinged feet, amateur theatricals, in fancy dress, stand in for the bride’s mother, Brother Francis с прописной, the Florentine, Your Excellency, madam для «сударыни», Papa. Транслитерации Lyovushka, Liza, Nikolay, Natalya Vladimirovna Andreyeva, Stroganov, Jeanne, Alice, Wadsworth звучат для английского читателя естественно; Khava и Uomi приемлемы, хотя читатель скажет «Kava» и «you-OH-mee». Главные языковые проблемы: (1) формула «Be blessed / Bless you»: «Bless you» по-английски — реакция на чихание, «Be blessed» звучит как американская церковная речь; рекомендую «May you be blessed». (2) Эпитет Bright о людях и силах (Bright Brothers, Bright Powers) читается как «смышлёные»; лучше of Light. (3) «expediency» для «целесообразности» по-английски значит «выгода», а en.term противоречит рекомендации в question (то же у vladyki-karm). (4) Il. рискованно типографски (I/l в рубленых шрифтах) и по ассоциации «Doctor Ill». (5) vigorous/vigorously нельзя делать обязательными для всех форм «бодрый/бодро». Мелкие несогласованности образцов с characters.yml: Lisa, Senjer, Tendly. Речь торговца: рекомендую умеренную плотность, но с поправками. Лёгкий вариант в p1-c01-014 делает торговца почти носителем, и контраст теряется как раз там, где персонаж представлен читателю. При этом в p1-c01-034 лёгкий вариант не легче умеренного, так что противопоставление двух плотностей в черновике не последовательно. Умеренную плотность нужно откалибровать по типам ошибок: согласование (people comes, he have, the women goes), пропуск артиклей, предлогов и связки, инверсия (Him I know well, Persia he trade with). Исключить приметы пиджина (plenty people), американского просторечия (know him good), фонетики и идишского «Oy». Главное: фразы, правильные в RU, оставлять правильными — в p1-c01-034 это нарушено. Игру «один … люди» (one tall dark people) не сохранять: она непонятна и даёт расовое прочтение. Смысловых расхождений с RU в образцах нет, кроме добавленного «talk and talk» (034) и ослабленного «I think» за «верно» (014, допустимо). Смысловая ошибка старого EN «Leave» за «Уеду» исправлена верно. Вопрос для стайлгайда: оксфордская орфография (DEC-024) не означает оксфордской запятой. Нужно решить отдельно, например для «Friend, brother(,) and dear son!»."
+  }
+}
