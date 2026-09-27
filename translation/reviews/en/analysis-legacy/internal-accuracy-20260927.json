@@ -1,0 +1,433 @@
+{
+  "unit": "analysis-legacy",
+  "lang": "en",
+  "reviewer": "claude-internal-accuracy",
+  "level": "internal",
+  "pass": "accuracy",
+  "findings": [
+    {
+      "target": "annotation",
+      "id": "p1-c01-041",
+      "verdict": "confirmed",
+      "detail": "grammar/major «keen brother’s ear» — цитата есть, ошибка реальна (читается как «ухо проницательного брата»). Порог пограничный: аналогичные неграмматичности в 043 p1-c12 («fell on the steamer so much»), 047 p1-c12 («where the sky and where the water was») стоят как minor. Не отмечено: «Мы двинулись было домой. Но внезапно» → «As soon as we stepped forward» — потеряны «домой» и значение прерванного действия («было»).",
+      "suggestion": "Оставить major или выровнять порог для грамматики во всей разметке; добавить minor omission про «двинулись было домой»."
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c01-046",
+      "verdict": "confirmed",
+      "detail": "«The first a simple cart was rolling.» — фраза сломана, major обоснован.",
+      "suggestion": "—"
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c01-052.2",
+      "verdict": "confirmed",
+      "detail": "Подтверждено. Кроме порядка слов и пропуска «женская», потеряно «в жизни»: «both on the stage and other recognized beauties» вместо «на сцене и в жизни».",
+      "suggestion": "Дописать в note пропуск «в жизни»."
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c12-048",
+      "verdict": "confirmed",
+      "detail": "Фраза без главного предложения — реальна. Смысловой сдвиг слабее, чем сказано: «everybody, including the captain, was obeying to I.’s commands» по сути близко к «командовал капитан, казалось, под диктовку И.»; главная потеря — «казалось» (у рассказчика это впечатление) и «his hand» вместо «свои руки».",
+      "suggestion": "Оставить major как grammar; в note смягчить «смысл сдвинут», указать потерю «казалось»."
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c12-051.2",
+      "verdict": "confirmed",
+      "detail": "«I understood that like his indulgence» — ошибка реальна, но это одна предложная ошибка; тяжелее её по сути minor-находка 052 («As though hollowed out walls…»), стоящая ниже. Также «menacing death» — добавление («не понимающему смерти»).",
+      "suggestion": "Оставить major только при едином пороге; иначе minor. Отметить «menacing» как addition."
+    },
+    {
+      "target": "annotation",
+      "id": "p2-c01-253",
+      "verdict": "confirmed",
+      "detail": "«how it is beautiful» — ошибка есть; пограничный major (та же проблема порога). «у нас на Востоке» → «in our Oriental families» (дома → семьи) — minor сдвиг, не записан.",
+      "suggestion": "Оставить; добавить minor mistranslation «families»."
+    },
+    {
+      "target": "annotation",
+      "id": "p2-c01-254",
+      "verdict": "category-wrong",
+      "detail": "Серьёзность major верна, категория нет: «wounds of break-up» вместо «язв разложения» (decay) — смысловая ошибка; к тому же «You make your decision» вместо «Ты судишь» и «take a look at houses in such a way» вместо «научишься различать дома» — тоже mistranslation, не fluency.",
+      "suggestion": "cat: mistranslation, sev: major; перечислить три сдвига."
+    },
+    {
+      "target": "annotation",
+      "id": "p3-c01-071",
+      "verdict": "confirmed",
+      "detail": "grammar/major: «Those who are unable to live like this every day, the knowledge is out of reach for them» — анаколуф реален.",
+      "suggestion": "—"
+    },
+    {
+      "target": "annotation",
+      "id": "p3-c01-071",
+      "verdict": "severity-too-low",
+      "detail": "mistranslation: цитаты верны, но последствия недооценены. В RU противопоставление: среди совершенных можно видеть лишь манеры, среди несовершенных — «видеть в них каплю огня Вечности» (видишь ТЫ). В EN «and who see the sparkle of fire of Eternity in them» — видят сами люди; параллель «можно… видеть» разрушена, а «радости совершенства» → «joy of knowledge». Это центральная мысль поучения (ключ к знанию — в том, как ты смотришь на людей); следующая фраза EN («help him, so that he would turn from the sparkle into the bonfire» — костром становится человек, а не капля) закрепляет искажение. По определению шапки («искажён смысл важного места») это critical.",
+      "suggestion": "sev: critical (или хотя бы явно пометить как кандидат в critical и отразить в выводе «критических нет»)."
+    },
+    {
+      "target": "annotation",
+      "id": "p3-c01-075",
+      "verdict": "confirmed",
+      "detail": "«become hardened» для «закаляются» — в английском «hardened hearts» = ожесточённые; major обоснован.",
+      "suggestion": "—"
+    },
+    {
+      "target": "annotation",
+      "id": "p3-c01-075",
+      "verdict": "confirmed",
+      "detail": "«мир» → «calm» — реально, major обоснован. Но одна системная замена учтена как major в 075, 078, 079, 083 и как minor в 080 — непоследовательно; при этом в 078/079 она склеена с другой ошибкой.",
+      "suggestion": "Выбрать правило: либо каждое вхождение одинаковой серьёзности, либо системная замена считается один раз + пометка «системная»."
+    },
+    {
+      "target": "annotation",
+      "id": "p3-c01-077",
+      "verdict": "confirmed",
+      "detail": "«move heaven and earth» = «лезть из кожи вон» (усилие), а не способность «сдвигать горы»; теряется и аллюзия на Мф 17:20 (вера/верность двигает горы), важная при «если верность твоя цельна». Major пограничный, но допустим.",
+      "suggestion": "Оставить."
+    },
+    {
+      "target": "annotation",
+      "id": "p3-c01-078",
+      "verdict": "confirmed",
+      "detail": "«begin and to start» вместо «начать и кончить» — реальная смысловая ошибка; major верно.",
+      "suggestion": "—"
+    },
+    {
+      "target": "annotation",
+      "id": "p3-c01-079",
+      "verdict": "confirmed",
+      "detail": "То же «begin and to start»; «everything what» — major верно.",
+      "suggestion": "—"
+    },
+    {
+      "target": "annotation",
+      "id": "p3-c01-083",
+      "verdict": "confirmed",
+      "detail": "«Accept my regards and calm» — формула благословения искажена; пропуск имени «Али» в «call me by name» реален (для призыва по имени это существенно).",
+      "suggestion": "Можно вынести пропуск «Али» отдельной находкой omission/major."
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c20-213",
+      "verdict": "confirmed",
+      "detail": "«My destiny is going like this:» — строка «Избранник я счастливой доли» утрачена полностью. Это ключевая строка песни-ответа Левушке («Он точно ответил мне», 214) — кандидат в critical.",
+      "suggestion": "Рассмотреть critical."
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c20-213",
+      "verdict": "confirmed",
+      "detail": "Подстрочник без рифмы и размера — факт. Серьёзность зависит от ещё не принятого правила о переводе стихов (в decisions.md правила нет); сейчас major — оценочный.",
+      "suggestion": "Пометить, что оценка зависит от будущего решения о стихах."
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c01-056",
+      "verdict": "confirmed",
+      "detail": "«sparkling like the eyes of the cat in the night» — конкретный образ, для этого переводчика нехарактерный как выдумка; правдоподобно другая редакция. Но доказательство «search» в репозитории не зафиксировано (нет URL/цитаты), тексты не открывались. Пропуск «Это было лицо совершенно незнакомого мне человека» записан внутри divergence и в ошибки не попал.",
+      "suggestion": "Сохранить URL/цитату поиска; пропуск фразы вынести отдельной omission (условно, до D14)."
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c12-040",
+      "verdict": "divergence-doubtful",
+      "detail": "«I even had to close my eyes» — прямо выводится из RU «протирая глаза руками, и открыл их с большим усилием»: типичная связующая экспликация переводчика (ср. признанные additions в p1-c01-043 «behind the tree», p2-c01-267). Нового повествовательного содержания нет. Не отмечено: «Я не успел даже опомниться, как» → «I didn’t even notice how» (не заметил ≠ не успел опомниться).",
+      "suggestion": "Перевести в addition/minor; добавить minor mistranslation «didn’t even notice»."
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c12-041",
+      "verdict": "confirmed",
+      "detail": "«and my leg would hang in the air» — конкретная, связная деталь; как другая редакция правдоподобно (слабая уверенность, evidence: pattern). Добавлено также «which separated us from the captain’s bridge» — не противоречит 040 только если 040 читать как итоговую фразу.",
+      "suggestion": "Оставить, пометить уверенность «низкая»."
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c12-042",
+      "verdict": "divergence-doubtful",
+      "detail": "Смешано два явления. «I. with all his strength was dragging my body» — правдоподобная вставка редакции. Но «we were flooded by the water… this gigantic wave didn’t have time to wash us away» при RU «чудовищная волна прошла стороной» больше похоже на неверное понимание «прошла стороной» с рационализацией («прижало» → вода прижала). Смысл перевёрнут — это нельзя выводить из метрик целиком.",
+      "suggestion": "Разделить: divergence для «I. … dragging»; для волны — mistranslation/major с пометкой «условно до D14»; в отчёте дать метрику в двух вариантах."
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c12-045",
+      "verdict": "divergence-doubtful",
+      "detail": "«squeezed into the corner by the strong wind that was blowing into my legs» при RU «прижат к рубке таким сильным ветром, что стоял очень устойчиво» — это отличие на уровне пересказа (рубка → угол, добавлено «into my legs»), а не новое содержание; одинаково объясняется вольностью переводчика.",
+      "suggestion": "Считать minor mistranslation/addition или пометить уверенность «низкая»."
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c12-046",
+      "verdict": "divergence-doubtful",
+      "detail": "«first-aid kit» — скорее лексический выбор переводчика для «коробочки» с пилюлями (и противоречит «green Florentian’s box» в 044, «my» — не его коробочка), а не содержание другой редакции.",
+      "suggestion": "Перевести в mistranslation/minor («my first-aid kit» ≠ коробочка Флорентийца)."
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c12-048",
+      "verdict": "divergence-doubtful",
+      "detail": "«and was fighting against the menacing death» — «menacing death» — штамп переводчика: в 051.2 он же добавлен к «не понимающему смерти», где RU-текст есть и никакой другой редакции не требуется. Вероятнее добавление переводчика.",
+      "suggestion": "Перевести в addition/minor."
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c12-055",
+      "verdict": "confirmed",
+      "detail": "«the mirage of my love to him» — поиск по фразе (по отчёту) находит её в другом тексте романа; правдоподобно. Доказательство в репозитории не сохранено.",
+      "suggestion": "Сохранить источник поиска."
+    },
+    {
+      "target": "annotation",
+      "id": "p2-c01-259.2",
+      "verdict": "confirmed",
+      "detail": "Эпизод о младшей дочери с букетом — связный, конкретный, согласован с дальнейшим (060 «младшая»); выдумкой переводчика быть маловероятно. Слабость доказательства в разметке указана честно.",
+      "suggestion": "—"
+    },
+    {
+      "target": "annotation",
+      "id": "p2-c01-261",
+      "verdict": "divergence-doubtful",
+      "detail": "Частично. «having clapped her hands like a child, she was talking» и «it clearly disobeyed the comb» — правдоподобные вставки редакции. Но «Alyssa’s kindness used to enslave everybody, while the atmosphere of joy…» может быть раздроблённой передачей «Какая-то радостная доброта Алисы покоряла каждого» (радостная → atmosphere of joy). Кроме того, внутри этого места пропущена ошибка «enslave» (см. missed).",
+      "suggestion": "Сузить divergence до «clapped her hands» / «disobeyed the comb»; остальное — перевод с ошибками."
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c01-041",
+      "verdict": "confirmed",
+      "detail": "omission «вдали»; «цоканье» → «rumbling»; также «a horse» (ед. ч.) при «конских копыт».",
+      "suggestion": "—"
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c01-043",
+      "verdict": "confirmed",
+      "detail": "«behind the tree» — безвредная экспликация, minor верно.",
+      "suggestion": "—"
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c01-048",
+      "verdict": "confirmed",
+      "detail": "«in quite a long distance – apparently, protecting from the dust» — подтверждено.",
+      "suggestion": "—"
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c01-051",
+      "verdict": "confirmed",
+      "detail": "«we’ve already been uncovered» для «мы открыты» — неточно (spotted/discovered), minor верно.",
+      "suggestion": "—"
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c01-055",
+      "verdict": "category-wrong",
+      "detail": "«having forgotten … that it was indecent» для «забыв … все приличия» — смысл («забыли, что так стоять неприлично») по сути сохранён; «сдвига смысла» нет, есть неуклюжесть.",
+      "suggestion": "cat: fluency (minor) или снять."
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c01-059",
+      "verdict": "confirmed",
+      "detail": "«the old Ali» при «the older Ali» в 050–052 — подтверждено. Не отмечено: «смеясь» → «smiling», «высоченную» → «huge» (minor).",
+      "suggestion": "Дополнить note."
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c01-062",
+      "verdict": "confirmed",
+      "detail": "«I was as though fallen into a light slumber» — подтверждено.",
+      "suggestion": "—"
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c12-043",
+      "verdict": "confirmed",
+      "detail": "«so much» — подтверждено; также «Огромная» (водяная стена) потеряно.",
+      "suggestion": "—"
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c12-046",
+      "verdict": "confirmed",
+      "detail": "«such fresh surge» — подтверждено.",
+      "suggestion": "—"
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c12-050",
+      "verdict": "confirmed",
+      "detail": "Точка перед репликой — подтверждено. Не отмечено: «раззадорила» → «encouraged» (ослаблено, minor).",
+      "suggestion": "—"
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c12-054",
+      "verdict": "confirmed",
+      "detail": "«spike» для «нос» — подтверждено (по сути лексическая ошибка, но minor уместен); «прорезал брюхо водяной горы» → «pierced through the gigantic mass» — образ потерян (minor, не записан).",
+      "suggestion": "—"
+    },
+    {
+      "target": "annotation",
+      "id": "p2-c01-256",
+      "verdict": "confirmed",
+      "detail": "«pleasingly», «telling about … to my wife», «by looking at Nal» — подтверждено.",
+      "suggestion": "—"
+    },
+    {
+      "target": "annotation",
+      "id": "p2-c01-259",
+      "verdict": "confirmed",
+      "detail": "Wodsword/Alyssa — вопрос глоссария, подтверждено.",
+      "suggestion": "—"
+    },
+    {
+      "target": "annotation",
+      "id": "p2-c01-263",
+      "verdict": "confirmed",
+      "detail": "Florentian — вопрос глоссария; также добавлено «in his eyes» (minor).",
+      "suggestion": "—"
+    },
+    {
+      "target": "annotation",
+      "id": "p2-c01-269",
+      "verdict": "confirmed",
+      "detail": "Пропуск «что выходит из нашего дома» — подтверждено; «Впрочем» → «by the way» — сдвиг (minor).",
+      "suggestion": "—"
+    },
+    {
+      "target": "annotation",
+      "id": "p3-c01-067",
+      "verdict": "confirmed",
+      "detail": "«совершенствования» → «development» — подтверждено, термин в глоссарий.",
+      "suggestion": "—"
+    },
+    {
+      "target": "annotation",
+      "id": "p3-c01-069",
+      "verdict": "confirmed",
+      "detail": "«дело» → «everything» — подтверждено.",
+      "suggestion": "—"
+    },
+    {
+      "target": "annotation",
+      "id": "p3-c01-073",
+      "verdict": "confirmed",
+      "detail": "«black occultists» — «black» устойчиво в англоязычной эзотерике; это скорее выбор термина, чем ошибка. Как minor terminology допустимо.",
+      "suggestion": "Оформить как вопрос глоссария."
+    },
+    {
+      "target": "annotation",
+      "id": "p3-c01-077",
+      "verdict": "confirmed",
+      "detail": "Порядок слов, «private burden» — подтверждено.",
+      "suggestion": "—"
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c20-213",
+      "verdict": "confirmed",
+      "detail": "«saint Beauty», «will and power» — подтверждено («воли» здесь скорее свобода).",
+      "suggestion": "—"
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c12-045",
+      "verdict": "severity-too-low",
+      "detail": "mistranslation записан как minor. RU: «так близок был ко мне… мой друг, точно я увидел его рядом. Положительно, если бы я спал, то был бы уверен, что вижу его во сне». EN: «I even saw him next to me. Of course, if I was lying, I would think that I was dreaming, but now I was certain that I saw him not in my dream» — «как будто» превращено в утверждение, что рассказчик действительно видел Флорентийца не во сне; логика фразы перевёрнута, а в 055 EN сам же называет это миражом. Для романа, где граница видения и реальности значима, это заметная смысловая ошибка.",
+      "suggestion": "sev: major; уровень блока L3."
+    },
+    {
+      "target": "annotation",
+      "id": "p1-c12-052",
+      "verdict": "severity-too-low",
+      "detail": "fluency/minor для «As though hollowed out walls of the green water … would rise». «высоченные» → «hollowed out» (выдолбленные) — образ заменён на другой, фраза-обрубок; кроме того опущено «и похоронить в пропасти» («They were threatening to flood us from all sides right away») и «в который уже раз».",
+      "suggestion": "cat: mistranslation, sev: major; добавить omission/minor «похоронить в пропасти»."
+    },
+    {
+      "target": "annotation",
+      "id": "p3-c01-080",
+      "verdict": "severity-too-low",
+      "detail": "«common welfare and calm» — та же замена «мир» → «calm», что в 075/083 стоит как major; здесь minor. Непоследовательность серьёзности для одной ошибки.",
+      "suggestion": "Выровнять с 075 (или считать системную замену один раз)."
+    },
+    {
+      "target": "missed",
+      "id": "p1-c12-053",
+      "verdict": "missed",
+      "detail": "RU: «фигура Флорентийца, коснувшаяся рук И., который двинул штурвал так, как хотел капитан». EN: «He touched I.’s hands and then he turned the wheel exactly so as the captain wanted it to» — по грамматике EN штурвал поворачивает призрачный Флорентиец, а не И. Смысловая ошибка (major): меняется, кто действует, в сцене, где фигура — лишь видение («мираж», 055).",
+      "suggestion": "Добавить mistranslation/major: «…the tall white figure of the Florentine, touching the hands of I., who turned the wheel just as the captain wanted»."
+    },
+    {
+      "target": "missed",
+      "id": "p3-c01-068",
+      "verdict": "missed",
+      "detail": "«Ты будешь владеть силами в себе и вовне» → «You are going to control your inner and your outer powers». RU: власть над силами внутри себя и во внешнем мире; EN сужает до «твоих внешних сил». Смысловая неточность в обещании Учителя — major (пограничный, по порогу, принятому для 077). Также «develop your psychic powers into the highest levels of knowledge» — цель «поведёт к высшей ступени знания» переподчинена силам (minor).",
+      "suggestion": "Добавить mistranslation/major: «You will command the forces within you and without»."
+    },
+    {
+      "target": "missed",
+      "id": "p3-c01-074",
+      "verdict": "missed",
+      "detail": "«сжигая в человеке волю к добру своим тяжелым гипнозом» → «they burn down the will for kindness within man with their hypnosis». «добро» (благо, добро как нравственная категория) сведено к «kindness» и смешано с «доброта» (078–079); «тяжелым» опущено. По порогу разметки (ср. «hardened», 075) — major terminology. В том же блоке 073: «страшны и разрушительны среди людей невежественных» → «they destroy ignorant people» — субъект сдвинут на оккультистов (записано лишь как omission/minor; это mistranslation).",
+      "suggestion": "Добавить terminology/major «will to good»; 073 omission → mistranslation."
+    },
+    {
+      "target": "missed",
+      "id": "p2-c01-261",
+      "verdict": "missed",
+      "detail": "Вне заданного объёма (cal-3), замечено при проверке divergence: «Какая-то радостная доброта Алисы покоряла каждого» → «Alyssa’s kindness used to enslave everybody» — «покоряла» (очаровывала) → «порабощала»; негативная коннотация того же рода, что «hardened» в 075, помеченное major.",
+      "suggestion": "Добавить mistranslation/major (или обосновать иной порог)."
+    },
+    {
+      "target": "level",
+      "id": "p1-c12-052",
+      "verdict": "missed",
+      "detail": "Блок {#p1-c12-052 p1-c12-053} стоит L2, но содержит две смысловые ошибки («hollowed out walls»; «he turned the wheel» — действует Флорентиец вместо И.) и пропуск «похоронить в пропасти».",
+      "suggestion": "L3."
+    },
+    {
+      "target": "level",
+      "id": "p1-c12-045",
+      "verdict": "missed",
+      "detail": "L2, но «I even saw him … certain that I saw him not in my dream» — смысловая ошибка, требующая переписать фразу.",
+      "suggestion": "L3."
+    },
+    {
+      "target": "level",
+      "id": "p1-c12-042",
+      "verdict": "missed",
+      "detail": "L2, хотя при нашей RU как канонической волна «прошла стороной» ↔ «we were flooded» — смысловая ошибка.",
+      "suggestion": "L3 условно (до D14); указать в отчёте оба варианта."
+    },
+    {
+      "target": "level",
+      "id": "p3-c01-068",
+      "verdict": "missed",
+      "detail": "L2, но «your outer powers» вместо «сил вовне» — смысловая ошибка.",
+      "suggestion": "L3."
+    },
+    {
+      "target": "level",
+      "id": "p3-c01-073",
+      "verdict": "missed",
+      "detail": "Блок {#p3-c01-073 p3-c01-074}: L2, но «they destroy ignorant people» (сдвиг субъекта) и «will for kindness» — смысловые, не построчные правки.",
+      "suggestion": "L3."
+    },
+    {
+      "target": "level",
+      "id": "p3-c01-082",
+      "verdict": "missed",
+      "detail": "Блок {#p3-c01-082 p3-c01-083}: L2 при major «Accept my regards and calm» (искажённая формула благословения) и пропуске имени «Али».",
+      "suggestion": "L3."
+    }
+  ],
+  "overall": {
+    "reliable": false,
+    "comment": "Все цитаты RU/EN в разметке дословно находятся в файлах отрывков, ложных находок почти нет (1 неверная категория смысла в p1-c01-055, 1 — в p2-c01-254). Слабее всего — недосчёт и непоследовательный порог: в cal-2 пропущена major-ошибка в 053 (штурвал поворачивает Флорентиец), недооценены 045 и 052, а 3 из 7 divergence (040, 046, 048) и половина 042 скорее добавления или неверное понимание переводчика; вывод их из метрик занижает cal-2 (2,7 на 1000 → реалистично 6,6–8,0). Порог для грамматики неровный (041, 253, 051.2 — major; 043, 047, 052 — minor), а одна системная замена «мир → calm» считается то major, то minor. Вывод «критических нет» спорен: p3-c01-071 (кто видит «каплю огня Вечности») и, возможно, строка песни p1-c20-213 подходят под определение critical. «≈5 major на 1000 слов прозы» — нижняя граница; с поправками получается ≈6–7 (15 → 21–22 при частичной перепроверке cal-1/cal-3). «Письмо Учителя заметно хуже» направленно верно (≈13 против ≈7–8 в cal-2), но разрыв меньше, чем 4× в метриках. «2/3 блоков требуют L2+» устойчиво: мои поправки переводят блоки L2 → L3 и долю L2+ не меняют, но долю L3 разметка занижает (cal-2: 1 → 3–4 из 16). Прежде чем опираться на цифры, нужно внести поправки, разделить divergence по уверенности и дать метрики в двух вариантах (с условными ошибками и без них)."
+  }
+}
