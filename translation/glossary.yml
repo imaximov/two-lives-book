@@ -16,6 +16,14 @@
 # оценка. Записи с несколькими ru через « / » — группы реалий одного эпизода (secondary); при поглавном росте
 # разбиваются, если слово встретится снова. Заметки исследования — translation/analysis/glossary-core-notes.md.
 # Проверка: python -m tools.glossary.check
+#
+# Правила по итогам внутреннего ревью ядра (translation/reviews/en/glossary-core/resolution.md): в en.term / en.name —
+# ровно один рабочий вариант (альтернативы — в question/note, контекстный выбор — явным критерием в note); по умолчанию —
+# вариант старого EN, если он не ошибочен (§9.2 п.6); имена в примерах — только по characters.yml; first_seen — первое
+# вхождение именно этого значения.
+# Открытые вопросы стайлгайда (этап 4), всплывшие при ревью ядра: оксфордская (серийная) запятая — отдельный вопрос, DEC-024
+# касается только орфографии -ize; торжественное labour для «труда» (trud); he/his при первых упоминаниях Сандры (characters.yml,
+# sandra-santanaida); точка после Il. в конце предложения и шрифт с различимыми I/l (illofillion).
 
 entries:
 
@@ -43,7 +51,7 @@ entries:
   - {id: p2-c01-287, ru: 'ученик идёт так, как ведёт его Учитель', en_legacy: the disciple is going in such a way as the Master
       is leading him}
   - {id: p3-c27-025, ru: усваивать уроки Учителя-Владыки, en_legacy: master the Teacher-Master’s lessons}
-  - {id: p3-c26-098, ru: заведует сам Великий Учитель, en_legacy: The Great Teacher himself is leading the laboratories}
+  - {id: p3-c26-099, ru: заведует сам Великий Учитель, en_legacy: The Great Teacher himself is leading the laboratories}
   en:
     term: Teacher
     legacy: Teacher ≈513 (ч. III), ≈43 (ч. II); Master ≈24 (сосредоточено в p2-c01-287…298 и p3-c25…c27, где Master служит
@@ -102,11 +110,13 @@ entries:
   first_seen: p1-c07-035
   counts: {p1: 2, p2: 4, p3: 5}
   counts_what: оценка по контексту (школа, курсы, театр, мастерская)
+  note: 'критерий (правило 1): школьник, ученик мастера или артиста — pupil («мой ученик Игоро» p3-c17-058); учащийся курсов,
+    университета — student (p2-c11-108 «ученица» курсов)'
   evidence:
   - {id: p2-c11-108, ru: Если вы ещё только ученица…, en_legacy: if you are still only a student}
   - {id: p3-c17-058, ru: 'блестящий режиссер, мой ученик Игоро', en_legacy: 'an excellent director, my student Igor'}
   en:
-    term: pupil / student (по контексту)
+    term: pupil
     legacy: student, pupil
     avoid: [disciple]
     status: proposed
@@ -125,12 +135,47 @@ entries:
     avoid: []
     status: proposed
 
+- id: nastavnik
+  ru: наставник / наставница
+  sense: тот, кто ведёт и учит человека (И. для рассказчика, Али, Флорентиец; «наставники» Общины); у женщин — наставница
+    (Дория для Наль, «наставницей в доме» для сирот)
+  distinguish: 'uchitel#spiritual — RU ставит «наставника» рядом с «Учителем» как другое слово: «мой дорогой наставник, мой
+    верный друг и Учитель» p3-c04-061; «Учителя, ближайшего наставника и помощника» p3-c28-040; «учителями и наставниками»
+    p3-c22-089; «ближайший Учитель и наставник» p3-c23-009. Школьные «классные наставники» (p3-c24-104) — form masters по
+    контексту.'
+  ru_forms: [наставник, наставника, наставнику, наставником, наставнике, наставники, наставников, наставникам, наставниками,
+    наставница, наставницей]
+  tier: core
+  first_seen: p1-c07-028
+  counts: {p1: 6, p2: 10, p3: 46}
+  counts_what: все формы, включая «рука-наставница» (p1-c05-018) и школьные «классные наставники» (p3-c24-104)
+  note: сквозное обозначение И. в речи рассказчика ч. III («мой дорогой наставник» p3-c06-010, p3-c19-116)
+  evidence:
+  - {id: p3-c04-061, ru: 'мой дорогой наставник, мой верный друг и Учитель', en_legacy: 'my dear guardian, my loyal friend
+      and Teacher'}
+  - {id: p3-c28-040, ru: 'держа за руку Учителя, ближайшего наставника и помощника', en_legacy: 'while you are holding the
+      hand of your Teacher, your closest guardian and assistant'}
+  - {id: p1-c07-028, ru: 'предложили бы выбрать друга, наставника, брата', en_legacy: 'I was offered to choose a friend, a
+      guardian, a brother'}
+  - {id: p3-c23-118, ru: сказал мне мой наставник, en_legacy: my chief said to me}
+  en:
+    term: mentor
+    legacy: 'guardian ≈37 (сдвиг: guardian = опекун), teacher ≈14 (слияние с «Учителем»), chief ≈10, master ≈8 — в связях
+      с «наставником» (61)'
+    avoid: [guardian, teacher (для «наставника»)]
+    status: proposed
+  question: 'mentor / instructor / guide? Доводы: RU отличает «наставника» от «Учителя» в одной фразе (p3-c04-061, p3-c28-040),
+    поэтому teacher не годится; guardian старого EN значит «опекун»; instructor — «инструктор», слишком служебно; guide —
+    возможно, но размыто. Рекомендация: mentor (наставница — mentor тоже).'
+
 - id: vladyka#master
   ru: Владыка
-  sense: 'высший духовный руководитель, выше Учителя по иерархии части III: Владыки оазиса, Владыки мощи (p3-c26-055), Владыки
-    Земли (p3-c30-092), Божественные Владыки (p3-c26-117), «старший Владыка» (p3-c25-088)'
-  distinguish: 'не путать с vladyka#lord (строчная: светский властелин, «владыкой пустыни» p3-c17-108; «новый владыка» сердца
-    p2-c03-009; церковнославянское «Владыко» в молитве p2-c02-039) и с vladyki-karm.'
+  sense: 'титул высших духовных руководителей в ч. III (гл. 25–33): Владыки оазиса, Владыки мощи (p3-c26-055), Владыки Земли
+    (p3-c30-092), Божественные Владыки (p3-c26-117), «старший Владыка» (p3-c25-088). Текст называет одних и тех же существ
+    то Учителями, то Владыками («Учитель пятого луча» p3-c26-083 — «к Владыке этого луча» p3-c26-108; «первым Владыкой-Учителем»
+    p3-c29-027), поэтому иерархию «выше Учителя» из текста не выводим'
+  distinguish: 'не путать с vladyka#ruler (строчная: светский властелин, «владыкой пустыни» p3-c17-108; «новый владыка» сердца
+    p2-c03-009), vladyka#god (церковнославянское «Владыко» в молитве p2-c02-039) и с vladyki-karm.'
   ru_forms: [Владыка, Владыки, Владыке, Владыку, Владыкой, Владык, Владыкам, Владыками, Владыко]
   tier: core
   first_seen: p3-c25-046
@@ -140,54 +185,152 @@ entries:
   - {id: p3-c25-088, ru: старший Владыка еще раз поклонился И., en_legacy: the senior Master bowed to I. once again}
   - {id: p3-c25-059, ru: 'Старейшины, или, как их называет Учитель И., Владыки оазиса', en_legacy: 'The chiefs, or the Masters
       of the oasis'}
-  - {id: p3-c26-117, ru: посылаемых Божественными Владыками, en_legacy: These Divine Masters are above everything}
+  - {id: p3-c26-117, ru: Эти Божественные Владыки — выше всего, en_legacy: These Divine Masters are above everything}
   en:
     term: Master
     legacy: Master ≈350; master ≈9; lord/Lord ≈9 (в основном другое значение)
     avoid: [Lord]
     status: proposed
-  question: 'Master или Lord? Доводы из текста: (1) «лорд» — реальный английский титул в романе (лорд Бенедикт = Florentian,
-    ~270 упоминаний, старый EN: lord Benedict), и Lord для «Владыки» столкнётся с ним; (2) старый перевод последователен (Master
-    ≈350); (3) Master для «Учителя» тогда недоступен — см. uchitel#spiritual. Рекомендация: Master (с прописной); «Владыка» в
-    молитве (Владыко) — Lord, см. vladyka#lord.'
+  question: 'Master или Lord? Довод лексический: в RU два разных слова — «Учитель» и «Владыка», и каждому нужно своё английское
+    слово; Teacher занят «Учителем» (uchitel#spiritual), значит, «Владыке» остаётся Master; старый перевод последователен
+    (Master ≈350). Вспомогательно: Lord в EN уже несёт «Господа» (bog, vladyka#god — там его различает контекст молитвы) и
+    титул «лорд» (RU «лорд Бенедикт» ≈575, старый EN lord/Lord Benedict ≈609); для «Владыки» (365 раз) это было бы третье
+    значение одного слова. Рекомендация: Master (с прописной); «Владыко» в молитве — Lord (vladyka#god).'
 
-- id: vladyka#lord
+- id: vladyka#ruler
   ru: владыка
-  sense: светский властелин, господин; «Владыко» — церковнославянское обращение к Богу в молитве
-  distinguish: духовный титул — vladyka#master; «владыки карм» — vladyki-karm
+  sense: 'светский властелин, господин (строчная): хозяин пустыни или округа, «владыка» сердца, муж как «владыка» дочери'
+  distinguish: духовный титул — vladyka#master (прописная); «Владыко» в молитве — vladyka#god; «владыки карм» — vladyki-karm
+  ru_forms: [владыка, владыки, владыку, владыкой]
   tier: core
-  first_seen: p2-c02-039
-  counts: {p1: 0, p2: 4, p3: 3}
-  counts_what: без «владык карм»
+  first_seen: p2-c03-009
+  counts: {p1: 0, p2: 2, p3: 5}
+  counts_what: 'строчная, без «владык карм»: p2-c03-009, p2-c14-143, p3-c16-110, p3-c16-159, p3-c17-085, p3-c17-108, p3-c17-158
+    («великий духовный владыка» — в речи о самозванце)'
+  note: 'критерий (правило 1): властелин места или людей — lord; «новый владыка» сердца (p2-c03-009) и муж как «владыка» (p2-c14-143)
+    — master по контексту'
   evidence:
-  - {id: p2-c02-039, ru: '«Ныне отпущаеши раба Твоего, Владыко, по глаголу Твоему с миром»', en_legacy: 'Lord, for…'}
   - {id: p3-c17-108, ru: 'в пустыне, где я являюсь владыкой', en_legacy: 'in the desert, the lord of which I am'}
+  - {id: p3-c16-110, ru: Мы привыкли называть дедушкой нашего дорогого владыку., en_legacy: We got used to call our dear lord
+      grandfather}
+  - {id: p3-c16-159, ru: дорогой владыка этого округа, en_legacy: dear host of this oasis}
   en:
-    term: lord; Lord (к Богу)
-    legacy: lord, Lord
+    term: lord
+    legacy: lord (p3-c16-110, p3-c17-108); host (p3-c16-159); the new person (p2-c03-009)
     avoid: []
     status: proposed
 
+- id: vladyka#god
+  ru: Владыко
+  sense: церковнославянское обращение к Богу в молитве («Ныне отпущаеши раба Твоего, Владыко»)
+  distinguish: духовный титул «Владыка» — vladyka#master; светский «владыка» — vladyka#ruler; «Господь/Господи» — bog
+  ru_forms: [Владыко]
+  tier: core
+  first_seen: p2-c02-039
+  counts: {p1: 0, p2: 1, p3: 0}
+  note: 'молитва пастора (Песнь Симеона); связь с bog: и «Господь», и «Владыко» к Богу → Lord'
+  evidence:
+  - {id: p2-c02-039, ru: '«Ныне отпущаеши раба Твоего, Владыко, по глаголу Твоему с миром»', en_legacy: 'Lord, forgive us
+      our sins, for we ourselves forgive everyone', note: старый EN заменил молитву другой (из «Отче наш»)}
+  en:
+    term: Lord
+    legacy: Lord (p2-c02-039, в подменённой молитве)
+    avoid: []
+    status: proposed
+  question: 'Молитву p2-c02-039 передать по английской библейской традиции («Lord, now lettest thou thy servant depart in
+    peace, according to thy word», Nunc dimittis) или современно («Lord, now let your servant go in peace, as you have promised»)?
+    Рекомендация: традиционная форма — это цитата, которую английский читатель узнаёт; thou здесь — часть цитаты, а не обращение
+    персонажей (§6.3 п.8 не нарушается).'
+
 - id: vladyki-karm
   ru: владыки карм
-  sense: силы (существа), распоряжающиеся кармой людей; всегда во мн. ч., в RU со строчной
-  distinguish: не путать с vladyka#master (прописная, титул); строчная в RU — устойчиво
-  ru_forms: [владыки карм, владыками карм, владык карм, владыки освобождающих карм]
+  sense: силы (существа), распоряжающиеся кармой людей; почти всегда во мн. ч.
+  distinguish: 'титул «Владыка» — vladyka#master. RU пишет и с прописной, и со строчной: строчная — 8 (p2-c13-041, p3-c05…c10:
+    «владыки карм» p3-c05-122), прописная — 18, все в p3-c26…c29 («Владыки карм» p3-c26-036, p3-c29-024), то есть RU не отделяет
+    их от титула «Владыка» буквой; ед. ч. «кармы» — p3-c26-097 («Владыками кармы их этажа»).'
+  ru_forms: [владыки карм, владыками карм, владык карм, владыкам карм, владыки освобождающих карм, Владыки карм, Владык карм,
+    Владыкам карм, Владыками кармы]
   tier: core
   first_seen: p2-c13-041
-  counts: {p1: 0, p2: 1, p3: 28}
+  counts: {p1: 0, p2: 1, p3: 25}
+  counts_what: «[Вв]лады* (освобождающих) карм*»; прописная 18 (p3-c26…c29), строчная 8
   evidence:
   - {id: p3-c05-122, ru: 'что такое «владыки карм», о которых ты еще ничего не знаешь', en_legacy: who “the lords of karma”…}
   - {id: p3-c09-105, ru: куда его пошлют владыки карм и рука их Учителя, en_legacy: whom the masters of karmas or the Teacher’s
       hand sends}
   en:
     term: Masters of karma
-    legacy: Masters of karma(s) ≈20; lords of karma(s) ≈4; masters ≈2
+    legacy: Masters of karma(s) / masters of karma ≈20 (9 связей с прописной, 9 со строчной); lords of karma(s) ≈4; masters
+      ≈2
+    avoid: [lords of karma]
+    status: proposed
+  question: 'Прописная: Masters of karma там, где в RU прописная (p3-c26…c29), и masters of karma там, где строчная (p2-c13-041,
+    p3-c05…c10), — по rule#capitalized-concepts; или единообразно Masters of karma? Рекомендация: зеркалить RU. Сам термин
+    — Masters of karma (старый EN, большинство; не ошибка, §9.2 п.6). lords of karma не брать: Lord сталкивается с титулом
+    «лорд» (см. vladyka#master), а привычность выражения в теософской литературе — не довод из текста романа.'
+
+- id: sanat-kumara
+  ru: Санат Кумара
+  sense: «Великий Бог, Господь нашей планеты» (p3-c28-038), «Защитник и Покровитель Земли» (p3-c29-033), Глава Светлого Братства
+    (p3-c30-022)
+  distinguish: Кумары (мн. ч.) — kumary; Маха-Чохан — maha-chohan
+  ru_forms: [Санат Кумара, Санат Кумары, Санат Кумарой]
+  tier: core
+  first_seen: p3-c28-038
+  counts: {p1: 0, p2: 0, p3: 21}
+  note: имя (не титул); местоимения при нём в RU с прописной (rule#capital-pronouns). Толкований не даём — только текст
+  evidence:
+  - {id: p3-c28-038, ru: 'Великий Бог, Господь нашей планеты — Санат Кумара', en_legacy: 'the Great God, the Lord of our planet
+      – Sanat Kumara'}
+  - {id: p3-c30-022, ru: 'со всем Светлым Братством, с Его Главою — Санат Кумарой', en_legacy: 'with the whole Bright Brotherhood,
+      with Her Master – Sanat Kumara'}
+  - {id: p3-c29-073, ru: мимо рабочего места Санат Кумары, en_legacy: through Sanat Kamara’s working place, note: опечатка
+      старого EN}
+  en:
+    term: Sanat Kumara
+    legacy: Sanat Kumara 20; Sanat Kamara 1 (опечатка, p3-c29-073)
+    avoid: [Sanat Kamara]
+    status: proposed
+
+- id: maha-chohan
+  ru: Маха-Чохан
+  sense: '«Великий Мировой Учитель», «Верховный Владыка пяти лучей» (p3-c29-053: «Великого Мирового Учителя Маха-Чохана»,
+    «Верховному Владыке пяти лучей, Маха-Чохану»)'
+  distinguish: Санат Кумара — sanat-kumara; «Учитель» при имени — uchitel#spiritual
+  ru_forms: [Маха-Чохан, Маха-Чохана, Маха-Чохану]
+  tier: core
+  first_seen: p3-c29-053
+  counts: {p1: 0, p2: 0, p3: 6}
+  counts_what: все 6 — в одном абзаце p3-c29-053
+  note: RU пишет через дефис; старый EN — без дефиса, последовательно; ошибки нет (§9.2 п.6)
+  evidence:
+  - {id: p3-c29-053, ru: Теперь ты видишь впервые Великого Мирового Учителя Маха-Чохана, en_legacy: 'Now, for the first time
+      you see the Great Teacher of the World Maha Chohan', note: в корпусе связь начинается с p3-c29-051}
+  en:
+    term: Maha Chohan
+    legacy: Maha Chohan 6 (без дефиса)
     avoid: []
     status: proposed
-  question: 'Masters of karma (старый EN, большинство; согласуется с vladyka#master) или lords of karma (строчная в RU как
-    раз отделяет их от титула «Владыка»)? Рекомендация: lords of karma — со строчной, чтобы не смешивать с Master-титулом;
-    но это отход от большинства старого перевода, решить владельцу.'
+
+- id: kumary
+  ru: Кумары
+  sense: «великие Кумары», «Великие три Кумары» — три ближайших помощника («три Его Брата») Живого Бога Земли (p3-c29-053)
+  distinguish: Санат Кумара (ед., имя) — sanat-kumara; не путать род. п. «Санат Кумары» с мн. ч.
+  ru_forms: [Кумары, Кумар, Кумарами]
+  tier: core
+  first_seen: p3-c29-052
+  counts: {p1: 0, p2: 0, p3: 4}
+  counts_what: p3-c29-052 (1), p3-c29-053 (3)
+  evidence:
+  - {id: p3-c29-053, ru: Здесь же Учитель Маха-Чохан получает мысли-шары от Великих трех Кумар непосредственно., en_legacy: thoughts
+      directly from three Great Kumaras}
+  - {id: p3-c29-052, ru: приближаются к лучезарному облику великих Кумар, en_legacy: they themselves are nearing the radiant
+      image of great Kumaras}
+  en:
+    term: the Kumaras
+    legacy: Kumaras 4
+    avoid: []
+    status: proposed
 
 - id: obshchina
   ru: Община
@@ -207,8 +350,10 @@ entries:
     legacy: Community ≈329 (ч. III); community (строчная) ≈8, в т. ч. для прописной p2-c19-105, p2-c20-056
     avoid: [commune, monastery]
     status: proposed
-  question: 'Оставить Community (старый EN, последовательно)? Альтернатив по тексту нет: Община — не монастырь (там живут
-    семьи, p3-c01-067). Рекомендация: Community, с прописной.'
+  question: 'Оставить Community (старый EN, последовательно)? Альтернатив по тексту нет: Община — не монастырь: при Общине
+    Али — больница и дом для сирот и беспризорных детей (p3-c06-073), в мастерских и школах Общины Раданды работают люди,
+    живущие в своих семьях («мы все работаем тайно от наших семей в твоих мастерских и школах» p3-c20-206). Рекомендация:
+    Community, с прописной.'
 
 - id: svetloe-bratstvo
   ru: Светлое Братство
@@ -222,6 +367,8 @@ entries:
   first_seen: p3-c18-042
   counts: {p1: 0, p2: 0, p3: 123}
   counts_what: «Светл* Братств*»; «Братств*» с прописной — 131; «Светлые Братья» — 11
+  note: '«Светлые Братья», «Светлые Силы» — эпитет перед людьми и силами передаётся через of Light (svetly): the Brothers
+    of Light; здесь — только название Братства.'
   evidence:
   - {id: p3-c18-042, ru: 'мир всего Светлого Братства, которое поручило мне передать вам свой привет', en_legacy: it is from
       the whole Bright Brotherhood which entrusted me to give its greeting}
@@ -232,16 +379,22 @@ entries:
       Bright Brothers
     avoid: [White Brotherhood (для «Светлого»)]
     status: proposed
-  question: '(1) Bright Brotherhood (старый EN, последовательно) или Brotherhood of Light? Основания менять в тексте нет,
-    старый вариант не ошибочен — рекомендация: Bright Brotherhood. (2) «Белое Братство» (2 раза) — сохранить отличие от «Светлого»:
-    White Brotherhood? Текст не говорит прямо, одно ли это братство. Рекомендация: White Brotherhood, как в RU (не додумывать
-    тождество).'
+  question: '(1) Название: Bright Brotherhood (старый EN, ≈125, последовательно) или Brotherhood of Light? Доводы за of Light
+    (языковое ревью): bright о людях по-английски значит прежде всего «сообразительный, жизнерадостный»; «of Light» устойчиво
+    в английской прозе этого рода и даёт пару к the dark powers; эпитет перед людьми и силами уже переведён на of Light (svetly),
+    и Brothers of Light рядом с Bright Brotherhood — несимметрично. Доводы за Bright Brotherhood: старый вариант не ошибочен
+    как имя собственное (§9.2 п.6), к названию организации значение «смышлёный» не прилипает. Рекомендация: Bright Brotherhood;
+    Brotherhood of Light — если владелец хочет единый эпитет с Brothers of Light. (2) «Белое Братство» (2 раза) — сохранить
+    отличие от «Светлого»: White Brotherhood? Текст не говорит прямо, одно ли это братство. Рекомендация: White Brotherhood,
+    как в RU (не додумывать тождество).'
 
 - id: brat#sibling
   ru: брат
-  sense: родной или двоюродный брат (Николай — брат Левушки; И. — двоюродный брат Левушки в ч. I)
-  distinguish: 'brat#fellow — брат по Общине/Братству и обращение «брат мой». Двоюродный брат: «моего двоюродного брата Лёвушку»
-    p1-c17-044; «брат И.» в ч. I (p1-c15-026) — родство, а не титул. «брат-отец» (Николай, 26 раз) — см. characters.yml.'
+  sense: родной брат (Николай — брат Левушки)
+  distinguish: 'brat#fellow — брат по Общине/Братству и обращение «брат мой». «Двоюродный брат» в ч. I — легенда для окружающих:
+    И. выдаёт Левушку за своего кузена («моего двоюродного брата Лёвушку Т.» p1-c17-044), хотя он грек и не родственник («Другой
+    мой друг — грек» p1-c07-027); «мой брат И.» (p1-c15-026) — часть той же легенды или братство по духу, но не родство. «брат-отец»
+    (Николай, 26 раз) — characters.yml, nikolay.'
   ru_forms: [брат, брата, брату, братом, брате]
   tier: core
   first_seen: p1-c01-003
@@ -263,19 +416,22 @@ entries:
   distinguish: родство — brat#sibling; различать по контексту Общины (ч. III), имени после слова, речи Учителя
   ru_forms: [брат, брата, братья, братьев, сестра, сестры, сестер]
   tier: core
-  first_seen: p1-c02-119
-  counts: {p1: 0, p2: 1, p3: 60}
-  counts_what: 'оценка: «брат/сестра + имя» в ч. III ≈60 (без брата Николая ≈30), «братья и сестры» 22 (p2 1, p3 21); обращения
-    «друг и брат» — formula#drug-brat-syn'
+  first_seen: p3-c01-067
+  counts: {p1: 0, p2: 0, p3: 60}
+  counts_what: 'оценка: «брат/сестра + имя» в ч. III ≈60 (без брата Николая ≈30), «братья и сестры» в этом значении 21 (ч.
+    III); p2-c11-042 «считайте нас своими братьями и сестрами» — переносно, не считается; обращения «друг и брат» (ч. I —
+    4) — formula#drug-brat-syn'
   note: 'в речи Учителей: «братья и сёстры» — brothers and sisters, без архаичного brethren (старый EN: brothers 14, my brothers
-    1, brethren 0; my sister 3); «сестра милосердия» — nurse (другое слово); «сестра Али Махмуд» (p1-c01-033) — родная сестра.'
+    1, brethren 0; my sister 3); «сестра милосердия» — nurse (другое слово); «сестра Али Махмуд» (p1-c01-033) — родная сестра.
+    Sister перед именем — к тому же британский титул старшей медсестры: подходит к «сестре Александре», старшей сестре больницы
+    Общины (p3-c03-059; старый EN — nurse Alexandra 15, sister Alexandra 3).'
   evidence:
   - {id: p3-c02-240, ru: 'Мир тебе, брат мой милый', en_legacy: 'Peace to you, my dear brother'}
   - {id: p3-c01-067, ru: 'все твои братья и сестры, идущие путем труда и совершенствования', en_legacy: all of them are your
       brothers and sisters who are walking the path of their development and work}
   - {id: p3-c06-076, ru: '— Счастлива твоя жизнь, смиренная сестра моя', en_legacy: '“Your life is happy, my obedient sister,'}
   en:
-    term: brother / sister; перед именем — Brother Francis, Sister Alexandra (?)
+    term: 'brother (сестра — sister); перед именем — с прописной: Brother Francis, Sister Alexandra'
     legacy: 'brother/sister перед именем всегда со строчной: brother Francisco 9, sister Carlota 7, sister Gerda 6 …'
     avoid: []
     status: proposed
@@ -294,7 +450,7 @@ entries:
   counts: {p1: 11, p2: 54, p3: 324}
   counts_what: все формы с прописной, включая начало предложения; в середине — 5/46/299 (первое — «Матери Жизни» p1-c14-034)
   evidence:
-  - {id: p3-c25-039, ru: 'Вы знаете, что Жизнь есть Вечное Движение', en_legacy: (нет совпадения в окне — проверить при правке)}
+  - {id: p3-c25-039, ru: 'Вы знаете, что Жизнь есть Вечное Движение', en_legacy: You know that Life is the Eternal Movement.}
   - {id: p3-c21-081, ru: 'Не передышки посылает Жизнь своим верным слугам, но Сама оживает в сердцах', en_legacy: Life is
       sending not a break… but Life Himself comes to life in the hearts}
   en:
@@ -303,8 +459,13 @@ entries:
       ошибка рода'
     avoid: [Life Himself]
     status: proposed
-  question: 'Какое местоимение для Жизни: it/itself (нейтрально) или She/Herself (как в RU и в образе «Великой Матери Жизни»)?
-    Himself — точно ошибка. Рекомендация: it/itself по умолчанию; She — только где Жизнь прямо олицетворена как Мать (mat-zhizni).
+  question: 'Какое местоимение для Жизни: it/itself или She/Herself? Himself — точно ошибка. Доводы из текста за She: RU последовательно
+    олицетворяет Жизнь прописным «Она/Ее/Сама» в поучениях («Он включен в труд Самой Жизни. Он один из Ее винтов» p3-c23-004;
+    «как Сама Жизнь готовит ступени… где и как Она находит нужным» p3-c23-013); Life itself по-английски читается как «жизнь
+    как таковая» и теряет олицетворение «Самой Жизни»; при it для Жизни и She для Великой Матери Жизни (mat-zhizni) у одного
+    образа будут два разных местоимения. Доводы за it: английская норма для абстрактных понятий; She для Life непривычно.
+    Рекомендация — стилистическая, не из текста: it/itself по умолчанию, She/Herself там, где Жизнь прямо олицетворена (Сама
+    Жизнь, Она с прописной, Мать Жизнь). Если владелец ставит верность образу RU выше английской нормы — She/Herself везде.
     См. rule#capital-pronouns.'
 
 - id: velikaya-zhizn
@@ -314,18 +475,18 @@ entries:
   tier: core
   first_seen: p2-c09-080
   counts: {p1: 0, p2: 2, p3: 11}
+  note: 'с определённым артиклем везде, кроме звательного обращения: без артикля Great Life читается как имя собственное (ср.
+    the Great Mother, the One Life)'
   evidence:
   - {id: p3-c01-076, ru: 'новый подарок, который тебе дала Великая Жизнь', en_legacy: the new present which Great Life gives
       to you}
   - {id: p3-c18-148, ru: дает Великая Жизнь в последний раз Свою защиту, en_legacy: For the last time the Great Life gives
       its protection to you}
   en:
-    term: Great Life
-    legacy: Great Life ≈4; просто Life ≈7 (эпитет теряется)
+    term: the Great Life
+    legacy: 'Great Life ≈4 (с артиклем и без: the Great Life p3-c18-148); просто Life ≈7 (эпитет теряется)'
     avoid: []
     status: proposed
-  question: 'Great Life (как старый EN, с определённым артиклем или без?). Рекомендация: «the Great Life» в повествовании
-    и без артикля в торжественной речи — решить стайлгайду; сам термин — Great Life.'
 
 - id: edinaya-zhizn
   ru: Единая Жизнь
@@ -372,7 +533,8 @@ entries:
   ru: Великая Мать
   sense: высшее женское начало, к которому обращены молитвы; в Общине Раданды — её часовня и статуя («часовня Звучащей Радости
     Великой Матери»); личные местоимения Она/Ее/Ты с прописной
-  distinguish: см. mat-zhizni (Великая Мать Жизни / Мать Жизни); не путать с «мать Анна» (хозяйка оазиса, p3-c23-117 — characters.yml)
+  distinguish: см. mat-zhizni (Великая Мать Жизни / Мать Жизни); не путать с «мать Анна» (настоятельница Общины в оазисе,
+    p3-c23-117 — characters.yml, mat-anna)
   ru_forms: [Великая Мать, Великой Матери, Великую Мать, Великой Матерью, Мать Великая, Матерь Великая]
   tier: core
   first_seen: p2-c06-011
@@ -396,6 +558,9 @@ entries:
   tier: core
   first_seen: p1-c14-034
   counts: {p1: 1, p2: 3, p3: 7}
+  note: 'различать как в RU: «Мать Жизни» (родительный: «Милосердие Великой Матери Жизни» p2-c15-142) → the (Great) Mother
+    of Life; приложение «Мать Жизнь / Матерь Жизнь» (Жизнь и есть Мать: «И Великая Мать Жизнь не осудит тебя» p3-c22-116)
+    → the Great Mother Life, по модели Mother Earth, Mother Nature. Father — ошибка в любом случае.'
   evidence:
   - {id: p3-c22-116, ru: И Великая Мать Жизнь не осудит тебя, en_legacy: 'and the Great Father Life won’t condemn you, he
       will give the shelter of his Kindness'}
@@ -406,20 +571,19 @@ entries:
   - {id: p2-c06-011, ru: в любви неугасимой Великой Матери Жизни, en_legacy: in the unquenchable love of the Great Mother
       – Life}
   en:
-    term: the Mother of Life; the Great Mother of Life
+    term: the Mother of Life (с эпитетом — the Great Mother of Life); приложение «(Великая) Мать/Матерь Жизнь» — the Great
+      Mother Life
     legacy: 'ОШИБКА РОДА: Father Life / Great Father(-)Life — 7 раз (p2-c15-142, p3-c15-078, p3-c18-160, p3-c22-116, p3-c27-031,
       p3-c32-108, p3-c32-116) + «he/his» при нём; верно Mother-Life / Mother – Life — 4 раза (p1-c03-110, p2-c06-011, p3-c13-065,
       p3-c13-074); p1-c14-034 и p2-c04-029 («великая Матерь Жизнь» → life) — опущено'
     avoid: [Father Life, Great Father Life]
     status: proposed
-  question: the Mother of Life / the Great Mother of Life (рекомендация) или Mother Life (ближе к «Матерь Жизнь»)? Father
-    — ошибка в любом случае.
 
 - id: vechnost
   ru: Вечность
   sense: вечность как высшая реальность («живая Вечность», «огонь Вечности», «стоять перед Вечностью на дежурстве»)
   distinguish: 'не путать с vechnoe («Вечное» — субстантив, the Eternal). В RU оба стоят рядом: «сердце ваше жило в Вечном…
-    кроме той Вечности, что звучит в…» p2-c17-107. Строчная «вечность» (26 раз) — обиходное «целая вечность» p3-c01-080.'
+    кроме той Вечности, что звучит в…» p2-c17-108. Строчная «вечность» (26 раз) — обиходное «целая вечность» p3-c01-080.'
   ru_forms: [Вечность, Вечности, Вечностью]
   tier: core
   first_seen: p2-c01-307
@@ -445,7 +609,7 @@ entries:
   counts: {p1: 0, p2: 8, p3: 77}
   counts_what: субстантивные формы с прописной (не перед словом)
   evidence:
-  - {id: p2-c17-107, ru: 'зная, что сердце ваше жило в Вечном', en_legacy: your heart was living in Eternity}
+  - {id: p2-c17-108, ru: 'зная, что сердце ваше жило в Вечном', en_legacy: your heart was living in Eternity}
   - {id: p3-c04-202, ru: Читай в каждой временной форме ее Вечное, en_legacy: In every temporary form read her Eternity}
   - {id: p3-c09-060, ru: жить только в творчестве Вечного, en_legacy: (the Eternal — один из 4 случаев)}
   en:
@@ -453,7 +617,7 @@ entries:
     legacy: 'СЛИЯНИЕ: Eternity ≈70 из 85; the Eternal/Eternal ≈10'
     avoid: [Eternity (для «Вечного»)]
     status: proposed
-  question: 'Различать Вечное (the Eternal) и Вечность (Eternity), как RU? Рекомендация: да — в тексте они стоят рядом (p2-c17-107).'
+  question: 'Различать Вечное (the Eternal) и Вечность (Eternity), как RU? Рекомендация: да — в тексте они стоят рядом (p2-c17-108).'
 
 - id: vechnoe-dvizhenie
   ru: Вечное Движение
@@ -476,9 +640,8 @@ entries:
 - id: svet#light-divine
   ru: Свет
   sense: высший, духовный свет («Свет Вечности», «путь Света», «Свет и Мир в человеке»); прописная
-  distinguish: 'svet#light — физический свет (строчная, «свет луны»); svet#society — «высший свет» (общество); «на свете»
-    — в мире (p1-c06-118 «на свете нет чудес» → «in the world»), 49 раз, отдельной записи не требует: world. Прописная в RU
-    различает: «видишь в человеке… его Свет и Мир» p3-c05-100.'
+  distinguish: 'svet#light — физический свет (строчная, «свет луны»); svet#society — «высший свет» (общество); «на свете»,
+    «тот свет», «весь свет» — svet#world. Прописная в RU различает: «видишь в человеке… его Свет и Мир» p3-c05-100.'
   ru_forms: [Свет, Света, Свету, Светом, Свете]
   tier: core
   first_seen: p1-c24-214
@@ -497,25 +660,26 @@ entries:
 - id: svet#light
   ru: свет
   sense: физический свет; также переносно без прописной («свет и тепло», «ленты света»)
-  distinguish: духовный Свет — svet#light-divine; при строчной в поучении сверять смысл
+  distinguish: духовный Свет — svet#light-divine; «на свете», «тот свет» — svet#world; «высший свет» — svet#society; при строчной
+    в поучении сверять смысл
   tier: core
   first_seen: p1-c01-053
-  counts: {p1: 86, p2: 99, p3: 156}
-  counts_what: все строчные формы «свет» (включая «на свете» 49 и «высший свет» ≈19)
+  counts: {p1: 67, p2: 66, p3: 130}
+  counts_what: 'оценка: все строчные формы «свет» (86/99/156) минус svet#world (≈15/29/23) и svet#society (≈4/4/3); «тот свет»
+    в значении «свет» (p3-c12-005 «в тот свет, что сияет за дверью», p2-c14-105) — здесь'
   evidence:
-  - id: p2-c18-033
-    ru: в которое лился мерцающий свет луны
-    en_legacy: through which the colourless light of the moon was pouring
+  - {id: p2-c18-033, ru: в которое лился мерцающий свет луны, en_legacy: through which the colourless light of the moon was
+      pouring}
   en:
     term: light
-    legacy: light ≈213; world ≈54 (для «на свете»/«свет» = мир)
+    legacy: light ≈213 (все строчные «свет», кроме «на свете»)
     avoid: []
     status: proposed
 
 - id: svet#society
   ru: свет (высший свет)
   sense: светское общество
-  distinguish: не путать с svet#light и svet#light-divine; «светский» — society
+  distinguish: не путать с svet#light, svet#light-divine и svet#world; «светский» — society
   tier: core
   first_seen: p1-c07-116
   counts: {p1: 7, p2: 10, p3: 2}
@@ -528,6 +692,32 @@ entries:
     avoid: [light]
     status: proposed
 
+- id: svet#world
+  ru: свет (на свете, тот свет)
+  sense: 'мир, земная жизнь: «на свете», «по свету», «весь/белый свет», «тот свет» (загробный мир), «Свет объездил»'
+  distinguish: svet#light — свет как освещение («свет луны» p2-c18-033); svet#society — «высший свет»; svet#light-divine —
+    Свет с прописной. «Тот свет» бывает и светом («в тот свет, что сияет за дверью» p3-c12-005) — сверять по контексту. Синоним
+    mir#world.
+  ru_forms: [на свете, по свету, весь свет, всему свету, белый свет, тот свет, того света, том свете, свет]
+  tier: core
+  first_seen: p1-c05-017
+  counts: {p1: 16, p2: 29, p3: 23}
+  counts_what: оценка по шаблону «на/по свет(е|у)», «весь/всего/всём/белый/тот/целый… свет» (строчная) + p1-c20-132 «Свет
+    объездил» (начало фразы); «на свете» — 12/21/17
+  note: обиходное значение, чаще в идиомах («забыл обо всём на свете», «больше всего на свете»)
+  evidence:
+  - {id: p1-c06-118, ru: на свете нет чудес, en_legacy: There aren’t any secrets in the world}
+  - {id: p1-c20-132, ru: Свет объездил — забавней мальчонки не видал!, en_legacy: 'I have travelled all over the world, but
+      I haven’t met a more interesting lad!'}
+  - {id: p1-c17-011, ru: забыв обо всём на свете, en_legacy: having forgotten everything in the world}
+  - {id: p2-c07-013, ru: чтобы он преследовал нас и с того света, en_legacy: follow us from another world}
+  en:
+    term: world
+    legacy: 'world — «на свете» → in the world ≈35 из 49 связей (остальное перефразировано или опущено: p1-c05-017, p1-c18-168);
+      «на тот свет» → by killing me (p1-c22-042), from another world (p2-c07-013)'
+    avoid: [light (для «на свете»)]
+    status: proposed
+
 - id: svetly
   ru: Светлый (с прописной)
   sense: 'эпитет высшего мира: Светлое Братство, Светлые Братья, Светлые Силы, Светлая Община'
@@ -537,12 +727,15 @@ entries:
   first_seen: p3-c02-219
   counts: {p1: 2, p2: 0, p3: 148}
   counts_what: все прописные формы, включая начало предложения; ≈123 из них — «Светлое Братство»
+  note: bright о людях по-английски читается как «сообразительный, жизнерадостный» («Bright Brothers» — «смышлёные братья»),
+    о силах — «яркий»; of Light передаёт «принадлежащий высшему Свету» и даёт пару к the dark powers (temnye-sily). Название
+    Братства — отдельный вопрос (svetloe-bratstvo).
   evidence:
   - {id: p3-c18-042, ru: всего Светлого Братства, en_legacy: the whole Bright Brotherhood}
   en:
-    term: Bright
+    term: of Light (the Brothers of Light, the Powers of Light, the Community of Light); «Светлое Братство» — svetloe-bratstvo
     legacy: Bright ≈129; Light 5; White 1
-    avoid: []
+    avoid: ['Bright (перед людьми и силами: Bright Brothers, Bright Powers)']
     status: proposed
 
 - id: mir#peace
@@ -570,7 +763,7 @@ entries:
   - {id: p3-c01-078, ru: каждую встречу сумеешь начать и кончить в радости и мире, en_legacy: begin and to start your every
       meeting calmly and joyfully}
   - {id: p3-c01-083, ru: Прими мой привет и мир., en_legacy: Accept my regards and calm.}
-  - {id: p3-c13-182, ru: идете по дню гонцом мира и Света людям, en_legacy: as the messenger of Calm and Light for people}
+  - {id: p3-c13-184, ru: идете по дню гонцом мира и Света людям, en_legacy: as the messenger of Calm and Light for people}
   - {id: p3-c18-042, ru: 'Мир, который я привез вам сегодня, не мир одного моего сердца', en_legacy: tranquillity which I’ve
       brought to you today isn’t only the tranquillity of my heart}
   - {id: p1-c06-019, ru: Если когда-либо ты потеряешь мир в сердце, en_legacy: If some day anxiety gets into your heart}
@@ -581,13 +774,16 @@ entries:
       в ч. III «мир» → calm — норма старого перевода, а не случайность. «Мир тебе/вам» при этом → Peace to you (5 из 5, formula#mir-tebe).'
     avoid: [calm, tranquillity, calmness]
     status: proposed
-  question: 'Утвердить peace для всех «мир-покой», включая формулы и пары («в радости и мире» → in joy and peace)? calm/tranquillity
-    оставить для «спокойствие» (spokoistvie: calm ≈70) и «покой». Рекомендация: да.'
+  question: 'Утвердить peace для всех «мир-покой», включая формулы и пары («в радости и мире» → in joy and peace)? Решать
+    вместе со spokoistvie (calm) и pokoy (tranquillity): RU ставит эти слова рядом как разные («мир и спокойствие» 11 раз,
+    p3-c04-094; «мир и покой» p3-c18-020, «Нет ни покоя, ни мира» p3-c16-016), а старый EN отдаёт «спокойствию» peace ≈43
+    раза — после замены calm → peace для «мира» понятия сольются в обратную сторону, если у «спокойствия» и «покоя» не будет
+    своих переводов. Рекомендация: мир-покой → peace, спокойствие → calm, покой → tranquillity (подробности — в тех записях).'
 
 - id: mir#world
   ru: мир
   sense: 'мир как совокупность людей, вещей, сфера бытия: «в широкий мир», «мир форм», «весь мир», «внутренний мир»'
-  distinguish: mir#peace — покой; mir-vselennaya; «на свете» — тоже world (svet#light-divine, distinguish)
+  distinguish: mir#peace — покой; mir-vselennaya; «на свете» — тоже world (svet#world)
   tier: core
   first_seen: p1-c02-101
   counts: {p1: 33, p2: 66, p3: 245}
@@ -626,6 +822,69 @@ entries:
     status: proposed
   question: 'Сохранить дефисную пару (the World-Universe) или передать одним словом (the Universe)? Рекомендация: the World-Universe
     в надписях на скрижалях (p3-c26-122, 136), где форма значима.'
+
+- id: spokoistvie
+  ru: спокойствие
+  sense: 'ровное, невозмутимое состояние человека (внешнее и внутреннее): «величавое спокойствие» восточных людей, «полное
+    спокойствие и самообладание»'
+  distinguish: 'не путать с mir#peace и pokoy: RU ставит их рядом как разные слова — «мир и спокойствие» (11 раз: p3-c04-094,
+    p2-c17-018), «спокойствие и мир» (p2-c06-009, p2-c17-134). Прилагательное «спокойный», наречие «спокойно» — calm/calmly
+    по контексту, отдельно не заводятся.'
+  ru_forms: [спокойствие, спокойствия, спокойствию, спокойствием, спокойствии]
+  tier: core
+  first_seen: p1-c01-007
+  counts: {p1: 28, p2: 44, p3: 65}
+  counts_what: существительное, все формы
+  note: пара к «самообладанию» (samoobladanie) и одно из постоянных требований к ученику; есть в пилотной главе (p1-c01-007)
+  evidence:
+  - {id: p1-c01-007, ru: 'И восточные люди, с их величавым спокойствием', en_legacy: And all of these Eastern people with
+      their grand calm}
+  - {id: p1-c02-071, ru: Полное спокойствие и самообладание, en_legacy: I was feeling full of self-control and peace}
+  - {id: p3-c04-094, ru: 'Мое радужное счастье, мир и спокойствие', en_legacy: 'My joyous happiness, peace and tranquillity'}
+  - {id: p2-c06-009, ru: Удивительное спокойствие и мир нисходят в мою душу., en_legacy: A wonderful calm and tranquillity
+      is descending into my soul}
+  en:
+    term: calm
+    legacy: calm ≈81, peace ≈43, tranquillity ≈26 (связи со «спокойствием» из 127; в связи бывает несколько слов)
+    avoid: [peace]
+    status: proposed
+  question: 'Утвердить calm для «спокойствия» вместе с mir#peace (peace) и pokoy (tranquillity)? Доводы: RU различает три
+    слова в одних и тех же фразах («мир и спокойствие» p3-c04-094; «мир и покой» p3-c18-020); calm — вариант большинства старого
+    EN; peace для «спокойствия» (≈43) после правки mir#peace даст обратное слияние («мир и спокойствие» → «peace and peace»).
+    Рекомендация: calm; peace не использовать; tranquillity оставить «покою».'
+
+- id: pokoy
+  ru: покой
+  sense: (1) внутренний покой, умиротворённость («неизреченный покой охватил Генри», «тот покой, тот благостный мир»); (2)
+    отсутствие беспокойства, тишина, отдых («нарушать покой», больному «нужен только полный покой»); (3) идиомы «оставить
+    в покое», «не давать покоя»
+  distinguish: 'mir#peace и spokoistvie — RU ставит «покой» и «мир» рядом как разные: «мир и покой» p3-c18-020, «Нет ни покоя,
+    ни мира» p3-c16-016, «тот покой, тот благостный мир» p3-c18-055, «покой и мир» p2-c11-185. «Покои» (комнаты) и «упокой»
+    — другие слова.'
+  ru_forms: [покой, покоя, покою, покоем, покое]
+  tier: core
+  first_seen: p1-c07-022
+  counts: {p1: 9, p2: 19, p3: 23}
+  counts_what: все формы, все три значения; идиомы «в покое» — 6
+  note: 'критерий (правило 1): внутреннее состояние — tranquillity; тишина, отдых, «нарушать покой» — quiet или rest по контексту
+    («the patient needs complete rest» p3-c11-072); идиомы — leave (someone) in peace / alone, give (someone) no peace: в
+    устойчивых английских идиомах peace допустимо, это не «мир-покой» поучений'
+  evidence:
+  - {id: p3-c18-055, ru: 'Запомните навсегда тот покой, тот благостный мир', en_legacy: 'Forever remember this peace, this
+      pleasing calm', note: покой и мир переставлены}
+  - {id: p2-c14-120, ru: 'Блаженство, мир, гармония, неизреченный покой охватили Генри', en_legacy: 'Henry was covered with
+      bliss, tranquillity, harmony, inexpressible calm'}
+  - {id: p3-c11-072, ru: Больному нужен только полный покой, en_legacy: The patient needs an absolute tranquillity}
+  - {id: p2-c09-018, ru: оставьте меня в покое, en_legacy: leave me in peace}
+  en:
+    term: tranquillity
+    legacy: peace ≈24, calm ≈19, tranquillity ≈7, rest/repose 5 (связи с «покоем» из 51)
+    avoid: [calm (для «покоя»)]
+    status: proposed
+  question: 'tranquillity (внутреннее состояние), rest/repose или peace? Доводы: peace сольёт «покой» с «миром-покоем», а
+    RU их различает (p3-c18-020, p3-c16-016, p3-c18-055); calm уже отдан «спокойствию»; rest/repose передают отдых, но не
+    умиротворённость («неизреченный покой» p2-c14-120). Рекомендация: tranquillity для внутреннего покоя, quiet/rest для тишины
+    и отдыха (критерий в note); peace — только если владелец сознательно сольёт «покой» с «миром».'
 
 - id: vselennaya
   ru: вселенная
@@ -675,7 +934,7 @@ entries:
   - {id: p3-c01-076, ru: 'Знание — двигатель жизни, и радость — масло для него.', en_legacy: 'Knowledge – that’s the engine
       of life, while joy – that’s the lubricant for it.'}
   en:
-    term: joy / Joy
+    term: joy / Joy (как в RU)
     legacy: joy ≈925; happy ≈44; glad ≈26
     avoid: []
     status: proposed
@@ -704,8 +963,8 @@ entries:
   ru: милосердие
   sense: милосердие — деятельная пощада и помощь; с прописной — Милосердие как высшее начало («ступени Милосердия», «братья
     Милосердия»)
-  distinguish: 'не путать с sostradanie (сострадание), «жалость» (pity) и «пощада». RU различает их в одной фразе: «Ничье
-    милосердие, ничье сострадание, ничья помощь…» p3-c04-136; «Пощада есть закон милосердия… в ней выражается не сострадание»
+  distinguish: 'не путать с sostradanie (сострадание), zhalost (жалость) и poshchada (пощада). RU различает их в одной фразе:
+    «Ничье милосердие, ничье сострадание, ничья помощь…» p3-c04-136; «Пощада есть закон милосердия… в ней выражается не сострадание»
     p3-c32-028; перечень «милосердия, доброты, любви, жалости, сострадания» p3-c17-158. Идиома «сестра/брат милосердия» (сиделка,
     санитар) — nurse (p1-c15-027, p1-c26-221, p3-c02-071).'
   ru_forms: [милосердие, милосердия, милосердию, милосердием, милосердии, Милосердие, Милосердия]
@@ -727,10 +986,14 @@ entries:
       ≈53, merciful 2'
     avoid: [compassion (для «милосердия»)]
     status: proposed
-  question: 'mercy или compassion? Доводы из текста: «сострадание» — отдельное понятие, стоящее рядом (p3-c04-136, p3-c32-028,
-    p3-c17-158), и старый перевод уже отдаёт ему compassion (≈41); если оба слова → compassion, различие исчезает (так и случилось
-    в p3-c04-136). Рекомендация: милосердие → mercy (Милосердие → Mercy, милосердный → merciful), сострадание → compassion,
-    жалость → pity. «Пощада» — вопрос в ЗАМЕТКАХ.'
+  question: 'mercy или compassion? Что меняется: старый EN отдаёт «милосердию» compassion в ≈178 местах из 232, то есть mercy
+    — отказ от варианта большинства. Почему: «сострадание» — отдельное понятие, стоящее рядом (p3-c04-136 «Ничье милосердие,
+    ничье сострадание…», p3-c17-158), и старый EN уже отдаёт ему compassion (≈41); если оба слова → compassion, различие исчезает
+    — так и случилось в p3-c04-136. Это довод о различении понятий, а не вкус. Последствие: английское mercy прежде всего
+    значит «пощада, помилование», а старый EN отдаёт mercy и «пощаде» (p3-c32-028, p3-c32-157), поэтому «пощада» получает
+    своё слово (poshchada → clemency), иначе возникнет новое слияние «милосердие = пощада = mercy» там, где RU их различает
+    («Пощада есть закон милосердия» p3-c32-028). Рекомендация: милосердие → mercy (Милосердие → Mercy, милосердный → merciful),
+    сострадание → compassion, жалость → pity, пощада → clemency — утверждать четыре записи вместе.'
 
 - id: sostradanie
   ru: сострадание
@@ -750,16 +1013,75 @@ entries:
     avoid: [sympathy, pity]
     status: proposed
 
+- id: poshchada
+  ru: пощада
+  sense: 'пощада как закон и свойство высшей любви: «закон пощады», «закон мировой пощады», «закон Великой Пощады», «пощада
+    Учителя»; в быту — «пощады не будет», «молить о пощаде»'
+  distinguish: 'miloserdie — милосердие: «Пощада есть закон милосердия» p3-c32-028, «милосердия и пощады» p3-c31-135, p2-c18-112;
+    zhalost — жалость, «жалостливость»: «жалостливость и пощада ничего общего между собой не имеют» p3-c32-028; sostradanie
+    — «в ней выражается не сострадание» (там же).'
+  ru_forms: [пощада, пощады, пощаде, пощаду, пощадой, Пощада, Пощады]
+  tier: core
+  first_seen: p1-c24-010
+  counts: {p1: 4, p2: 12, p3: 14}
+  counts_what: существительное, все формы (прописная 6); глагол «щадить» не считается
+  note: 'критерий (правило 1): в поучениях («закон пощады», «пощада и милосердие») — clemency; в бытовых идиомах («пощады
+    вам не будет» p2-c03-054, «молить его о пощаде» p3-c15-138) английское устойчиво mercy (no mercy, beg for mercy) — это
+    идиома, а не понятие учения'
+  evidence:
+  - {id: p3-c32-028, ru: жалостливость и пощада ничего общего между собой не имеют. Пощада есть закон милосердия., en_legacy: regret
+      and mercy don’t have anything in common. Mercy – that’s the law of regret.}
+  - {id: p1-c24-150, ru: силу мирового закона пощады, en_legacy: the power of the universal law of compassion}
+  - {id: p3-c32-157, ru: закон Великой Пощады, en_legacy: the Great law of Mercy}
+  - {id: p3-c09-007, ru: 'Милосердие бесконечно, пощада не знает предела и отказа', en_legacy: compassion is endless and it
+      never pushes him away, note: два понятия слиты в одно}
+  en:
+    term: clemency
+    legacy: compassion ≈15, mercy ≈15, pity ≈8, прочее (sparing, forgiveness) 4 — в связях с «пощадой» (28)
+    avoid: [compassion (для «пощады»), regret]
+    status: proposed
+  question: 'clemency / forbearance / sparing / mercy? Доводы: mercy уже предложено для «милосердия» (miloserdie), а RU ставит
+    их рядом как разные («Пощада есть закон милосердия» p3-c32-028); compassion занято «состраданием». clemency — «пощада,
+    отказ от кары» — точнее всего; forbearance ближе к «терпению, снисхождению»; sparing — только глагольное. Парадокс «закон
+    мировой пощады требовал полного уничтожения гада» (p2-c14-089) с clemency сохраняется. Рекомендация: clemency; если владелец
+    оставит compassion для «милосердия», пощада → mercy.'
+
+- id: zhalost
+  ru: жалость
+  sense: жалость — человеческое чувство; в поучениях «жалостливость» противопоставлена пощаде как «предрассудок… сентиментальность»
+    (p3-c32-028)
+  distinguish: 'poshchada — пощада (p3-c32-028); sostradanie — сострадание, стоит рядом: «жалостью и состраданием» p3-c06-068,
+    «жалость, сострадание» p3-c05-062, перечень «милосердия, доброты, любви, жалости, сострадания» p3-c17-158. «Какая жалость»
+    (p2-c01-055) — идиома: what a pity.'
+  ru_forms: [жалость, жалости, жалостью, жалостливость, жалостливый, жалостливо]
+  tier: core
+  first_seen: p1-c14-035
+  counts: {p1: 2, p2: 4, p3: 9}
+  counts_what: «жалость» (все формы); «жалостлив*» — ещё 2/1/2
+  note: «жалостливость» (p3-c32-028) — pity тоже (a pitying heart, sentimental pity по контексту), главное — не слить с пощадой
+  evidence:
+  - {id: p3-c32-028, ru: у тебя еще щемит сердце от жалости иногда, en_legacy: your heart still aches with regret}
+  - {id: p3-c06-068, ru: Он залил их жалостью и состраданием, en_legacy: He was pouring his compassion and sympathy into them,
+    note: 'жалость → compassion, сострадание → sympathy: оба сдвинуты'}
+  - {id: p1-c17-099, ru: всё же жалость к ней, en_legacy: anyway I was feeling a pity for her}
+  en:
+    term: pity
+    legacy: compassion ≈10, pity ≈5, sympathy ≈4, regret 3 — в связях с «жалостью» (15)
+    avoid: [compassion (для «жалости»), regret]
+    status: proposed
+
 - id: dobro#good
   ru: добро
   sense: добро как нравственное начало («добро и зло», «воля к добру», «платить добром»)
-  distinguish: не путать с «доброта» (kindness, 387 раз) и с «добро» = имущество, пожитки («своего аккуратно сложенного добра»
-    p3-c03-099, «немудрящее добро в мешок» p3-c14-122, «ворованного добра» p2-c20-073) — belongings.
+  distinguish: 'не путать с «доброта» (kindness, 387 раз), с кратким прилагательным «добра», «добром лице» (kind) и с «добро»
+    = имущество, пожитки — другое значение, goods / belongings: «своего аккуратно сложенного добра» p3-c03-099, «немудрящее
+    добро в мешок» p3-c14-122, «ворованного добра» p2-c20-073, «своего добра» p3-c06-051, «чужое добро» p3-c15-124.'
   ru_forms: [добро, добра, добру, добром, добре]
   tier: core
   first_seen: p1-c22-013
-  counts: {p1: 4, p2: 14, p3: 37}
-  counts_what: все формы, включая «имущество» (≈6) и поговорку «нет худа без добра»
+  counts: {p1: 2, p2: 9, p3: 29}
+  counts_what: существительное «добро» в значении «благо»; без «имущества» (5), прилагательных «добра/добром» (7) и поговорки
+    «нет худа без добра» (p1-c06-090)
   evidence:
   - {id: p3-c02-218, ru: 'жертву борьбы страстей, борьбы добра и зла', en_legacy: the victim of good and evil}
   - {id: p2-c15-176, ru: 'ему пришлось встретиться с добром, превосходящим его силы', en_legacy: he encountered the power
@@ -808,10 +1130,10 @@ entries:
     legacy: will ≈170; power ≈18; freedom 3
     avoid: []
     status: proposed
-  question: 'В песне Ананды (p1-c20-213, повтор p2-c18-047/048) «песнь любви и воли» — will или freedom? Доводы: в прозе пара
-    «любовь и воля» трижды = сила (p1-c18-144, p3-c12-042, воля — «воля к добру»); поэтическое «воля» = свобода возможно,
-    но текст этого не подтверждает. Рекомендация: will (для песни — окончательно в переводе стихов по DEC-026, с оговоркой,
-    что двусмысленность допустима, если рифма потребует freedom).'
+  question: 'В песне Ананды (p1-c20-213, повтор p2-c18-047/048) «песнь любви и воли» — will или freedom? В прозе вопроса нет:
+    пара «любовь и воля» трижды = сила (p1-c18-144, p3-c12-042; «воля к добру»), «воля» → will. В песне по DEC-026 готовятся
+    оба варианта (рифмованный и нерифмованный), и выбор слова делается при переводе песни: поэтическое «воля» = свобода возможно,
+    но текст этого не подтверждает. Рекомендация: will; freedom — только если его потребует рифмованный вариант песни (verse-terms#cal-5).'
 
 - id: volya#freedom
   ru: воля (на волю)
@@ -932,7 +1254,7 @@ entries:
   first_seen: p1-c02-071
   counts: {p1: 39, p2: 57, p3: 156}
   evidence:
-  - {id: p3-c06-068, ru: в непоколебимом самообладании и верности, en_legacy: has to keep an unshakable self-control and loyalty}
+  - {id: p3-c06-069, ru: в непоколебимом самообладании и верности, en_legacy: has to keep an unshakable self-control and loyalty}
   en:
     term: self-control
     legacy: self-control ≈219 (последовательно); calm ≈14
@@ -946,28 +1268,33 @@ entries:
   sense: деятельная живость, прилив сил и духа, которую «несут», «подают» встречному; стоит в паре с «энергией» («пожатие
     бодрости и энергии» p1-c06-019) и отдельно от «радости» и «жизнерадостности»
   distinguish: 'RU различает: «радость и бодрость» p3-c01-161, «бодрость и радостность» p3-c20-115, «Бодрость ее, мужество
-    и жизнерадостность» p3-c11-169 — значит, бодрость ≠ радость/жизнерадостность (cheerfulness). Ложная бодрость: «Есть бодрость
-    — показное, мнимо энергичное состояние» p3-c31-018 — т. е. по тексту это состояние энергии. «бодрящий» (о конфетах Али,
-    p1-c06-018) — invigorating.'
+    и жизнерадостность» p3-c11-169 — значит, бодрость ≠ радость/жизнерадостность (cheerfulness). В p3-c31-018 текст отделяет
+    ложную бодрость («показное, мнимо энергичное состояние») от истинной: «истинная бодрость есть благословение в себе и ближнем
+    Божественной Энергии и гармоничный труд в Ней при забвении «я»» — связь с Энергией и трудом, а не с весельем. «бодрящий»
+    (о конфетах Али, p1-c06-019) — invigorating.'
   ru_forms: [бодрость, бодрости, бодростью, бодрый, бодро, бодрое]
   tier: core
   first_seen: p1-c01-002
   counts: {p1: 10, p2: 3, p3: 28}
   counts_what: существительное; прилагательное/наречие «бодрый/бодро» — 9/4/15
+  note: 'критерий (правило 1): существительное — vigour («my inner vigour», «vigour and energy»); прилагательное и наречие
+    — по контексту, не механически vigorous(ly): бодрый старик — hale / sprightly; бодрым голосом, бодро ответил — briskly,
+    in a brisk voice; бодрое пожатие — a firm, vigorous handshake; «подать бодрость» — hearten, put heart into (give vigour
+    не использовать); cheerily — только в бытовой речи'
   evidence:
   - {id: p1-c06-019, ru: Прими моё пожатие бодрости и энергии…, en_legacy: Accept my handshake full of cheerfulness and energy…}
   - {id: p3-c01-078, ru: 'Прими, друг, бодрое пожатие моей руки', en_legacy: 'My friend, accept my energetic handshake'}
   - {id: p3-c31-018, ru: 'Есть бодрость — показное, мнимо энергичное состояние', en_legacy: 'An artificial, demonstrative
       cheerfulness exists, an imaginary energetic state'}
   en:
-    term: vigour (?)
+    term: vigour
     legacy: cheerfulness/cheerful ≈47 (сущ. + прил.); energy/energetic 6; spirit 2
-    avoid: []
+    avoid: [cheerfulness, give vigour]
     status: proposed
-  question: 'cheerfulness (старый EN) / vigour / good heart / buoyancy? Довод из текста: бодрость стоит рядом с радостью и
-    жизнерадостностью как отдельное качество и определена как «энергичное состояние» (p3-c31-018) — cheerfulness сливает её
-    с радостью. Рекомендация: vigour (бодрый — vigorous, «подать бодрость» — give vigour / put heart into); нужна проверка
-    носителем языка.'
+  question: 'cheerfulness (старый EN) / vigour / good heart / buoyancy? Доводы из текста: бодрость стоит рядом с радостью
+    и жизнерадостностью как отдельное качество (p3-c01-161, p3-c20-115, p3-c11-169), а истинная бодрость определена через
+    Божественную Энергию и гармоничный труд (p3-c31-018) — cheerfulness сливает её с радостью. Рекомендация: vigour для существительного,
+    формы — по критерию в note; нужна проверка носителем языка.'
 
 - id: besstrashie
   ru: бесстрашие
@@ -1003,13 +1330,16 @@ entries:
 
 - id: dukh#spirit
   ru: дух
-  sense: дух человека («силы творческого духа», «очи духа»); «Дух» с прописной — редко (9)
-  distinguish: dusha#soul — душа. «Дух» = мужество («упал духом», «не смущайся духом») — идиома, по контексту (courage ≈8).
-    «духовный» — spiritual.
-  ru_forms: [дух, духа, духу, духом, духе, духи]
+  sense: дух человека («силы творческого духа», «очи духа»); «Дух» с прописной — 19 (все в ч. III, середина фразы)
+  distinguish: 'dusha#soul — душа; dukh#beings — «духи» (существа: «духи Света», «духи стихии огня»). «Дух» = мужество — идиомы
+    («падать духом» p1-c13-094, p3-c22-119; «не смущайся духом» p3-c15-078; ≈8): не spirit, а courage / heart по контексту
+    (lose heart, take heart); старый EN — falling into a gloom, despair. «духи» = парфюм (p1-c11-048, p1-c25-107) — другое
+    слово, perfume. «духовный» — spiritual.'
+  ru_forms: [дух, духа, духу, духом, духе]
   tier: core
   first_seen: p1-c02-039
-  counts: {p1: 48, p2: 99, p3: 383}
+  counts: {p1: 45, p2: 98, p3: 343}
+  counts_what: формы ед. ч. во всех значениях, включая идиомы мужества; «духи» (мн. ч.) — dukh#beings и парфюм
   evidence:
   - {id: p3-c01-069, ru: развернуло в тебе все силы творческого духа, en_legacy: all your creative powers of spirit would
       open within yourself}
@@ -1017,6 +1347,28 @@ entries:
     term: spirit
     legacy: spirit ≈441; mind ≈14; soul 8; courage 8
     avoid: [soul]
+    status: proposed
+
+- id: dukh#beings
+  ru: духи
+  sense: 'духи — существа в видениях ч. III: «духи Света», «светлые духи», «братья-духи», «духи стихии огня», «духи-труженики»;
+    почти всегда во мн. ч.'
+  distinguish: dukh#spirit — дух человека (ед. ч.); «духи» = парфюм («аромат духов и сигар» p1-c11-048, «приторными духами»
+    p1-c25-107) — perfume.
+  ru_forms: [духи, духов, духам, духами, духах]
+  tier: core
+  first_seen: p3-c09-179
+  counts: {p1: 0, p2: 0, p3: 39}
+  counts_what: мн. ч. «дух(и|ов|ам|ами|ах)» без «духов» = парфюма (5); почти всё — p3-c26…c29
+  evidence:
+  - {id: p3-c26-037, ru: в них духи Света вносили будущие эмбрионы людей, en_legacy: the spirits of Light were carrying the
+      future people embryos}
+  - {id: p3-c29-013, ru: 'То духи стихии огня, труженики', en_legacy: 'That’s the spirits of the fire element, her workers'}
+  - {id: p3-c26-081, ru: встречают светлые братья-духи, en_legacy: his brothers – the spirits of light meet him}
+  en:
+    term: spirits
+    legacy: spirits — 30 из 36 связей (последовательно); beings 2, angels 2
+    avoid: []
     status: proposed
 
 - id: dusha#soul
@@ -1098,11 +1450,12 @@ entries:
   tier: core
   first_seen: p1-c01-035
   counts: {p1: 102, p2: 148, p3: 774}
+  note: торжественное labour — вопрос стайлгайда (этап 4); до решения — work
   evidence:
   - {id: p1-c07-098, ru: как труд любви и радости, en_legacy: as an activity of love and joy}
   - {id: p3-c01-067, ru: идущие путем труда и совершенствования, en_legacy: walking the path of their development and work}
   en:
-    term: work (торжественно — labour, решить стайлгайду)
+    term: work
     legacy: work ≈581; activity ≈240 (ч. III ≈196) — смешение с «деятельностью»; effort 14; labour 6
     avoid: [activity]
     status: proposed
@@ -1122,6 +1475,92 @@ entries:
     term: the common good
     legacy: welfare (common/general/people’s) ≈24; well-being ≈10; the common good — 0
     avoid: [common welfare, general welfare, wellbeing]
+    status: proposed
+
+- id: podvig
+  ru: подвиг
+  sense: 'подвиг — героическое усилие или самоотверженное служение: «подвиг любви и милосердия», «подвиг труда», «великий
+    подвиг», «жить в подвиге»'
+  distinguish: 'RU часто противопоставляет подвиг простому труду и радости — это противопоставление надо сохранить: «Дежурства
+    не подвига, а простого счастья» p3-c06-018; «не как долг или подвиг, а как самое простое сотрудничество» p3-c08-020; «Подвигами
+    как таковыми не движутся вперед наши ученики» p3-c10-005; «не подвиг тяжкий несу я» p3-c12-088. «подвижник» (1) — отдельное
+    слово.'
+  ru_forms: [подвиг, подвига, подвигу, подвигом, подвиге, подвиги, подвигов, подвигам, подвигами]
+  tier: core
+  first_seen: p1-c11-020
+  counts: {p1: 8, p2: 5, p3: 58}
+  counts_what: все формы
+  note: 'критерий (правило 1): feat — «подвиг любви/милосердия/труда» (the feat of love), «великий подвиг»; с глаголами «нести
+    подвиг», «жить в подвиге» — описательно (carry the heroic labour of…, live heroically); «героического подвига» (p3-c15-090)
+    — heroic feat'
+  evidence:
+  - {id: p1-c25-039, ru: очищенный его подвигом любви и милосердия, en_legacy: purified by the feat of his love and compassion}
+  - {id: p3-c26-117, ru: подвигом милосердия и самоотвержения, en_legacy: the feat of incomprehensible compassion and self-sacrifice}
+  - {id: p3-c18-100, ru: Он взял на себя великий подвиг любви, en_legacy: He took a great deed of love upon himself}
+  - {id: p3-c08-020, ru: 'не как долг или подвиг, а как самое простое сотрудничество', en_legacy: 'which isn’t as a duty or
+      a deed for him, but as the most ordinary communication with his Teacher'}
+  en:
+    term: feat
+    legacy: 'deed ≈34, heroic/heroism ≈30, feat ≈11, (self-)sacrifice ≈7 — в связях с «подвигом» (54; в связи бывает несколько):
+      разнобой'
+    avoid: []
+    status: proposed
+  question: 'feat / heroic deed / deed / heroism? Доводы: deed теряет «героическое» (подвиг ≠ «дело»), heroism — свойство,
+    а не поступок; heroic deed точно, но тяжело в сочетаниях («heroic deed of love and mercy»); feat — прямое соответствие
+    («подвиг, требующий мужества») и легко сочетается («the feat of love»). Рекомендация: feat, формы по критерию в note.'
+
+- id: sotrudnik
+  ru: сотрудник
+  sense: 'тот, кто трудится вместе с Учителем, Братством, Жизнью: «круг моих сотрудников» (Али), «сотрудник живого неба»,
+    «сотрудники Великой Матери», «Владыка этого луча… своих сотрудников»'
+  distinguish: 'sotrudnichestvo — сотрудничество; «помощник» — другое слово, стоит рядом: «друга и помощника, и сотрудника
+    тоже» p1-c16-105. Служебное «сотрудник» (юрист у адвоката, «вашему сотруднику и племяннику» p2-c08-017) — colleague по
+    контексту.'
+  ru_forms: [сотрудник, сотрудника, сотруднику, сотрудником, сотрудники, сотрудников, сотрудникам, сотрудниками, сотрудница]
+  tier: core
+  first_seen: p1-c16-105
+  counts: {p1: 1, p2: 3, p3: 60}
+  counts_what: все формы
+  evidence:
+  - {id: p3-c01-053, ru: я приму тебя в круг моих сотрудников, en_legacy: I will accept you to the circle of my co-workers}
+  - {id: p3-c05-009, ru: Вы сотрудник живого неба, en_legacy: you are worker of the living heaven}
+  - {id: p1-c16-105, ru: 'в Али молодом обретёшь друга и помощника, и сотрудника тоже', en_legacy: young Ali will be your
+      friend and assistant, note: «сотрудник» опущен}
+  - {id: p3-c32-008, ru: признание вас сотрудниками, en_legacy: your recognition as Life’s coworkers}
+  en:
+    term: co-worker
+    legacy: 'colleague ≈21, assistant ≈16, associate ≈13, worker/helper ≈15, co-worker/coworker ≈5 — в связях с «сотрудником»
+      (54): разнобой'
+    avoid: [assistant (для «сотрудника»)]
+    status: proposed
+  question: 'co-worker / fellow worker / collaborator / colleague? Доводы: assistant сливает «сотрудника» с «помощником» (p1-c16-105);
+    colleague и associate — служебные и деловые; collaborator двусмысленно (коллаборационист). Рекомендация: co-worker (так
+    и в старом EN в p3-c01-053); colleague — только в служебном значении.'
+
+- id: sotrudnichestvo
+  ru: сотрудничество / сотрудничать
+  sense: 'совместный труд человека с Учителем, Жизнью, Богом: «сотрудничество с Жизнью», «места моего с Ним сотрудничества»,
+    «войти в сотрудничество с Учителем»'
+  distinguish: sotrudnik — сотрудник (лицо)
+  ru_forms: [сотрудничество, сотрудничества, сотрудничеству, сотрудничеством, сотрудничестве, сотрудничать]
+  tier: core
+  first_seen: p2-c04-075
+  counts: {p1: 0, p2: 2, p3: 38}
+  counts_what: «сотрудничеств*» 0/2/35 + «сотруднича*» 0/0/3
+  note: старый EN в основном последователен (cooperation); написание без дефиса — как у большинства старого EN (§9.2 п.6)
+  evidence:
+  - {id: p3-c32-006, ru: Ваше сотрудничество с Жизнью состоит в помощи строительства, en_legacy: Your cooperation with Life
+      – that’s to take part in His construction}
+  - {id: p3-c29-073, ru: места моего с Ним сотрудничества для блага людей земли, en_legacy: His and my cooperation is taking
+      place for the prosperity of the people of the Earth}
+  - {id: p3-c08-020, ru: как самое простое сотрудничество, en_legacy: as the most ordinary communication with his Teacher,
+    note: 'ошибка: communication'}
+  - {id: p3-c07-038, ru: И ты привлек к сотрудничеству, en_legacy: you drew closer … to yourself to collaborate with you}
+  en:
+    term: cooperation
+    legacy: cooperation/cooperate ≈25 (написание cooperat- 28 во всём тексте, co-operat- 7); assist/help ≈18; collaborate
+      2
+    avoid: [communication]
     status: proposed
 
 - id: put#path
@@ -1147,19 +1586,22 @@ entries:
   distinguish: буквальная ступенька (лестница, вагон) — step
   ru_forms: [ступень, ступени, ступенью, ступеней, ступеням, ступенями, ступенях]
   tier: core
-  first_seen: p1-c02-042
+  first_seen: p1-c14-081
   counts: {p1: 12, p2: 25, p3: 200}
+  note: 'критерий (правило 1): stage — ступень пути, совершенства, знания; step / rung — там, где образ лестницы явный («начиная
+    с самых низших ступеней» p1-c22-179 — from the lowest rungs); level не запрещён в идиомах, где он естественен («возводит
+    человека на новую ступень внутренней силы» p1-c14-081 — a new level of inner strength); буквальная ступенька — step'
   evidence:
   - {id: p1-c14-081, ru: возводит человека на новую ступень внутренней силы, en_legacy: leading him upstairs onto the new
       level of strength}
   - {id: p1-c22-179, ru: начиная с самых низших ступеней, en_legacy: by starting from the lowest stages}
   en:
-    term: stage (?)
+    term: stage
     legacy: level ≈96; stage ≈62; step ≈48 (часть — буквальные ступеньки); degree 1 — непоследовательно
     avoid: []
     status: proposed
-  question: 'Один термин для метафоры: step (сохраняет образ лестницы: «возводит на ступень»), stage или level? Рекомендация:
-    step там, где образ лестницы явный, иначе stage; level не использовать — решить владельцу с носителем.'
+  question: 'stage / step / level? Старый EN непоследователен (level ≈96, stage ≈62, step ≈48). Рекомендация: stage как рабочий
+    вариант, step/rung — по образу лестницы, level — только в идиомах (критерий в note); решить владельцу с носителем.'
 
 - id: osvobozhdenie
   ru: освобождение (освобожденность, раскрепощение)
@@ -1167,7 +1609,7 @@ entries:
   distinguish: «свобода» (66) — freedom; «раскрепощённость/раскрепощение» (72) — старый EN тоже liberation/freedom
   ru_forms: [освобождение, освобождения, освобожденность, освобожденности, освободиться, освобожденный]
   tier: core
-  first_seen: p1-c05-009
+  first_seen: p1-c14-079
   counts: {p1: 29, p2: 49, p3: 267}
   counts_what: все слова на «освобо-»
   evidence:
@@ -1202,7 +1644,7 @@ entries:
   sense: силы зла; в паре со «светлыми силами»
   ru_forms: [тёмные силы, темных сил, темным силам, тёмными силами]
   tier: core
-  first_seen: p1-c06-078
+  first_seen: p1-c22-122
   counts: {p1: 3, p2: 4, p3: 22}
   evidence:
   - {id: p3-c18-054, ru: 'Вы долго боролись с темными силами, которым когда-то послужили', en_legacy: You were fighting against
@@ -1277,7 +1719,7 @@ entries:
   - {id: p3-c01-070, ru: Это единение вечное с его трудом и путями., en_legacy: That is his eternal unity with his work and
       his paths.}
   en:
-    term: union (?)
+    term: union
     legacy: unite ≈40; unity ≈19; union ≈7
     avoid: []
     status: proposed
@@ -1291,16 +1733,17 @@ entries:
   tier: core
   first_seen: p1-c08-036
   counts: {p1: 18, p2: 43, p3: 106}
+  note: для свойства — creative power(s), the creative spirit; creativity — слово второй половины XX в. с психологическим
+    и деловым оттенком, в речи рассказчика и Учителей звучит анахронизмом («the stormy flame of your Teachers’ creative work»,
+    p3-c01-070)
   evidence:
   - {id: p3-c01-070, ru: ты сольешься с бурным пламенем творчества твоих Учителей, en_legacy: you will unite with the intensive
       flame of your Teachers’ creation}
   en:
-    term: creativity / creative work (?)
+    term: creative work
     legacy: creation ≈99; art ≈35; work ≈15
-    avoid: []
+    avoid: [creativity, creation (для «творчества»)]
     status: proposed
-  question: 'creation (старый EN) звучит как «творение, мироздание». Рекомендация: creative work; creativity — для свойства;
-    решить с носителем.'
 
 - id: samootverzhennost
   ru: самоотверженность (самоотвержение)
@@ -1323,11 +1766,12 @@ entries:
 
 - id: luch#ray
   ru: луч (семь лучей)
-  sense: один из семи лучей, по которым идут люди и которыми руководят Великие Учителя (гл. 25–27 ч. III)
+  sense: 'один из семи лучей, по которым идут люди и которыми руководят Великие Учителя: «Путь освобождения проходит по всем
+    лучам, коих семь» p3-c04-121, «Учитель пятого луча» p3-c26-083, «башни лучей» p3-c29-024'
   distinguish: физический луч (солнца, света) — beam/ray по контексту
   ru_forms: [луч, луча, лучу, лучом, луче, лучи, лучей, лучам, лучами, лучах]
   tier: core
-  first_seen: p1-c01-011
+  first_seen: p3-c04-121
   counts: {p1: 14, p2: 15, p3: 204}
   counts_what: все значения; с порядковым числительным («седьмого луча») — 4/6/56
   evidence:
@@ -1386,6 +1830,9 @@ entries:
   first_seen: p1-c04-003
   counts: {p1: 4, p2: 6, p3: 26}
   counts_what: все слова на «целесообразн-»; «закон целесообразности» — 1/4/6
+  note: 'закон — the law of purposefulness; наречие — purposefully / to good purpose («act not only fearlessly but to good
+    purpose», p1-c05-028); пара с zakonomernost — «conformity to law and purposefulness». expediency по-английски — «выгода,
+    беспринципное удобство» (political expediency): «закон expediency» прочтётся как «закон выгоды»'
   evidence:
   - {id: p3-c05-129, ru: 'единственные законы движения вселенной: закономерность и целесообразность', en_legacy: 'the only
       laws of the movement of the universe: accuracy and regularity'}
@@ -1394,12 +1841,10 @@ entries:
   - {id: p1-c05-028, ru: 'действовать надо не только бесстрашно, но и целесообразно', en_legacy: 'you have to act not only
       bravely, but also accurately'}
   en:
-    term: expediency (?)
+    term: purposefulness
     legacy: 'ОШИБКА: accuracy/accurately ≈21 из 36; expediency 4; purpose 6'
-    avoid: [accuracy]
+    avoid: [accuracy, expediency, expediently]
     status: proposed
-  question: 'expediency (ближе к термину, но в англ. есть оттенок «выгоды») / purposefulness / fitness (to purpose)? Рекомендация:
-    purposefulness для закона («the law of purposefulness»), purposefully / expediently для наречия по контексту; нужен носитель.'
 
 - id: zakonomernost
   ru: закономерность
@@ -1408,14 +1853,16 @@ entries:
   tier: core
   first_seen: p1-c04-003
   counts: {p1: 3, p2: 2, p3: 20}
+  note: наречие — in accordance with law; lawfulness для общего читателя — «законность, правомерность» (юридическое), conformity
+    to law однозначно отсылает к закономерности природы и вселенной
   evidence:
   - {id: p3-c05-129, ru: закономерность и целесообразность, en_legacy: accuracy and regularity}
   - {id: p1-c04-003, ru: гармония всегда закономерно и целесообразно действующих сил, en_legacy: harmony of the powers… which
       is always working naturally and accurately}
   en:
-    term: lawfulness / conformity to law (?)
+    term: conformity to law
     legacy: naturally ≈7; accuracy ≈6; regularity ≈5; law 3 — непоследовательно
-    avoid: [accuracy]
+    avoid: [accuracy, lawfulness]
     status: proposed
 
 - id: seryi-den
@@ -1426,19 +1873,19 @@ entries:
   tier: core
   first_seen: p1-c02-016
   counts: {p1: 10, p2: 3, p3: 52}
+  note: 'образ сохраняем, но не одной формой: голое «the grey day» читается как погода; нужна опора — plain, ordinary, workaday:
+    «in the affairs of the plain, grey day»; мн. ч. — grey, ordinary days; допустимо the grey everyday round'
   evidence:
-  - {id: p1-c06-018, ru: героика чувств и мыслей живёт… в делах простого и серого дня, en_legacy: simply it is your daily
+  - {id: p1-c06-019, ru: героика чувств и мыслей живёт… в делах простого и серого дня, en_legacy: simply it is your daily
       activity}
-  - {id: p2-c18-111, ru: Будем стараться жить среди серого дня, en_legacy: Let’s try to walk… during our grey daily routine}
+  - {id: p2-c18-112, ru: Будем стараться жить среди серого дня, en_legacy: Let’s try to walk… during our grey daily routine}
   - {id: p3-c04-128, ru: к великому руководству в простом сером дне труда, en_legacy: as the landmarks of your grey daily
       routine}
   en:
-    term: the grey day (?)
+    term: the plain grey day
     legacy: grey daily routine / daily routine ≈24; everyday ≈13; grey (другие сочетания) ≈15; образ часто теряется
     avoid: []
     status: proposed
-  question: 'Сохранять образ «серого дня» (the grey day / the plain grey day) или передавать смыслом (the grey daily round
-    / everyday life)? Рекомендация: the grey day — это сквозной образ поучений (65 раз).'
 
 - id: gonets
   ru: гонец
@@ -1448,7 +1895,7 @@ entries:
   first_seen: p1-c23-029
   counts: {p1: 1, p2: 3, p3: 68}
   evidence:
-  - {id: p3-c13-182, ru: идете по дню гонцом мира и Света людям, en_legacy: walking every day as the messenger of Calm and
+  - {id: p3-c13-184, ru: идете по дню гонцом мира и Света людям, en_legacy: walking every day as the messenger of Calm and
       Light for people}
   en:
     term: messenger
@@ -1471,7 +1918,7 @@ entries:
       hardened here}
   - {id: p3-c01-002, ru: 'закалило не только мое здоровье, но и весь мой характер', en_legacy: 'not only hardened my organism,
       but also changed my character'}
-  - {id: p3-c28-006, ru: 'Тех, кого Истина посылает Своими гонцами, Она закаляет в единении с Нею.', en_legacy: She hardens
+  - {id: p3-c28-008, ru: 'Тех, кого Истина посылает Своими гонцами, Она закаляет в единении с Нею.', en_legacy: She hardens
       with unity with Herself}
   en:
     term: temper
@@ -1505,8 +1952,8 @@ entries:
   counts: {p1: 0, p2: 0, p3: 45}
   counts_what: прописная в середине предложения
   evidence:
-  - {id: p3-c26-117, ru: 'в море золотого Света, промчавшегося от Божественной Силы, охраняющей, защищающей, созидающей и
-      правящей Землей', en_legacy: 'the golden Light which poured out of the Divine Power that protects, defends, creates
+  - {id: p3-c26-117, ru: 'в море золотого Света, промчавшегося … от Божественной Силы, охраняющей, защищающей, созидающей
+      и правящей Землей', en_legacy: 'the golden Light which poured out of the Divine Power that protects, defends, creates
       and rules the Earth'}
   - {id: p3-c18-042, ru: 'Единой Сущности, проливающей во вселенную свои Силу, Свет и Мир', en_legacy: 'who pours his Power,
       Light and Calm into the entire universe'}
@@ -1521,12 +1968,11 @@ entries:
   sense: божественный; с прописной в титулах и именованиях (Божественные Владыки, Божественная Сила, Божественная Мать)
   ru_forms: [божественный, Божественный, Божественная, Божественной, Божественные, Божественных]
   tier: core
-  first_seen: p1-c05-068
+  first_seen: p1-c22-185
   counts: {p1: 8, p2: 26, p3: 119}
   evidence:
-  - id: p3-c21-068
-    ru: мешает осуществляться плану Божественной Силы
-    en_legacy: impedes to fulfil the plan of the Divine Power
+  - {id: p3-c21-068, ru: мешает осуществляться плану Божественной Силы, en_legacy: impedes to fulfil the plan of the Divine
+      Power}
   en:
     term: divine / Divine (как в RU)
     legacy: divine ≈79; Divine ≈48; God 7
@@ -1564,7 +2010,7 @@ entries:
   counts: {p1: 0, p2: 3, p3: 58}
   counts_what: прописная в середине предложения
   evidence:
-  - {id: p3-c04-167, ru: перед Огнем Вечного, en_legacy: before the Fire of Eternity}
+  - {id: p3-c04-168, ru: перед Огнем Вечного, en_legacy: before the Fire of Eternity}
   en:
     term: Fire
     legacy: Fire ≈55; fire ≈7
@@ -1574,39 +2020,66 @@ entries:
 - id: zemlya#planet
   ru: Земля (с прописной)
   sense: 'планета Земля как поле труда Учителей и Братства: «Владыки Земли», «на Земле»'
-  distinguish: 'строчная «земля» (727): «жизнь на земле», «земная жизнь» (earth, со строчной, как в англ. «on earth»), почва,
-    страна (ground, land). Прописная появляется только с p3-c19 (13 глав).'
+  distinguish: 'строчная «земля» (≈723): земная жизнь и земной мир — zemlya#earth («жизнь на земле», «пока земля нуждается
+    в тебе»); почва, страна — ground, land по контексту. Прописная появляется только с p3-c19 (13 глав).'
   ru_forms: [Земля, Земли, Земле, Землю, Землей]
   tier: core
   first_seen: p3-c19-042
   counts: {p1: 0, p2: 0, p3: 207}
   counts_what: прописная в середине предложения
   evidence:
-  - id: p3-c21-073
-    ru: вся сила вашей жизни дней на Земле и весь их смысл — в труде для Вечного
-    en_legacy: the entire energy of your days on the Earth and their whole meaning – that’s the work for Eternity
+  - {id: p3-c21-073, ru: вся сила вашей жизни дней на Земле и весь их смысл — в труде для Вечного, en_legacy: the entire energy
+      of your days on the Earth and their whole meaning – that’s the work for Eternity}
   en:
     term: the Earth
     legacy: Earth ≈145; earth ≈45
     avoid: []
     status: proposed
 
+- id: zemlya#earth
+  ru: земля (строчная)
+  sense: 'земная жизнь, земной мир как поле труда человека: «жить на земле», «уйти с земли», «жизнь земли и неба», «условности
+    земли», «пока земля нуждается в тебе»'
+  distinguish: zemlya#planet — «Земля» с прописной (планета, ч. III с p3-c19); почва, пол, страна — ground, land («опустил
+    меня на землю» p1-c02-084, «лежавших на земле» p1-c25-207).
+  ru_forms: [земля, земли, земле, землю, землёй]
+  tier: core
+  first_seen: p1-c09-099
+  counts: {p1: 25, p2: 77, p3: 253}
+  counts_what: 'оценка по шаблону (на земле, с земли, жизнь/труд/условности/пути/дни земли, земля и небо) — верхняя: включает
+    и буквальные «на землю» (≈10%); все строчные «земл*» — 56/149/518'
+  note: 'сквозное понятие поучений: земная жизнь как место труда ученика; противопоставление «земли и неба»'
+  evidence:
+  - {id: p1-c09-099, ru: вы не можете понять счастья жить на земле, en_legacy: you cannot even understand what happiness it
+      is to live on the earth}
+  - {id: p2-c01-327, ru: 'Мы должны жить на земле, для земли, для людей.', en_legacy: 'We must live on earth for the sake
+      of the earth, for people.'}
+  - {id: p3-c11-143, ru: 'Не стремись выше, пока земля нуждается в тебе.', en_legacy: Don’t force your way up until the earth
+      needs you}
+  - {id: p1-c26-034, ru: восприятия жизни земли и неба как единой живой жизни, en_legacy: perception of the visible life of
+      the earth and heaven as the only living life}
+  en:
+    term: earth
+    legacy: the earth / earth (строчная) — «the earth» 36/137/354 во всём тексте (все значения, включая почву); the Earth
+      0/14/216 — в основном zemlya#planet
+    avoid: [Earth (с прописной для строчной «земли»)]
+    status: proposed
+  question: 'on earth (без артикля, как в английской идиоме «on earth») или on the earth (как чаще в старом EN)? Рекомендация:
+    «на земле» — on earth; «жизнь земли», «условности земли» — of the earth.'
+
 - id: bog
   ru: Бог / Господь
   sense: Бог; «Господь», «Господи» — в молитвах и восклицаниях
-  distinguish: «Божий», «Божественный» — bozhestvennyi; местоимения Он/Его/Ты с прописной — rule#capital-pronouns
+  distinguish: «Божий», «Божественный» — bozhestvennyi; «Владыко» в молитве — vladyka#god (тоже Lord); местоимения Он/Его/Ты
+    с прописной — rule#capital-pronouns
   ru_forms: [Бог, Бога, Богу, Богом, Боге, Господь, Господа, Господи]
   tier: core
   first_seen: p1-c01-080
   counts: {p1: 46, p2: 67, p3: 305}
   counts_what: «Бог*» (35/51/282) + «Господ*» (11/16/23)
   evidence:
-  - id: p1-c02-022
-    ru: И во что выливается религия, зовя к Богу
-    en_legacy: which as though is leading us to God
-  - id: p1-c04-067
-    ru: мои молитвы хорошо доходят до Бога
-    en_legacy: my prayers were always reaching God
+  - {id: p1-c02-023, ru: 'И во что выливается религия, зовя к Богу', en_legacy: which as though is leading us to God}
+  - {id: p1-c04-067, ru: мои молитвы хорошо доходят до Бога, en_legacy: my prayers were always reaching God}
   en:
     term: God; Lord (Господь)
     legacy: God ≈343; Lord ≈33 (для «Господь»)
@@ -1632,12 +2105,13 @@ entries:
       calm to everybody'}
   - {id: p3-c19-027, ru: '— Мир тебе, брат мой Всеволод.', en_legacy: '“Peace to you, my brother Vsevolod.'}
   en:
-    term: Peace be with you / Peace to you
+    term: Peace to you
     legacy: Peace to you (5 из 5 проверенных); но «мой мир» в той же фразе → my calm (p3-c10-156)
     avoid: [calm]
     status: proposed
-  question: 'Peace to you (старый EN, дословно) или Peace be with you (устойчивая английская формула)? Рекомендация: Peace
-    be with you; «мир вам» — Peace be with you all / Peace to you all по контексту.'
+  question: Peace to you (старый EN, 5 из 5, дословно и не ошибка) или Peace be with you (устойчивая английская формула)?
+    По §9.2 п.6 рабочий вариант — старый; Peace be with you — предложение владельцу, довод только идиоматичность. «Мир вам»
+    — Peace to you all / Peace to you по контексту.
 
 - id: formula#privet-i-mir
   ru: Прими мой привет и мир
@@ -1647,10 +2121,12 @@ entries:
   first_seen: p3-c01-083
   counts: {p1: 0, p2: 0, p3: 2}
   counts_what: «Прими(те) … привет» — 2 (p3-c01-083, p3-c25-085)
+  note: в английской концовке письма устойчиво мн. ч. greetings; «Примите привет Светлого Братства» (p3-c25-085) — Accept
+    the greetings of the Bright Brotherhood
   evidence:
   - {id: p3-c01-083, ru: Прими мой привет и мир., en_legacy: Accept my regards and calm.}
   en:
-    term: Accept my greeting and my peace.
+    term: Accept my greetings and my peace.
     legacy: Accept my regards and calm. (calm — ошибка; regards — бытовой регистр)
     avoid: [calm, regards]
     status: proposed
@@ -1662,12 +2138,16 @@ entries:
   first_seen: p1-c06-019
   counts: {p1: 1, p2: 0, p3: 1}
   counts_what: 'письма Али: p1-c06-019, p3-c01-078 («пожати*» всего — 14)'
+  note: '«handshake of vigour and energy» натянуто: «handshake of X» естественно только с отношением (of friendship); full
+    of передаёт родительный качества RU. «друг» во вставке — my friend (drug#address). Допустимая альтернатива для p3-c01-078
+    — the vigorous clasp of my hand (личная теплота, отчёт §6.5)'
   evidence:
   - {id: p1-c06-019, ru: Жму твою руку. Прими моё пожатие бодрости и энергии…, en_legacy: I am squeezing your hand. Accept
       my handshake full of cheerfulness and energy…}
   - {id: p3-c01-078, ru: 'Прими, друг, бодрое пожатие моей руки', en_legacy: 'My friend, accept my energetic handshake'}
   en:
-    term: 'по bodrost: Accept my handshake of vigour and energy / Accept, friend, the vigorous clasp of my hand'
+    term: p1-c06-019 — I clasp your hand. Accept my handshake, full of vigour and energy…; p3-c01-078 — Accept, my friend,
+      a firm and vigorous handshake
     legacy: handshake full of cheerfulness and energy; energetic handshake
     avoid: []
     status: proposed
@@ -1698,18 +2178,23 @@ entries:
   tier: core
   first_seen: p2-c06-162
   counts: {p1: 0, p2: 4, p3: 45}
+  note: 'мн. ч. — то же («May you be blessed in the name of the Bright Brotherhood — peace to you», p3-c18-056); для тёплой
+    личной интонации допустимо Blessings on you. Bless you британскому читателю — ответ на чихание или снисходительное «bless
+    you, dear»; Be blessed звучит как современное американское церковное прощание, и повелительное наклонение здесь неестественно:
+    быть благословлённым не зависит от адресата. Формула — 49 раз'
   evidence:
   - {id: p3-c06-069, ru: 'Будь благословенна. Иди любимая и любящая, радующая и радующаяся, творящая и двигающая к творчеству.',
     en_legacy: 'Be blessed. Go loved and loving, glad and gladdening, creating and encouraging creation.'}
   - {id: p3-c18-056, ru: Будьте благословенны именем Светлого Братства — мир вам., en_legacy: Be blessed on behalf of the
       Bright Brotherhood – peace to you.}
   en:
-    term: Be blessed; Bless you (?)
+    term: May you be blessed
     legacy: Be blessed (≈64 для «благословен*»)
-    avoid: []
+    avoid: [Bless you]
     status: proposed
-  question: 'Be blessed (старый EN, последовательно) или May you be blessed / Blessings on you? Рекомендация: Be blessed —
-    сохраняет краткость и повелительное наклонение RU.'
+  question: Be blessed (старый EN, ≈64, последовательно) или May you be blessed? По итогам языкового ревью рабочий вариант
+    — May you be blessed (желательный оборот, торжественно и без архаики); Be blessed — старый вариант, остаётся на выбор
+    владельца.
 
 - id: formula#lyubimyi-i-lyubyashchii
   ru: Иди, любимая и любящая (любимые и любящие)
@@ -1723,7 +2208,8 @@ entries:
       blessed. Go being loved and loving others, protect all of those whom you meet.'}
   en:
     term: Go, loved and loving
-    legacy: Go loved and loving; Go being loved and loving others; (p2-c06-164 — не найдено в окне)
+    legacy: Go loved and loving; Go being loved and loving others; p2-c06-164 — “I bless you one more time, live in harmony,
+      go with joy day after day, loving and loved.” (порядок причастий обратный, «благословенны» → I bless you)
     avoid: []
     status: proposed
 
@@ -1733,7 +2219,7 @@ entries:
   tier: core
   first_seen: p3-c10-054
   counts: {p1: 0, p2: 0, p3: 3}
-  counts_what: «с миром» всего — 1/5/8 (ещё «ложитесь с миром спать» p1-c25-112, «отошедший от вас с миром» p3-c21-073)
+  counts_what: «с миром» всего — 1/5/8 (ещё «ложитесь с миром спать» p1-c25-112, «отошедший от вас с миром» p3-c21-074)
   evidence:
   - {id: p3-c10-054, ru: 'Иди с миром, мой пес дорогой, все благополучно.', en_legacy: 'Go calmly, my dear dog, everything
       is all right.'}
@@ -1793,6 +2279,10 @@ entries:
   tier: core
   first_seen: p1-c23-070
   counts: {p1: 1, p2: 2, p3: 4}
+  note: 'варианты RU передаются по месту: «не брат» → no one is your brother (p3-c07-034, p3-c09-036, p3-c22-089 — сам RU
+    даёт эту редакцию в 3 из 7 мест); «великий» → great; «Учитель/учитель» — по прописной RU. Замена «враг» → brother в старом
+    EN (3 из 4) может быть гармонизацией или следом другой редакции RU (вопрос D14 о канонической редакции); правку по нашему
+    RU это не ослабляет'
   evidence:
   - {id: p1-c23-070, ru: 'никто тебе не друг, никто тебе не враг, но всякий человек тебе Учитель', en_legacy: 'nobody is a
       friend to you, nobody is a brother to you, but every man is a Teacher to you'}
@@ -1805,13 +2295,15 @@ entries:
   - {id: p3-c07-034, ru: '«Никто тебе не друг, никто тебе не брат, но всякий человек тебе великий Учитель»', en_legacy: '“No
       one is your friend, no one is your brother, but every man is great Teacher for you.”'}
   en:
-    term: No one is your friend, no one is your enemy (brother), but every man is your (great) Teacher.
+    term: No one is your friend, no one is your enemy, but every man is your Teacher.
     legacy: 'ОШИБКА: «не враг» → brother в 3 из 4 случаев (p1-c23-070, p2-c01-358, p2-c10-128); верно enemy только в p3-c20-166.
       Также Teacher/teacher и формы (nobody / no one; to you / for you) разнятся.'
     avoid: []
     status: proposed
-  question: 'Утвердить одну английскую форму изречения с двумя вариантами по RU (enemy / brother) и великий → great? Рекомендация:
-    да; Teacher с прописной во всех местах (по смыслу это Учитель, строчная в RU — колебание издания).'
+  question: 'Утвердить одну английскую форму изречения с вариантами по RU (enemy / brother, great)? Прописная: RU пишет «Учитель»
+    4 раза (p1-c23-070, p3-c07-034, p3-c09-036, p3-c20-166) и «учитель» 3 раза (p2-c01-358, p2-c10-128, p3-c22-089) — это
+    не единичное колебание, а изречение может значить и обычного учителя (каждый человек тебя чему-то учит). Рекомендация:
+    зеркалить прописную RU по месту (rule#capitalized-concepts); унификация Teacher везде — только решением владельца.'
 
 - id: formula#muzhaysya
   ru: Мужайся (мужайтесь), друг.
@@ -1824,12 +2316,13 @@ entries:
   - {id: p1-c12-038, ru: — Мужайтесь. Мать должна быть примером своим детям., en_legacy: “Be strong. A mother must be an example
       to her children.}
   en:
-    term: Take courage, my friend.
+    term: Be strong, my friend.
     legacy: Be strong, my friend / Don’t lose your courage, my friend
     avoid: []
     status: proposed
-  question: 'Единая формула Take courage (как в RU одно слово) или Be strong (старый EN чаще)? Рекомендация: Take courage
-    — точнее «мужайся» и одинаково в обоих регистрах.'
+  question: Be strong (старый EN, вариант большинства и не ошибка) или Take courage (ближе к одному слову «мужайся»)? По §9.2
+    п.6 рабочий вариант — Be strong; Take courage — предложение, довод только стилистический. «Don’t lose your courage» (p3-c01-082)
+    привести к той же формуле.
 
 - id: formula#zovi-imya
   ru: зови имя моё «Али», и я отвечу тебе немедленно
@@ -1872,14 +2365,12 @@ entries:
   counts_what: 'не считается одной цифрой; по отдельным словам (середина предложения, p1/p2/p3): Жизнь 5/46/299, Любовь 0/21/205,
     Свет 6/27/203, Радость 0/1/71, Мир 0/0/16, Вечность 0/23/80, Мудрость 0/7/50, Истина 1/1/68, Огонь 0/3/58, Сила 0/0/45,
     Милосердие 0/6/47'
-  note: Старый EN в основном сохраняет прописную (Life ≈265/320, Love ≈185/209, Light ≈184/210, Joy ≈57/77), но не везде.
+  note: 'Старый EN в основном сохраняет прописную (Life ≈265/320, Love ≈185/209, Light ≈184/210, Joy ≈57/77), но не везде.
+    «Мудрость» отдельной записи не имеет: старый EN последователен (wisdom ≈199 на ≈185 «мудрост*»), прописная — по этому
+    правилу.'
   evidence:
-  - id: p3-c04-207
-    ru: Чтобы дойти до живой в себе Истины
-    en_legacy: to achieve the living Truth within yourself
-  - id: p3-c21-073
-    ru: в труде для Вечного
-    en_legacy: the work for Eternity
+  - {id: p3-c04-207, ru: Чтобы дойти до живой в себе Истины, en_legacy: to achieve the living Truth within yourself}
+  - {id: p3-c21-073, ru: в труде для Вечного, en_legacy: the work for Eternity}
   en:
     term: сохранять прописную RU у понятий-начал; строчную — в обычном значении
     legacy: в основном сохраняет; потери — ≈10–20% (напр., Жизнь → life ≈55)
@@ -1910,7 +2401,7 @@ entries:
   - {id: p3-c20-125, ru: 'О, Великая Мать… ибо я видел Тебя', en_legacy: 'Oh, Great Mother, in this moment I desire to burn
       down in Your fire and to give my life to You, because I saw You'}
   - {id: p3-c21-081, ru: Не передышки посылает Жизнь… но Сама оживает, en_legacy: but Life Himself comes to life}
-  - {id: p3-c28-006, ru: 'Тех, кого Истина посылает Своими гонцами, Она закаляет в единении с Нею.', en_legacy: 'Those whom
+  - {id: p3-c28-008, ru: 'Тех, кого Истина посылает Своими гонцами, Она закаляет в единении с Нею.', en_legacy: 'Those whom
       the Truth is sending as her messengers, She hardens with unity with Herself.'}
   en:
     term: вежливое Вы → you (строчная, как всегда в старом EN); местоимения о Боге (He/His/Him, You/Your в молитве) и Великой
@@ -1925,7 +2416,8 @@ entries:
     старый EN так и делал); прописные He/She/You — только для Бога и Великой Матери (и в молитвах), для Жизни/Истины/Вечного
     — it/its без прописной, для Учителей-людей — he; (б) сохранять прописные для всех случаев, где они есть в RU (включая
     Жизнь → She/Her, Истину → She, Али → He) — ближе к RU, но в EN непривычно и RU сам непоследователен; (в) вообще без прописных
-    местоимений. Нужен выбор владельца: влияет на тон всей ч. III.'
+    местоимений. Доводы за She для Жизни — в zhizn#life-divine (там рекомендация помечена как стилистическая). Нужен выбор
+    владельца: влияет на тон всей ч. III.'
 
 # ════════════════════════════════════════════════════════════════════════════════════════════════════
 # ТИТУЛЫ, ОБРАЩЕНИЯ, УСЛОВНОСТИ
@@ -1952,7 +2444,7 @@ entries:
   - {id: p2-c16-032, ru: 'А это дядя Ананды, князь Сенжер.', en_legacy: 'and here’s Ananda’s uncle, duke Saintger.'}
   - {id: p1-c25-165, ru: снова остановил князя Ананда, en_legacy: Ananda stopped the duke once again}
   en:
-    term: prince; перед именем с прописной — Prince Senjer (форма имени — по characters.yml); в обращении — Prince
+    term: prince; перед именем с прописной — Prince Saintger (форма имени — по characters.yml, senzher); в обращении — Prince
     legacy: duke — 317 / 31 / 3 (duke 333, Duke 16, dukes 1 во всём тексте; из них «duke Saintger» 21); prince для «князь»
       — 0 (в связях)
     avoid: [duke]
@@ -2069,7 +2561,7 @@ entries:
   - {id: p2-c12-050, ru: «Леди Цецилии Ричард Ретедли. баронессе Оберсвоуд от Флорентийца», en_legacy: '“For lady Cecilia
       Richard Rettedly, baroness Obersvode, from Florentian.”'}
   en:
-    term: Baron / Baroness перед названием титула (Lord Samuel Rettedly, Baron Obersvode)
+    term: Baron / Baroness перед названием титула (Lord Samuel Retedly, Baron Obersvode)
     legacy: baron 4, baroness 3, barons 1 — все со строчной
     avoid: []
     status: proposed
@@ -2079,7 +2571,7 @@ entries:
   sense: британский титул; главное употребление — «лорд Бенедикт» (имя, под которым выступает Флорентиец), также лорд Мильдрей,
     лорд Уодсворд и др.
   distinguish: '«английский лорд» как нарицательное (p1-c03-052 «я и в самом деле английский лорд») — со строчной: an English
-    lord. Не путать с Lord = Бог: «Господи» в старом EN 23 раза → Lord (см. gospodi#interjection).'
+    lord. Не путать с Lord = Бог: «Господи» в старом EN 23 раза → Lord (см. moy-bog#interjection).'
   ru_forms: [лорд, лорда, лорду, лордом, лорде, лорды, лордов, лордами]
   tier: core
   first_seen: p1-c03-052
@@ -2094,7 +2586,8 @@ entries:
       having heard about your visit of courtesy'}
   - {id: p2-c01-263, ru: представлял ей Николая лорд Бенедикт, en_legacy: lord Benedict was bowing to the girl … and he introduced
       Nikolay to her}
-  - {id: p2-c16-032, ru: (речь лорда Бенедикта), en_legacy: '“Alyssa, stand up,” the lord Benedict’s voice was heard.'}
+  - {id: p2-c16-032, ru: '— Встань, друг Алиса, — раздался голос лорда Бенедикта.', en_legacy: '“Alyssa, stand up,” the lord
+      Benedict’s voice was heard.'}
   en:
     term: Lord + имя без артикля (Lord Benedict, Lord Mildrey; Lord Benedict’s voice); нарицательное — a lord
     legacy: lord + имя 12 / 590 / 1 (lord Benedict 516, lord Mildrey 55, lord Wodsword 16 …); Lord + имя 3 / 120 / 1; the
@@ -2111,16 +2604,17 @@ entries:
   counts: {p1: 0, p2: 230, p3: 59}
   note: '«Леди Катарина Уодсворд» — жена пастора; по британскому этикету так называли бы только дочь пэра, но это авторское
     употребление — сохраняем как в RU (DEC-028: решаем по тексту романа, а не по внешним нормам). Старый EN: lady + имя 1
-    / 161 / 45, Lady + имя 0 / 57 / 12. «Миледи» (обращение служанки, p2-c03-044/045) → milady (старый EN так и даёт) — верно.'
+    / 161 / 45, Lady + имя 0 / 57 / 12. «Миледи» (обращение служанки, p2-c03-044/045) → my lady (в речи допустимо m’lady):
+    написание milady у английского читателя связано с Дюма и французским колоритом; старый EN — milady.'
   evidence:
   - {id: p2-c01-259, ru: '— Леди Катарина Уодсворд, — сказал пастор, подводя жену к Наль.', en_legacy: '“This is my wife,
       lady Katherine Wodsword,” the pastor uttered'}
   - {id: p2-c03-045, ru: '— Не называйте меня «миледи», я такая же слуга, как и вы', en_legacy: '“Don’t call me milady, I’m
       the same servant as you are”'}
   en:
-    term: Lady + имя (Lady Katherine Wodsword — фамилия по characters.yml); обращение служанки — milady
+    term: Lady + имя (Lady Katherine Wodsword — фамилия по characters.yml); обращение служанки — my lady
     legacy: lady Katherine 73, lady Cecilia 60, lady Berdran 44 … (строчная); Lady + имя 69
-    avoid: [lady + имя со строчной]
+    avoid: [lady + имя со строчной, milady]
     status: proposed
   question: 'Сохранить авторское «Lady + личное имя» для жены пастора (не «править» по этикету на Lady Wodsword)? Рекомендация:
     сохранить.'
@@ -2195,7 +2689,7 @@ entries:
       name'}
   - {id: p2-c03-054, ru: Мой знакомый служит у мистера Б., en_legacy: My acquaintance is serving at mister B.’s}
   en:
-    term: 'Mr (без точки): Mr Tendly, Mr B.'
+    term: 'Mr (без точки): Mr Tendl, Mr B. (форма фамилии — по characters.yml, tendl)'
     legacy: mister + имя 1 / 59 / 11, Mister + имя 0 / 31 / 1, Mr. 1 (всё с учётом регистра)
     avoid: [mister, Mister, Mr.]
     status: proposed
@@ -2213,11 +2707,13 @@ entries:
   - {id: p1-c16-083, ru: '— Не горюйте, мадам, — сказал он ей.', en_legacy: '“Don’t upset yourself, madam,” he was talking
       to her.'}
   en:
-    term: перед именем — Madame (Madame Jeanne — имя по characters.yml); в обращении без имени — madame
+    term: перед именем — Madame (Madame Jeanne — имя по characters.yml); в обращении без имени — madam
     legacy: madam 10, Madam 2
     avoid: [madam + имя]
     status: proposed
-  question: 'Вокатив без имени: французское madame (как в RU, отмечает француженку) или английское madam? Рекомендация: madame.'
+  question: 'Вокатив без имени: madam (старый EN, не ошибка) или французское madame (как в RU, отмечает француженку)? По §9.2
+    п.6 рабочий вариант — madam; madame — предложение владельцу. Перед именем madam + имя по-английски не употребляется —
+    там Madame.'
 
 - id: sinyor#title
   ru: синьор / синьора
@@ -2229,15 +2725,15 @@ entries:
   note: 'RU везде даёт итальянскую форму «синьор», не испанскую «сеньор». Старый EN в части I — signor/signora(s) (10), а
     в частях II–III — испанские senor/senora (22 и 14: senor Bonda 14, senora Beata 8, senora Sedelani 4 …). Прямого указания
     на испанское происхождение этих лиц в тексте нет (поиск «испан*» рядом с Бонда/Седелани — 0), так что senor противоречит
-    форме RU.'
+    форме RU. Итальянское мн. ч. signore английский читатель не узнает и прочтёт как мужское ед. ч. («сударь»).'
   evidence:
   - {id: p1-c15-150, ru: 'кроме Жанны, двух синьор итальянок и семьи греков', en_legacy: 'not only Joan, both signoras Italians
       and the Greek family'}
   - {id: p1-c14-039, ru: 'навестить тётушку, синьору Терезу', en_legacy: signora Terez}
   en:
-    term: Signor / Signora перед именем; мн. ч. — the Signore Galdoni или the Galdoni ladies (по контексту)
+    term: Signor / Signora перед именем; мн. ч. («синьоры Гальдони») — the Galdoni ladies
     legacy: signor/signora/signoras — 10 (ч. I); senor/senora/Senor/Senora — 0 / 22 / 14
-    avoid: [senor, senora, signoras]
+    avoid: [senor, senora, signoras, the Signore Galdoni]
     status: proposed
 
 - id: gospodin#address
@@ -2256,8 +2752,9 @@ entries:
   - {id: p1-c16-093, ru: господин старший доктор, en_legacy: mister senior doctor}
   - {id: p1-c13-037, ru: уверить госпожу Жанну Моранье, en_legacy: to assure the lady Joan Moranje}
   en:
-    term: 'по контексту: обращение к должности — sir / Headmaster / Doctor (Excuse me, sir; «To the Junior Doctor»); госпожа
-      + французское имя — Madame (Madame Jeanne …)'
+    term: обращение к должности — принятое английское обращение этой должности («господин директор» — Headmaster; «Господину
+      младшему доктору» — To the Junior Doctor; без названия должности — sir); госпожа + французское имя — Madame (Madame
+      Jeanne …)
     legacy: mister (10 / 1 / 8 в связях), Mr. 1, master (3 / 12 / 10), the lady + имя
     avoid: ['mister + должность (mister junior doctor, Mr. principal)', the lady + имя]
     status: proposed
@@ -2334,7 +2831,7 @@ entries:
   - {id: p1-c13-025, ru: 'Я, светлейшая княгиня, требую', en_legacy: 'I, the brightest duchess, demand'}
   en:
     term: сиятельство → Your / His / Her Excellency; превосходительство → Your Excellency; светлейшая княгиня → a Serene Highness
-      («I, a princess and a Serene Highness, demand …»)
+      («I, a Serene Highness, demand …»)
     legacy: His/Her/Your Highness (4), Your excellency (1), the brightest (1)
     avoid: [Highness (для сиятельства — это титул владетельных/царственных особ), brightest]
     status: proposed
@@ -2386,7 +2883,8 @@ entries:
 - id: kapitan#ship
   ru: капитан (судна)
   sense: капитан парохода (часть I — безымянный капитан; часть II — капитан Джемс и др.)
-  distinguish: kapitan#army — армейский чин (брат Николай, «капитан Т.», «капитан М-ского полка» p1-c01-003); здесь — капитан парохода (p1-c12-042)
+  distinguish: kapitan#army — армейский чин (брат Николай, «капитан Т.», «капитан М-ского полка» p1-c01-003); здесь — капитан
+    парохода (p1-c12-042)
   ru_forms: [капитан, капитана, капитану, капитаном, капитане]
   tier: core
   first_seen: p1-c10-047
@@ -2398,7 +2896,7 @@ entries:
       said to the captain tenderly.'}
   - {id: p2-c01-061, ru: подошёл к капитану Т. капитан парохода, en_legacy: '(Count, excuse me … ,” the ca[ptain])'}
   en:
-    term: the captain (без имени — со строчной); с именем — Captain James; помощники капитана — mates / officers (см. pomoshnik-kapitana)
+    term: the captain (без имени — со строчной); с именем — Captain James; помощники капитана — mates (см. pomoshnik-kapitana)
     legacy: captain (876 во всём тексте, все значения); captain James 16, Captain James 1
     avoid: [captain + имя со строчной]
     status: proposed
@@ -2408,15 +2906,15 @@ entries:
   sense: врач; в части I — И. и Левушка выступают как «старший» и «младший доктор» на пароходе; «доктор И.» — устойчивое обозначение
   ru_forms: [доктор, доктора, доктору, доктором, докторе]
   tier: core
-  first_seen: p1-c02-005
+  first_seen: p1-c02-006
   counts: {p1: 126, p2: 22, p3: 70}
   evidence:
   - {id: p1-c13-001, ru: адресовано "Господину младшему доктору", en_legacy: addressed “to mister junior doctor”}
   - {id: p1-c15-061, ru: '— Доктор, — сказал он дрожащим, слабым голосом.', en_legacy: '“Doctor,” he addressed I. with his
       trembling and weak voice.'}
   en:
-    term: перед именем/инициалом — Doctor I. (полностью, не Dr; форма «И.» — по characters.yml); в обращении — Doctor; «старший/младший
-      доктор» — the senior / junior doctor
+    term: перед именем/инициалом — Doctor Il. (полностью, не Dr; форма «И.» — по characters.yml, illofillion); в обращении
+      — Doctor; «старший/младший доктор» — the senior / junior doctor
     legacy: doctor I. 23 / 7 / 33, Doctor I. 13 / 0 / 8 (всё с учётом регистра); doctor в остальном
     avoid: [doctor I. (строчная)]
     status: proposed
@@ -2477,25 +2975,53 @@ entries:
 
 - id: nastoyatel#title
   ru: настоятель / настоятельница
-  sense: глава монастыря/обители (в части III — Раданда, глава Общины; настоятельница — женской обители)
+  sense: 'глава обители/Общины: в ч. III — Раданда, глава Общины в пустыне; «мать-настоятельница Общины» — мать Анна (p3-c23-112,
+    characters.yml, mat-anna)'
   ru_forms: [настоятель, настоятеля, настоятелю, настоятелем, настоятельница, настоятельницы, настоятельницу]
   tier: core
-  first_seen: p3-c11-168
+  first_seen: p3-c11-169
   counts: {p1: 0, p2: 0, p3: 70}
-  note: 'Контекст монастырский: «настоятель в игуменских палатах» (p3-c11-168), «келейника» (p3-c17-176).'
+  note: 'Контекст монастырский: «настоятель в игуменских палатах» (p3-c11-169), «келейника» (p3-c17-176). Обращение к настоятельнице
+    «мать» — mat#address.'
   evidence:
   - {id: p3-c17-171, ru: Старец Раданда оказавшийся настоятелем, en_legacy: The old man Radanda who turned out to be the chief
       of the Community}
   - {id: p3-c17-176, ru: '— Левушка, настоятель предложил мне выбрать себе келейника', en_legacy: '“Lyovushka, the chief offered
       me to pick out a servant brother'}
-  - {id: p3-c11-168, ru: а учеником его — настоятель в игуменских палатах, en_legacy: while his disciple – head of the monastery}
+  - {id: p3-c11-169, ru: а учеником его — настоятель в игуменских палатах, en_legacy: while his disciple – head of the monastery}
   en:
-    term: 'предложение: the Superior / the Mother Superior (нейтральнее конфессионально) — см. question'
-    legacy: chief 44, head 2 (в связях с «настоятель»); chief 5 (настоятельница)
+    term: the Superior (настоятельница, «мать-настоятельница» — the Mother Superior)
+    legacy: chief 44, head 2 (в связях с «настоятель»); chief 5 (настоятельница); chief-mother (p3-c23-112, «мать-настоятельница»)
     avoid: ['chief (слишком общее, теряет монастырский смысл)']
     status: proposed
-  question: 'abbot/abbess (точнее для «настоятель» + «игумен», «келейник»), the Superior или оставить the head of the Community?
-    Рекомендация: abbot/abbess или the Superior — решить владельцу вместе с понятием «Община».'
+  question: 'abbot/abbess (точнее для «настоятель» + «игумен», «келейник»), the Superior / the Mother Superior или оставить
+    the head of the Community? chief старого EN слишком общее и теряет монастырский смысл. Рекомендация: the Superior / the
+    Mother Superior (конфессионально нейтральнее abbot); решить владельцу вместе с понятием «Община».'
+
+- id: mat#address
+  ru: мать (обращение к настоятельнице)
+  sense: 'обращение и именование матери Анны, настоятельницы Общины в оазисе: «Прости, мать…» (И.), «говорила мать», «мать
+    Анна» — в ч. III (p3-c23…c33)'
+  distinguish: родная мать — mother (обычное слово); «Великая Мать», «Мать Жизни» — velikaya-mat, mat-zhizni; персонаж — characters.yml,
+    mat-anna
+  ru_forms: [мать, матери, мать Анна, матери Анны, матерью Анной]
+  tier: core
+  first_seen: p3-c23-107
+  counts: {p1: 0, p2: 0, p3: 175}
+  counts_what: «мать/матери/матерью Анн*» — 175 (p3-c23…c33); отдельное обращение «мать» к ней — ещё ≈10 (p3-c23-107, 110,
+    113)
+  note: 'как английское обращение к настоятельнице (Mother, Mother Superior) — с прописной и в обращении, и перед именем:
+    Mother Anna; связь с nastoyatel#title (the Mother Superior)'
+  evidence:
+  - {id: p3-c23-107, ru: '— Прости, мать, моему секретарю его растерянность', en_legacy: '“Mother, forgive my secretary'}
+  - {id: p3-c23-113, ru: 'Будь же, мать, отныне не просто мать-начальница, но свети всем встречным как мать Анна', en_legacy: 'From
+      now on, mother, be not just chief-mother, but shine for everybody as mother Anna'}
+  - {id: p3-c23-117, ru: Мать Анна смахнула слезу, en_legacy: Mother Anna wiped the tear}
+  en:
+    term: Mother (Mother Anna)
+    legacy: mother Anna 146, Mother Anna 28 (прописная почти только в начале фразы); Mother в обращении; chief-mother 2
+    avoid: [mother Anna (строчная), chief-mother]
+    status: proposed
 
 - id: drug#address
   ru: друг / мой друг / друг мой (обращение)
@@ -2557,7 +3083,8 @@ entries:
   - {id: p1-c19-060, ru: '— Дитя ты ещё, Лёвушка, — засмеялся И.', en_legacy: '“What a baby you still are, Lovushka,” I. gave
       a laugh.'}
   en:
-    term: my child / child (обращение); характеристика — child («You are still a child, Lyovushka» — форма имени по characters.yml)
+    term: «дитя моё» — my child; «дитя» (обращение) — child; характеристика — child («You are still a child, Lyovushka» —
+      форма имени по characters.yml)
     legacy: my child 15, child 9, my baby / baby / kid 19, my dear 2 (в связях)
     avoid: [my baby, baby, kid]
     status: proposed
@@ -2593,12 +3120,13 @@ entries:
   - {id: p1-c11-015, ru: '— Ты полежи немного, дружок, — сказал он мне.', en_legacy: '“My dear friend, you’ll have to lie
       in bed for a while.'}
   en:
-    term: my dear boy / dear boy (к Левушке); my dear (к женщинам и детям) — по контексту
+    term: my friend
     legacy: my friend 18, my dear 7, my dear friend 1; 6 без явного варианта
     avoid: []
     status: proposed
-  question: 'Держать отличие «дружок» ≠ «друг» (dear boy / my dear) или оставить my friend, как старый EN? Рекомендация: отличать;
-    my friend — не ошибка, но теряет интонацию.'
+  question: 'Держать отличие «дружок» ≠ «друг» (my dear boy / dear boy к Левушке, my dear к женщинам и детям) или оставить
+    my friend, как старый EN (18 из 34)? Запись признаёт: my friend — не ошибка, но теряет интонацию. По §9.2 п.6 рабочий
+    вариант — my friend; dear boy / my dear — предложение владельцу.'
 
 - id: druzya-moi#address
   ru: друзья мои / дети мои / дочь моя
@@ -2658,7 +3186,7 @@ entries:
       brotherhood with me, so does your love to me look like those flowers …', note: упрёк за «вы» опущен}
   en:
     term: 'без thou/thee; различие — тоном, формами обращения (my friend / Sir), сокращениями; в метаязыковых местах — перифраз:
-      «you still address Lisa so formally», «From now on, speak to me as a friend — no formalities», «she laid heavy stress
+      «you still address Liza so formally», «From now on, speak to me as a friend — no formalities», «she laid heavy stress
       on the word ‘you’»'
     legacy: не передаётся (thou 0); в 4 метаязыковых местах — потеря или бессмыслица
     avoid: [thou, thee, say “You” to]
@@ -2705,11 +3233,12 @@ entries:
   - {id: p1-c25-198, ru: 'проводить, лекарей-то, к Льву Н[иколаевичу]', en_legacy: to take those doctors to the room of Lev
       Nikolayevich}
   en:
-    term: 'имя + отчество полностью, без склонения и без Mr/Mrs; одна система транслитерации для всех (выбрать вместе с characters.yml:
-      Dmitriyevna/Dmitrievna)'
+    term: 'имя + отчество полностью, без склонения и без Mr/Mrs; одна система транслитерации для всех: «Дмитриевна» — Dmitrievna'
     legacy: сохраняется; три варианта для «Дмитриевна»
     avoid: [Mr/Mrs + фамилия вместо имени-отчества]
     status: proposed
+  question: 'Транслитерация отчеств: Dmitrievna (старый EN, большинство — 5) / Dmitryevna (4) / Dmitriyevna (2)? Рекомендация:
+    Dmitrievna по §9.2 п.6; систему согласовать с characters.yml (Natalya Vladimirovna, Andreyeva).'
 
 # ════════════════════════════════════════════════════════════════════════════════════════════════════
 # ТЕРМИНЫ ПИЛОТНОЙ ГЛАВЫ p1-c01 И КАЛИБРОВОЧНЫХ ОТРЫВКОВ
@@ -2723,7 +3252,9 @@ entries:
   tier: secondary
   first_seen: p1-c01-003
   counts: {p1: 35, p2: 0, p3: 1}
-  note: trader не ошибка, но «купец» — сословие и крупная торговля с Персией и Россией (029); famous — ошибка (важный ≠ знаменитый).
+  note: 'довод о различении понятий, а не вкус: RU различает «купец» (сословие, крупная торговля с Персией и Россией, 029)
+    и «торговец» (родовое, чаще пренебрежительно: «восточный торговец» p1-c01-071); trader уже занят «торговцем» (torgovets),
+    поэтому оба слова в trader сольются. famous — ошибка (важный ≠ знаменитый).'
   evidence:
   - {id: p1-c01-003, ru: Изредка проедет шагом на осле купец на базар., en_legacy: 'From time to time, a trader would ride
       by slowly to the market on his donkey'}
@@ -2731,10 +3262,11 @@ entries:
       trader.}
   - {id: p1-c01-089, ru: и ты сможешь сойти за важного купца, en_legacy: and you will look like a famous trader}
   en:
-    term: merchant (важный купец — an important / a wealthy merchant)
+    term: merchant (важный купец — an important merchant)
     legacy: trader — 34 из 36 в связях; «важный» → famous (p1-c01-029, 089)
     avoid: [famous (для «важный»)]
     status: proposed
+    note: для «большая важная купец» допустимо a wealthy merchant, если важен достаток, а не положение
   question: 'merchant для «купец», trader для «торговец» — развести? Рекомендация: да; если владелец за минимальную правку
     — оставить trader, исправив только famous.'
 
@@ -2759,14 +3291,16 @@ entries:
   sense: владелец лавки — торговец из p1-c01 (012–034)
   tier: secondary
   first_seen: p1-c01-012
-  note: the owner понятно, но без дополнения звучит обрывочно; the shopkeeper — точнее.
+  note: the owner понятно и не ошибка (запись признаёт), но без дополнения звучит обрывочно; the shopkeeper — точнее.
   evidence:
   - {id: p1-c01-012, ru: 'и, наконец, решился спросить хозяина', en_legacy: until I dared to speak to the owner}
   en:
-    term: the shopkeeper
+    term: the owner
     legacy: the owner (p1-c01-012, 016, 018, 021, 029)
     avoid: []
     status: proposed
+  question: the owner (старый EN, p1-c01-012…029, не ошибка) или the shopkeeper (точнее, без обрывочности)? По §9.2 п.6 рабочий
+    вариант — the owner; the shopkeeper — предложение владельцу, довод стилистический.
 
 - id: denshchik
   ru: денщик
@@ -2781,11 +3315,12 @@ entries:
   - {id: p1-c01-004, ru: жил в нём один со своим денщиком, en_legacy: he was living alone with his messenger}
   - {id: p1-c07-021, ru: что это денщик капитана Т., en_legacy: that he was the messenger of captain T.}
   en:
-    term: orderly (британское разговорное — batman)
+    term: orderly
     legacy: messenger — 21 из 23
     avoid: [messenger]
     status: proposed
-  question: 'orderly или batman? Рекомендация: orderly — понятнее за пределами британского армейского жаргона.'
+  question: 'orderly или batman? batman — стандартный британский армейский термин (не разговорное слово); orderly принято
+    в английских переводах русской классики и понятнее за пределами армейского словаря. Рекомендация: orderly.'
 
 - id: dvornik
   ru: дворник
@@ -2826,13 +3361,14 @@ entries:
   tier: secondary
   first_seen: p1-c01-030
   counts: {p1: 9, p2: 26, p3: 0}
+  note: в сказуемом («Он, наверное, учёный») допустимо a learned man
   evidence:
   - {id: p1-c01-030, ru: 'Не похоже, чтобы он был купец. Он, наверное, учёный', en_legacy: He doesn’t look like a trader.
       He must be a scientist}
   - {id: p1-c01-031, ru: 'Учёный он есть такой, что и у твоя брат все книги знает.', en_legacy: He is such a scientist that
       he knows all your brother’s books.}
   en:
-    term: scholar / a learned man
+    term: scholar
     legacy: scientist — 28 из 35 в связях
     avoid: ['scientist (для p1-c01-030, 031)']
     status: proposed
@@ -2917,11 +3453,15 @@ entries:
   - {id: p1-c01-079, ru: 'здесь носят сразу семь халатов, начиная с ситцевого и кончая шёлковым', en_legacy: 'it is usual
       here to wear seven oriental robes at once, starting with the cotton one and ending with the silk one'}
   en:
-    term: robe; при первом упоминании и где нужно подчеркнуть восточность — oriental robe / silk robe
+    term: oriental robe
     legacy: oriental robe 63 (ч. I), robe 41, gown 2 (в связях)
     avoid: [dressing-gown (для восточного халата)]
     status: proposed
-  question: 'Ввести заимствование khalat? Рекомендация: нет — robe понятно; khalat малоизвестно англоязычному читателю.'
+    note: в ч. II–III старый EN сам пишет robe — там так и оставить
+  question: '(1) Сокращать ли oriental robe до robe после первого упоминания? Старый EN в ч. I последовательно пишет oriental
+    robe (не ошибка), довод за сокращение — только тяжеловесность повтора (стилистический), поэтому по §9.2 п.6 рабочий вариант
+    — oriental robe; robe после первого упоминания — предложение владельцу. (2) Ввести заимствование khalat? Рекомендация:
+    нет — robe понятно; khalat малоизвестно англоязычному читателю.'
 
 - id: chalma
   ru: чалма
@@ -2951,6 +3491,7 @@ entries:
   ru_forms: [покрывало, покрывала, сетка, сетки, сеткой, паранджа, паранджи]
   tier: secondary
   first_seen: p1-c01-003
+  note: покрывало-накидка на голову и тело — где важен покрой, допустимо описательно (a cloak-like veil)
   evidence:
   - {id: p1-c01-003, ru: 'укутанных в чёрные сетки и белые или тёмные покрывала, подобно плащу скрадывающие формы тела', en_legacy: who
       cover their faces with black nettings and even wrap themselves up in white and black cloaks}
@@ -2960,8 +3501,7 @@ entries:
       p1-c01-050: «чёрной сеткой» опущено; fix — black veils'}
   - {id: p1-c01-068, ru: ходят дома без паранджи, en_legacy: they are walking without their burqas at home}
   en:
-    term: 'покрывало — veil (накидка: wrap, cloak-like veil); чёрная сетка — black mesh veil; паранджа — veil (или paranja
-      с пояснением)'
+    term: покрывало — veil; чёрная сетка — black mesh veil; паранджа — veil
     legacy: cloaks (003, 033), mantle (052, 053), black nettings (003), burqas (068)
     avoid: ['burqa (другой, афганский покров)', nettings]
     status: proposed
@@ -3010,7 +3550,7 @@ entries:
   - {id: p1-c01-123, ru: 'большая бриллиантовая брошь, изображавшая павлина', en_legacy: the brilliant fastener which portrayed
       the peacock}
   en:
-    term: brooch (брошь); pin / turban pin (булавка)
+    term: brooch (брошь); turban pin (булавка)
     legacy: 'fastener (p1-c01: 5 раз; ч. II — 8)'
     avoid: [fastener]
     status: proposed
@@ -3028,10 +3568,12 @@ entries:
   - {id: p1-c01-102, ru: Оттуда сверкнули крупные бриллианты в форме треугольника, en_legacy: Large brilliants laid out in
       a triangle began to glitter in it}
   en:
-    term: diamond(s)
+    term: brilliants
     legacy: brilliants 40, diamonds 5 (в связях)
     avoid: []
     status: proposed
+  question: brilliants (старый EN, 40; устар. «бриллиант», не ошибка) или diamonds (естественнее)? Запись признаёт правку
+    вкусовой, поэтому по §9.2 п.6 рабочий вариант — brilliants; diamonds — предложение владельцу.
 
 - id: dragotsennosti#pilot
   ru: рубин / изумруд / жемчуг / перстень / платиновая оправа / футляр / свёрток
@@ -3058,10 +3600,12 @@ entries:
   evidence:
   - {id: p1-c01-108, ru: брат выдвинул ящик бюро, en_legacy: he pulled out one of the drawers of his writing-table}
   en:
-    term: bureau
+    term: writing-table
     legacy: writing-table — 2
     avoid: []
     status: proposed
+  question: writing-table (старый EN, не ошибка) или bureau (у бюро ящики, что важно в сцене p1-c01-108)? У writing-table
+    тоже бывают ящики, довод слабый; по §9.2 п.6 рабочий вариант — writing-table, bureau — предложение владельцу.
 
 - id: papirosnaya-bumaga
   ru: папиросная бумага
@@ -3072,7 +3616,7 @@ entries:
   - {id: p1-c01-100, ru: 'похожей на белую замшу, но по тонкости равной папиросной бумаге', en_legacy: similar to the white
       suede and it was finer than the paper of cigarettes}
   en:
-    term: cigarette paper (или tissue paper)
+    term: cigarette paper
     legacy: the paper of cigarettes
     avoid: [the paper of cigarettes]
     status: proposed
@@ -3120,8 +3664,8 @@ entries:
   - {id: p1-c01-024, ru: И купец достал из-под прилавка чудесный розового тона халат, en_legacy: The trader pulled an excellent
       oriental robe with reddish hues out of his stall.}
   en:
-    term: bazaar или market (см. question); лавка — shop / stall; торговые галереи — covered arcades; торговые ряды — the
-      market rows; прилавок — counter; ресторан-кухня — eating-house; расписные — painted
+    term: market; лавка — shop; торговые галереи — covered arcades; торговые ряды — the market rows; прилавок — counter; ресторан-кухня
+      — eating-house; расписные — painted
     legacy: market (19 из 19); shop 3 / stall 1; trade galleries; stall (для «прилавка»); restaurants-kitchens
     avoid: [restaurants-kitchens, stall (для «прилавок»)]
     status: proposed
@@ -3147,15 +3691,17 @@ entries:
     «важно зовёт» гардеробную «туалетной»)
   tier: secondary
   first_seen: p1-c01-005
+  note: 'toilette room — не английское сочетание, читатель услышит toilet room (уборную): ложная шутка, которой нет в RU;
+    robing-room — пышное название (комнаты облачения судей и духовенства), ирония сохраняется'
   evidence:
   - {id: p1-c01-005, ru: которая носила громкое название «зала», en_legacy: although up to now it was loudly called the sitting-room}
   - {id: p1-c01-075, ru: 'заглянем-ка в «туалетную», как важно зовёт денщик гардеробную', en_legacy: let’s go to my dressing-room,
     note: шутка про денщика опущена}
   en:
-    term: '«зала» — the grand name ‘the salon’ (или ‘the ballroom’); гардеробная — dressing-room; «туалетная» — передать иронию:
-      ‘the toilette room’, as my orderly grandly calls the dressing-room'
+    term: «зала» — the grand name ‘the salon’; гардеробная — dressing-room; «туалетная» — ‘the robing-room’, as my orderly
+      grandly calls the dressing-room
     legacy: sitting-room (ирония потеряна); dressing-room (шутка опущена)
-    avoid: [loudly called]
+    avoid: [loudly called, toilette room]
     status: proposed
 
 - id: vannaya-v-sadu
@@ -3167,9 +3713,9 @@ entries:
   - {id: p1-c01-069, ru: 'умылись в ванной комнате, устроенной прямо в саду из циновок и брезента', en_legacy: we washed ourselves
       in the lavatory which was made of mats and tarpaulin in the yard}
   en:
-    term: bathing shelter / washroom (of matting and canvas, right in the garden)
+    term: bathroom («we washed in the bathroom, rigged up right in the garden out of matting and canvas»)
     legacy: lavatory
-    avoid: [lavatory (в британском — уборная)]
+    avoid: [lavatory (в британском — уборная), washroom (эвфемизм уборной)]
     status: proposed
 
 - id: ekipazh
@@ -3190,7 +3736,7 @@ entries:
       in the old light carriage after them.}
   - {id: p1-c01-046, ru: Первой шла простая телега., en_legacy: The first a simple cart was rolling.}
   en:
-    term: экипаж — carriage; пролётка — droshky (или open carriage); бричка — britzka (или trap); телега — cart
+    term: экипаж — carriage; пролётка — droshky; бричка — britzka; телега — cart
     legacy: 'пролётка: light carriage / calash / coach (разнобой в одной сцене: 011, 050, 052, 055); бричка: light carriage
       5 из 8; телега: cart'
     avoid: [calash, light carriage (одинаково для пролётки и брички)]
@@ -3230,15 +3776,18 @@ entries:
   sense: достижение возраста зрелости (подарки «от Наль в день её совершеннолетия»)
   tier: secondary
   first_seen: p1-c01-094
+  note: в p1-c01-104 старый EN ломает синтаксис («this is some Nal’s majority») — это правка фразы, а не термина
   evidence:
   - {id: p1-c01-094, ru: принять их как подарок от Наль в день её совершеннолетия, en_legacy: to accept it as the present
       on the occasion of Nal’s majority}
   - {id: p1-c01-104, ru: — Вот так совершеннолетие Наль!, en_legacy: '“Well, this is some Nal’s majority!”'}
   en:
-    term: coming of age (Nal’s coming of age)
+    term: majority (Nal’s majority)
     legacy: majority
-    avoid: [Nal’s majority]
+    avoid: []
     status: proposed
+  question: majority (старый EN, юридически точное «совершеннолетие», не ошибка) или coming of age (естественнее в речи)?
+    Довод за замену — только естественность, поэтому по §9.2 п.6 рабочий вариант — majority; coming of age — предложение владельцу.
 
 - id: religioznyy-pokhod
   ru: религиозный поход
@@ -3277,9 +3826,9 @@ entries:
   - {id: p1-c01-071, ru: что любой режиссёр мог бы позавидовать их фантазии, en_legacy: that any artistic director could envy
       their fantasies}
   en:
-    term: stage director (или producer — британское для театра начала XX в.)
+    term: stage director
     legacy: artistic director
-    avoid: []
+    avoid: [producer (современный читатель поймёт как «продюсер»)]
     status: proposed
 
 - id: moy-bog#interjection
@@ -3292,7 +3841,7 @@ entries:
   - {id: p1-c01-080, ru: '— Мой Бог, — сказал я', en_legacy: '“Oh, my god,” I was unable to remain still'}
   - {id: p2-c01-143, ru: '— Господи, как вы прекрасны', en_legacy: '“God, how beautiful you are,”'}
   en:
-    term: My God / Good Lord / Oh Lord — с прописной
+    term: «Мой Бог», «Боже» — My God; «Господи» — Good Lord (с прописной)
     legacy: Oh, my god (строчная, p1-c01-080); «Господи» → Lord 23, God 11 (в связях)
     avoid: [god со строчной в восклицании]
     status: proposed
@@ -3305,10 +3854,12 @@ entries:
   evidence:
   - {id: p1-c01-088, ru: 'Помилуй, Николушка, иди уж лучше один', en_legacy: 'Have pity on me. Nikolushka, you better go alone'}
   en:
-    term: for pity’s sake / have mercy
+    term: have pity (Have pity on me)
     legacy: Have pity on me
     avoid: []
     status: proposed
+  question: 'Have pity on me (старый EN, не ошибка — исправить только разрыв «Have pity on me. Nikolushka») или for pity’s
+    sake (разговорнее)? Рекомендация по §9.2 п.6 — старый вариант. have mercy не брать: mercy занято «милосердием».'
 
 - id: srednyaya-aziya
   ru: Средняя Азия (среднеазиатский торговый город)
@@ -3374,11 +3925,12 @@ entries:
   tier: secondary
   first_seen: p1-c12-040
   counts: {p1: 4, p2: 0, p3: 17}
+  note: the captain’s bridge (старый EN, p1-c12-040) — тоже допустимо, не ошибка
   evidence:
   - {id: p1-c12-040, ru: Мы добрались до капитанского мостика с огромным трудом., en_legacy: We reached the captain’s bridge
       with great difficulty.}
   en:
-    term: the bridge (the captain’s bridge — допустимо)
+    term: the bridge
     legacy: captain’s bridge; bridge 17 в связях
     avoid: []
     status: proposed
@@ -3434,11 +3986,12 @@ entries:
   ru: борт / корма (кормовая часть) / палуба
   tier: secondary
   first_seen: p1-c12-054
+  note: существительное broadside значит бортовой залп орудий; корректно только наречное broadside (on)
   evidence:
   - {id: p1-c12-054, ru: Если бы вся эта масса ударила нам в борт … вся тяжесть обрушилась на его кормовую часть, en_legacy: If
       this mountain had hit the ship’s side … the whole weight of the water fell on its stern}
   en:
-    term: side (удар в борт — broadside); stern; deck
+    term: side (удар в борт — had struck us broadside on); stern; deck
     legacy: ship’s side; stern; deck
     avoid: []
     status: proposed
@@ -3448,12 +4001,14 @@ entries:
   sense: наклон судна на борт; «ляжет, чтобы уже не встать» — опрокинется
   tier: secondary
   first_seen: p1-c12-049
+  note: 'в морском английском list — устойчивый крен от смещения груза или воды, мгновенный наклон на волне в шторм — roll
+    (или heel): «One more roll like that and she’ll go over and never right herself.»'
   evidence:
   - {id: p1-c12-049, ru: '— Ещё один такой крен, и пароход ляжет, чтобы уже не встать', en_legacy: '“One more such heeling
       over of the ship, and the steamer will fall on its side, so that it would never rise again,”', note: 'annot. fix: One
       more list like that and she’ll go over and never right herself'}
   en:
-    term: list / roll; «ляжет» — go over, never right herself
+    term: roll; «ляжет» — go over, never right herself
     legacy: heeling over; fall on its side
     avoid: []
     status: proposed
@@ -3462,11 +4017,12 @@ entries:
   ru: помощники (капитана)
   tier: secondary
   first_seen: p1-c12-042
+  note: officers — где речь о командном составе в целом
   evidence:
   - {id: p1-c12-043, ru: которое капитан и помощники уже не могли удерживать втроём, en_legacy: because the captain with his
       assistants were unable to hold it, note: 'annot. fix: the captain and his two mates'}
   en:
-    term: mates (the first/second mate) или officers
+    term: mates (the first / second mate)
     legacy: assistants (87 в связях со всеми «помощник*», не только морскими)
     avoid: [assistants (о помощниках капитана)]
     status: proposed
@@ -3481,7 +4037,7 @@ entries:
       capsized inevitably … the steamer pierced through the gigantic mass of the water with its spike, note: 'отчёт §6.6:
       судно везде her'}
   en:
-    term: steamer / ship; местоимение she/her
+    term: steamer (пароход); ship (судно); местоимение she/her
     legacy: steamer, ship; it/its
     avoid: [it/its (о судне)]
     status: proposed
@@ -3493,17 +4049,18 @@ entries:
   tier: secondary
   first_seen: p1-c11-075
   counts: {p1: 70, p2: 0, p3: 0}
+  note: 'текст подчёркивает рост и ловкость: «Возле меня выросла высокая тень — это был наш матрос-верзила» (p1-c11-101),
+    «этот верзила так же летал по лестницам» (p1-c11-076); lanky («долговязый и нескладный») и hulking («громоздкий, неуклюжий»)
+    этому противоречат, а lanky, повторённое 70 раз, станет комичным; strapping — рослый и крепкий, слегка старомодно. Допустимо
+    разнообразить: our big sailor, the giant of a sailor'
   evidence:
   - {id: p1-c12-042, ru: 'как матрос-верзила что-то крикнул, рванул меня вперёд', en_legacy: how the clumsy sailor screamed
       something and yanked me forward, note: annot. p1-c12-042; отчёт §5}
   en:
-    term: the lanky sailor (или hulking sailor — решить одно)
+    term: the strapping sailor
     legacy: clumsy — 67 из 70 в связях (78 clumsy в тексте ч. I)
-    avoid: [clumsy]
+    avoid: [clumsy, lanky, hulking]
     status: proposed
-  question: 'lanky (долговязый) или hulking (здоровенный)? Текст подчёркивает рост и ловкость: «Возле меня выросла высокая
-    тень — это был наш матрос-верзила» (p1-c11-101), «этот верзила так же летал по лестницам» (p1-c11-076). Рекомендация:
-    lanky (или big lanky sailor).'
 
 - id: nyanka-matros
   ru: нянька-матрос
@@ -3513,10 +4070,12 @@ entries:
   evidence:
   - {id: p1-c12-041, ru: валился на свою няньку-матроса, en_legacy: I fell on my “nurse”}
   en:
-    term: my sailor-nursemaid
+    term: my “nurse”
     legacy: my “nurse”
     avoid: []
     status: proposed
+  question: my “nurse” (старый EN, шутка сохранена, «матрос» ясен из контекста) или my sailor-nursemaid (ближе к составному
+    RU)? Довод за замену стилистический; по §9.2 п.6 рабочий вариант — старый.
 
 - id: korobochka-pilyuli
   ru: коробочка (Флорентийца) / пилюли
@@ -3577,10 +4136,11 @@ entries:
   - {id: p2-c01-252, ru: 'Взяв визитные карточки гостей, слуга ввёл их в гостиную', en_legacy: 'Having taken the visiting-cards
       from the guests, the servant invited them to the sitting-room'}
   en:
-    term: visiting cards (cards)
+    term: visiting-cards
     legacy: visiting-cards
     avoid: []
     status: proposed
+    note: написание через дефис — старое британское, не ошибка (§9.2 п.6); visiting cards — допустимо по решению стайлгайда
 
 - id: gostinaya
   ru: гостиная
@@ -3592,12 +4152,12 @@ entries:
   - {id: p2-c01-252, ru: 'слуга ввёл их в гостиную, тоже старинную, с огромным камином', en_legacy: 'the servant invited them
       to the sitting-room which also was old-fashioned, with the big fireside'}
   en:
-    term: drawing-room (в английском доме того времени); sitting-room — для скромных домов (p1-c01-005)
+    term: sitting-room
     legacy: sitting-room 19 из 20
     avoid: []
     status: proposed
-  question: 'drawing-room для гостиной пастора — правка по эпохе, не по ошибке. Рекомендация: drawing-room в части II; решить
-    владельцу.'
+  question: 'drawing-room для гостиной пастора — правка по эпохе, не по ошибке: по §9.2 п.6 рабочий вариант — sitting-room
+    (старый EN, 19 из 20). Предложение владельцу: drawing-room в части II (парадная комната английского дома того времени).'
 
 - id: kamin
   ru: камин
@@ -3645,6 +4205,9 @@ entries:
   sense: семейные обращения и шутливые «в мамашу», «в папашу»; Наль называет Флорентийца «отец»
   tier: core
   first_seen: p2-c01-253
+  note: 'для шутливого тона «в мамашу» допустимо her mama / her papa. Довод о различении: в одной сцене RU различает «папа»
+    (Алиса пастору, p2-c01-260) и «отец» (Наль Флорентийцу, p2-c01-253), а старый EN даёт father обоим — поэтому Papa, а не
+    father.'
   evidence:
   - {id: p2-c01-260, ru: '— О папа, — заразительно засмеялась младшая', en_legacy: '“Oh, father,” the girl was laughing infectiously'}
   - {id: p2-c01-262, ru: — Папа был прав., en_legacy: “My father was right}
@@ -3652,8 +4215,8 @@ entries:
       her daddy}
   - {id: p2-c01-253, ru: 'не то, что у нас на Востоке, отец.', en_legacy: 'not like in our Oriental families, father.'}
   en:
-    term: 'Papa (обращение дочери, британское начала XX в.); «в мамашу / в папашу» — takes after her mother / her father (шутливо:
-      her mama / her papa); отец (Наль → Флорентийцу) — Father'
+    term: Papa (обращение дочери, британское начала XX в.); «в мамашу / в папашу» — takes after her mother / her father; отец
+      (Наль → Флорентийцу) — Father
     legacy: father / my father / mummy / daddy
     avoid: ['mummy, daddy (детская речь; звучит в устах пастора неуместно)']
     status: proposed
@@ -3703,13 +4266,13 @@ entries:
   ru: дом на Востоке / кров Общины / балкон / пальмы / свирель / розы и гвоздики
   tier: secondary
   first_seen: p3-c01-067
+  note: pinks — старый EN, не ошибка (§9.2 п.6); carnations — допустимая замена по решению владельца
   evidence:
   - {id: p3-c01-084, ru: 'очень отдаленный звук свирели, аромат роз и гвоздик', en_legacy: 'a very distant voice of the little
       pipe, the aroma of roses and pinks'}
   - {id: p3-c01-067, ru: Сегодня ты вступил в мой дом на Востоке., en_legacy: Today you entered my home in the East.}
   en:
-    term: my home in the East; the shelter (roof) of the Community; balcony; palms; reed pipe / shepherd’s pipe; roses and
-      carnations (pinks — допустимо)
+    term: my home in the East; the shelter of the Community; balcony; palms; reed pipe; roses and pinks
     legacy: home in the East; shelter/roof; balcony; palms; little pipe; pinks
     avoid: [little pipe]
     status: proposed
@@ -3719,7 +4282,9 @@ entries:
   sense: образы песни (p1-c20-213 — перевод заново, DEC-026) и обрамления
   tier: secondary
   first_seen: p1-c20-212
-  note: 'образы одной песни (перевод заново, DEC-026: рифмованный и нерифмованный варианты); «воля» — см. volya#will / volya#freedom.'
+  note: 'образы одной песни (перевод заново, DEC-026: рифмованный и нерифмованный варианты). В песне допустимы варианты по
+    рифме (a blessed lot; my holy of holies; freedom вместо will) — окончательно при переводе песни; «воля» в прозе — will
+    (volya#will), так что противоречия с volya#will нет.'
   evidence:
   - {id: p1-c20-213, ru: Я только странник на земле., en_legacy: I’m only a wanderer of this earth.}
   - {id: p1-c20-213, ru: Избранник я счастливой доли., en_legacy: 'My destiny is going like this:', note: строка утрачена
@@ -3730,8 +4295,8 @@ entries:
       a hymn of victorious love…'}
   - {id: p1-c20-212, ru: запел русскую песню, en_legacy: began to sing in Russian}
   en:
-    term: wanderer (on earth); a happy lot / a blessed lot; my shrine / my holy of holies — Beauty; a song of love and freedom
-      (или will — см. question); a hymn of triumphant love; a Russian song
+    term: wanderer (on earth); a happy lot; my shrine — Beauty; a song of love and will; a hymn of triumphant love; a Russian
+      song
     legacy: wanderer; —; saint Beauty; love, will and power; victorious love; sing in Russian
     avoid: [saint (для «святыня»)]
     status: proposed

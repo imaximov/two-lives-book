@@ -71,8 +71,9 @@ DEC-025: умеренная стилизация — отличие от реч�
         Али сказал: «Уеду». Ну, мулла и молчит пока.»
     EN: “They aren’t allowed to do so in the street. We aren’t allowed to do so at our home, too. At Ali Mahomet’s home all women are
         walking without any covers. Mullah was talking a lot, but he stopped. Ali said “Leave”, so Mullah is now silent.”
-    Ломаное: «Улица нельзя» (без предлога), «женщины … ходит открыта» (число, род). СМЫСЛОВАЯ ОШИБКА старого EN: «Уеду» (я уеду)
-        → “Leave” (повелит.).
+    Ломаное — только первые три фразы: «Улица нельзя» (без предлога), «и в дом нельзя» (вместо «дома»), «у Али Мохаммед» (нет
+        родит.), «женщины … ходит открыта» (число, род). Правильные: «Мулла много раз говорил, да перестал. Али сказал: «Уеду».
+        Ну, мулла и молчит пока». СМЫСЛОВАЯ ОШИБКА старого EN: «Уеду» (я уеду) → “Leave” (повелит.).
 
 Что делает RU (мера стилизации): ломаются согласование рода/числа, падежи и предлоги, формы глагола; растянутые гласные
 («ба-а-льшой», «ха-а-роший») и междометия («ой-я», «оуяй», «ух»); фамильярное «ты». Но НЕ каждая фраза: рядом стоят
@@ -82,28 +83,42 @@ DEC-025: умеренная стилизация — отличие от реч�
 
 ## Принципы английской передачи (предложение)
 
-1. Ошибки — грамматические, типичные для иностранца в английском и соответствующие типам RU: пропуск артикля и связки
-   *is/are*, базовая форма глагола (*he know*, *he trade*), пропуск предлога, *also* в конце.
-2. Не больше одной-двух ошибок во фразе; правильные фразы RU остаются правильными.
-3. Растянутые гласные — там же, где в RU (*bi-i-ig*, *go-o-od*); междометия транслитерируются (*Oy-ya!*).
-4. Не использовать фонетический «акцент» (*velly*, *zis*), пиджин (*me no know*, *him* вместо *he*) — это карикатура.
+Переработано по внутреннему языковому ревью (`translation/reviews/en/glossary-core/resolution.md`, l4, l5, l32, l33).
+
+1. Ошибки — грамматические, типичные для иностранца в английском и соответствующие типам RU: согласование (*people comes*,
+   *the women goes*, *he have*), артикль и притяжательное *’s* (*in Ali Mohammed house* ≈ «у Али Мохаммед» без родительного),
+   предлог, связка *is/are*, базовая форма глагола (*he trade*, *he need*), инверсия (*Him I know well*, *Persia he trade with*).
+2. Не больше одной-двух ошибок во фразе; **фразы, правильные в RU, остаются правильными** (в 034 правильны «Мулла много раз
+   говорил, да перестал. Али сказал: «Уеду». Ну, мулла и молчит пока» — ломаются только первые три фразы).
+3. Растянутые гласные — там же, где в RU (*bi-i-ig*, *go-o-od*); междометия: «ой-я» — *Ay-ya!*, «оуяй» — *Ow-yai!*, по месту
+   *Aha!* / *Oho!*. Не *Oy*: английское *oy* прочно связано с идишским *oy vey* — ложный и стереотипный колорит.
+4. Не использовать: фонетический «акцент» (*velly*, *zis*); пиджин (*me no know*, *him* вместо *he* в роли подлежащего,
+   *plenty people* без *of*); американское просторечие (*I know him good* — британский читатель услышит речь носителя, а не
+   ошибку иностранца); *dark people* о человеке (как группа читается «темнокожие» — та же двусмысленность, что *black man*
+   для «брюнета», см. glossary `bryunet`; в идиоме *a tall dark man* dark однозначно значит «темноволосый»).
 5. Реплики понятны без усилия; речь рассказчика рядом — нормативная британская.
 
 ## Образцы на утверждение
 
 Для каждой реплики — **умеренный** вариант (плотность как в RU) и **лёгкий** (только артикли, связка и базовые формы
-глаголов). Нужно выбрать плотность; после выбора её держим для всех реплик торговца и подобных персонажей.
+глаголов). **Рекомендация: умеренная плотность**; лёгкий вариант оставлен для сравнения. После выбора плотность держим для
+всех реплик торговца и подобных персонажей. «хозяин» в ремарках — *the owner* (glossary `khozyain#shopkeeper`), «халат» — *oriental robe* (`khalat`).
 
-| ID | RU | Умеренный | Лёгкий |
+| ID | RU | Умеренный (рекомендация) | Лёгкий (для сравнения) |
 |---|---|---|---|
-| p1-c01-014 | Люди? Люди много ходила сегодня мой лавка… Только твой, верно, не люди хочет знать, а один высокий чёрный люди? | “People? Plenty people come my shop today,” he said with a sly smile. “Only you not want to know about people, I think. You want to know about one tall dark people, yes?” | “People? Many people come to my shop today,” he said with a sly smile. “Only you don’t want to know about people, I think. You want to know about one tall dark man, yes?” |
-| p1-c01-021 | Капитан Т.? … Я его хорошо знай. Ему уже есть семь халатов. На что ему ещё? | “Captain T.? I know him good. He have seven robes already. What for he need more?” | “Captain T.? I know him well. He have seven robes already. Why he need more?” |
-| p1-c01-029 | Я же сказал, — большая важная купец. Персия торгует и Россия тоже | “I tell you already — big important merchant. Persia he trade with, Russia also,” the shopkeeper replied. | “I tell you already — he is big important merchant. He trade with Persia and with Russia also,” the shopkeeper replied. |
-| p1-c01-034 | Улица нельзя. У нас и в дом нельзя. А у Али Мохаммед все женщины дома ходит открыта. Мулла много раз говорил, да перестал. Али сказал: «Уеду». Ну, мулла и молчит пока. | “In the street — not allowed. With us, not allowed even in the house. But in Ali Mohammed’s house all the women go uncovered. The mullah talk and talk many times, then he stop. Ali say: ‘I go away from here.’ So the mullah keep quiet — for now.” | “In the street it is not allowed. With us it is not allowed even in the house. But in Ali Mohammed’s house all women go uncovered. The mullah talk many times, then he stop. Ali say: ‘I will go away.’ So the mullah keep quiet — for now.” |
+| p1-c01-014 | Люди? Люди много ходила сегодня мой лавка… Только твой, верно, не люди хочет знать, а один высокий чёрный люди? | “People? Many people comes to my shop today,” he said with a sly smile. “Only you not want to know about people, I think. You want to know about one tall dark man, yes?” | “People? Many people come to my shop today,” he said with a sly smile. “Only you don’t want to know about people, I think. You want to know about one tall dark man, yes?” |
+| p1-c01-021 | Капитан Т.? … Я его хорошо знай. Ему уже есть семь халатов. На что ему ещё? | “Captain T.? Him I know well. He have seven oriental robes already. What for he need more?” | “Captain T.? I know him well. He have seven oriental robes already. Why he need more?” |
+| p1-c01-029 | Я же сказал, — большая важная купец. Персия торгует и Россия тоже | “I tell you already — big important merchant. Persia he trade with, Russia also,” the owner replied. | “I tell you already — he is big important merchant. He trade with Persia and with Russia also,” the owner replied. |
+| p1-c01-034 | Улица нельзя. У нас и в дом нельзя. А у Али Мохаммед все женщины дома ходит открыта. Мулла много раз говорил, да перестал. Али сказал: «Уеду». Ну, мулла и молчит пока. | “Street — not allowed. With us, not allowed even in house. But in Ali Mohammed house all the women goes uncovered. The mullah spoke many times, but he stopped. Ali said, ‘I will leave.’ So the mullah keeps quiet — for now.” | “In the street it is not allowed. With us not even in the house. But in Ali Mohammed’s house all women goes uncovered. The mullah spoke many times, but he stopped. Ali said, ‘I will leave.’ So the mullah keeps quiet — for now.” |
 
-Обоснование умеренных вариантов (исследователь): *plenty people come my shop* ≈ «люди … ходила … мой лавка»; *you not want* ≈
-«твой … хочет»; *one tall dark people* сохраняет игру RU «один … люди» и убирает ложное *black man*; *know him good*,
-*he have* ≈ «знай», «ему есть»; *Persia he trade with* ≈ «Персия торгует»; в 034 исправлена смысловая ошибка «Уеду» → *I go away*
-(не *Leave*). Английские образцы носитель языка не проверял — это задача внешнего ревью.
+Обоснование умеренных вариантов: *Many people comes* ≈ «люди … ходила» (ошибка согласования того же типа, что в RU; вместо
+пиджинного *plenty people*); *you not want* ≈ «твой … хочет»; игра RU «один … люди» в английском не считывается как шутка и
+выглядит непонятной ошибкой, поэтому — *one tall dark man* (dark о волосах, без ложного *black man* старого EN); *Him I know
+well* (инверсия) ≈ «Я его хорошо знай» — вместо американского *I know him good*; *He have* ≈ «Ему есть»; *Persia he trade with*
+≈ «Персия торгует». В 034 ломаются только три первые фразы, как в RU: *Street — not allowed* (нет предлога и артикля ≈ «Улица
+нельзя»), *even in house* (≈ «в дом» вместо «дома»), *in Ali Mohammed house* (≈ нет родительного), *all the women goes*
+(≈ «женщины … ходит»); последние три фразы правильные, как в RU, и исправлена смысловая ошибка старого EN «Уеду» → *I will
+leave* (не повелительное *Leave*). Междометия реплик 015, 016, 023, 031, 033 — *Ay-ya!* / *Ow-yai!* по принципу 3. Английские
+образцы носитель языка не проверял — это задача внешнего ревью.
 
-Вопросы владельцу: (1) плотность — умеренная или лёгкая; (2) сохранять ли игру «один … люди» (*one tall dark people*).
+Вопрос владельцу: плотность — умеренная (рекомендация) или лёгкая.
