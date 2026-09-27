@@ -73,7 +73,7 @@
 |---|---|---|---|---|
 | глагол речи uttered | 66 (2.8) | 134 (5.8) | 247 (6.1) | — |
 |  | Vol1 с.7: «…ear heard a horse come rumbling. “Wait,” he uttered “they are coming.” I didn’t hear anything. M…»<br>Vol1 с.8: «…now from the very bottom of my heart, and I uttered with my plaintive voice. “I want to sleep ve…»<br>Vol2 с.6: «…rd the steamer as soon as possible. She only uttered by being amazed at the grandeur of the city.…» | | | |
-| be going to + глагол (без going to + место) | 60 (2.5) | 79 (3.4) | 63 (1.6) | — |
+| be going to + глагол (без going to + место или лицо) | 62 (2.6) | 80 (3.5) | 64 (1.6) | — |
 |  | Vol1 с.25: «…for hunting late in the evening, and that I was going to report about that to colonel N. It seemed that my b…»<br>Vol1 с.46: «…tian uttered to my very ear silently. “So we are going to jump out of the train that is running at the full…»<br>Vol2 с.5: «…epends on our self- control how perfectly we are going to play our roles and save our lives. We have to sav…» | | | |
 | clumsy sailor (матрос-верзила) | 77 (3.3) | 0 (0.0) | 0 (0.0) | 47 / 0 / 0 |
 |  | Vol1 с.122: «…nd of the hospital’s section I saw that tall clumsy sailor who was accompanying us with the stretcher a…»<br>Vol1 с.122: «…the fourth class quickly, because this tall clumsy sailor was running up and down the stairs not worse…» | | | |

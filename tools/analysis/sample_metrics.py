@@ -123,7 +123,7 @@ def main() -> None:
              "- Единица подсчёта — находка: для critical и major это один независимый дефект; minor-находка может объединять",
              "  несколько мелких дефектов фрагмента, поэтому главная метрика — critical+major. Это плотность размеченных находок,",
              "  а не точное число ошибок.",
-             "- cal-5 разделён на стихи и прозаическое обрамление; плотность по 24 словам стихотворения — иллюстрация, не статистика.", ""]
+             "- cal-5 разделён на стихи и прозаическое обрамление; для стихотворения (24 слова) плотность не приводится.", ""]
     tot_words = 0
     for variant in ("A", "B"):
         lines += [f"## По отрывкам — вариант {variant}", "",
@@ -137,8 +137,9 @@ def main() -> None:
             if meta["evaluate"] == "prose":
                 pc.update(c)
                 pw += w
-            lines.append(f"| {meta['id']} | {w} | {len(en)} | {c['critical']} | {c['major']} | {c['minor']} | "
-                         f"{1000 * (c['critical'] + c['major']) / w:.1f} | {1000 * sum(c.values()) / w:.1f} |")
+            dens = (f"{1000 * (c['critical'] + c['major']) / w:.1f} | {1000 * sum(c.values()) / w:.1f}"
+                    if not meta["id"].endswith("(стихи)") else "— | —")  # по 24 словам плотность ничего не измеряет
+            lines.append(f"| {meta['id']} | {w} | {len(en)} | {c['critical']} | {c['major']} | {c['minor']} | {dens} |")
         lines += ["", f"**Проза вместе** (без стихов), вариант {variant}: {pw} слов RU; critical {pc['critical']}, major {pc['major']}, "
                   f"minor {pc['minor']}; critical+major — {1000 * (pc['critical'] + pc['major']) / pw:.1f} на 1000 слов, "
                   f"всего — {1000 * sum(pc.values()) / pw:.1f} на 1000 слов.", ""]
