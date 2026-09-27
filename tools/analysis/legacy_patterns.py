@@ -31,7 +31,8 @@ RU = {"Vol1 (ч. I)": "sources/ru/original/part-1.epub",
 
 # (группа, название, regex EN, regex RU для сопоставления или None, флаги)
 PATTERNS = [
-    ("Имена и титулы", "князь → duke", r"\b[Dd]uke(?:s|’s)?\b", r"\bкня(?:зь|зя|зю|зем|зе|зья|зей)\b"),
+    ("Имена и титулы", "duke без Grand Duke (кандидаты «князь» → duke)", r"(?<!Grand )(?<!grand )\b[Dd]uke(?:s|’s)?\b", r"\bкня(?:зь|зя|зю|зем|зе|зья|зей)\b"),
+    ("Имена и титулы", "Grand Duke (допустимо: великий князь)", r"\b[Gg]rand [Dd]uke(?:s|’s)?\b", None),
     ("Имена и титулы", "prince (любые: и «князь», и сказочный принц)", r"\b[Pp]rince(?:s|’s)?\b", None),
     ("Имена и титулы", "Левушка → Lovushka", r"\bLovushka\b", r"\bЛ[её]вушк"),
     ("Имена и титулы", "Левушка → Lyovushka", r"\bLyovushka\b", None),
@@ -47,7 +48,8 @@ PATTERNS = [
     ("Имена и титулы", "Али старший → the elder Ali", r"\b[Tt]he elder Ali\b", r"\bАли[- ]старш"),
     ("Имена и титулы", "Али старший → the older Ali", r"\b[Tt]he older Ali\b", None),
     ("Имена и титулы", "Али старший → the old Ali", r"\b[Tt]he old Ali\b", None),
-    ("Имена и титулы", "«И.» → I. (с пробелом/знаком после)", r"(?<![A-Za-z])I\.(?=[’'\s,;:!?)”])", r"(?<![А-Яа-я])И\.(?=[\s,;:!?)»”])"),
+    ("Имена и титулы", "«И.» → I. (с пробелом/знаком после; без чужих инициалов вида «F. I.»)",
+     r"(?<![A-Z]\. )(?<![A-Za-z])I\.(?=[’'\s,;:!?)”])", r"(?<![А-Яа-я])И\.(?=[\s,;:!?)»”])"),
     ("Кальки", "everything what / all what", r"\b(?:[Ee]verything|[Aa]ll) what\b", None),
     ("Кальки", "According to me", r"\b[Aa]ccording to me\b", None),
     ("Кальки", "глагол речи/действия + by -ing (деепричастие)",
@@ -55,13 +57,15 @@ PATTERNS = [
     ("Кальки", "hair were (волосы — мн. ч.)", r"\bhair were\b", None),
     ("Кальки", "begin and start (начать и кончить)", r"\bbegin and (?:to )?start\b", None),
     ("Регистр и лексика", "глагол речи uttered", r"\buttered\b", None),
-    ("Регистр и лексика", "be going to", r"\b(?:am|is|are|was|were|’s|’re|’m)\s+going to\b", None),
+    ("Регистр и лексика", "be going to + глагол (без going to + место)",
+     r"\b(?:am|is|are|was|were|’s|’re|’m)\s+going to (?!(?:the|a|an|his|her|my|our|their|your|its|this|that|bed|church|school|town|sleep|see)\b)[a-z]+", None),
     ("Регистр и лексика", "clumsy sailor (матрос-верзила)", r"\bclumsy sailor\b", r"\bверзил"),
     ("Регистр и лексика", "oriental robe (халат)", r"\boriental robes?\b", r"\bхалат"),
     ("Регистр и лексика", "слово calm (все формы, без calmly; может передавать «мир», «покой», «спокойствие»)", r"\bcalm\b", None),
     ("Регистр и лексика", "peace", r"\bpeace\b", r"\bмир(?:а|у|ом|е)?\b"),
     ("Пунктуация", "глагол речи + продолжение реплики без запятой: «uttered “they»",
      r"\b(?:said|uttered|answered|asked|added|continued|replied|whispered|shouted|cried|exclaimed|told \w+|went on|was speaking(?: to \w+)?|was telling(?: \w+)?)(?: \w+ly)? “[a-z]", None),
+    ("Орфография", "gotten (американское; брит. got)", r"\bgotten\b", None),
     ("Орфография", "colour / color", r"\b[Cc]olour", None),
     ("Орфография", "color (американское)", r"\b[Cc]olor(?!ado)", None),
     ("Орфография", "honour / honor", r"\b[Hh]onour", None),
@@ -96,8 +100,9 @@ def main() -> None:
     words = {v: sum(len(p.split()) for p in pages) for v, (pages, _) in data.items()}
 
     out = ["# Закономерности по корпусу старого EN (генерируется)", "",
-           "Файл создан `python -m tools.analysis.legacy_patterns`; не править вручную. Числа — вхождения в томе и на 10 000 слов",
-           "английского текста тома. RU — вхождения в оригинале соответствующей части (для сопоставления имён и титулов).",
+           "Файл создан `python -m tools.analysis.legacy_patterns`; не править вручную. Числа — **сырые совпадения поисковых",
+           "шаблонов** в томе и на 10 000 слов английского текста тома, а не число подтверждённых ошибок: каждое вхождение",
+           "проверяется при редактуре по контексту и RU. RU — вхождения в оригинале соответствующей части (для сопоставления имён и титулов).",
            "Для Vol3 — нижняя оценка (≈1% текста извлекается слитно). Примеры: страница PDF (с 1) и фрагмент.", "",
            "| Том | Файл | sha256 | Слов EN |", "|---|---|---|---|"]
     for vol, path in VOLS.items():

@@ -1,7 +1,8 @@
 # Закономерности по корпусу старого EN (генерируется)
 
-Файл создан `python -m tools.analysis.legacy_patterns`; не править вручную. Числа — вхождения в томе и на 10 000 слов
-английского текста тома. RU — вхождения в оригинале соответствующей части (для сопоставления имён и титулов).
+Файл создан `python -m tools.analysis.legacy_patterns`; не править вручную. Числа — **сырые совпадения поисковых
+шаблонов** в томе и на 10 000 слов английского текста тома, а не число подтверждённых ошибок: каждое вхождение
+проверяется при редактуре по контексту и RU. RU — вхождения в оригинале соответствующей части (для сопоставления имён и титулов).
 Для Vol3 — нижняя оценка (≈1% текста извлекается слитно). Примеры: страница PDF (с 1) и фрагмент.
 
 | Том | Файл | sha256 | Слов EN |
@@ -14,8 +15,10 @@
 
 | Закономерность | Vol1 (ч. I) | Vol2 (ч. II) | Vol3 (ч. III) | RU (ч. I / II / III) |
 |---|---|---|---|---|
-| князь → duke | 319 (13.5) | 32 (1.4) | 3 (0.1) | 279 / 25 / 3 |
-|  | Vol1 с.97: «…visited at one or another countess and which duke had invited them for tomorrow. I had never h…»<br>Vol1 с.141: «…ll about your behaviour to His Majesty grand duke Vladimir who will board our ship in the next…»<br>Vol2 с.157: «…s elegant and light step, his manners of the duke – and he seemed to himself to be a sickly, g…» | | | |
+| duke без Grand Duke (кандидаты «князь» → duke) | 318 (13.5) | 32 (1.4) | 3 (0.1) | 279 / 25 / 3 |
+|  | Vol1 с.97: «…visited at one or another countess and which duke had invited them for tomorrow. I had never h…»<br>Vol1 с.173: «…robably would only turn away rudely from the duke who was exciting disgust. However, now there…»<br>Vol2 с.157: «…s elegant and light step, his manners of the duke – and he seemed to himself to be a sickly, g…» | | | |
+| Grand Duke (допустимо: великий князь) | 1 (0.0) | 0 (0.0) | 0 (0.0) | — |
+|  | Vol1 с.141: «…ill tell about your behaviour to His Majesty grand duke Vladimir who will board our ship in the next…» | | | |
 | prince (любые: и «князь», и сказочный принц) | 25 (1.1) | 7 (0.3) | 3 (0.1) | — |
 |  | Vol1 с.105: «…m so intensely as though he was a fairy-tale prince and she was Cinderella. Having turned my eye…»<br>Vol1 с.106: «…re the huge ship, the eminent English “Black Prince” went down. Most of all I wanted to see the…»<br>Vol2 с.19: «…ly, he used to call the captain T. to be the prince of the fairy-tale. So long, uncle! I’m your…» | | | |
 | Левушка → Lovushka | 284 (12.1) | 31 (1.3) | 212 (5.2) | 280 / 30 / 340 |
@@ -46,8 +49,8 @@
 |  | Vol1 с.7: «…thes. It seemed to me that the black eyes of the older Ali pierced through the tree behind which we wer…»<br>Vol1 с.7: «…oaching calash intently. One more moment and the older Ali went up to the stopped coach. And … a small,…» | | | |
 | Али старший → the old Ali | 1 (0.0) | 0 (0.0) | 0 (0.0) | — |
 |  | Vol1 с.8: «…ad been asked – and I saw the huge figure of the old Ali, standing in front of me; He was stretching…» | | | |
-| «И.» → I. (с пробелом/знаком после) | 1125 (47.8) | 22 (1.0) | 1818 (45.0) | 1069 / 21 / 1827 |
-|  | Vol1 с.1: «…dko”, “Jolanta”, “Werther”, etc. She knew F. I. Chaliapin, S. V. Rachmaninoff and other famo…»<br>Vol1 с.71: «…invitation they came to help Ali, and so did I. Try to look at their faces differently for t…»<br>Vol2 с.102: «…s absolutely free in the same way as you and I. were doing it, but such miracles don’t happe…» | | | |
+| «И.» → I. (с пробелом/знаком после; без чужих инициалов вида «F. I.») | 1122 (47.6) | 22 (1.0) | 1817 (45.0) | 1069 / 21 / 1827 |
+|  | Vol1 с.71: «…invitation they came to help Ali, and so did I. Try to look at their faces differently for t…»<br>Vol1 с.75: «…visited. “Would you like to travel?” I heard I.’s question. As if I had fallen from the moon…»<br>Vol2 с.102: «…s absolutely free in the same way as you and I. were doing it, but such miracles don’t happe…» | | | |
 
 ## Кальки
 
@@ -70,8 +73,8 @@
 |---|---|---|---|---|
 | глагол речи uttered | 66 (2.8) | 134 (5.8) | 247 (6.1) | — |
 |  | Vol1 с.7: «…ear heard a horse come rumbling. “Wait,” he uttered “they are coming.” I didn’t hear anything. M…»<br>Vol1 с.8: «…now from the very bottom of my heart, and I uttered with my plaintive voice. “I want to sleep ve…»<br>Vol2 с.6: «…rd the steamer as soon as possible. She only uttered by being amazed at the grandeur of the city.…» | | | |
-| be going to | 84 (3.6) | 87 (3.8) | 87 (2.2) | — |
-|  | Vol1 с.25: «…shutters. It was quiet in the street. When I was going to the bathroom, I saw the messenger who was al…»<br>Vol1 с.25: «…for hunting late in the evening, and that I was going to report about that to colonel N. It seemed th…»<br>Vol2 с.5: «…epends on our self- control how perfectly we are going to play our roles and save our lives. We have t…» | | | |
+| be going to + глагол (без going to + место) | 60 (2.5) | 79 (3.4) | 63 (1.6) | — |
+|  | Vol1 с.25: «…for hunting late in the evening, and that I was going to report about that to colonel N. It seemed that my b…»<br>Vol1 с.46: «…tian uttered to my very ear silently. “So we are going to jump out of the train that is running at the full…»<br>Vol2 с.5: «…epends on our self- control how perfectly we are going to play our roles and save our lives. We have to sav…» | | | |
 | clumsy sailor (матрос-верзила) | 77 (3.3) | 0 (0.0) | 0 (0.0) | 47 / 0 / 0 |
 |  | Vol1 с.122: «…nd of the hospital’s section I saw that tall clumsy sailor who was accompanying us with the stretcher a…»<br>Vol1 с.122: «…the fourth class quickly, because this tall clumsy sailor was running up and down the stairs not worse…» | | | |
 | oriental robe (халат) | 63 (2.7) | 1 (0.0) | 0 (0.0) | 65 / 22 / 10 |
@@ -92,6 +95,8 @@
 
 | Закономерность | Vol1 (ч. I) | Vol2 (ч. II) | Vol3 (ч. III) | RU (ч. I / II / III) |
 |---|---|---|---|---|
+| gotten (американское; брит. got) | 15 (0.6) | 11 (0.5) | 8 (0.2) | — |
+|  | Vol1 с.8: «…how long we were standing there, that we had gotten hungry, that it was hot, that it was indecen…»<br>Vol1 с.8: «…serious and even austere, his blue eyes had gotten darker somehow, and they were sparkling like…»<br>Vol2 с.6: «…ed Petersburg train, and Nal who had already gotten used to her opened face was very glad about…» | | | |
 | colour / color | 64 (2.7) | 51 (2.2) | 145 (3.6) | — |
 |  | Vol1 с.4: «…out the huge trade galleries with their many-coloured pillars and little Eastern restaurants-kit…»<br>Vol1 с.6: «…beauty. I only was unable to decide of what colour her eyes were: black as her uncle’s or viole…»<br>Vol2 с.13: «…only people whose blood was of the same red colour. You won’t be my servant, but you’ll be my f…» | | | |
 | color (американское) | 0 (0.0) | 0 (0.0) | 0 (0.0) | — |

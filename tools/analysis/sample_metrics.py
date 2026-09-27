@@ -3,6 +3,7 @@
 Вход: translation/calibration/cal-*.md (окна) + translation/analysis/legacy-en-sample-annotations.yml.
 Выход: translation/analysis/legacy-en-sample-metrics.md.
 Проверяет, что уровни правки заданы ровно для всех EN-блоков окон, а замечания ссылаются на абзацы окон.
+Отрывок, который оценивается отдельно (cal-5), делится на стихи (RU-блок ::: verse) и прозаическое обрамление.
 
     python -m tools.analysis.sample_metrics
 """
@@ -41,10 +42,16 @@ def parse_window(path):
             else:
                 en[ids[0]] = m.group(2)
                 en_ids[ids[0]] = ids
-        elif en and mode == "en" and line and not line.startswith(("---", "EN", "RU")):
-            last = list(en)[-1]
-            en[last] += "\n" + line  # многострочный блок (стихи)
+        elif mode and line and not line.startswith(("---", "EN", "RU")):
+            d = ru if mode == "ru" else en  # многострочный блок (стихи) — и в RU, и в EN
+            if d:
+                last = list(d)[-1]
+                d[last] += "\n" + line
     return meta, ru, en, en_ids
+
+
+def is_verse(t: str) -> bool:
+    return t.startswith("::: verse")
 
 
 def words(t: str) -> int:
@@ -57,9 +64,19 @@ def main() -> None:
     all_ru, all_en, block_of = {}, {}, {}
     for p in sorted(CAL.glob("cal-*.md")):
         meta, ru, en, en_ids = parse_window(p)
-        passages.append((meta, ru, en))
+        if meta["evaluate"] == "prose":
+            passages.append((meta, ru, en))
+        else:  # стихи и прозаическое обрамление считаются раздельно
+            verse = {k for k, t in ru.items() if is_verse(t)}
+            for part, keep in (("стихи", lambda k: k in verse), ("обрамление", lambda k: k not in verse)):
+                passages.append(({**meta, "id": f"{meta['id']} ({part})"},
+                                 {k: t for k, t in ru.items() if keep(k)},
+                                 {k: t for k, t in en.items() if keep(k)}))
+    for meta, ru, en in passages:
         all_ru.update({k: meta["id"] for k in ru})
         all_en.update({k: meta["id"] for k in en})
+    for p in sorted(CAL.glob("cal-*.md")):
+        _, _, _, en_ids = parse_window(p)
         for first, ids in en_ids.items():
             for i in ids:
                 block_of[i] = first
@@ -102,7 +119,11 @@ def main() -> None:
              "- `source-divergence` (вероятное расхождение редакций с внешним признаком) в ошибки не входит.",
              "- **Вариант A** — все остальные находки. **Вариант B** — без находок `edition_candidate` (содержание, которое",
              "  теоретически может восходить к другой редакции; зависит от D14).",
-             "- Плотность — на 1 000 слов **русского** оригинала окна.", ""]
+             "- Плотность — на 1 000 слов **русского** оригинала окна.",
+             "- Единица подсчёта — находка: для critical и major это один независимый дефект; minor-находка может объединять",
+             "  несколько мелких дефектов фрагмента, поэтому главная метрика — critical+major. Это плотность размеченных находок,",
+             "  а не точное число ошибок.",
+             "- cal-5 разделён на стихи и прозаическое обрамление; плотность по 24 словам стихотворения — иллюстрация, не статистика.", ""]
     tot_words = 0
     for variant in ("A", "B"):
         lines += [f"## По отрывкам — вариант {variant}", "",
