@@ -16,12 +16,14 @@
 |---|---|---|---|---|
 | князь → duke | 319 (13.5) | 32 (1.4) | 3 (0.1) | 279 / 25 / 3 |
 |  | Vol1 с.97: «…visited at one or another countess and which duke had invited them for tomorrow. I had never h…»<br>Vol1 с.141: «…ll about your behaviour to His Majesty grand duke Vladimir who will board our ship in the next…»<br>Vol2 с.157: «…s elegant and light step, his manners of the duke – and he seemed to himself to be a sickly, g…» | | | |
-| князь → prince | 25 (1.1) | 7 (0.3) | 3 (0.1) | — |
+| prince (любые: и «князь», и сказочный принц) | 25 (1.1) | 7 (0.3) | 3 (0.1) | — |
 |  | Vol1 с.105: «…m so intensely as though he was a fairy-tale prince and she was Cinderella. Having turned my eye…»<br>Vol1 с.106: «…re the huge ship, the eminent English “Black Prince” went down. Most of all I wanted to see the…»<br>Vol2 с.19: «…ly, he used to call the captain T. to be the prince of the fairy-tale. So long, uncle! I’m your…» | | | |
 | Левушка → Lovushka | 284 (12.1) | 31 (1.3) | 212 (5.2) | 280 / 30 / 340 |
 |  | Vol1 с.6: «…cast to my feet and suddenly I heard a cry. “Lovushka, where have you been? I was already about to…»<br>Vol1 с.7: «…inued. “You remind me of the little stubborn Lovushka who loved stunning everybody with his riddle…»<br>Vol2 с.6: «…for her in the corridor. The thoughts about Lovushka – his only close brother in arms of his life…» | | | |
-| Левушка → Levushka/Lyovushka | 0 (0.0) | 0 (0.0) | 125 (3.1) | — |
+| Левушка → Lyovushka | 0 (0.0) | 0 (0.0) | 125 (3.1) | — |
 |  | Vol3 с.302: «…which was coming nearer to us. “Here it is, Lyovushka, the first test about which I. was telling u…»<br>Vol3 с.303: «…er and said to me very silently. “Thank you, Lyovushka. A protest and dissatisfaction rose within m…» | | | |
+| Левушка → Levushka | 0 (0.0) | 0 (0.0) | 0 (0.0) | — |
+|  |  | | | |
 | Флорентиец → Florentian | 358 (15.2) | 490 (21.2) | 146 (3.6) | 351 / 461 / 141 |
 |  | Vol1 с.29: «…uest said. “I can assure you that I’m really Florentian, although I have been living in the East for…»<br>Vol1 с.31: «…I am the lord Benedict, but you can call me Florentian, like everyone is doing.”…»<br>Vol2 с.7: «…o be my friend and helper, but until we meet Florentian and we marry, I cannot tell you anything, ev…» | | | |
 | Флорентиец → Florentine | 0 (0.0) | 0 (0.0) | 0 (0.0) | — |
@@ -74,7 +76,7 @@
 |  | Vol1 с.122: «…nd of the hospital’s section I saw that tall clumsy sailor who was accompanying us with the stretcher a…»<br>Vol1 с.122: «…the fourth class quickly, because this tall clumsy sailor was running up and down the stairs not worse…» | | | |
 | oriental robe (халат) | 63 (2.7) | 1 (0.0) | 0 (0.0) | 65 / 22 / 10 |
 |  | Vol1 с.4: «…locals who used to wear their bright motley oriental robes, I would feel as being in Baghdad and I woul…»<br>Vol1 с.4: «…youth were wearing white turbans and motley oriental robes made of silk. Their carriage and manners wer…»<br>Vol2 с.2: «…he young Ali Mahmed into the reddish wedding oriental robe and the sumptuous hijab. She separated with…» | | | |
-| calm (как передача «мир» — проверять по контексту) | 75 (3.2) | 134 (5.8) | 328 (8.1) | — |
+| слово calm (все формы, без calmly; может передавать «мир», «покой», «спокойствие») | 75 (3.2) | 134 (5.8) | 328 (8.1) | — |
 |  | Vol1 с.4: «…all of these Eastern people with their grand calm, or on the contrary – with their too great e…»<br>Vol1 с.10: «…y oriental robes up himself. “Now, Lovushka, calm yourself and put this green oriental robe on…»<br>Vol2 с.4: «…’t any trace of excitement on his serene and calm face of an old philosopher; it seemed that n…» | | | |
 | peace | 64 (2.7) | 71 (3.1) | 68 (1.7) | 93 / 151 / 541 |
 |  | Vol1 с.15: «…ter word, to cause a pain. She could be only peace, comfort and joy for everybody who would be…»<br>Vol1 с.17: «…e your faithfulness to only law – the law of peace. Be strong and wait for me without any fear…»<br>Vol2 с.15: «…igure of Florentian, next to the undisturbed peace which was reflected on his face. “Take my ar…» | | | |
@@ -83,5 +85,30 @@
 
 | Закономерность | Vol1 (ч. I) | Vol2 (ч. II) | Vol3 (ч. III) | RU (ч. I / II / III) |
 |---|---|---|---|---|
-| реплика продолжается без запятой: «uttered “they» | 68 (2.9) | 54 (2.3) | 294 (7.3) | — |
-|  | Vol1 с.7: «…eard a horse come rumbling. “Wait,” he uttered “they are coming.” I didn’t hear anything. My b…»<br>Vol1 с.7: «…ing staggering,” my brother was speaking to me “only stand so as nobody could notice us behind…»<br>Vol2 с.2: «…ened, and it was unusual for her to answer him “yes”. Having seen the girl with the simple Eng…» | | | |
+| глагол речи + продолжение реплики без запятой: «uttered “they» | 2 (0.1) | 4 (0.2) | 1 (0.0) | — |
+|  | Vol1 с.7: «…ear heard a horse come rumbling. “Wait,” he uttered “they are coming.” I didn’t hear anything. My b…»<br>Vol1 с.7: «…u will see something staggering,” my brother was speaking to me “only stand so as nobody could notice us behind…»<br>Vol2 с.18: «…n his arms – and my heart, drowned in bliss, uttered “father” to him. When I saw him, my lips repeat…» | | | |
+
+## Орфография
+
+| Закономерность | Vol1 (ч. I) | Vol2 (ч. II) | Vol3 (ч. III) | RU (ч. I / II / III) |
+|---|---|---|---|---|
+| colour / color | 64 (2.7) | 51 (2.2) | 145 (3.6) | — |
+|  | Vol1 с.4: «…out the huge trade galleries with their many-coloured pillars and little Eastern restaurants-kit…»<br>Vol1 с.6: «…beauty. I only was unable to decide of what colour her eyes were: black as her uncle’s or viole…»<br>Vol2 с.13: «…only people whose blood was of the same red colour. You won’t be my servant, but you’ll be my f…» | | | |
+| color (американское) | 0 (0.0) | 0 (0.0) | 0 (0.0) | — |
+|  |  | | | |
+| honour / honor | 54 (2.3) | 68 (2.9) | 71 (1.8) | — |
+|  | Vol1 с.11: «…turbans above our foreheads. It is the great honour to receive such a present and not at all eve…»<br>Vol1 с.11: «…home, all Eastern customs of hospitality and honour to friendship are respected.” The time was p…»<br>Vol2 с.11: «…ently, like Lovushka was calling you, but in honour of my father and for the perpetual memory ab…» | | | |
+| honor (американское) | 0 (0.0) | 0 (0.0) | 0 (0.0) | — |
+|  |  | | | |
+| grey | 43 (1.8) | 29 (1.3) | 62 (1.5) | — |
+|  | Vol1 с.4: «…mfortable for me to see such a respect to my grey head. I was twenty years old when I came to…»<br>Vol1 с.10: «…ckets. And on top of them, put this wide and grey one on with red edgings,” and again he helpe…»<br>Vol2 с.10: «…took seats of the coach and rolled down the grey and boring streets full of smoke and mist. T…» | | | |
+| gray (американское) | 0 (0.0) | 0 (0.0) | 0 (0.0) | — |
+|  |  | | | |
+| theatre | 8 (0.3) | 12 (0.5) | 28 (0.7) | — |
+|  | Vol1 с.1: «…of philology, but her dream was singing and theatre. She decided to devote her life to the art.…»<br>Vol1 с.1: «…Antarova alone was accepted to the Mariinsky theatre where her career as an artist began. In one…»<br>Vol2 с.22: «…sit them. He promised her to take her to the theatre about which she had read only in books. Now…» | | | |
+| theater (американское) | 0 (0.0) | 0 (0.0) | 0 (0.0) | — |
+|  |  | | | |
+| recogniz- / realiz- (оксфордское -ize) | 66 (2.8) | 57 (2.5) | 124 (3.1) | — |
+|  | Vol1 с.4: «…c lamp would come out from somewhere, or not recognized by anybody Harun al-Rashid would march pas…»<br>Vol1 с.8: «…a lot of women – both on the stage and other recognized beauties, - but only now for the first tim…»<br>Vol2 с.3: «…sitting next to he and whom she could hardly recognize in his civil clothes. “Nal, let’s speak Eng…» | | | |
+| recognis- / realis- (-ise) | 0 (0.0) | 0 (0.0) | 1 (0.0) | — |
+|  | Vol3 с.84: «…e which may be poured into everyday work and realised will be a living Love, an action of the On…» | | | |

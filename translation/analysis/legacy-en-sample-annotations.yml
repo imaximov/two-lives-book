@@ -1,30 +1,45 @@
-# Разметка выборки старого английского перевода (этап 2).
+# Разметка выборки старого английского перевода (этап 2), версия 2 — после внутреннего ревью
+# (translation/reviews/en/analysis-legacy/internal-*.json, разбор — resolution.md там же).
 # Выборка: окна калибровочного набора translation/calibration/cal-*.md (контекст не размечается).
-# Разметчик: Claude (сессия Claude Code), 2026-09-27. Метрики считает tools/analysis/sample_metrics.py.
+# Разметчик: Claude (сессия Claude Code). Метрики считает tools/analysis/sample_metrics.py.
 #
-# Категории (TRANSLATION-PROCESS §7.4): mistranslation, omission, addition, terminology, name, grammar,
-#   fluency, style, register, typography.
-# Особая категория source-divergence — НЕ ошибка перевода: в EN есть содержание, которого нет в нашей
-#   RU-редакции, но есть признаки, что оно есть в другой русской редакции (см. evidence). В метрики ошибок
-#   не входит.
-# Серьёзность: critical — искажён смысл важного места или пропущено важное; major — заметная смысловая
-#   неточность или ошибка, которую заметит читатель; minor — мелочь.
-# Уровни правки блока (levels): L0 — оставить; L1 — точечные исправления (опечатка, пунктуация, артикль,
-#   слово); L2 — построчная редактура (грамматика, кальки, порядок слов, выбор слов; структура и образы
-#   сохраняются); L3 — переписать отдельные фразы из-за смысловых ошибок; L4 — перевести блок заново.
+# КАТЕГОРИИ (TRANSLATION-PROCESS §7.4): mistranslation, omission, addition, terminology, name, grammar,
+#   fluency, style, register, typography. Особая категория source-divergence — НЕ ошибка перевода и в метрики
+#   не входит: в EN есть связное содержание, которого нет ни в одной из трёх наших частей RU, и есть ВНЕШНИЙ
+#   признак, что оно есть в другой русской редакции (поиск по точной фразе). Поле evidence: search | search-weak.
+#
+# ШКАЛА СЕРЬЁЗНОСТИ (одинаково для всех отрывков):
+#   critical — смысл ключевого утверждения (поучение, важная сюжетная деталь) стал ложным или противоположным;
+#   major    — смысловая ошибка в предложении: кто что делает, подмена понятия или сквозного термина, идиома
+#              с другим смыслом, обратная связка или коннотация, изменённая сюжетная деталь; фраза грамматически
+#              не собрана (нет главного предложения, сломана так, что читатель спотыкается); в стихах — потеря
+#              строки смысла или рифмы и размера;
+#   minor    — неточное слово без изменения сцены или мысли, опущенный второстепенный определитель, читаемая
+#              калька, локальная грамматика (артикль, предлог, порядок в словосочетании), пунктуация, опечатка.
+#   Каждое вхождение сквозной ошибки (например «мир» → calm) считается отдельно, с одной и той же серьёзностью.
+#   Экспликация, нужная англоязычному читателю и не вносящая нового содержания, ошибкой не считается.
+#
+# edition_candidate: true — содержание без опоры в нашей RU, которое теоретически может восходить к другой
+#   редакции (до решения D14). В варианте метрик B такие находки исключаются.
+# fix — предлагаемый правильный вариант (иллюстрация, не окончательная редактура).
+#
+# УРОВНИ ПРАВКИ БЛОКА (levels): L0 — оставить; L1 — точечно (слово, опечатка, пунктуация, артикль);
+#   L2 — построчная редактура (грамматика, кальки, порядок, выбор слов; структура и образы сохраняются);
+#   L3 — переписать отдельные фразы из-за смысловых ошибок; L4 — перевести блок заново (L3 понадобился бы
+#   для большинства фраз блока). У каждого блока L1+ есть хотя бы одна находка (проверяет скрипт).
 
 levels:
   # cal-1-narrative (p1-c01)
   p1-c01-041: L2
   p1-c01-041.2: L1
   p1-c01-042: L1
-  p1-c01-043: L2
+  p1-c01-043: L1
   p1-c01-044: L2
   p1-c01-046: L2
   p1-c01-049: L0
   p1-c01-050: L2
   p1-c01-052.2: L3
-  p1-c01-055.2: L3
+  p1-c01-055.2: L2
   p1-c01-056: L2
   p1-c01-058: L1
   p1-c01-059: L2
@@ -32,10 +47,10 @@ levels:
   # cal-2-drama (p1-c12)
   p1-c12-040: L2
   p1-c12-041: L2
-  p1-c12-042: L2
+  p1-c12-042: L3
   p1-c12-043: L2
-  p1-c12-044: L2
-  p1-c12-045: L2
+  p1-c12-044: L1
+  p1-c12-045: L3
   p1-c12-046: L2
   p1-c12-047: L2
   p1-c12-048: L3
@@ -43,21 +58,21 @@ levels:
   p1-c12-050: L1
   p1-c12-051: L1
   p1-c12-051.2: L2
-  p1-c12-052: L2
+  p1-c12-052: L3
   p1-c12-054: L2
   p1-c12-055: L1
   # cal-3-dialogue (p2-c01)
   p2-c01-252: L2
-  p2-c01-253: L2
-  p2-c01-254: L2
+  p2-c01-253: L1
+  p2-c01-254: L3
   p2-c01-255: L1
-  p2-c01-256: L2
+  p2-c01-256: L3
   p2-c01-257: L1
   p2-c01-258: L2
-  p2-c01-259: L2
+  p2-c01-259: L1
   p2-c01-259.2: L2
   p2-c01-260: L2
-  p2-c01-261: L2
+  p2-c01-261: L3
   p2-c01-262: L0
   p2-c01-263: L1
   p2-c01-264: L1
@@ -69,14 +84,14 @@ levels:
   p2-c01-270: L1
   p2-c01-271: L2
   # cal-4-teaching (p3-c01)
-  p3-c01-066: L1
+  p3-c01-066: L0
   p3-c01-066.2: L1
   p3-c01-067: L2
-  p3-c01-068: L2
+  p3-c01-068: L3
   p3-c01-069: L2
   p3-c01-070: L3
   p3-c01-071: L3
-  p3-c01-073: L2
+  p3-c01-073: L3
   p3-c01-075: L3
   p3-c01-076: L2
   p3-c01-077: L3
@@ -84,7 +99,7 @@ levels:
   p3-c01-079: L3
   p3-c01-080: L2
   p3-c01-081: L1
-  p3-c01-082: L2
+  p3-c01-082: L3
   p3-c01-084: L0
   p3-c01-084.2: L2
   # cal-5-verse (p1-c20)
@@ -95,117 +110,134 @@ levels:
 
 findings:
   # ───────────── cal-1-narrative (p1-c01) ─────────────
-  - {id: p1-c01-041, cat: grammar, sev: major, ru: "чуткое ухо брата", en: "keen brother’s ear", note: "неверный порядок в притяжательной конструкции; «my brother’s keen ear»"}
-  - {id: p1-c01-041, cat: omission, sev: minor, ru: "различило вдали цоканье конских копыт", en: "heard a horse come rumbling", note: "«вдали» опущено; «цоканье копыт» (стук, цокот) → «rumbling» (гул)"}
-  - {id: p1-c01-041.2, cat: typography, sev: minor, en: "“Wait,” he uttered “they are coming.”", note: "нет запятой после ремарки; «uttered» — избыточно книжный глагол речи (см. корпус)"}
-  - {id: p1-c01-042, cat: fluency, sev: minor, ru: "заставил остановиться под огромным деревом", en: "made me freeze below a big tree", note: "«below» вместо «under»; «огромным» → «big»"}
-  - {id: p1-c01-043, cat: typography, sev: minor, en: "my brother was speaking to me “only stand so as nobody could notice us", note: "разрыв реплики без запятой; «was speaking» — прогрессив для однократного действия"}
-  - {id: p1-c01-043, cat: addition, sev: minor, ru: "чтобы нас не было видно ни из дома, ни со стороны дороги", en: "so as nobody could notice us behind the tree", note: "«behind the tree» — безвредная экспликация"}
-  - {id: p1-c01-044, cat: fluency, sev: minor, ru: "топот нескольких лошадей", en: "the running of several horses", note: "«hoofbeats/clatter»; «мягкой» (дороге) опущено"}
-  - {id: p1-c01-045, cat: fluency, sev: minor, ru: "дворник вышел на дорогу", en: "The yard-keeper went on the road", note: "калька «yard-keeper»; «came out onto the road»"}
-  - {id: p1-c01-045, cat: addition, sev: minor, ru: "махнул кому-то в сад и остановился в ожидании.", en: "waiting for the carriages. There were three of them already.", note: "фразы нет в нашей RU; забегает вперёд (экипажи описаны в 046–048). Может быть и расхождением редакций — не проверено"}
-  - {id: p1-c01-046, cat: grammar, sev: major, ru: "Первой шла простая телега.", en: "The first a simple cart was rolling.", note: "грамматически сломанная фраза"}
-  - {id: p1-c01-048, cat: grammar, sev: minor, en: "in quite a long distance – apparently, protecting from the dust", note: "«at quite a distance»; висячий оборот"}
-  - {id: p1-c01-050, cat: omission, sev: minor, ru: "с закрытыми чёрной сеткой лицами", en: "with their faces covered", note: "«чёрной сеткой» опущено"}
-  - {id: p1-c01-050, cat: addition, sev: minor, en: "They had muffled themselves up in mantles.", note: "фразы нет в нашей RU (возможна другая редакция)"}
-  - {id: p1-c01-051, cat: mistranslation, sev: minor, ru: "мне даже показалось, что по губам его скользнула едва уловимая усмешка", en: "I even had time to see how a ghost of a sneer slipped in his lips", note: "«показалось» → «успел увидеть»: неуверенность рассказчика стала уверенностью; «slipped in» → «across»"}
-  - {id: p1-c01-051, cat: mistranslation, sev: minor, ru: "желая сказать: \"мы открыты\"", en: "that we’ve already been uncovered", note: "«открыты» здесь «нас заметили» (spotted), не «uncovered»"}
-  - {id: p1-c01-052.2, cat: fluency, sev: major, ru: "Я видел женщин, признанных красавиц, на сцене и в жизни, но сейчас впервые понял, что такое женская красота.", en: "I had seen a lot of women – both on the stage and other recognized beauties, - but only now for the first time I understood what was beauty.", note: "сбитая структура фразы и порядок слов («what beauty was»); «женская» опущено"}
-  - {id: p1-c01-053, cat: mistranslation, sev: minor, ru: "что-то визгливо выговаривала Али", en: "was explaining something to Ali, squealing at him", note: "«выговаривала» = отчитывала (scolding), не «explaining»"}
-  - {id: p1-c01-053, cat: mistranslation, sev: minor, ru: "поднял бросившуюся ему на шею девушку и, как ребёнка, понёс её в дом", en: "lifted the girl who had pressed herself to him. He brought her home like a child.", note: "«бросилась на шею» ослаблено; «понёс в дом» → «brought her home»"}
-  - {id: p1-c01-054, cat: fluency, sev: minor, ru: "почтительно высаживал всё ещё ворчавшую старуху", en: "respectfully landed the old woman on the ground, who was still grumbling", note: "«landed» — неуместно (helped out of the carriage); висячее придаточное"}
-  - {id: p1-c01-055, cat: mistranslation, sev: minor, ru: "забыв, что хотелось есть, жару и все приличия", en: "that we had gotten hungry, that it was hot, that it was indecent", note: "«забыв все приличия» → «that it was indecent» — сдвиг смысла"}
-  - {id: p1-c01-057, cat: typography, sev: minor, en: "so I only kelp looking", note: "опечатка «kelp» → «kept»"}
-  - {id: p1-c01-056, cat: grammar, sev: minor, en: "wishing to share my fascinations with him", note: "«fascinations» во мн. ч.; «my delight»"}
-  - {id: p1-c01-056, cat: source-divergence, evidence: search, ru: "Его синие глаза как-то потемнели. Это было лицо совершенно незнакомого мне человека.", en: "his blue eyes had gotten darker somehow, and they were sparkling like the eyes of the cat in the night", note: "в нашей RU нет «сверкали, как у кошки ночью»; поиск по точной фразе «синие глаза как-то потемнели и сверкали» находит издания на Литрес/MyBook — вероятно, другая редакция. Фраза «Это было лицо совершенно незнакомого мне человека» в EN отсутствует (смысл частично передан в 057)"}
-  - {id: p1-c01-058, cat: fluency, sev: minor, ru: "незнакомый металлический голос", en: "a strange metal voice", note: "«unfamiliar metallic voice»; «strange» вместо «незнакомый» — повторяется"}
-  - {id: p1-c01-059, cat: name, sev: minor, ru: "Али старшего", en: "the old Ali", note: "«старший» → «old»; в том же отрывке «older Ali»; нужно единое «the elder Ali» (глоссарий)"}
-  - {id: p1-c01-059, cat: typography, sev: minor, en: "standing in front of me; He was", note: "заглавная после точки с запятой"}
-  - {id: p1-c01-060, cat: grammar, sev: minor, ru: "С усилием оторвались мои глаза", en: "Only thanks to my effort, I was able to take my eyes off … and I looked into his hands", note: "«with an effort»; «looked at his hands»"}
-  - {id: p1-c01-061, cat: fluency, sev: minor, ru: "Вся рука … всё же говорила об огромной физической силе. Казалось, глаза … находились в полной гармонии с этими руками.", en: "it was telling about his enormous physical strength, while his iron-will, spark-casting eyes fitted to these hands", note: "калька «telling about»; «Казалось» опущено; «розовыми» → «reddish»"}
-  - {id: p1-c01-062, cat: fluency, sev: minor, ru: "Я точно стоя заснул.", en: "I was as though fallen into a light slumber while I was standing.", note: "неграмматично; «light slumber» смягчает"}
+  - {id: p1-c01-041, cat: grammar, sev: minor, ru: "чуткое ухо брата", en: "keen brother’s ear", fix: "my brother’s keen ear", note: "локальный порядок слов в притяжательной конструкции"}
+  - {id: p1-c01-041, cat: omission, sev: minor, ru: "различило вдали цоканье конских копыт", en: "heard a horse come rumbling", fix: "caught the distant clatter of hooves", note: "«вдали» опущено; «цоканье» → «rumbling» (гул)"}
+  - {id: p1-c01-041.2, cat: typography, sev: minor, en: "“Wait,” he uttered “they are coming.”", fix: "“Wait,” he said, “they are coming.”", note: "нет запятой после ремарки; книжное «uttered»"}
+  - {id: p1-c01-042, cat: fluency, sev: minor, ru: "заставил остановиться под огромным деревом", en: "made me freeze below a big tree", fix: "made me stop under a huge tree", note: "«below» вместо «under»; «огромным» → «big»"}
+  - {id: p1-c01-043, cat: typography, sev: minor, en: "my brother was speaking to me “only stand so as nobody could notice us", fix: "my brother said. “Only stand where nobody can see us…”", note: "разрыв реплики без знака; прогрессив «was speaking» для однократной реплики"}
+  - {id: p1-c01-044, cat: fluency, sev: minor, ru: "топот нескольких лошадей … на мягкой немощёной дороге", en: "the running of several horses … on the unpaved road", fix: "the hoofbeats of several horses … on the soft unpaved road", note: "«running»; «мягкой» опущено"}
+  - {id: p1-c01-045, cat: fluency, sev: minor, ru: "дворник вышел на дорогу", en: "The yard-keeper went on the road", fix: "the porter came out onto the road", note: "калька «yard-keeper»; предлог"}
+  - {id: p1-c01-045, cat: addition, sev: minor, edition_candidate: true, ru: "махнул кому-то в сад и остановился в ожидании.", en: "waiting for the carriages. There were three of them already.", note: "фразы нет в нашей RU; забегает вперёд (экипажи описаны в 046–048)"}
+  - {id: p1-c01-046, cat: grammar, sev: major, ru: "Первой шла простая телега.", en: "The first a simple cart was rolling.", fix: "First came a simple cart.", note: "фраза грамматически не собрана"}
+  - {id: p1-c01-048, cat: grammar, sev: minor, en: "in quite a long distance – apparently, protecting from the dust", fix: "at some distance behind — evidently keeping clear of the dust", note: "предлог; висячий оборот"}
+  - {id: p1-c01-050, cat: omission, sev: minor, ru: "с закрытыми чёрной сеткой лицами", en: "with their faces covered", fix: "their faces hidden behind black veils", note: "«чёрной сеткой» опущено"}
+  - {id: p1-c01-050, cat: addition, sev: minor, edition_candidate: true, en: "They had muffled themselves up in mantles.", note: "фразы нет в нашей RU"}
+  - {id: p1-c01-051, cat: mistranslation, sev: minor, ru: "мне даже показалось, что по губам его скользнула едва уловимая усмешка", en: "I even had time to see how a ghost of a sneer slipped in his lips", fix: "I even fancied that the faintest smile flickered across his lips", note: "«показалось» → «успел увидеть»: неуверенность стала уверенностью; «усмешка» ≠ «sneer»"}
+  - {id: p1-c01-051, cat: mistranslation, sev: minor, ru: "желая сказать: \"мы открыты\"", en: "that we’ve already been uncovered", fix: "“we’ve been seen”", note: "«открыты» = замечены"}
+  - {id: p1-c01-052.2, cat: fluency, sev: major, ru: "Я видел женщин, признанных красавиц, на сцене и в жизни, но сейчас впервые понял, что такое женская красота.", en: "I had seen a lot of women – both on the stage and other recognized beauties, - but only now for the first time I understood what was beauty.", fix: "I had seen acknowledged beauties, on the stage and in life, but only now did I understand for the first time what a woman’s beauty was.", note: "фраза не собрана; порядок «what beauty was»; «женская» опущено"}
+  - {id: p1-c01-053, cat: mistranslation, sev: minor, ru: "что-то визгливо выговаривала Али", en: "was explaining something to Ali, squealing at him", fix: "was shrilly scolding Ali", note: "«выговаривала» = отчитывала"}
+  - {id: p1-c01-053, cat: mistranslation, sev: minor, ru: "поднял бросившуюся ему на шею девушку и, как ребёнка, понёс её в дом", en: "lifted the girl who had pressed herself to him. He brought her home like a child.", fix: "lifted the girl, who had flung her arms round his neck, and carried her into the house like a child", note: "«бросилась на шею» ослаблено; «понёс в дом» → «brought her home»"}
+  - {id: p1-c01-054, cat: fluency, sev: minor, ru: "почтительно высаживал всё ещё ворчавшую старуху", en: "respectfully landed the old woman on the ground, who was still grumbling", fix: "was respectfully helping the still grumbling old woman out of the carriage", note: "«landed»; висячее придаточное"}
+  - {id: p1-c01-055.2, cat: fluency, sev: minor, ru: "забыв место, время, забыв, что хотелось есть, жару и все приличия", en: "having forgotten where we were, how long we were standing there, that we had gotten hungry, that it was hot, that it was indecent", fix: "forgetting place and time, forgetting hunger, the heat and all propriety", note: "смысл сохранён, но тяжеловесно и «indecent» сильнее «приличий»"}
+  - {id: p1-c01-056, cat: grammar, sev: minor, en: "wishing to share my fascinations with him", fix: "wishing to share my delight with him", note: "мн. ч. «fascinations»"}
+  - {id: p1-c01-056, cat: source-divergence, evidence: search, ru: "Его синие глаза как-то потемнели. Это было лицо совершенно незнакомого мне человека.", en: "his blue eyes had gotten darker somehow, and they were sparkling like the eyes of the cat in the night", note: "в наших трёх частях нет «сверкали, как у кошки ночью» (проверено по полному тексту); поиск по точной фразе «синие глаза как-то потемнели и сверкали» находит издания на Литрес/MyBook; тексты не открыты. Фраза «Это было лицо совершенно незнакомого мне человека» в EN отсутствует (смысл частично передан в 057)"}
+  - {id: p1-c01-057, cat: typography, sev: minor, en: "so I only kelp looking", fix: "kept", note: "опечатка"}
+  - {id: p1-c01-058, cat: fluency, sev: minor, ru: "незнакомый металлический голос", en: "a strange metal voice", fix: "an unfamiliar metallic voice", note: "«strange» для «незнакомый»; «metal»"}
+  - {id: p1-c01-059, cat: name, sev: minor, ru: "Али старшего", en: "the old Ali", fix: "the elder Ali", note: "в том же отрывке «older Ali» — нужна единая форма (глоссарий)"}
+  - {id: p1-c01-059, cat: typography, sev: minor, en: "standing in front of me; He was", fix: "; he was", note: "заглавная после точки с запятой"}
+  - {id: p1-c01-060, cat: grammar, sev: minor, ru: "С усилием оторвались мои глаза", en: "Only thanks to my effort, I was able to take my eyes off … and I looked into his hands", fix: "With an effort I tore my eyes away … and looked at his hands", note: "предлоги"}
+  - {id: p1-c01-061, cat: fluency, sev: minor, ru: "Вся рука … всё же говорила об огромной физической силе. Казалось, глаза … находились в полной гармонии с этими руками.", en: "it was telling about his enormous physical strength, while his iron-will, spark-casting eyes fitted to these hands", fix: "yet spoke of enormous physical strength. His eyes, flashing with iron will, seemed in perfect harmony with those hands.", note: "калька «telling about»; авторское «Казалось» опущено; «розовыми» → «reddish»"}
+  - {id: p1-c01-062, cat: fluency, sev: minor, ru: "Я точно стоя заснул.", en: "I was as though fallen into a light slumber while I was standing.", fix: "It was as if I had fallen asleep on my feet.", note: "неграмматично; «light slumber» смягчает"}
 
   # ───────────── cal-2-drama (p1-c12) ─────────────
-  - {id: p1-c12-040, cat: source-divergence, evidence: pattern, ru: "меня обдало с ног до головы холодной водой", en: "I didn’t even notice how the cold water flooded me from my head to foot, I even had to close my eyes.", note: "«I even had to close my eyes» нет в нашей RU; в отрывке много таких связных вставок (040–048, 055) — см. раздел о редакциях"}
-  - {id: p1-c12-040, cat: fluency, sev: minor, en: "on the deck which was being flashed by the lightning", note: "неестественно; «лит вспышками молний»"}
-  - {id: p1-c12-041, cat: source-divergence, evidence: pattern, ru: "Я подымал ногу и тут же валился на свою няньку-матроса.", en: "now I was lifting my leg and wanted to put it on the deck, but I fell on my “nurse”, and my leg would hang in the air", note: "подробности (нога повисала в воздухе) нет в нашей RU"}
-  - {id: p1-c12-041, cat: fluency, sev: minor, en: "if one could call those movements of my body and legs “a going”", note: "калька «a going»; «I wouldn’t be in time for ducking»"}
-  - {id: p1-c12-042, cat: source-divergence, evidence: pattern, ru: "А в следующий момент нас прижало к стенкам капитанской рубки и чудовищная волна прошла стороной.", en: "One more moment – and we were flooded by the water. It pressed us to the walls of the wheelhouse, but we survived, because this gigantic wave didn’t have time to wash us away.", note: "по нашей RU волна прошла стороной, в EN — накрыла; также добавлено «I. with all his strength was dragging my body». Если канонической останется наша редакция — это смысловая ошибка (major)"}
-  - {id: p1-c12-042, cat: fluency, sev: minor, ru: "матрос-верзила", en: "the clumsy sailor", note: "«верзила» = здоровяк, долговязый; «clumsy» (неуклюжий) — сдвиг; повторяется в корпусе"}
-  - {id: p1-c12-043, cat: grammar, sev: minor, en: "the wall of the water fell on the steamer so much, it hit the wheelhouse so strongly", note: "«so much» неграмматично"}
-  - {id: p1-c12-043, cat: omission, sev: minor, ru: "которое капитан и помощники уже не могли удерживать втроём", en: "because the captain with his assistants were unable to hold it", note: "«втроём» опущено; «because» — лишняя причинность"}
-  - {id: p1-c12-044, cat: fluency, sev: minor, ru: "из зелёной коробочки Флорентийца, пилюли всем", en: "quickly pull a pill for everybody out of the green Florentian’s box", note: "порядок слов «Florentian’s green box»"}
-  - {id: p1-c12-045, cat: source-divergence, evidence: pattern, ru: "Я был прижат к рубке таким сильным ветром, что стоял очень устойчиво.", en: "I was squeezed into the corner by the strong wind that was blowing into my legs", note: "детали отличаются от нашей RU"}
-  - {id: p1-c12-045, cat: mistranslation, sev: minor, ru: "Положительно, если бы я спал, то был бы уверен, что вижу его во сне", en: "Of course, if I was lying, I would think that I was dreaming, but now I was certain that I saw him not in my dream", note: "«спал» → «was lying»; логика фразы изменена (возможна и другая редакция)"}
-  - {id: p1-c12-046, cat: source-divergence, evidence: pattern, ru: "Я вынул пилюли", en: "I pulled the pills out of my first-aid kit easily", note: "«first-aid kit» нет в нашей RU"}
-  - {id: p1-c12-046, cat: grammar, sev: minor, en: "I felt such fresh surge of strength … I became merry and laughing, I leant towards", note: "артикль; цепочка без союзов"}
-  - {id: p1-c12-047, cat: mistranslation, sev: minor, ru: "забыл о смерти, таящейся в любом последующем натиске стихии", en: "I forgot about the death brought by every gust of the wind", note: "«натиск стихии» (волн, шторма) сужен до «gust of the wind»"}
-  - {id: p1-c12-047, cat: grammar, sev: minor, en: "one was still unable to discern where the sky and where the water was", note: "неграмматично"}
-  - {id: p1-c12-048, cat: grammar, sev: major, ru: "Он как бы держал свои руки на его руках. Да и командовал капитан, казалось, под диктовку И.", en: "As though he had put his hand on I.’s hands, and that everybody, including the captain, was obeying to I.’s commands.", note: "фраза без главного предложения; смысл сдвинут: в RU капитан командовал как бы под диктовку И., в EN все подчинялись командам И.; «obeying to»"}
-  - {id: p1-c12-048, cat: source-divergence, evidence: pattern, ru: "Все молчали.", en: "Everybody kept silent and was fighting against the menacing death.", note: "вторая часть отсутствует в нашей RU"}
-  - {id: p1-c12-049, cat: fluency, sev: minor, en: "One more such heeling over of the ship, and the steamer will fall on its side, so that it would never rise again", note: "тяжеловесно; «gave a shout»"}
-  - {id: p1-c12-050, cat: typography, sev: minor, en: "but I cried into the very ear of the captain.", note: "перед репликой точка вместо двоеточия — систематически (см. корпус)"}
-  - {id: p1-c12-051.2, cat: grammar, sev: major, ru: "Он только повёл плечами, и это был жест снисхождения мне, мальчишке, не понимающему смерти.", en: "He only shrugged his shoulders, and I understood that like his indulgence to my childish incomprehension of the menacing death.", note: "«understood that like» — неграмматично"}
-  - {id: p1-c12-052, cat: fluency, sev: minor, en: "As though hollowed out walls of the green water with the peaks of white foam would rise from time to time.", note: "неграмматичная конструкция; «hollowed out» вместо «towering»"}
-  - {id: p1-c12-053, cat: typography, sev: minor, en: "the captain pulled is head into his shoulders", note: "опечатка «is» → «his»"}
-  - {id: p1-c12-053, cat: fluency, sev: minor, ru: "пароход послушно повернулся носом вправо", en: "the steamer turned obediently with its front to the right", note: "морская лексика: «bow», не «front» (в 054 «spike» для носа)"}
-  - {id: p1-c12-054, cat: fluency, sev: minor, en: "pierced through the gigantic mass of the water with its spike … its spike rose upward … didn’t menace to crash us", note: "«spike» вместо «bow»; «menace to crash» → «threaten to smash»"}
-  - {id: p1-c12-055, cat: source-divergence, evidence: search, ru: "но понял, что то был лишь мираж", en: "but I understood that it was only a mirage, the mirage of my love to him", note: "в нашей RU нет «мираж моей любви»; поиск по точной фразе находит её в тексте «Двух жизней» на другом сайте — вероятно, другая редакция"}
+  - {id: p1-c12-040, cat: mistranslation, sev: minor, ru: "Я не успел даже опомниться, как меня обдало с ног до головы холодной водой.", en: "I didn’t even notice how the cold water flooded me from my head to foot", fix: "Before I could collect myself, I was drenched from head to foot with icy water.", note: "«не успел опомниться» ≠ «didn’t notice»"}
+  - {id: p1-c12-040, cat: addition, sev: minor, en: "I even had to close my eyes.", note: "экспликация переводчика: выводится из «протирая глаза… открыл их с большим усилием», нового содержания нет, но и не нужна"}
+  - {id: p1-c12-040, cat: fluency, sev: minor, en: "on the deck which was being flashed by the lightning", fix: "in the darkness lit by flashes", note: "неестественно"}
+  - {id: p1-c12-041, cat: addition, sev: minor, edition_candidate: true, ru: "Я подымал ногу и тут же валился на свою няньку-матроса.", en: "now I was lifting my leg and wanted to put it on the deck, but I fell on my “nurse”, and my leg would hang in the air", note: "подробности (нога повисала в воздухе) нет в нашей RU"}
+  - {id: p1-c12-041, cat: fluency, sev: minor, en: "if one could call those movements of my body and legs “a going” … I wouldn’t be in time for ducking", fix: "if walking is the word for what my legs and body were doing … before I could duck", note: "кальки"}
+  - {id: p1-c12-042, cat: mistranslation, sev: major, edition_candidate: true, ru: "А в следующий момент нас прижало к стенкам капитанской рубки и чудовищная волна прошла стороной.", en: "One more moment – and we were flooded by the water. It pressed us to the walls of the wheelhouse, but we survived, because this gigantic wave didn’t have time to wash us away.", fix: "The next moment we were pressed against the walls of the wheelhouse, and a monstrous wave swept past us.", note: "по нашей RU волна прошла стороной, в EN — накрыла людей; вероятнее неверное понимание «прошла стороной», но формально зависит от D14"}
+  - {id: p1-c12-042, cat: addition, sev: minor, edition_candidate: true, en: "in his turn, I. with all his strength was dragging my body which could hardly keep its balance", note: "вставки нет в нашей RU"}
+  - {id: p1-c12-042, cat: fluency, sev: minor, ru: "матрос-верзила", en: "the clumsy sailor", fix: "the lanky sailor / the hulking sailor", note: "«верзила» = здоровяк, не «неуклюжий»; систематически по корпусу"}
+  - {id: p1-c12-043, cat: grammar, sev: minor, en: "the wall of the water fell on the steamer so much, it hit the wheelhouse so strongly", fix: "a huge wall of water crashed down on the steamer, striking the wheelhouse so hard that it shook", note: "«so much»"}
+  - {id: p1-c12-043, cat: omission, sev: minor, ru: "которое капитан и помощники уже не могли удерживать втроём", en: "because the captain with his assistants were unable to hold it", fix: "which the captain and his two mates could no longer hold between the three of them", note: "«втроём» опущено; лишнее «because»"}
+  - {id: p1-c12-044, cat: fluency, sev: minor, ru: "из зелёной коробочки Флорентийца, пилюли всем", en: "quickly pull a pill for everybody out of the green Florentian’s box", fix: "quick — the pills from the Florentine’s green box, for everyone", note: "порядок слов"}
+  - {id: p1-c12-045, cat: mistranslation, sev: minor, edition_candidate: true, ru: "Я был прижат к рубке таким сильным ветром, что стоял очень устойчиво.", en: "I was squeezed into the corner by the strong wind that was blowing into my legs and I was feeling very steady.", fix: "The wind pinned me so hard against the wheelhouse that I stood quite firmly.", note: "рубка → угол; «blowing into my legs» — пересказ"}
+  - {id: p1-c12-045, cat: mistranslation, sev: major, ru: "так близок был ко мне в эту минуту мой друг, точно я увидел его рядом. Положительно, если бы я спал, то был бы уверен, что вижу его во сне", en: "my friend was so close to me at this moment that I even saw him next to me. Of course, if I was lying, I would think that I was dreaming, but now I was certain that I saw him not in my dream", fix: "my friend felt so near at that moment that it was as if I saw him beside me. Had I been asleep, I should certainly have thought I was seeing him in a dream", note: "«точно увидел» → «even saw» (видение стало фактом); «спал» → «was lying»; логика сравнения со сном перевёрнута"}
+  - {id: p1-c12-046, cat: mistranslation, sev: minor, ru: "Я вынул пилюли", en: "I pulled the pills out of my first-aid kit easily", fix: "I took out the pills", note: "пилюли из «зелёной коробочки Флорентийца» (044), не из «my first-aid kit»"}
+  - {id: p1-c12-046, cat: grammar, sev: minor, en: "I felt such fresh surge of strength … I became merry and laughing, I leant towards", fix: "such a surge of strength … I felt merry and, laughing, leaned towards", note: "артикль; цепочка без союзов"}
+  - {id: p1-c12-047, cat: mistranslation, sev: minor, ru: "Точно дивная рука Флорентийца помогла мне … забыл о смерти, таящейся в любом последующем натиске стихии", en: "The wonderful hand of Florentian was as though holding me … I forgot about the death brought by every gust of the wind", fix: "As though the Florentine’s wondrous hand were helping me … I forgot the death lurking in every fresh onslaught of the elements", note: "«помогла» → «holding»; «натиск стихии» → «gust of the wind»"}
+  - {id: p1-c12-047, cat: grammar, sev: minor, en: "one was still unable to discern where the sky and where the water was", fix: "it was still impossible to tell where the water ended and the sky began", note: "неграмматично"}
+  - {id: p1-c12-048, cat: grammar, sev: major, ru: "Он как бы держал свои руки на его руках. Да и командовал капитан, казалось, под диктовку И.", en: "As though he had put his hand on I.’s hands, and that everybody, including the captain, was obeying to I.’s commands.", fix: "He seemed to be holding his hands over I.’s hands. And the captain himself seemed to be giving orders at I.’s dictation.", note: "нет главного предложения; смысл сдвинут (капитан командовал как бы под диктовку И. → «все подчинялись командам И.»); «obeying to»"}
+  - {id: p1-c12-048, cat: addition, sev: minor, en: "Everybody kept silent and was fighting against the menacing death.", note: "вторая часть — штамп переводчика («menacing death» добавлен и в 051.2)"}
+  - {id: p1-c12-049, cat: fluency, sev: minor, en: "One more such heeling over of the ship, and the steamer will fall on its side, so that it would never rise again", fix: "One more list like that and she’ll go over and never right herself", note: "тяжеловесно"}
+  - {id: p1-c12-050, cat: typography, sev: minor, en: "but I cried into the very ear of the captain.", fix: "…right into the captain’s ear:", note: "перед репликой точка вместо двоеточия"}
+  - {id: p1-c12-051, cat: fluency, sev: minor, ru: "Не ляжет, ни за что не ляжет, выйдем невредимыми.", en: "It will not fall on its side, not for anything, we will survive!", fix: "She won’t go over — never! We’ll come through unharmed!", note: "калька «not for anything»; «невредимыми» → «survive»"}
+  - {id: p1-c12-051.2, cat: grammar, sev: major, ru: "Он только повёл плечами, и это был жест снисхождения мне, мальчишке, не понимающему смерти.", en: "He only shrugged his shoulders, and I understood that like his indulgence to my childish incomprehension of the menacing death.", fix: "He only shrugged — an indulgent gesture towards me, a boy who did not understand death.", note: "фраза не собрана; добавлено «menacing»"}
+  - {id: p1-c12-052, cat: mistranslation, sev: major, ru: "Временами вздымались высоченные зелёные стены воды, с белыми гребнями, точно грозя залить нас сразу со всех сторон и похоронить в пропасти.", en: "As though hollowed out walls of the green water with the peaks of white foam would rise from time to time. They were threatening to flood us from all sides right away", fix: "Now and then towering green walls of water with white crests rose up, as if threatening to engulf us from every side and bury us in the abyss.", note: "«высоченные» → «hollowed out» (выдолбленные) — другой образ; фраза-обрубок"}
+  - {id: p1-c12-052, cat: omission, sev: minor, ru: "и похоронить в пропасти … в который уже раз", en: "They were threatening to flood us from all sides right away … so that then we could get upward successfully", note: "опущено"}
+  - {id: p1-c12-053, cat: mistranslation, sev: major, ru: "Мне снова почудилась высокая белая фигура Флорентийца, коснувшаяся рук И., который двинул штурвал так, как хотел капитан", en: "The tall and white Florentian’s figure appeared to me again. He touched I.’s hands and then he turned the wheel exactly so as the captain wanted it to", fix: "Again I seemed to see the tall white figure of the Florentine touching the hands of I., who turned the wheel just as the captain wanted", note: "по EN штурвал поворачивает видение, а не И. — меняется, кто действует"}
+  - {id: p1-c12-053, cat: typography, sev: minor, en: "the captain pulled is head into his shoulders", fix: "his head", note: "опечатка"}
+  - {id: p1-c12-053, cat: fluency, sev: minor, ru: "пароход послушно повернулся носом вправо", en: "the steamer turned obediently with its front to the right", fix: "the steamer obediently swung her bow to starboard", note: "морская лексика: bow, не front/spike"}
+  - {id: p1-c12-054, cat: fluency, sev: minor, en: "pierced through the gigantic mass of the water with its spike … its spike rose upward … didn’t menace to crash us", fix: "cut through the belly of the water-mountain … her bow reared up … no longer threatened to smash us", note: "«spike»; «menace to crash»; «брюхо водяной горы» ослаблено"}
+  - {id: p1-c12-055, cat: addition, sev: minor, ru: "но понял, что то был лишь мираж", en: "it was only a mirage, the mirage of my love to him", note: "«мираж моей любви» есть в НАШЕЙ редакции, но в гл. 13 (часть I); переводчик перенёс фразу в гл. 12 — добавление, не расхождение редакций"}
 
   # ───────────── cal-3-dialogue (p2-c01) ─────────────
-  - {id: p2-c01-252, cat: fluency, sev: minor, en: "with the big fireside, bulky sofas and armchairs, upholstered with the blue silk, with the curtains … which were made of the lace of the irreproachable whiteness", note: "«fireplace»; лишние артикли; громоздкий порядок"}
-  - {id: p2-c01-253, cat: grammar, sev: major, ru: "Удивительно, как красиво в западных домах.", en: "It is amazing how it is beautiful inside of European houses", note: "порядок слов «how beautiful it is»; «у нас на Востоке» → «in our Oriental families»"}
-  - {id: p2-c01-254, cat: fluency, sev: major, ru: "Ты судишь по моему и этому, единственным западным домам, которые видела. Но когда-нибудь ты научишься различать дома, и их внешняя роскошь не скроет от твоих глаз внутренних язв разложения", en: "You make your decision only according to this and my house, according to the single ones where you’ve been, but some day, my daughter, you will be able to take a look at houses in such a way that an exterior luxury won’t be able to hide its inner wounds of break-up from your eyes.", note: "трудно читается; «язвы разложения» → «wounds of break-up» (неверно: decay)"}
-  - {id: p2-c01-255, cat: grammar, sev: minor, en: "the pastor came in by greeting his guests", note: "«by + -ing» вместо деепричастия — систематическая калька (см. корпус)"}
-  - {id: p2-c01-256, cat: mistranslation, sev: minor, ru: "А жена будет посаженной матерью", en: "while my wife would become the matron of honour", note: "«посаженная мать» ≠ «matron of honour» (замужняя подружка невесты)"}
-  - {id: p2-c01-256, cat: fluency, sev: minor, en: "the pastor uttered pleasingly … I’ve been telling about the young bride to my wife … the pastor was telling them by looking at Nal", note: "«приветливо» → «pleasingly»; кальки"}
-  - {id: p2-c01-257, cat: grammar, sev: minor, en: "there wouldn’t be a single woman in my wedding", note: "«at my wedding»"}
-  - {id: p2-c01-258, cat: fluency, sev: minor, ru: "Разделённые на пробор волнистые волосы, свитые у шеи в тугие косы", en: "Her distinct, curly, copper and parted hair were unusually luxuriant, it was done up in two wiry plaits behind her back", note: "«hair were» (по корпусу редко — не закономерность); «тугие» → «wiry»; «у шеи» → «behind her back»"}
-  - {id: p2-c01-259, cat: grammar, sev: minor, en: "she’s even an exact her copy", note: "порядок слов"}
+  - {id: p2-c01-252, cat: fluency, sev: minor, en: "with the big fireside, bulky sofas and armchairs, upholstered with the blue silk, with the curtains … which were made of the lace of the irreproachable whiteness", fix: "with a huge fireplace, large sofas and armchairs upholstered in blue silk, and spotless white lace curtains at its three wide windows", note: "«fireside»; лишние артикли"}
+  - {id: p2-c01-253, cat: grammar, sev: minor, ru: "Удивительно, как красиво в западных домах.", en: "It is amazing how it is beautiful inside of European houses", fix: "How beautiful Western houses are", note: "локальный порядок слов; «у нас на Востоке» → «in our Oriental families»"}
+  - {id: p2-c01-254, cat: mistranslation, sev: major, ru: "Ты судишь по моему и этому, единственным западным домам, которые видела. Но когда-нибудь ты научишься различать дома, и их внешняя роскошь не скроет от твоих глаз внутренних язв разложения", en: "You make your decision only according to this and my house, according to the single ones where you’ve been, but some day, my daughter, you will be able to take a look at houses in such a way that an exterior luxury won’t be able to hide its inner wounds of break-up from your eyes.", fix: "You judge by mine and this one — the only Western houses you have seen. But one day you will learn to tell houses apart, and their outward luxury will not hide from you the inner sores of decay, my daughter.", note: "три сдвига: «судишь» → «make your decision»; «научишься различать» → «take a look … in such a way»; «язвы разложения» → «wounds of break-up»"}
+  - {id: p2-c01-255, cat: grammar, sev: minor, en: "the pastor came in by greeting his guests", fix: "the pastor came in, greeting his unexpected guests", note: "«by + -ing» вместо деепричастия (по корпусу — систематически)"}
+  - {id: p2-c01-256, cat: mistranslation, sev: major, ru: "А жена будет посаженной матерью, как полагается по здешним обычаям.", en: "while my wife would become the matron of honour according to our custom", fix: "and my wife will stand in for the bride’s mother, as local custom requires", note: "«посаженная мать» (заменяет мать невесты) ≠ «matron of honour» (замужняя подружка невесты) — подмена роли"}
+  - {id: p2-c01-256, cat: fluency, sev: minor, en: "the pastor uttered pleasingly … I’ve been telling about the young bride to my wife … the pastor was telling them by looking at Nal", fix: "said the pastor cordially … I have talked so much to my wife and daughters about the young bride … said the pastor, looking at Nal", note: "«pleasingly»; кальки"}
+  - {id: p2-c01-257, cat: grammar, sev: minor, en: "there wouldn’t be a single woman in my wedding", fix: "at my wedding", note: "предлог"}
+  - {id: p2-c01-258, cat: fluency, sev: minor, ru: "Разделённые на пробор волнистые волосы, свитые у шеи в тугие косы", en: "Her distinct, curly, copper and parted hair were unusually luxuriant, it was done up in two wiry plaits behind her back", fix: "Her wavy hair, parted in the middle and twisted into tight plaits at the nape, was magnificent", note: "«hair were» (по корпусу редко); «тугие» → «wiry»; «у шеи» → «behind her back»"}
+  - {id: p2-c01-259, cat: grammar, sev: minor, en: "she’s even an exact her copy", fix: "her exact copy", note: "порядок слов"}
   - {id: p2-c01-259, cat: name, sev: minor, ru: "Уодсворд; Алиса", en: "Wodsword; Alyssa", note: "транслитерации имён — решить в глоссарии (Wadsworth? Alice?)"}
-  - {id: p2-c01-259.2, cat: source-divergence, evidence: search, ru: "Девушки и мать отшучивались.", en: "…while he kept telling the guests about their impatience with humour. He told them about his youngest daughter that today she had decided to run to the bride’s house secretly…", note: "эпизода о младшей дочери нет в нашей RU; поиск возвращает близкую русскую фразу («младшая дочь даже решила пойти посмотреть хотя бы дом невесты…»), но первоисточник не открыт — доказательность слабая"}
-  - {id: p2-c01-260, cat: fluency, sev: minor, ru: "заразительно засмеялась младшая", en: "the girl was laughing infectiously … the beauty from oversea … exceeds everything what one could imagine", note: "«младшая» потеряно; «overseas»; «everything what» (см. корпус)"}
-  - {id: p2-c01-261, cat: mistranslation, sev: minor, ru: "Она казалась остовом семьи.", en: "It seemed that she was that little link which was connecting their family.", note: "«остов» = опора, стержень (mainstay), не «little link»"}
-  - {id: p2-c01-261, cat: mistranslation, sev: minor, ru: "принимающих приятных, но чужих людей", en: "accepting kind, but strange people", note: "«чужих» = посторонних (strangers), «strange» — странных"}
-  - {id: p2-c01-261, cat: source-divergence, evidence: pattern, en: "while the atmosphere of joy that was covering her used to create an ordinary relationship with the girl … having clapped her hands like a child, she was talking", note: "фрагментов нет в нашей RU"}
-  - {id: p2-c01-263, cat: name, sev: minor, ru: "Флорентийца", en: "Florentian", note: "«Флорентиец» → «Florentian»; естественнее «the Florentine» — решить в глоссарии"}
-  - {id: p2-c01-264, cat: addition, sev: minor, ru: "низко присела в реверансе", en: "made a deep curtsy to both men", note: "«to both men» нет в RU"}
-  - {id: p2-c01-265, cat: fluency, sev: minor, ru: "по-моему", en: "According to me", note: "неидиоматично («In my opinion»); по корпусу единичный случай"}
-  - {id: p2-c01-267, cat: addition, sev: minor, ru: "У нас, по старинному обычаю, чай пьют в столовой.", en: "According to the old custom of our forefathers, we drink the tea not in the sitting-room, but in the dining-room.", note: "экспликации «of our forefathers», «not in the sitting-room»"}
-  - {id: p2-c01-269, cat: omission, sev: minor, ru: "всё самое высокое и благородное, что выходит из нашего дома", en: "Everything what is the most honourable and generous always belongs to him", note: "«что выходит из нашего дома» опущено; «everything what»"}
-  - {id: p2-c01-271, cat: mistranslation, sev: minor, ru: "Это верно до некоторой степени, потому что мы все очень дружны.", en: "On a certain scale – yes, although we all are very friendly.", note: "«потому что» → «although» — связь мыслей перевёрнута"}
+  - {id: p2-c01-259.2, cat: source-divergence, evidence: search-weak, ru: "Девушки и мать отшучивались.", en: "…He told them about his youngest daughter that today she had decided to run to the bride’s house secretly…", note: "эпизода нет ни в одной из наших частей (проверено по полному тексту); поиск возвращает близкую русскую фразу только в пересказе поисковика, первоисточник не открыт — доказательность слабая"}
+  - {id: p2-c01-259.2, cat: fluency, sev: minor, en: "they also were getting out in jest of such a presentation", fix: "The girls and their mother laughed it off", note: "калька"}
+  - {id: p2-c01-260, cat: fluency, sev: minor, ru: "заразительно засмеялась младшая", en: "the girl was laughing infectiously … the beauty from oversea … exceeds everything what one could imagine", fix: "laughed the younger girl … the overseas beauty … exceeds everything one could imagine", note: "«младшая» потеряно; «overseas»; «everything what»"}
+  - {id: p2-c01-261, cat: mistranslation, sev: major, ru: "Какая-то радостная доброта Алисы покоряла каждого.", en: "Alyssa’s kindness used to enslave everybody, while the atmosphere of joy that was covering her used to create an ordinary relationship with the girl.", fix: "Alice’s joyful kindness won everyone over.", note: "«покоряла» (очаровывала) → «enslave» (порабощала) — обратная коннотация; вторая половина — раздробленная передача «радостная»"}
+  - {id: p2-c01-261, cat: mistranslation, sev: minor, ru: "Она казалась остовом семьи.", en: "It seemed that she was that little link which was connecting their family.", fix: "She seemed the mainstay of the family.", note: "«остов» = опора"}
+  - {id: p2-c01-261, cat: mistranslation, sev: minor, ru: "принимающих приятных, но чужих людей", en: "accepting kind, but strange people", fix: "receiving pleasant strangers", note: "«чужих» = посторонних"}
+  - {id: p2-c01-261, cat: addition, sev: minor, edition_candidate: true, en: "it clearly disobeyed the comb … having clapped her hands like a child, she was talking", note: "фрагментов нет в нашей RU"}
+  - {id: p2-c01-263, cat: name, sev: minor, ru: "Флорентийца", en: "Florentian", fix: "the Florentine", note: "решить в глоссарии"}
+  - {id: p2-c01-264, cat: addition, sev: minor, ru: "низко присела в реверансе", en: "made a deep curtsy to both men", fix: "made a deep curtsy", note: "«to both men» нет в RU"}
+  - {id: p2-c01-265, cat: fluency, sev: minor, ru: "по-моему", en: "According to me", fix: "In my opinion / I think", note: "по корпусу единичный случай"}
+  - {id: p2-c01-267, cat: addition, sev: minor, ru: "У нас, по старинному обычаю, чай пьют в столовой.", en: "According to the old custom of our forefathers, we drink the tea not in the sitting-room, but in the dining-room.", fix: "By old custom we take tea in the dining-room.", note: "лишние «of our forefathers», «not in the sitting-room»"}
+  - {id: p2-c01-268, cat: grammar, sev: minor, en: "to be the bridesmaids in the wedding of his daughter tomorrow", fix: "to be his daughter’s bridesmaids at tomorrow’s wedding", note: "предлог"}
+  - {id: p2-c01-269, cat: omission, sev: minor, ru: "всё самое высокое и благородное, что выходит из нашего дома", en: "Everything what is the most honourable and generous always belongs to him", fix: "everything that is finest and noblest in our house always comes from him", note: "«что выходит из нашего дома» опущено; «everything what»"}
+  - {id: p2-c01-270, cat: fluency, sev: minor, ru: "У вас в доме как бы две партии", en: "As though two parties exist in your home", fix: "So there are, as it were, two parties in your house", note: "неестественный порядок"}
+  - {id: p2-c01-271, cat: mistranslation, sev: major, ru: "Это верно до некоторой степени, потому что мы все очень дружны.", en: "On a certain scale – yes, although we all are very friendly.", fix: "That is true to some extent, because we are all very close.", note: "«потому что» → «although» — обратная связка"}
 
   # ───────────── cal-4-teaching (p3-c01) ─────────────
-  - {id: p3-c01-066.2, cat: terminology, sev: minor, ru: "условного разъединения", en: "conditional separation", note: "«условный» здесь = мнимый, внешний (apparent/conventional), не «conditional»"}
-  - {id: p3-c01-067, cat: fluency, sev: minor, ru: "равноправным членом моей семьи", en: "as the member of my family enjoying equal rights", note: "калька; «as a full member of my family»"}
-  - {id: p3-c01-067, cat: terminology, sev: minor, ru: "идущие путем труда и совершенствования", en: "walking the path of their development and work", note: "«совершенствование» (self-perfection) → «development»: сквозное понятие, в глоссарий"}
-  - {id: p3-c01-068, cat: name, sev: minor, ru: "сэра Уоми", en: "sir Vomi", note: "транслитерация «Уоми» → «Vomi» сомнительна, но по корпусу последовательна во всех томах (257/83/34) — вопрос глоссария; «sir» со строчной"}
-  - {id: p3-c01-068, cat: register, sev: minor, ru: "И. поведет тебя … Ты будешь владеть силами", en: "I. is going to lead you … You are going to control", note: "разговорное «be going to» в возвышенном письме Учителя — систематически в отрывке (070, 071)"}
-  - {id: p3-c01-068, cat: grammar, sev: minor, en: "You were endowed more than many of them", note: "«You have been given more than many of them»"}
-  - {id: p3-c01-069, cat: mistranslation, sev: minor, ru: "чтобы дело шло успешно", en: "so that everything would happen successfully", note: "«дело» (the Work, общее дело) → «everything»"}
-  - {id: p3-c01-070, cat: mistranslation, sev: minor, ru: "Если ты выкажешь героическое напряжение сил и мыслей", en: "If you are going to light the heroic strain of your strength and your thoughts", note: "«выкажешь» → «light»; бессмысленное сочетание"}
-  - {id: p3-c01-070, cat: mistranslation, sev: minor, ru: "единственный ключ ко всему знанию", en: "the only key to all your knowledge", note: "«ко всему знанию» сужено до «your knowledge»"}
-  - {id: p3-c01-071, cat: grammar, sev: major, ru: "Кто не сумеет так жить свой день, для тех знание закрыто", en: "Those who are unable to live like this every day, the knowledge is out of reach for them", note: "анаколуф — фраза грамматически не собрана"}
-  - {id: p3-c01-071, cat: mistranslation, sev: major, ru: "несовершенных, но стремящихся к радости совершенства людей и видеть в них каплю огня Вечности", en: "imperfect, but who are striving for joy of knowledge, and who see the sparkle of fire of Eternity in them", note: "«радость совершенства» → «joy of knowledge»; субъект сдвинут: в RU «ты» видишь каплю огня в людях, в EN люди видят; «капля огня» → «sparkle»"}
-  - {id: p3-c01-071, cat: omission, sev: minor, ru: "легче и проще, выше и веселее", en: "in an easier, simpler and merrier way", note: "«выше» опущено"}
-  - {id: p3-c01-073, cat: terminology, sev: minor, ru: "темные оккультисты", en: "The black occultists", note: "«тёмные» → «black»; сквозной термин, в глоссарий"}
-  - {id: p3-c01-073, cat: omission, sev: minor, ru: "язвы, которые они оставляют в сердцах, страшны и разрушительны среди людей невежественных", en: "the wounds which they leave are terrible, and they destroy ignorant people", note: "«в сердцах» опущено; смысл «разрушительны среди невежественных» упрощён"}
-  - {id: p3-c01-075, cat: mistranslation, sev: major, ru: "Здесь закаляются сердца тех, кто хочет жить для общего блага", en: "The hearts of those become hardened here, who want to live for the common welfare", note: "«закаляются» (закаляются, крепнут — tempered) → «become hardened» (ожесточаются) — противоположная коннотация"}
-  - {id: p3-c01-075, cat: terminology, sev: major, ru: "для мира и радости людей", en: "for the people’s calm and joy", note: "«мир» → «calm» — сквозная замена ключевого понятия (075, 078, 079, 080, 083); см. корпус"}
-  - {id: p3-c01-075, cat: fluency, sev: minor, ru: "где куются бойцы для борьбы со злом, с награблением, с разжигающими страстями", en: "where the soldiers for fight against the evil, robbery and burning passions are trained", note: "образ «куются» потерян; «разжигающие страсти» → «burning passions» (сдвиг)"}
-  - {id: p3-c01-076, cat: fluency, sev: minor, en: "From this moment on when you’ve entered under the roof … notice the new present", note: "«пойми» → «notice»; конструкция неграмматична"}
-  - {id: p3-c01-077, cat: mistranslation, sev: major, ru: "может сдвигать горы", en: "is able to move heaven and earth", note: "«move heaven and earth» = из кожи вон лезть; нужно «move mountains» (есть в английском с тем же смыслом)"}
-  - {id: p3-c01-077, cat: fluency, sev: minor, en: "You have the period of entire seven years before you … your private burden … beat the smallest crack through it", note: "порядок слов; «бытовых тягот» → «private burden»"}
-  - {id: p3-c01-078, cat: mistranslation, sev: major, ru: "ты каждую встречу сумеешь начать и кончить в радости и мире", en: "you will be able to begin and to start your every meeting calmly and joyfully", note: "«начать и кончить» → «begin and start»; «мир» → «calmly»"}
-  - {id: p3-c01-078, cat: fluency, sev: minor, ru: "бодрое пожатие моей руки … в простой доброте", en: "my energetic handshake … with an ordinary kindness", note: "«hearty handshake»; «simple kindness»"}
-  - {id: p3-c01-079, cat: mistranslation, sev: major, ru: "начать и кончить каждую из них в мире, милосердии и доброте", en: "to begin and to start each of them calmly, with compassion and kindness", note: "то же «begin and start»; «мир» → «calmly»; «everything what»"}
-  - {id: p3-c01-080, cat: terminology, sev: minor, ru: "пути к общему благу и миру", en: "the paths for people to the common welfare and calm", note: "«мир» → «calm» (повтор, см. 075)"}
-  - {id: p3-c01-083, cat: terminology, sev: major, ru: "Прими мой привет и мир.", en: "Accept my regards and calm.", note: "формула благословения искажена; «Accept my greeting and peace»; также опущено «зови имя мое «Али»» → «call me by name»"}
-  - {id: p3-c01-084.2, cat: fluency, sev: minor, ru: "Огромные пальмы едва вырисовывались волшебными контурами. … какие-то шорохи, точно вздохи", en: "The glamourous contours of the big palms were difficult to see. … some rustles", note: "«волшебными» → «glamourous»; «точно вздохи» опущено; «I stopped feeling to be»"}
+  - {id: p3-c01-066.2, cat: terminology, sev: minor, ru: "условного разъединения", en: "conditional separation", fix: "apparent separation", note: "«условный» здесь = мнимый, внешний"}
+  - {id: p3-c01-067, cat: fluency, sev: minor, ru: "равноправным членом моей семьи", en: "as the member of my family enjoying equal rights", fix: "as a full member of my family", note: "калька"}
+  - {id: p3-c01-067, cat: terminology, sev: major, ru: "идущие путем труда и совершенствования", en: "walking the path of their development and work", fix: "treading the path of labour and self-perfection", note: "«совершенствование» (сквозное понятие учения) → «development»"}
+  - {id: p3-c01-068, cat: mistranslation, sev: major, ru: "Ты будешь владеть силами в себе и вовне.", en: "You are going to control your inner and your outer powers.", fix: "You will command the forces within you and without.", note: "власть над силами в себе и во внешнем мире сужена до «твоих внешних сил»"}
+  - {id: p3-c01-068, cat: name, sev: minor, ru: "сэра Уоми", en: "sir Vomi", note: "транслитерация сомнительна, но по корпусу последовательна (257/83/34) — вопрос глоссария; «sir» со строчной"}
+  - {id: p3-c01-068, cat: register, sev: minor, ru: "И. поведет тебя … Ты будешь владеть", en: "I. is going to lead you … You are going to control", fix: "I. will lead you … You will command", note: "разговорное «be going to» в возвышенном письме (также 070)"}
+  - {id: p3-c01-068, cat: grammar, sev: minor, en: "You were endowed more than many of them", fix: "More has been given to you than to many of them", note: ""}
+  - {id: p3-c01-069, cat: mistranslation, sev: minor, ru: "чтобы дело шло успешно", en: "so that everything would happen successfully", fix: "for the Work to go well", note: "«дело» (общее дело) → «everything»"}
+  - {id: p3-c01-070, cat: mistranslation, sev: major, ru: "Если ты выкажешь героическое напряжение сил и мыслей", en: "If you are going to light the heroic strain of your strength and your thoughts", fix: "If you show a heroic effort of all your strength and thought", note: "условие поучения передано бессмысленным сочетанием"}
+  - {id: p3-c01-070, cat: mistranslation, sev: minor, ru: "единственный ключ ко всему знанию", en: "the only key to all your knowledge", fix: "the only key to all knowledge", note: "сужение"}
+  - {id: p3-c01-071, cat: grammar, sev: major, ru: "Кто не сумеет так жить свой день, для тех знание закрыто", en: "Those who are unable to live like this every day, the knowledge is out of reach for them", fix: "Knowledge is closed to those who cannot live their day like this", note: "фраза не собрана (анаколуф)"}
+  - {id: p3-c01-071, cat: mistranslation, sev: critical, ru: "Можно жить среди таких же, как ты сам, несовершенных, но стремящихся к радости совершенства людей и видеть в них каплю огня Вечности.", en: "One can live among the same people like you are, imperfect, but who are striving for joy of knowledge, and who see the sparkle of fire of Eternity in them.", fix: "One can live among people as imperfect as yourself, but striving towards the joy of perfection, and see in them a drop of the fire of Eternity.", note: "центральная мысль отрывка: в RU «ты» видишь в других каплю огня Вечности, в EN её видят сами люди; «радость совершенства» → «joy of knowledge»"}
+  - {id: p3-c01-071, cat: omission, sev: minor, ru: "легче и проще, выше и веселее", en: "in an easier, simpler and merrier way", fix: "more easily and simply, higher and more joyfully", note: "«выше» опущено"}
+  - {id: p3-c01-073, cat: terminology, sev: minor, ru: "темные оккультисты", en: "The black occultists", fix: "dark occultists", note: "сквозной термин — в глоссарий"}
+  - {id: p3-c01-073, cat: mistranslation, sev: minor, ru: "язвы, которые они оставляют в сердцах, страшны и разрушительны среди людей невежественных", en: "the wounds which they leave are terrible, and they destroy ignorant people", fix: "the sores they leave in hearts are terrible and destructive among the ignorant", note: "«в сердцах» опущено; сдвиг субъекта"}
+  - {id: p3-c01-074, cat: terminology, sev: major, ru: "сжигая в человеке волю к добру своим тяжелым гипнозом", en: "they burn down the will for kindness within man with their hypnosis", fix: "burning out in man the will to good with their heavy hypnosis", note: "«добро» как нравственная категория → «kindness» (смешано с «доброта» 078–079); «тяжелым» опущено"}
+  - {id: p3-c01-075, cat: mistranslation, sev: critical, ru: "Здесь закаляются сердца тех, кто хочет жить для общего блага", en: "The hearts of those become hardened here, who want to live for the common welfare", fix: "Here the hearts of those who wish to live for the common good are tempered", note: "«закаляются» (крепнут) → «become hardened» (ожесточаются): ключевое утверждение об Общине получает противоположный смысл"}
+  - {id: p3-c01-075, cat: terminology, sev: major, ru: "для мира и радости людей", en: "for the people’s calm and joy", fix: "for the peace and joy of people", note: "«мир» → «calm» (075, 078, 079, 080, 083)"}
+  - {id: p3-c01-075, cat: fluency, sev: minor, ru: "где куются бойцы для борьбы со злом, с награблением, с разжигающими страстями", en: "where the soldiers for fight against the evil, robbery and burning passions are trained", fix: "where fighters are forged for the struggle against evil, against greed and inflaming passions", note: "образ «куются» потерян"}
+  - {id: p3-c01-076, cat: fluency, sev: minor, en: "From this moment on when you’ve entered under the roof … notice the new present", fix: "From the moment you entered under the roof of my Community, grasp the new order of things and understand in it the new gift", note: "«пойми» → «notice»"}
+  - {id: p3-c01-077, cat: mistranslation, sev: major, ru: "может сдвигать горы", en: "is able to move heaven and earth", fix: "can move mountains", note: "«move heaven and earth» = приложить все усилия — другой смысл"}
+  - {id: p3-c01-077, cat: fluency, sev: minor, en: "You have the period of entire seven years before you … your private burden … beat the smallest crack through it", fix: "Before you lies a period of seven whole years … everyday burdens … make a breach in it", note: ""}
+  - {id: p3-c01-078, cat: mistranslation, sev: major, ru: "ты каждую встречу сумеешь начать и кончить", en: "you will be able to begin and to start your every meeting", fix: "you will be able to begin and end every meeting", note: "«кончить» → «start»"}
+  - {id: p3-c01-078, cat: terminology, sev: major, ru: "в радости и мире", en: "calmly and joyfully", fix: "in joy and peace", note: "«мир» → «calm»"}
+  - {id: p3-c01-078, cat: fluency, sev: minor, ru: "бодрое пожатие моей руки … в простой доброте", en: "my energetic handshake … with an ordinary kindness", fix: "a hearty handshake … in simple kindness", note: ""}
+  - {id: p3-c01-079, cat: mistranslation, sev: major, ru: "начать и кончить каждую из них", en: "to begin and to start each of them", fix: "to begin and end each of them", note: "то же"}
+  - {id: p3-c01-079, cat: terminology, sev: major, ru: "в мире, милосердии и доброте", en: "calmly, with compassion and kindness", fix: "in peace, mercy and kindness", note: "«мир» → «calm»"}
+  - {id: p3-c01-079, cat: grammar, sev: minor, en: "everything what man must achieve", fix: "all that a man must achieve", note: "«everything what»"}
+  - {id: p3-c01-080, cat: terminology, sev: major, ru: "пути к общему благу и миру", en: "the paths for people to the common welfare and calm", fix: "paths to the common good and peace", note: "«мир» → «calm»"}
+  - {id: p3-c01-081, cat: mistranslation, sev: minor, ru: "каждому его момент современности", en: "everybody has his own time", fix: "to each his own moment in time", note: "оттенок «момент современности» утрачен"}
+  - {id: p3-c01-083, cat: terminology, sev: major, ru: "Прими мой привет и мир.", en: "Accept my regards and calm.", fix: "Accept my greeting and my peace.", note: "формула благословения; «мир» → «calm»"}
+  - {id: p3-c01-083, cat: omission, sev: minor, ru: "зови имя мое «Али»", en: "call me by name", fix: "call my name, “Ali”", note: "имя опущено"}
+  - {id: p3-c01-084.2, cat: fluency, sev: minor, ru: "Огромные пальмы едва вырисовывались волшебными контурами. … какие-то шорохи, точно вздохи", en: "The glamourous contours of the big palms were difficult to see. … some rustles", fix: "The huge palms were barely outlined, magical silhouettes … rustlings like sighs", note: "«волшебными» → «glamourous»; «точно вздохи» опущено"}
 
   # ───────────── cal-5-verse (p1-c20) ─────────────
-  - {id: p1-c20-213, cat: mistranslation, sev: major, ru: "Среди труда, страстей и боли / Избранник я счастливой доли.", en: "Between work, passion and suffering / My destiny is going like this:", note: "смысл строки («я — избранник счастливой доли») утрачен"}
-  - {id: p1-c20-213, cat: style, sev: major, ru: "земле/красоте; боли/доли/воли", en: "(без рифмы и размера)", note: "стихотворение передано подстрочником: нет рифмы и ритма"}
-  - {id: p1-c20-213, cat: mistranslation, sev: minor, ru: "Моей святыне — красоте / Пою я песнь любви и воли.", en: "I’m weaving my song only for the saint Beauty / From my love, will and power.", note: "«святыня» ≠ «saint»; «воли» (свободы) → «will and power»"}
-  - {id: p1-c20-214, cat: mistranslation, sev: minor, ru: "То была не просто песнь, а гимн торжествующей любви", en: "That wasn’t a song anymore, but a hymn of victorious love", note: "«не просто песнь» → «not a song anymore»"}
-  - {id: p1-c20-215, cat: mistranslation, sev: minor, ru: "я едва смог, поддерживаемый И., встать … И. был необычно бледен", en: "I could hardly stand up, although I. was holding me … who was pale", note: "«although» переворачивает логику; «необычно» опущено"}
+  - {id: p1-c20-213, cat: mistranslation, sev: major, ru: "Среди труда, страстей и боли / Избранник я счастливой доли.", en: "Between work, passion and suffering / My destiny is going like this:", note: "строка смысла утрачена"}
+  - {id: p1-c20-213, cat: style, sev: major, ru: "земле/красоте; боли/доли/воли", en: "(без рифмы и размера)", note: "стихи переданы подстрочником"}
+  - {id: p1-c20-213, cat: mistranslation, sev: minor, ru: "Моей святыне — красоте / Пою я песнь любви и воли.", en: "I’m weaving my song only for the saint Beauty / From my love, will and power.", note: "«святыня» ≠ «saint»; «воли» → «will and power»"}
+  - {id: p1-c20-214, cat: mistranslation, sev: minor, ru: "То была не просто песнь, а гимн торжествующей любви", en: "That wasn’t a song anymore, but a hymn of victorious love", fix: "It was not merely a song but a hymn of triumphant love", note: ""}
+  - {id: p1-c20-215, cat: mistranslation, sev: major, ru: "я едва смог, поддерживаемый И., встать", en: "I could hardly stand up, although I. was holding me", fix: "supported by I., I could barely rise", note: "«поддерживаемый» → «although» — обратная связка"}
+  - {id: p1-c20-215, cat: omission, sev: minor, ru: "И. был необычно бледен", en: "who was pale", fix: "unusually pale", note: "«необычно» опущено"}
+  - {id: p1-c20-215.2, cat: typography, sev: minor, en: "he said to the captain tenderly.", fix: "he said tenderly to the captain:", note: "точка вместо двоеточия перед репликой"}
